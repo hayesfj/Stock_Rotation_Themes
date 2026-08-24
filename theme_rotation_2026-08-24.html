@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Early Rotation Theme Analysis — Week of Aug 24, 2026</title>
+<style>
+  :root {
+    --bg:        #0C0F14;
+    --surface:   #141820;
+    --border:    #1E2530;
+    --border2:   #252E3A;
+    --text:      #D8D4CC;
+    --muted:     #6E7A8A;
+    --head:      #EAE5DA;
+    --green:     #34D399;
+    --green-dim: #1A3D2E;
+    --amber:     #FBBF24;
+    --amber-dim: #3A2F0E;
+    --red:       #F87171;
+    --red-dim:   #3B1515;
+    --blue:      #60A5FA;
+    --blue-dim:  #1A2840;
+    --accent:    #A78BFA;
+    --mono:      'Courier New', 'Consolas', monospace;
+    --sans:      system-ui, -apple-system, sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.65;
+    padding: 0 0 60px 0;
+  }
+
+  .report-header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 28px 32px 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .report-header .brand { font-family: var(--mono); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+  .report-header h1 { font-size: 26px; font-weight: 700; color: var(--head); letter-spacing: -.01em; }
+  .report-header .meta { text-align: right; font-family: var(--mono); font-size: 13px; color: var(--muted); line-height: 1.8; }
+  .report-header .meta .date { font-size: 15px; color: var(--head); font-weight: 600; }
+
+  .market-banner { background: var(--surface); border-bottom: 1px solid var(--border); padding: 12px 32px; display: flex; gap: 36px; flex-wrap: wrap; }
+  .mkt-item { display: flex; flex-direction: column; gap: 2px; }
+  .mkt-label { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+  .mkt-val { font-family: var(--mono); font-size: 15px; font-weight: 700; color: var(--head); }
+  .mkt-chg { font-family: var(--mono); font-size: 13px; }
+  .pos { color: var(--green); }
+  .neg { color: var(--red); }
+  .neu { color: var(--amber); }
+
+  .report-body { max-width: 1600px; margin: 0 auto; padding: 36px 32px 0; }
+
+  .section { margin-top: 48px; }
+  .section-eyebrow { font-family: var(--mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+  .section-title { font-size: 21px; font-weight: 700; color: var(--head); padding-bottom: 12px; border-bottom: 1px solid var(--border); margin-bottom: 20px; }
+
+  .summary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .summary-box { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 20px; }
+  .summary-box .sb-label { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 10px; }
+  .summary-box.green .sb-label { color: var(--green); }
+  .summary-box.amber .sb-label { color: var(--amber); }
+  .summary-box.red   .sb-label { color: var(--red); }
+  .summary-box.blue  .sb-label { color: var(--blue); }
+  .summary-box p { font-size: 15px; color: var(--text); line-height: 1.7; }
+  .summary-box ul { padding-left: 18px; }
+  .summary-box li { font-size: 15px; margin-bottom: 5px; }
+
+  .scorecard-table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+  .scorecard-table th { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); padding: 9px 14px; text-align: left; border-bottom: 1px solid var(--border); white-space: nowrap; }
+  .scorecard-table td { padding: 9px 14px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+  .scorecard-table tr:last-child td { border-bottom: none; }
+  .scorecard-table tr:hover td { background: var(--surface); }
+  .td-theme { font-weight: 600; color: var(--head); min-width: 220px; }
+  .td-mono  { font-family: var(--mono); font-size: 14px; white-space: nowrap; }
+
+  .acc-bar-wrap { display: flex; align-items: center; gap: 8px; }
+  .acc-bar { height: 7px; border-radius: 3px; min-width: 4px; }
+  .acc-pos { background: var(--green); }
+  .acc-neg { background: var(--red); }
+  .acc-num { font-family: var(--mono); font-size: 13px; white-space: nowrap; }
+
+  .badge { display: inline-block; font-family: var(--mono); font-size: 12px; padding: 3px 8px; border-radius: 3px; font-weight: 700; letter-spacing: .04em; }
+  .badge-early  { background: var(--green-dim); color: var(--green); }
+  .badge-hold   { background: var(--amber-dim); color: var(--amber); }
+  .badge-cool   { background: var(--red-dim);   color: var(--red); }
+  .badge-mature { background: var(--blue-dim);  color: var(--blue); }
+
+  .stars { font-size: 15px; letter-spacing: 1px; }
+
+  .tier-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .tier-card { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 24px; }
+  .tier-card.full-width { grid-column: 1 / -1; }
+  .tier-card .tc-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; padding-bottom: 14px; border-bottom: 1px solid var(--border); }
+  .tier-card .tc-title { font-size: 17px; font-weight: 700; color: var(--head); }
+  .tier-card .tc-sub { font-family: var(--mono); font-size: 12px; color: var(--muted); margin-top: 4px; letter-spacing: .06em; }
+  .tier-card .tc-rating { font-size: 18px; }
+  .tier-card .tc-body p { font-size: 15px; line-height: 1.7; margin-bottom: 12px; }
+  .tier-card .tc-body p:last-child { margin-bottom: 0; }
+
+  .stat-row { display: flex; gap: 24px; flex-wrap: wrap; margin: 14px 0; }
+  .stat-item { display: flex; flex-direction: column; gap: 2px; }
+  .stat-label { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+  .stat-value { font-family: var(--mono); font-size: 15px; font-weight: 700; }
+
+  .ticker-table { width: 100%; border-collapse: collapse; margin-top: 14px; font-size: 14px; }
+  .ticker-table th { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); padding: 6px 10px; text-align: right; border-bottom: 1px solid var(--border2); }
+  .ticker-table th:first-child { text-align: left; }
+  .ticker-table td { font-family: var(--mono); padding: 6px 10px; border-bottom: 1px solid var(--border2); text-align: right; }
+  .ticker-table td:first-child { text-align: left; color: var(--head); font-weight: 700; }
+  .ticker-table tr:last-child td { border-bottom: none; }
+
+  .tag { display: inline-block; font-family: var(--mono); font-size: 11px; padding: 2px 6px; border-radius: 2px; font-weight: 700; }
+  .tag-hi  { background: rgba(52,211,153,.15); color: var(--green); border: 1px solid rgba(52,211,153,.3); }
+  .tag-med { background: rgba(251,191,36,.12); color: var(--amber); border: 1px solid rgba(251,191,36,.3); }
+  .tag-lo  { background: rgba(100,116,139,.15); color: var(--muted); border: 1px solid rgba(100,116,139,.3); }
+
+  .cooling-table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+  .cooling-table th { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); padding: 9px 14px; text-align: left; border-bottom: 1px solid var(--border); }
+  .cooling-table td { padding: 10px 14px; border-bottom: 1px solid var(--border); font-size: 15px; line-height: 1.65; vertical-align: top; }
+  .cooling-table tr:last-child td { border-bottom: none; }
+  .cooling-table .ct-theme { font-weight: 700; color: var(--head); width: 210px; }
+  .cooling-table .ct-diff { font-family: var(--mono); font-size: 14px; color: var(--red); white-space: nowrap; width: 90px; }
+
+  .ppo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .ppo-card { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 22px; }
+  .ppo-card .pc-title { font-family: var(--mono); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+  .ppo-card.hi .pc-title { color: var(--green); }
+  .ppo-card.watch .pc-title { color: var(--amber); }
+
+  .chartlist-box { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 22px; font-family: var(--mono); font-size: 15px; line-height: 2.0; color: var(--green); word-break: break-all; white-space: pre-wrap; }
+
+  .callout { border-left: 3px solid; padding: 12px 16px; border-radius: 0 4px 4px 0; font-size: 15px; margin: 14px 0; line-height: 1.7; }
+  .callout.green { border-color: var(--green); background: var(--green-dim); color: #9AE6C0; }
+  .callout.amber { border-color: var(--amber); background: var(--amber-dim); color: #FDE68A; }
+  .callout.red   { border-color: var(--red);   background: var(--red-dim);   color: #FCA5A5; }
+
+  .report-footer { margin-top: 50px; padding: 20px 32px; background: var(--surface); border-top: 1px solid var(--border); font-family: var(--mono); font-size: 12px; color: var(--muted); line-height: 1.8; }
+
+  @media (max-width: 760px) {
+    .report-header { padding: 18px 16px; flex-direction: column; gap: 10px; }
+    .report-header .meta { text-align: left; }
+    .report-body { padding: 20px 16px 0; }
+    .summary-grid, .tier-grid, .ppo-grid { grid-template-columns: 1fr; }
+    .tier-card.full-width { grid-column: auto; }
+    .market-banner { padding: 10px 16px; gap: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="report-header">
+  <div>
+    <div class="brand">Market Theme Rotation Strategist</div>
+    <h1>Early Rotation Theme Analysis</h1>
+  </div>
+  <div class="meta">
+    <div class="date">Week of August 24, 2026</div>
+    <div>Data through Aug 21&ndash;24 close</div>
+    <div>Universe: 835 wtd names / 34 themes</div>
+  </div>
+</div>
+
+<div class="market-banner">
+  <div class="mkt-item"><span class="mkt-label">S&amp;P 500</span><span class="mkt-val">7,653</span><span class="mkt-chg neg">&minus;0.3% &middot; prior wk &minus;1.4%</span></div>
+  <div class="mkt-item"><span class="mkt-label">Nasdaq</span><span class="mkt-val">25,980</span><span class="mkt-chg neg">&minus;0.8% &middot; SOXX &minus;2.7%</span></div>
+  <div class="mkt-item"><span class="mkt-label">Dow</span><span class="mkt-val">53,417</span><span class="mkt-chg pos">+0.3%</span></div>
+  <div class="mkt-item"><span class="mkt-label">Gold spot</span><span class="mkt-val">$4,637</span><span class="mkt-chg pos">+0.8% &middot; 3-mo high</span></div>
+  <div class="mkt-item"><span class="mkt-label">WTI crude</span><span class="mkt-val">$85.6</span><span class="mkt-chg neu">elevated &middot; Iran risk</span></div>
+  <div class="mkt-item"><span class="mkt-label">10Y yield</span><span class="mkt-val">Elevated</span><span class="mkt-chg neu">~2025 highs</span></div>
+  <div class="mkt-item"><span class="mkt-label">Next catalyst</span><span class="mkt-val">NVDA</span><span class="mkt-chg neu">earnings Wed 8/26</span></div>
+</div>
+
+<div class="report-body">
+
+  <!-- ============ EXECUTIVE SUMMARY ============ -->
+  <div class="section">
+    <div class="section-eyebrow">01 &mdash; Executive Summary</div>
+    <div class="section-title">The tape is quietly rotating out of AI/semis into cyclical value</div>
+
+    <div class="callout green">
+      <strong>The headline change vs. last month:</strong> Agriculture flipped from a sleepy 1-month consolidation (theme +0.5%) into clear 1-week leadership (+6.3%), driven by a nitrogen-fertilizer supply squeeze and a weak dollar &mdash; before it shows up on anyone's leaderboard. This is the cleanest &ldquo;early rotation&rdquo; signal in the book this week.
+    </div>
+
+    <div class="summary-grid">
+      <div class="summary-box green">
+        <div class="sb-label">What accelerated (1W &gt; 1M)</div>
+        <ul>
+          <li><strong>Agriculture &amp; FoodTech</strong> +6.3% 1W vs +0.5% 1M &mdash; fertilizers &amp; precision ag</li>
+          <li><strong>Commodities&ndash;Agriculture</strong> +5.0% vs +0.3% &mdash; crop inputs re-accelerating</li>
+          <li>Fertilizer sub-group +9.2% 1W after a <em>negative</em> 1M (&minus;4.2%) &mdash; textbook reset</li>
+          <li>Quality industrial distributors (GWW, CSX, CTAS) turning up off shallow 1M dips</li>
+        </ul>
+      </div>
+      <div class="summary-box red">
+        <div class="sb-label">What broke this week</div>
+        <ul>
+          <li><strong>Semiconductors</strong> &minus;9.0% 1W, breadth 0% &mdash; the epicenter of the selloff (Micron &minus;5.8%)</li>
+          <li><strong>Cybersecurity</strong> &minus;7.4% 1W reversing a +3.9% 1M &mdash; failed rotation</li>
+          <li><strong>Defense/Aerospace supply chain</strong> &minus;6.6% 1W &mdash; CRS, CW, HXL, HWM all rolling over</li>
+          <li>Telecom &minus;6.2%, Industrial Automation &minus;4.5% &mdash; deteriorating</li>
+        </ul>
+      </div>
+      <div class="summary-box blue">
+        <div class="sb-label">Mature leadership &mdash; hold, don't chase</div>
+        <ul>
+          <li><strong>Gold miners</strong> still +12% 1W but +33% 1M / +19% 3M &mdash; extended, crowding risk (AEM/AU +50% 1M)</li>
+          <li><strong>Healthcare</strong> the best down-day performer, now at all-time highs &mdash; quality but no longer &ldquo;early&rdquo;</li>
+          <li><strong>Software/Cloud</strong> +7&ndash;11% 1M but decelerating hard into the tape</li>
+        </ul>
+      </div>
+      <div class="summary-box amber">
+        <div class="sb-label">Positioning implications</div>
+        <p>Buy the <strong>ag-inputs reset</strong> on quality (CF, CTVA) and the precision-ag compounders (DE, CNH). Keep a <strong>defensive picks-and-shovels</strong> core (GWW, CSX, packaging) that held up on down days. <strong>Don't chase gold</strong> &mdash; keep the core, add only on a real pullback. <strong>Avoid</strong> broken semis and the rolling-over aerospace supply chain until weekly structure repairs.</p>
+      </div>
+    </div>
+
+    <div class="callout amber">
+      <strong>OPEX note:</strong> August monthly expiration was Fri 8/15. The sharp down days on 8/18&ndash;8/20 are <em>post-OPEX</em>, so they read as genuine de-risking (rising yields, oil, a 9% Walmart drop) rather than gamma-pin distortion &mdash; the relative-strength signals below are cleaner than usual.
+    </div>
+  </div>
+
+  <!-- ============ SCORECARD ============ -->
+  <div class="section">
+    <div class="section-eyebrow">02 &mdash; Updated Theme Scorecard</div>
+    <div class="section-title">Cap-weighted theme performance &amp; rotation state</div>
+    <table class="scorecard-table">
+      <thead>
+        <tr>
+          <th>Theme</th>
+          <th>1W</th>
+          <th>1M</th>
+          <th>3M</th>
+          <th>1W&nbsp;vs&nbsp;1M (accel)</th>
+          <th>Selloff strength</th>
+          <th>Interpretation</th>
+          <th>Rating</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="td-theme">Agriculture &amp; FoodTech</td>
+          <td class="td-mono pos">+6.3%</td><td class="td-mono neu">+0.5%</td><td class="td-mono pos">+13.7%</td>
+          <td><div class="acc-bar-wrap"><div class="acc-bar acc-pos" style="width:92px"></div><span class="acc-num pos">+5.8</span></div></td>
+          <td><span class="badge badge-early">HELD / LED</span></td>
+          <td>Early rotation &mdash; 1M was flat, 1W leading</td>
+          <td class="stars">&#11088;&#11088;&#11088;</td>
+        </tr>
+        <tr>
+          <td class="td-theme">Commodities &ndash; Agriculture</td>
+          <td class="td-mono pos">+5.0%</td><td class="td-mono neu">+0.3%</td><td class="td-mono pos">+2.1%</td>
+          <td><div class="acc-bar-wrap"><div class="acc-bar acc-pos" style="width:74px"></div><span class="acc-num pos">+4.6</span></div></td>
+          <td><span class="badge badge-early">HELD</span></td>
+          <td>Early rotation &mdash; crop inputs, breadth 73%</td>
+          <td class="stars">&#11088;&#11088;&#11088;</td>
+        </tr>
+        <tr>
+          <td class="td-theme">Healthcare &amp; Biotech</td>
+          <td class="td-mono pos">+4.4%</td><td class="td-mono pos">+7.6%</td><td class="td-mono pos">+16.1%</td>
+          <td><div class="acc-bar-wrap"><div class="acc-bar acc-neg" style="width:52px"></div><span class="acc-num neg">&minus;3.3</span></div></td>
+          <td><span class="badge badge-early">LED</span></td>
+          <td>Mature leadership &mdash; best down-day, at highs</td>
+          <td class="stars">&#11088;&#11088;</td>
+        </tr>
+        <tr>
+          <td class="td-theme">Commodities &ndash; Metals</td>
+          <td class="td-mono pos">+12.3%</td><td class="td-mono pos">+32.7%</td><td class="td-mono pos">+18.8%</td>
+          <td><div class="acc-bar-wrap"><div class="acc-bar acc-neg" style="width:120px"></div><span class="acc-num neg">&minus;20.4</span></div></td>
+          <td><span class="badge badge-early">LED</span></td>
+          <td>Mature &mdash; gold miners extended, crowded</td>
+          <td class="stars">&#11088;&#11088;</td>
+        </tr>
+        <tr>
+          <td class="td-theme">Real Estate &amp; REITs</td>
+          <td class="td-mono pos">+1.8%</td><td class="td-mono pos">+2.9%</td><td class="td-mono pos">+8.5%</td>
+          <td><div class="acc-bar-wrap"><div class="acc-bar acc-neg" style="width:20px"></div><span class="acc-num neg">&minus;1.2</span></div></td>
+          <td><span class="badge badge-hold">MIXED</span></td>
+          <td>Quality resets inside; yields a headwind</td>
+          <td class="stars">&#11088;&#11088;</td>
+        </tr>
+        <tr>
+          <td class="td-theme">Energy &ndash; Traditional</td>
+          <td class="td-mono neg">&minus;1.1%</td><td class="td-mono neu">+0.7%</td><td class="td-mono neu">+0.8%</td>
+          <td><div class="acc-bar-wrap"><div class="acc-bar acc-neg" style="width:30px"></div><span class="acc-num neg">&minus;1.8</span></div></td>
+          <td><span class="badge badge-hold">MIXED</span></td>
+          <td>Oil-supported but breadth weak (39%)</td>
+          <td class="stars">&#11088;&#11088;</td>
+        </tr>
+        <tr>
+          <td class="td-theme">Business Services</td>
+          <td class="td-mono pos">+7.0%</td><td class="td-mono pos">+16.3%</td><td class="td-mono pos">+14.7%</td>
+          <td><div class="acc-bar-wrap"><div class="acc-bar acc-neg" style="width:90px"></div><span class="acc-num neg">&minus;9.3</span></div></td>
+          <td><span class="badge badge-early">HELD</span></td>
+          <td>Mature quality &mdash; strong but crowded</td>
+          <td class="stars">&#11088;&#11088;</td>
+        </tr>
+        <tr>
+          <td class="td-theme">Financials &ndash; Traditional</td>
+          <td class="td-mono neg">&minus;0.8%</td><td class="td-mono neu">+1.6%</td><td class="td-mono pos">+12.1%</td>
+          <td><div class="acc-bar-wrap"><div class="acc-bar acc-neg" style="width:38px"></div><span class="acc-num neg">&minus;2.4</span></div></td>
+          <td><span class="badge badge-hold">MIXED</span></td>
+          <td>Insurance resets, banks soft on yields</td>
+          <td class="stars">&#11088;&#11088;</td>
+        </tr>
+        <tr>
+          <td class="td-theme">Software</td>
+          <td class="td-mono pos">+7.1%</td><td class="td-mono pos">+24.6%</td><td class="td-mono pos">+20.5%</td>
+          <td><div class="acc-bar-wrap"><div class="acc-bar acc-neg" style="width:120px"></div><span class="acc-num neg">&minus;17.6</span></div></td>
+          <td><span class="badge badge-cool">FRAGILE</span></td>
+          <td>Extended / speculative &mdash; outside mandate</td>
+          <td class="stars">&#11088;</td>
+        </tr>
+        <tr>
+          <td class="td-theme">Industrials &amp; Construction</td>
+          <td class="td-mono neg">&minus;2.3%</td><td class="td-mono neu">+1.1%</td><td class="td-mono pos">+6.1%</td>
+          <td><div class="acc-bar-wrap"><div class="acc-bar acc-neg" style="width:52px"></div><span class="acc-num neg">&minus;3.5</span></div></td>
+          <td><span class="badge badge-cool">SOFT</span></td>
+          <td>Cooling &mdash; pockets resetting (see Tier 2)</td>
+          <td class="stars">&#11088;</td>
+        </tr>
+        <tr>
+          <td class="td-theme">Cloud Computing</td>
+          <td class="td-mono neu">+0.4%</td><td class="td-mono pos">+10.6%</td><td class="td-mono neg">&minus;3.5%</td>
+          <td><div class="acc-bar-wrap"><div class="acc-bar acc-neg" style="width:110px"></div><span class="acc-num neg">&minus;10.2</span></div></td>
+          <td><span class="badge badge-cool">ROLLING</span></td>
+          <td>Mature rolling over &mdash; momentum spent</td>
+          <td class="stars">&#11088;</td>
+        </tr>
+        <tr>
+          <td class="td-theme">Defense &amp; Aerospace</td>
+          <td class="td-mono neg">&minus;6.6%</td><td class="td-mono neg">&minus;1.4%</td><td class="td-mono pos">+10.6%</td>
+          <td><div class="acc-bar-wrap"><div class="acc-bar acc-neg" style="width:70px"></div><span class="acc-num neg">&minus;5.2</span></div></td>
+          <td><span class="badge badge-cool">BROKE</span></td>
+          <td>Failed rotation &mdash; supply chain rolling over</td>
+          <td class="stars">&#11088;</td>
+        </tr>
+        <tr>
+          <td class="td-theme">Cybersecurity</td>
+          <td class="td-mono neg">&minus;7.4%</td><td class="td-mono neu">+3.9%</td><td class="td-mono pos">+13.9%</td>
+          <td><div class="acc-bar-wrap"><div class="acc-bar acc-neg" style="width:120px"></div><span class="acc-num neg">&minus;11.4</span></div></td>
+          <td><span class="badge badge-cool">BROKE</span></td>
+          <td>Failed rotation &mdash; sharp 1W reversal</td>
+          <td class="stars">&#11088;</td>
+        </tr>
+        <tr>
+          <td class="td-theme">Semiconductors</td>
+          <td class="td-mono neg">&minus;9.0%</td><td class="td-mono neg">&minus;6.9%</td><td class="td-mono neg">&minus;7.5%</td>
+          <td><div class="acc-bar-wrap"><div class="acc-bar acc-neg" style="width:44px"></div><span class="acc-num neg">&minus;2.1</span></div></td>
+          <td><span class="badge badge-cool">BROKE</span></td>
+          <td>Selloff epicenter &mdash; breadth 0%</td>
+          <td class="stars">&#11088;</td>
+        </tr>
+        <tr>
+          <td class="td-theme">Telecommunications</td>
+          <td class="td-mono neg">&minus;6.2%</td><td class="td-mono neu">+3.7%</td><td class="td-mono neg">&minus;13.1%</td>
+          <td><div class="acc-bar-wrap"><div class="acc-bar acc-neg" style="width:110px"></div><span class="acc-num neg">&minus;9.9</span></div></td>
+          <td><span class="badge badge-cool">BROKE</span></td>
+          <td>Failed &mdash; no durable trend</td>
+          <td class="stars">&#11088;</td>
+        </tr>
+        <tr>
+          <td class="td-theme">Space Tech</td>
+          <td class="td-mono neg">&minus;10.1%</td><td class="td-mono pos">+10.9%</td><td class="td-mono neg">&minus;33.6%</td>
+          <td><div class="acc-bar-wrap"><div class="acc-bar acc-neg" style="width:120px"></div><span class="acc-num neg">&minus;21.0</span></div></td>
+          <td><span class="badge badge-cool">BROKE</span></td>
+          <td>Speculative whipsaw &mdash; avoid</td>
+          <td class="stars">&#11088;</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="margin-top:12px; font-size:13px; color:var(--muted); font-family:var(--mono);">Accel bar = 1W minus 1M spread (green = accelerating, red = decelerating). Selloff strength = behavior on the 8/18&ndash;8/20 down days.</p>
+  </div>
+
+  <!-- ============ TIER 1 ============ -->
+  <div class="section">
+    <div class="section-eyebrow">03 &mdash; Tier 1 Themes</div>
+    <div class="section-title">Agriculture: the early rotation that fits a quality/value book</div>
+
+    <div class="tier-grid">
+      <div class="tier-card full-width">
+        <div class="tc-header">
+          <div>
+            <div class="tc-title">Agriculture &amp; FoodTech + Crop Inputs</div>
+            <div class="tc-sub">1W +6.3% &middot; 1M +0.5% &middot; 3M +13.7% &nbsp;|&nbsp; ~$227B wtd &middot; breadth 57%</div>
+          </div>
+          <div class="tc-rating stars">&#11088;&#11088;&#11088;</div>
+        </div>
+        <div class="tc-body">
+          <p><strong>Why it's accelerating:</strong> The fertilizer sub-group put up <strong>+9.2% in a single week after a negative trailing month (&minus;4.2%)</strong> &mdash; the classic reset the framework hunts for. The trigger is a nitrogen supply squeeze: urea and ammonia prices jumped on Strait-of-Hormuz supply dislocation, and a weak dollar is lifting globally-priced ag commodities. Precision-ag equipment is riding the same farmer-economics improvement (China resuming U.S. soybean/corn buying, rising global acreage).</p>
+          <p><strong>What changed this week:</strong> A month ago, investors were <em>exiting</em> fertilizer names expecting prices to ease once the strait reopened &mdash; that's what produced the mediocre 1M. Prices didn't ease; nitrogen stayed tight, and the group re-accelerated hard into a market that was selling semis. That divergence (ag up while the tape is down) is the institutional accumulation tell.</p>
+          <p><strong>Institutional behavior:</strong> Money rotating out of crowded AI/semis is finding cheap, cash-generative cyclicals. Analyst revisions are turning up (Corteva target lifted to $92, Buy; sell-side lifting CF nitrogen models). Buyers appeared into weakness rather than selling the strength &mdash; the group closed near highs on down days.</p>
+
+          <div class="stat-row">
+            <div class="stat-item"><span class="stat-label">Best quality/value fit</span><span class="stat-value pos">CF, CTVA, DE</span></div>
+            <div class="stat-item"><span class="stat-label">Accelerating &amp; cheaper</span><span class="stat-value neu">CNH, FMC, AGCO</span></div>
+            <div class="stat-item"><span class="stat-label">Setup type</span><span class="stat-value">1M reset &rarr; 1W reclaim</span></div>
+          </div>
+
+          <table class="ticker-table">
+            <thead>
+              <tr><th>Name</th><th>1W</th><th>1M</th><th>3M</th><th>Cap</th><th>Quality/value read</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>CF &mdash; CF Industries</td><td class="pos">+9.7</td><td class="pos">+3.9</td><td class="pos">+6.7</td><td>$14B</td><td style="text-align:left"><span class="tag tag-hi">TOP PICK</span> Low-cost nitrogen, ~10&times; fwd, buyback + rising div, strong FCF</td></tr>
+              <tr><td>CTVA &mdash; Corteva</td><td class="pos">+8.9</td><td class="neg">&minus;7.2</td><td class="pos">+4.3</td><td>$55B</td><td style="text-align:left"><span class="tag tag-hi">TOP PICK</span> Seeds/crop-science, cleanest reset, margin/FCF story intact</td></tr>
+              <tr><td>DE &mdash; Deere</td><td class="pos">+8.1</td><td class="pos">+3.3</td><td class="pos">+22.9</td><td>$105B</td><td style="text-align:left"><span class="tag tag-hi">QUALITY</span> Best-in-class engineering compounder; 3M a touch extended</td></tr>
+              <tr><td>CNH &mdash; CNH Industrial</td><td class="pos">+14.3</td><td class="pos">+5.5</td><td class="pos">+16.3</td><td>$19B</td><td style="text-align:left"><span class="tag tag-med">VALUE</span> Cheaper DE alternative, accelerating hardest in the group</td></tr>
+              <tr><td>FMC &mdash; FMC Corp</td><td class="pos">+10.8</td><td class="neg">&minus;0.2</td><td class="neg">&minus;13.4</td><td>$5B</td><td style="text-align:left"><span class="tag tag-lo">TURNAROUND</span> Crop chemicals; deep-value but 3M still broken &mdash; watch only</td></tr>
+              <tr><td>AGCO &mdash; AGCO Corp</td><td class="pos">+10.4</td><td class="neg">&minus;8.9</td><td class="neg">&minus;2.1</td><td>$5B</td><td style="text-align:left"><span class="tag tag-lo">TURNAROUND</span> Early-cycle bounce; needs weekly confirmation</td></tr>
+            </tbody>
+          </table>
+
+          <div class="callout green">
+            <strong>How to play it:</strong> CF and CTVA are the quality core &mdash; CF for the low-cost-producer / cash-return story, CTVA for the cleaner reset off a negative month. DE/CNH give you the durable engineering franchise with the same tailwind. Treat FMC/AGCO as turnaround watch-list, not core, until 3M trend repairs.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ TIER 2 ============ -->
+  <div class="section">
+    <div class="section-eyebrow">04 &mdash; Tier 2 Themes</div>
+    <div class="section-title">Emerging opportunities &amp; quality resets to stalk</div>
+
+    <div class="tier-grid">
+      <div class="tier-card">
+        <div class="tc-header">
+          <div><div class="tc-title">Packaging &amp; Containers</div><div class="tc-sub">Defensive industrial picks-and-shovels</div></div>
+          <div class="tc-rating stars">&#11088;&#11088;</div>
+        </div>
+        <div class="tc-body">
+          <p>Quietly strong 3M trends resetting on shallow 1M dips &mdash; boring, cash-generative, low-drama. Fits the mandate almost perfectly.</p>
+          <table class="ticker-table">
+            <tbody>
+              <tr><td>CCK &mdash; Crown</td><td class="pos">+3.0</td><td class="pos">+1.9</td><td class="pos">+24.2</td><td><span class="tag tag-hi">quality</span></td></tr>
+              <tr><td>BALL &mdash; Ball</td><td class="pos">+5.3</td><td class="pos">+0.9</td><td class="pos">+14.4</td><td><span class="tag tag-hi">quality</span></td></tr>
+              <tr><td>AMCR &mdash; Amcor</td><td class="pos">+5.2</td><td class="pos">+7.6</td><td class="pos">+26.9</td><td><span class="tag tag-med">extended</span></td></tr>
+              <tr><td>ATR &mdash; AptarGroup</td><td class="pos">+2.3</td><td class="pos">+2.2</td><td class="pos">+16.3</td><td><span class="tag tag-hi">quality</span></td></tr>
+            </tbody>
+          </table>
+          <p><strong>Risk:</strong> low beta means modest upside; these are ballast, not thrust. Momentum improving, not speculative.</p>
+        </div>
+      </div>
+
+      <div class="tier-card">
+        <div class="tc-header">
+          <div><div class="tc-title">Quality Industrial Distribution / Rail</div><div class="tc-sub">Held up on down days, resetting off dips</div></div>
+          <div class="tc-rating stars">&#11088;&#11088;</div>
+        </div>
+        <div class="tc-body">
+          <p>The purest &ldquo;buyable-on-pullback&rdquo; names &mdash; strong 3M, shallow 1M dip, 1W turning up. High ROIC, durable moats.</p>
+          <table class="ticker-table">
+            <tbody>
+              <tr><td>GWW &mdash; Grainger</td><td class="pos">+0.3</td><td class="neg">&minus;4.2</td><td class="pos">+6.2</td><td><span class="tag tag-hi">reset</span></td></tr>
+              <tr><td>CSX &mdash; CSX</td><td class="pos">+1.7</td><td class="neg">&minus;3.4</td><td class="pos">+13.4</td><td><span class="tag tag-hi">reset</span></td></tr>
+              <tr><td>CTAS &mdash; Cintas</td><td class="pos">+4.8</td><td class="pos">+1.0</td><td class="pos">+20.2</td><td><span class="tag tag-med">compounder</span></td></tr>
+            </tbody>
+          </table>
+          <p><strong>Quality hierarchy:</strong> GWW &gt; CSX &gt; CTAS on valuation cushion; all three are franchise-grade. Momentum <em>improving</em>.</p>
+        </div>
+      </div>
+
+      <div class="tier-card">
+        <div class="tc-header">
+          <div><div class="tc-title">Healthcare REITs / Senior Living</div><div class="tc-sub">Demographic demand + rate-cut optionality</div></div>
+          <div class="tc-rating stars">&#11088;&#11088;</div>
+        </div>
+        <div class="tc-body">
+          <p>Sub-theme flipped +2.9% 1W off a negative month (&minus;4.6%). Defensive cash flows, senior-living tailwind.</p>
+          <table class="ticker-table">
+            <tbody>
+              <tr><td>DOC &mdash; Healthpeak</td><td class="pos">+5.1</td><td class="neg">&minus;2.4</td><td class="pos">+11.2</td><td><span class="tag tag-hi">reset</span></td></tr>
+              <tr><td>AHR &mdash; Amer. Healthcare</td><td class="pos">+2.8</td><td class="neg">&minus;2.2</td><td class="pos">+12.5</td><td><span class="tag tag-med">reset</span></td></tr>
+            </tbody>
+          </table>
+          <p><strong>Risk:</strong> 10Y yields near cycle highs are a live headwind &mdash; needs yields to stabilize. Improving, not speculative.</p>
+        </div>
+      </div>
+
+      <div class="tier-card">
+        <div class="tc-header">
+          <div><div class="tc-title">Energy &mdash; Quality FCF</div><div class="tc-sub">Geopolitical oil premium, second-order</div></div>
+          <div class="tc-rating stars">&#11088;&#11088;</div>
+        </div>
+        <div class="tc-body">
+          <p>Iran/Hormuz keeps a bid under crude (~$85). Prefer disciplined, low-cost, high-FCF operators over the broad theme (breadth is weak at 39%).</p>
+          <table class="ticker-table">
+            <tbody>
+              <tr><td>EOG &mdash; EOG Resources</td><td class="pos">+2.8</td><td class="pos">+2.6</td><td class="pos">+7.2</td><td><span class="tag tag-hi">FCF</span></td></tr>
+            </tbody>
+          </table>
+          <p><strong>Risk:</strong> the driver is a geopolitical premium that can reverse on a headline &mdash; size accordingly. This is a hedge, not a thesis.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ COOLING / DOWNGRADES ============ -->
+  <div class="section">
+    <div class="section-eyebrow">05 &mdash; Themes Cooling / Downgrades</div>
+    <div class="section-title">What failed, narrowed, or got too crowded</div>
+    <table class="cooling-table">
+      <thead><tr><th>Theme</th><th>1W&minus;1M</th><th>What happened &amp; why downgraded</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="ct-theme">Semiconductors</td>
+          <td class="ct-diff">&minus;2.1</td>
+          <td>The center of gravity of this week's selloff. 1W &minus;9.0% with <strong>0% breadth</strong> &mdash; not a single weighted name positive. Micron &minus;5.8%, SOXX &minus;2.7%. Negative across 1W/1M/3M means there's no trend to lean on. <strong>Downgrade &mdash; failed.</strong> Wait for weekly structure to repair before any nibble; NVDA earnings 8/26 is the swing factor.</td>
+        </tr>
+        <tr>
+          <td class="ct-theme">Defense &amp; Aerospace</td>
+          <td class="ct-diff">&minus;5.2</td>
+          <td>Deteriorated from &minus;1.4% (1M) to &minus;6.6% (1W), breadth 9%. The aerospace supply chain broke hardest &mdash; Carpenter (&minus;12% 1W), Curtiss-Wright (&minus;12%), Hexcel (&minus;10%), Howmet (&minus;9%). A theme you like structurally, but it's <strong>rolling over now.</strong> Downgrade; re-stalk HWM/GD once the daily bleed stops.</td>
+        </tr>
+        <tr>
+          <td class="ct-theme">Cybersecurity</td>
+          <td class="ct-diff">&minus;11.4</td>
+          <td>Sharpest reversal in the book: a healthy +3.9% month flipped to &minus;7.4% in a week. Selloff exposed how much was momentum-fueled. <strong>Downgrade &mdash; failed rotation.</strong></td>
+        </tr>
+        <tr>
+          <td class="ct-theme">Cloud Computing</td>
+          <td class="ct-diff">&minus;10.2</td>
+          <td>+10.6% 1M collapsed to +0.4% 1W with a negative 3M underneath &mdash; momentum spent, leadership narrowing into a few megacaps. <strong>Mature, rolling over.</strong> Outside the value mandate regardless.</td>
+        </tr>
+        <tr>
+          <td class="ct-theme">Software</td>
+          <td class="ct-diff">&minus;17.6</td>
+          <td>Still +24.6% 1M but the 1W give-back is the largest deceleration on the board. Speculative, narrative-driven, extended &mdash; <strong>explicitly outside mandate.</strong> Downgrade.</td>
+        </tr>
+        <tr>
+          <td class="ct-theme">Telecommunications</td>
+          <td class="ct-diff">&minus;9.9</td>
+          <td>&minus;6.2% 1W and negative 3M &mdash; a head-fake month with no durable trend. <strong>Remove.</strong></td>
+        </tr>
+        <tr>
+          <td class="ct-theme">Commodities &ndash; Metals (gold)</td>
+          <td class="ct-diff">&minus;20.4</td>
+          <td><strong>Downgrade to HOLD, not sell.</strong> Still leading on 1W (+12%) but 1M +33% / 3M +19% with miners like AEM/AU up ~50% on the month = late-stage, crowded. This is <em>mature leadership</em>, not a failure &mdash; keep the core, don't add here, wait for a real pullback.</td>
+        </tr>
+        <tr>
+          <td class="ct-theme">Space Tech</td>
+          <td class="ct-diff">&minus;21.0</td>
+          <td>&minus;10% 1W, &minus;34% 3M, tiny/pre-scale names. Pure speculation &mdash; <strong>avoid entirely.</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ============ PPO RESET CANDIDATES ============ -->
+  <div class="section">
+    <div class="section-eyebrow">06 &mdash; PPO Reset Candidates</div>
+    <div class="section-title">Weekly trend intact + daily reset + improving relative strength</div>
+    <p style="margin-bottom:18px; color:var(--muted);">Screen: 3M trend intact (&gt;+4%), 1M consolidating (shallow dip to modestly positive), 1W turning up &mdash; the &ldquo;daily PPO reset while weekly PPO holds&rdquo; setup. Filtered to quality/value-eligible names.</p>
+    <div class="ppo-grid">
+      <div class="ppo-card hi">
+        <div class="pc-title">High Conviction</div>
+        <table class="ticker-table">
+          <thead><tr><th>Name</th><th>1W</th><th>1M</th><th>3M</th><th>Note</th></tr></thead>
+          <tbody>
+            <tr><td>CTVA</td><td class="pos">+8.9</td><td class="neg">&minus;7.2</td><td class="pos">+4.3</td><td style="text-align:left">cleanest reset</td></tr>
+            <tr><td>CF</td><td class="pos">+9.7</td><td class="pos">+3.9</td><td class="pos">+6.7</td><td style="text-align:left">low-cost, cheap</td></tr>
+            <tr><td>DE</td><td class="pos">+8.1</td><td class="pos">+3.3</td><td class="pos">+22.9</td><td style="text-align:left">franchise quality</td></tr>
+            <tr><td>GWW</td><td class="pos">+0.3</td><td class="neg">&minus;4.2</td><td class="pos">+6.2</td><td style="text-align:left">picks-and-shovels</td></tr>
+            <tr><td>CSX</td><td class="pos">+1.7</td><td class="neg">&minus;3.4</td><td class="pos">+13.4</td><td style="text-align:left">rail, deep quality</td></tr>
+            <tr><td>CTAS</td><td class="pos">+4.8</td><td class="pos">+1.0</td><td class="pos">+20.2</td><td style="text-align:left">compounder</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="ppo-card watch">
+        <div class="pc-title">Watchlist</div>
+        <table class="ticker-table">
+          <thead><tr><th>Name</th><th>1W</th><th>1M</th><th>3M</th><th>Note</th></tr></thead>
+          <tbody>
+            <tr><td>CNH</td><td class="pos">+14.3</td><td class="pos">+5.5</td><td class="pos">+16.3</td><td style="text-align:left">extended 1W</td></tr>
+            <tr><td>CCK</td><td class="pos">+3.0</td><td class="pos">+1.9</td><td class="pos">+24.2</td><td style="text-align:left">packaging</td></tr>
+            <tr><td>BALL</td><td class="pos">+5.3</td><td class="pos">+0.9</td><td class="pos">+14.4</td><td style="text-align:left">packaging</td></tr>
+            <tr><td>DOC</td><td class="pos">+5.1</td><td class="neg">&minus;2.4</td><td class="pos">+11.2</td><td style="text-align:left">HC REIT, yield risk</td></tr>
+            <tr><td>EOG</td><td class="pos">+2.8</td><td class="pos">+2.6</td><td class="pos">+7.2</td><td style="text-align:left">energy FCF</td></tr>
+            <tr><td>ACGL</td><td class="pos">+3.4</td><td class="neg">&minus;2.1</td><td class="pos">+5.0</td><td style="text-align:left">insurance reset</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="callout amber">
+      <strong>Held-up vs. buyable &mdash; the distinction:</strong> Gold miners and healthcare <em>held up / led</em> on down days but are <em>extended</em> (not buyable here). The reset names above are <em>buyable on pullback</em> &mdash; weekly uptrend intact, daily pulled back toward zero, relative strength turning. That's where fresh capital belongs.
+    </div>
+  </div>
+
+  <!-- ============ CHARTLIST ============ -->
+  <div class="section">
+    <div class="section-eyebrow">07 &mdash; Comma-Delimited ChartList</div>
+    <div class="section-title">StockCharts.com import</div>
+    <div class="chartlist-box">CF, CTVA, DE, CNH, FMC, AGCO, GWW, CSX, CTAS, CCK, BALL, AMCR, ATR, DOC, AHR, EOG, ACGL, EG, AON, CALM, ELAN, HWM, GD</div>
+  </div>
+
+  <div class="report-footer">
+    Methodology: theme &amp; sub-theme returns are sub-market-cap&ndash;weighted (&Sigma; sub-cap &times; %chg / &Sigma; sub-cap) across the 835 names carrying a valid sub-market-cap weight (1,100 rows lacked cap data and are excluded from weighting). Rotation state derived from 1W-vs-1M-vs-3M spreads; selloff behavior from the post-OPEX 8/18&ndash;8/20 down days. Week-over-week upgrade/downgrade calls inferred from the 1W-vs-trailing-trend divergence (no prior-week snapshot in file). &mdash; Not investment advice; for research use only. Verify all prices and fundamentals before acting.
+  </div>
+
+</div>
+</body>
+</html>

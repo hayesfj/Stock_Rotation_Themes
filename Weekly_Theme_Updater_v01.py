@@ -54,12 +54,12 @@ from tqdm import tqdm
 
 warnings.filterwarnings("ignore", category=FutureWarning)
 
-# ──────────────────────────────────────────────────────────────────────────────
+# ──────────────────────────────────────────────────────────────────────────────git 
 # Configuration
 # ──────────────────────────────────────────────────────────────────────────────
 
-DEFAULT_INPUT  = r"G:\My Drive\Projects\Python\Stocks & Options\Themes\Tickers_Themes_Revised_v2.csv"
-DEFAULT_OUTPUT = r"G:\My Drive\Projects\Python\Stocks & Options\Themes\Ticker_Theme_SubTheme.csv"
+DEFAULT_INPUT  = r"G:\My Drive\Projects\Python\Stocks & Options\Themes\Input_Ticker_List_by_Theme.csv"
+DEFAULT_OUTPUT = r"G:\My Drive\Projects\Python\Stocks & Options\Themes\Tickers_Themes_SubThemes.csv"
 
 # Lookback window: must cover 3 months + a buffer for weekends / holidays
 HISTORY_PERIOD = "4mo"
