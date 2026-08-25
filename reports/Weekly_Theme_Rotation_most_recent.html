@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Early Rotation Theme Analysis — Week of Aug 21, 2026</title>
+<style>
+  :root {
+    --bg:        #0C0F14;
+    --surface:   #141820;
+    --border:    #1E2530;
+    --border2:   #252E3A;
+    --text:      #D8D4CC;
+    --muted:     #6E7A8A;
+    --head:      #EAE5DA;
+    --green:     #34D399;
+    --green-dim: #1A3D2E;
+    --amber:     #FBBF24;
+    --amber-dim: #3A2F0E;
+    --red:       #F87171;
+    --red-dim:   #3B1515;
+    --blue:      #60A5FA;
+    --blue-dim:  #1A2840;
+    --accent:    #A78BFA;
+    --mono:      'Courier New', 'Consolas', monospace;
+    --sans:      system-ui, -apple-system, sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.65;
+    padding: 0 0 60px 0;
+  }
+
+  .report-header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 28px 32px 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .report-header .brand { font-family: var(--mono); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+  .report-header h1 { font-size: 26px; font-weight: 700; color: var(--head); letter-spacing: -.01em; }
+  .report-header .meta { text-align: right; font-family: var(--mono); font-size: 13px; color: var(--muted); line-height: 1.8; }
+  .report-header .meta .date { font-size: 15px; color: var(--head); font-weight: 600; }
+
+  .market-banner { background: var(--surface); border-bottom: 1px solid var(--border); padding: 12px 32px; display: flex; gap: 36px; flex-wrap: wrap; }
+  .mkt-item { display: flex; flex-direction: column; gap: 2px; }
+  .mkt-label { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+  .mkt-val { font-family: var(--mono); font-size: 15px; font-weight: 700; color: var(--head); }
+  .mkt-chg { font-family: var(--mono); font-size: 13px; }
+  .pos { color: var(--green); }
+  .neg { color: var(--red); }
+  .neu { color: var(--amber); }
+
+  .report-body { max-width: 1600px; margin: 0 auto; padding: 36px 32px 0; }
+
+  .section { margin-top: 48px; }
+  .section-eyebrow { font-family: var(--mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+  .section-title { font-size: 21px; font-weight: 700; color: var(--head); padding-bottom: 12px; border-bottom: 1px solid var(--border); margin-bottom: 20px; }
+
+  .summary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .summary-box { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 20px; }
+  .summary-box .sb-label { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 10px; }
+  .summary-box.green .sb-label { color: var(--green); }
+  .summary-box.amber .sb-label { color: var(--amber); }
+  .summary-box.red   .sb-label { color: var(--red); }
+  .summary-box.blue  .sb-label { color: var(--blue); }
+  .summary-box p { font-size: 15px; color: var(--text); line-height: 1.7; }
+  .summary-box ul { padding-left: 18px; }
+  .summary-box li { font-size: 15px; margin-bottom: 5px; }
+
+  .scorecard-table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+  .scorecard-table th { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); padding: 9px 14px; text-align: left; border-bottom: 1px solid var(--border); white-space: nowrap; }
+  .scorecard-table td { padding: 9px 14px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+  .scorecard-table tr:last-child td { border-bottom: none; }
+  .scorecard-table tr:hover td { background: var(--surface); }
+  .td-theme { font-weight: 600; color: var(--head); min-width: 220px; }
+  .td-mono  { font-family: var(--mono); font-size: 14px; white-space: nowrap; }
+
+  .acc-bar-wrap { display: flex; align-items: center; gap: 8px; }
+  .acc-bar { height: 7px; border-radius: 3px; min-width: 4px; }
+  .acc-pos { background: var(--green); }
+  .acc-neg { background: var(--red); }
+  .acc-num { font-family: var(--mono); font-size: 13px; white-space: nowrap; }
+
+  .badge { display: inline-block; font-family: var(--mono); font-size: 12px; padding: 3px 8px; border-radius: 3px; font-weight: 700; letter-spacing: .04em; }
+  .badge-early  { background: var(--green-dim); color: var(--green); }
+  .badge-hold   { background: var(--amber-dim); color: var(--amber); }
+  .badge-cool   { background: var(--red-dim);   color: var(--red); }
+  .badge-mature { background: var(--blue-dim);  color: var(--blue); }
+
+  .stars { font-size: 15px; letter-spacing: 1px; }
+
+  .tier-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .tier-card { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 24px; }
+  .tier-card.full-width { grid-column: 1 / -1; }
+  .tier-card .tc-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; padding-bottom: 14px; border-bottom: 1px solid var(--border); }
+  .tier-card .tc-title { font-size: 17px; font-weight: 700; color: var(--head); }
+  .tier-card .tc-sub { font-family: var(--mono); font-size: 12px; color: var(--muted); margin-top: 4px; letter-spacing: .06em; }
+  .tier-card .tc-rating { font-size: 18px; }
+  .tier-card .tc-body p { font-size: 15px; line-height: 1.7; margin-bottom: 12px; }
+  .tier-card .tc-body p:last-child { margin-bottom: 0; }
+
+  .stat-row { display: flex; gap: 24px; flex-wrap: wrap; margin: 14px 0; }
+  .stat-item { display: flex; flex-direction: column; gap: 2px; }
+  .stat-label { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+  .stat-value { font-family: var(--mono); font-size: 15px; font-weight: 700; }
+
+  .ticker-table { width: 100%; border-collapse: collapse; margin-top: 14px; font-size: 14px; }
+  .ticker-table th { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); padding: 6px 10px; text-align: right; border-bottom: 1px solid var(--border2); }
+  .ticker-table th:first-child { text-align: left; }
+  .ticker-table td { font-family: var(--mono); padding: 6px 10px; border-bottom: 1px solid var(--border2); text-align: right; }
+  .ticker-table td:first-child { text-align: left; color: var(--head); font-weight: 700; }
+  .ticker-table tr:last-child td { border-bottom: none; }
+
+  .tag { display: inline-block; font-family: var(--mono); font-size: 11px; padding: 2px 6px; border-radius: 2px; font-weight: 700; }
+  .tag-hi  { background: rgba(52,211,153,.15); color: var(--green); border: 1px solid rgba(52,211,153,.3); }
+  .tag-med { background: rgba(251,191,36,.12); color: var(--amber); border: 1px solid rgba(251,191,36,.3); }
+  .tag-lo  { background: rgba(100,116,139,.15); color: var(--muted); border: 1px solid rgba(100,116,139,.3); }
+
+  .cooling-table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+  .cooling-table th { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); padding: 9px 14px; text-align: left; border-bottom: 1px solid var(--border); }
+  .cooling-table td { padding: 10px 14px; border-bottom: 1px solid var(--border); font-size: 15px; line-height: 1.65; vertical-align: top; }
+  .cooling-table tr:last-child td { border-bottom: none; }
+  .cooling-table .ct-theme { font-weight: 700; color: var(--head); width: 210px; }
+  .cooling-table .ct-diff { font-family: var(--mono); font-size: 14px; color: var(--red); white-space: nowrap; width: 90px; }
+
+  .ppo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .ppo-card { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 22px; }
+  .ppo-card .pc-title { font-family: var(--mono); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+  .ppo-card.hi .pc-title { color: var(--green); }
+  .ppo-card.watch .pc-title { color: var(--amber); }
+
+  .chartlist-box { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 22px; font-family: var(--mono); font-size: 15px; line-height: 2.0; color: var(--green); word-break: break-all; white-space: pre-wrap; }
+
+  .callout { border-left: 3px solid; padding: 12px 16px; border-radius: 0 4px 4px 0; font-size: 15px; margin: 14px 0; line-height: 1.7; }
+  .callout.green { border-color: var(--green); background: var(--green-dim); color: #9AE6C0; }
+  .callout.amber { border-color: var(--amber); background: var(--amber-dim); color: #FDE68A; }
+  .callout.red   { border-color: var(--red);   background: var(--red-dim);   color: #FCA5A5; }
+
+  .report-footer { margin-top: 50px; padding: 20px 32px; background: var(--surface); border-top: 1px solid var(--border); font-family: var(--mono); font-size: 12px; color: var(--muted); line-height: 1.8; }
+
+  @media (max-width: 760px) {
+    .report-header { padding: 18px 16px; flex-direction: column; gap: 10px; }
+    .report-header .meta { text-align: left; }
+    .report-body { padding: 20px 16px 0; }
+    .summary-grid, .tier-grid, .ppo-grid { grid-template-columns: 1fr; }
+    .tier-card.full-width { grid-column: auto; }
+    .market-banner { padding: 10px 16px; gap: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="report-header">
+  <div>
+    <div class="brand">Early Rotation Theme Analysis · Weekly Update</div>
+    <h1>Real Assets &amp; Defensives Lead as the Long End Cracks</h1>
+  </div>
+  <div class="meta">
+    <div class="date">Week Ending Fri Aug 21, 2026</div>
+    <div>Data as of close 08/21/2026</div>
+    <div>Universe: 1,397 tickers · 34 themes · 175 sub-themes</div>
+  </div>
+</div>
+
+<div class="market-banner">
+  <div class="mkt-item"><span class="mkt-label">S&amp;P 500</span><span class="mkt-val">7,674.37</span><span class="mkt-chg pos">+0.43% Fri · wk lower</span></div>
+  <div class="mkt-item"><span class="mkt-label">Nasdaq Comp</span><span class="mkt-val">26,180.45</span><span class="mkt-chg neg">5-day slide snapped</span></div>
+  <div class="mkt-item"><span class="mkt-label">Dow</span><span class="mkt-val">53,277.01</span><span class="mkt-chg pos">+0.98% Fri</span></div>
+  <div class="mkt-item"><span class="mkt-label">Russell 2000</span><span class="mkt-val">3,017.87</span><span class="mkt-chg neu">wk lower</span></div>
+  <div class="mkt-item"><span class="mkt-label">30Y UST</span><span class="mkt-val">5.27%</span><span class="mkt-chg neg">~2-decade high</span></div>
+  <div class="mkt-item"><span class="mkt-label">10Y UST</span><span class="mkt-val">4.73%</span><span class="mkt-chg neg">elevated</span></div>
+  <div class="mkt-item"><span class="mkt-label">Gold (Dec)</span><span class="mkt-val">$4,569</span><span class="mkt-chg pos">3-mo high · +5% wk</span></div>
+  <div class="mkt-item"><span class="mkt-label">Bitcoin</span><span class="mkt-val">~$77k</span><span class="mkt-chg pos">best wk in 2 yrs</span></div>
+</div>
+
+<div class="report-body">
+
+  <!-- ============ EXECUTIVE SUMMARY ============ -->
+  <div class="section">
+    <div class="section-eyebrow">01 — Executive Summary</div>
+    <div class="section-title">The Rotation This Week: Duration Out, Hard Assets &amp; Defensives In</div>
+
+    <div class="callout amber">
+      <strong>The single fact that explains the tape:</strong> long-dated Treasury yields spiked to their highest since 2007 (30Y ~5.27%) as US gross debt crossed $40T, and the Treasury announced expanded long-end bond buybacks to contain it. Rising long rates re-priced the crowded, long-duration leaders (semiconductors, AI, cloud, cyber) lower and pushed capital into real assets and defensives. Friday Aug 21 was also <strong>August monthly OPEX</strong> — read the single-day bounce (Dow +1%, materials +2%, Russell noise) as partly positioning/gamma, not a clean trend signal.
+    </div>
+
+    <div class="summary-grid">
+      <div class="summary-box green">
+        <div class="sb-label">▲ What Improved</div>
+        <ul>
+          <li><strong>Agriculture &amp; fertilizer</strong> — the cleanest new early-rotation signal. Fertilizer/crop-inputs +8 to +9% on the week off a <em>negative</em> 1-month base; a real fundamental catalyst (China phosphate export curbs, Middle-East supply disruption, firming crop prices into fall application).</li>
+          <li><strong>Metals &amp; materials</strong> — gold at a 3-month high, copper &amp; diversified miners extending. Real-asset bid intact.</li>
+          <li><strong>Healthcare</strong> — defensive leadership; led the Friday tape (Merck, J&amp;J). Broad (78% of names green).</li>
+          <li><strong>Crypto</strong> — bitcoin's best week in two years (+~22%); financials got a lift from crypto names.</li>
+        </ul>
+      </div>
+      <div class="summary-box red">
+        <div class="sb-label">▼ What Weakened</div>
+        <ul>
+          <li><strong>Semiconductors</strong> — a full washout: <strong>0% of names green</strong> on the week, cap-weighted −8.2%. The rate-sensitive momentum leader is unwinding.</li>
+          <li><strong>Defense &amp; aerospace</strong> — broad −5% pullback (only 12% green) after a strong 3-month run — a reset, not yet a break.</li>
+          <li><strong>Clean energy / smart grid</strong> — electrification, solar and wind all lower; grid −9% on the week.</li>
+          <li><strong>Data-center build-out contractors</strong> (Comfort Systems, EMCOR, United Rentals) cracked hard — an early tell on AI-capex enthusiasm.</li>
+        </ul>
+      </div>
+      <div class="summary-box blue">
+        <div class="sb-label">◆ Down-Day / Selloff Test</div>
+        <p>The week carried genuine down days (Aug 18 &amp; 20) on the bond move. Themes that <em>held or were bought into weakness</em>: Agriculture (75% green), Healthcare (78%), Consumer Staples/Goods (76%), Real Estate (78%), Business Services (86%). Themes that <em>broke</em>: Semis (0%), Defense (12%), Hardware (13%), Renewables (21%), Industrial Automation (22%). Metals looks strong cap-weighted but breadth is only 69% — the strength is <strong>narrow</strong> (gold/copper carrying it while steel breaks).</p>
+      </div>
+      <div class="summary-box amber">
+        <div class="sb-label">▶ Positioning Implications</div>
+        <p>For a quality/value mandate this is a favorable rotation: money is leaving high-multiple software/AI and entering exactly the balance-sheet-driven, cash-generative real-economy businesses you prefer. <strong>Lead with agriculture inputs</strong> (early rotation + real catalyst + reasonable valuation). <strong>Use the defense/aerospace and industrial pullback as a shopping list</strong>, not a warning — 3-month trends there remain intact. <strong>Respect crowding in gold</strong> (+41% in a month is late-stage). Avoid chasing the semis/AI unwind.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ SCORECARD ============ -->
+  <div class="section">
+    <div class="section-eyebrow">02 — Theme Scorecard</div>
+    <div class="section-title">Updated Rotation Scorecard (Market-Cap-Weighted, Sub-Theme Allocation)</div>
+    <table class="scorecard-table">
+      <thead>
+        <tr>
+          <th>Theme</th>
+          <th>1W vs 1M</th>
+          <th>3M Context</th>
+          <th>Selloff Strength</th>
+          <th>Interpretation</th>
+          <th>Rating</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="td-theme">Commodities — Agriculture</td>
+          <td><div class="acc-bar-wrap"><div class="acc-bar acc-pos" style="width:70px"></div><span class="acc-num pos">+5.2 / +2.8</span></div></td>
+          <td class="td-mono neu">+3.4%</td>
+          <td class="td-mono pos">Held (75% grn)</td>
+          <td><span class="badge badge-early">EARLY ROTATION</span></td>
+          <td class="stars">⭐⭐⭐</td>
+        </tr>
+        <tr>
+          <td class="td-theme">Agriculture &amp; FoodTech</td>
+          <td><div class="acc-bar-wrap"><div class="acc-bar acc-pos" style="width:68px"></div><span class="acc-num pos">+5.0 / +2.5</span></div></td>
+          <td class="td-mono pos">+12.9%</td>
+          <td class="td-mono pos">Held (65% grn)</td>
+          <td><span class="badge badge-early">EARLY ROTATION</span></td>
+          <td class="stars">⭐⭐⭐</td>
+        </tr>
+        <tr>
+          <td class="td-theme">Healthcare &amp; Biotech</td>
+          <td><div class="acc-bar-wrap"><div class="acc-bar acc-pos" style="width:60px"></div><span class="acc-num pos">+5.2 / +7.4</span></div></td>
+          <td class="td-mono pos">+18.5%</td>
+          <td class="td-mono pos">Bought (78% grn)</td>
+          <td><span class="badge badge-early">DEFENSIVE LEAD</span></td>
+          <td class="stars">⭐⭐⭐</td>
+        </tr>
+        <tr>
+          <td class="td-theme">Commodities — Metals</td>
+          <td><div class="acc-bar-wrap"><div class="acc-bar acc-pos" style="width:44px"></div><span class="acc-num pos">+9.9 / +27.6</span></div></td>
+          <td class="td-mono pos">+15.1%</td>
+          <td class="td-mono neu">Narrow (69% grn)</td>
+          <td><span class="badge badge-mature">MATURE / CROWDED</span></td>
+          <td class="stars">⭐⭐</td>
+        </tr>
+        <tr>
+          <td class="td-theme">Real Estate &amp; REITs</td>
+          <td><div class="acc-bar-wrap"><div class="acc-bar acc-pos" style="width:30px"></div><span class="acc-num pos">+1.2 / +0.0</span></div></td>
+          <td class="td-mono pos">+6.7%</td>
+          <td class="td-mono pos">Held (78% grn)</td>
+          <td><span class="badge badge-early">EARLY / DEFENSIVE</span></td>
+          <td class="stars">⭐⭐</td>
+        </tr>
+        <tr>
+          <td class="td-theme">Business Services &amp; Consulting</td>
+          <td><div class="acc-bar-wrap"><div class="acc-bar acc-pos" style="width:40px"></div><span class="acc-num pos">+5.7 / +13.7</span></div></td>
+          <td class="td-mono pos">+11.4%</td>
+          <td class="td-mono pos">Held (86% grn)</td>
+          <td><span class="badge badge-hold">STEADY LEAD</span></td>
+          <td class="stars">⭐⭐</td>
+        </tr>
+        <tr>
+          <td class="td-theme">Nanotechnology (Research Tools)</td>
+          <td><div class="acc-bar-wrap"><div class="acc-bar acc-pos" style="width:40px"></div><span class="acc-num pos">+5.1 / +10.8</span></div></td>
+          <td class="td-mono pos">+20.1%</td>
+          <td class="td-mono neg">Weak breadth (45%)</td>
+          <td><span class="badge badge-mature">MATURE</span></td>
+          <td class="stars">⭐⭐</td>
+        </tr>
+        <tr>
+          <td class="td-theme">Consumer Goods &amp; Retail</td>
+          <td><div class="acc-bar-wrap"><div class="acc-bar acc-pos" style="width:38px"></div><span class="acc-num pos">+3.8 / +5.5</span></div></td>
+          <td class="td-mono pos">+6.2%</td>
+          <td class="td-mono pos">Held (76% grn)</td>
+          <td><span class="badge badge-hold">STEADY / DEFENSIVE</span></td>
+          <td class="stars">⭐⭐</td>
+        </tr>
+        <tr>
+          <td class="td-theme">Industrials &amp; Construction</td>
+          <td><div class="acc-bar-wrap"><div class="acc-bar acc-neg" style="width:34px"></div><span class="acc-num neg">−2.4 / +0.0</span></div></td>
+          <td class="td-mono pos">+7.2%</td>
+          <td class="td-mono neg">Split (27% grn)</td>
+          <td><span class="badge badge-hold">PULLBACK — MIXED</span></td>
+          <td class="stars">⭐⭐</td>
+        </tr>
+        <tr>
+          <td class="td-theme">Defense &amp; Aerospace</td>
+          <td><div class="acc-bar-wrap"><div class="acc-bar acc-neg" style="width:56px"></div><span class="acc-num neg">−5.2 / +3.4</span></div></td>
+          <td class="td-mono pos">+10.5%</td>
+          <td class="td-mono neg">Broke (12% grn)</td>
+          <td><span class="badge badge-hold">BUYABLE RESET</span></td>
+          <td class="stars">⭐⭐</td>
+        </tr>
+        <tr>
+          <td class="td-theme">Crypto &amp; Blockchain</td>
+          <td><div class="acc-bar-wrap"><div class="acc-bar acc-pos" style="width:48px"></div><span class="acc-num pos">+5.5 / +8.2</span></div></td>
+          <td class="td-mono pos">+14.0%</td>
+          <td class="td-mono neu">Held (65% grn)</td>
+          <td><span class="badge badge-mature">HOT — OFF-MANDATE</span></td>
+          <td class="stars">⭐</td>
+        </tr>
+        <tr>
+          <td class="td-theme">Software</td>
+          <td><div class="acc-bar-wrap"><div class="acc-bar acc-neg" style="width:64px"></div><span class="acc-num neg">+2.0 / +24.9</span></div></td>
+          <td class="td-mono pos">+13.7%</td>
+          <td class="td-mono neu">Narrowing</td>
+          <td><span class="badge badge-cool">DECELERATING</span></td>
+          <td class="stars">⭐</td>
+        </tr>
+        <tr>
+          <td class="td-theme">Cloud Computing</td>
+          <td><div class="acc-bar-wrap"><div class="acc-bar acc-neg" style="width:56px"></div><span class="acc-num neg">+0.8 / +17.6</span></div></td>
+          <td class="td-mono pos">+5.2%</td>
+          <td class="td-mono neg">Broke (52% grn)</td>
+          <td><span class="badge badge-cool">MOMENTUM FADE</span></td>
+          <td class="stars">⭐</td>
+        </tr>
+        <tr>
+          <td class="td-theme">Industrial Automation &amp; Robotics</td>
+          <td><div class="acc-bar-wrap"><div class="acc-bar acc-neg" style="width:60px"></div><span class="acc-num neg">−3.7 / +7.6</span></div></td>
+          <td class="td-mono pos">+7.1%</td>
+          <td class="td-mono neg">Broke (22% grn)</td>
+          <td><span class="badge badge-cool">ROLLING OVER</span></td>
+          <td class="stars">⭐</td>
+        </tr>
+        <tr>
+          <td class="td-theme">Cybersecurity</td>
+          <td><div class="acc-bar-wrap"><div class="acc-bar acc-neg" style="width:62px"></div><span class="acc-num neg">−5.8 / +6.6</span></div></td>
+          <td class="td-mono pos">+17.0%</td>
+          <td class="td-mono neg">Broke (26% grn)</td>
+          <td><span class="badge badge-cool">SHARP REVERSAL</span></td>
+          <td class="stars">⭐</td>
+        </tr>
+        <tr>
+          <td class="td-theme">Energy — Renewable</td>
+          <td><div class="acc-bar-wrap"><div class="acc-bar acc-neg" style="width:44px"></div><span class="acc-num neg">+0.1 / +4.8</span></div></td>
+          <td class="td-mono neg">−6.0%</td>
+          <td class="td-mono neg">Broke (21% grn)</td>
+          <td><span class="badge badge-cool">FAILED — GRID/SOLAR</span></td>
+          <td class="stars">⭐</td>
+        </tr>
+        <tr>
+          <td class="td-theme">Semiconductors</td>
+          <td><div class="acc-bar-wrap"><div class="acc-bar acc-neg" style="width:76px"></div><span class="acc-num neg">−8.2 / −1.8</span></div></td>
+          <td class="td-mono neg">−4.0%</td>
+          <td class="td-mono neg">Washout (0% grn)</td>
+          <td><span class="badge badge-cool">BREAKDOWN</span></td>
+          <td class="stars">⭐</td>
+        </tr>
+        <tr>
+          <td class="td-theme">Space Tech</td>
+          <td><div class="acc-bar-wrap"><div class="acc-bar acc-neg" style="width:80px"></div><span class="acc-num neg">−12.4 / +11.3</span></div></td>
+          <td class="td-mono neg">−30.8%</td>
+          <td class="td-mono neg">Broke (7% grn)</td>
+          <td><span class="badge badge-cool">FAILED ROTATION</span></td>
+          <td class="stars">⭐</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="callout green">
+      <strong>How to read the acceleration column:</strong> figures are market-cap-weighted 1-week / 1-month change (sub-theme cap × % move, per your methodology). A green bar with <em>1W&nbsp;&gt;&nbsp;1M</em> off a <em>mediocre or negative</em> 1M base is the early-rotation signal. Agriculture is the textbook case; Metals is the opposite — 1W strong but on top of a parabolic +27.6% month (leadership, not entry).
+    </div>
+  </div>
+
+  <!-- ============ TIER 1 ============ -->
+  <div class="section">
+    <div class="section-eyebrow">03 — Tier 1 Themes</div>
+    <div class="section-title">Highest Conviction: Early Rotation That Fits a Quality/Value Frame</div>
+
+    <div class="tier-grid">
+
+      <!-- AG INPUTS -->
+      <div class="tier-card full-width">
+        <div class="tc-header">
+          <div>
+            <div class="tc-title">Agriculture Inputs &amp; Fertilizer — <span style="color:var(--green)">The Standout</span></div>
+            <div class="tc-sub">Commodities-Agri · Agriculture &amp; FoodTech — Fertilizers, Crop Science, Precision Ag</div>
+          </div>
+          <div class="tc-rating">⭐⭐⭐</div>
+        </div>
+        <div class="tc-body">
+          <div class="stat-row">
+            <div class="stat-item"><span class="stat-label">Fertilizer sub 1W</span><span class="stat-value pos">+8.9%</span></div>
+            <div class="stat-item"><span class="stat-label">Fertilizer sub 1M</span><span class="stat-value neg">−0.4%</span></div>
+            <div class="stat-item"><span class="stat-label">Crop Inputs 1W</span><span class="stat-value pos">+9.2%</span></div>
+            <div class="stat-item"><span class="stat-label">Crop Inputs 1M</span><span class="stat-value neu">+0.6%</span></div>
+            <div class="stat-item"><span class="stat-label">Breadth (1W grn)</span><span class="stat-value pos">75%</span></div>
+          </div>
+          <p><strong>Why it's accelerating:</strong> a near +9% weekly move off a flat-to-negative month is the purest early-rotation setup in the book — the trend inflected this week, before it is obvious leadership. Crucially, it is backed by fundamentals rather than a momentum chase: China's extended phosphate export restrictions (partly to feed its own LFP battery supply chain), Middle-East supply disruptions amplified by the Iran tensions dominating this week's macro headlines, and firming crop prices pulling forward the fall fertilizer application season all point to a structural nutrient deficit with little market slack.</p>
+          <p><strong>What changed this week:</strong> the group went from laggard to leader. Fertilizer/crop-input sub-themes swung from roughly flat over the trailing month to +8–9% in five sessions, and did so <em>during</em> a risk-off, rising-rate tape — a tell that the buyer is fundamental, not levered momentum. This is a second-order beneficiary of the same geopolitical stress hurting duration assets.</p>
+          <p><strong>Institutional behavior:</strong> broad participation (75% of names green) rather than one or two spikes, and strength concentrated in the low-cost, cash-generative majors — consistent with allocation rather than speculation. Nutrien is trading near 52-week highs as the low-cost potash leader.</p>
+          <p><strong>Best quality/value candidates</strong> — strong balance sheets, real free cash flow, durable positions, reasonable valuations:</p>
+          <table class="ticker-table">
+            <thead><tr><th>Ticker</th><th>Company</th><th>Cap</th><th>1W</th><th>1M</th><th>3M</th><th>Quality Fit</th></tr></thead>
+            <tbody>
+              <tr><td>NTR</td><td style="text-align:left;color:var(--text)">Nutrien</td><td>$36B</td><td class="pos">+8.8</td><td class="pos">+9.1</td><td class="pos">+6.9</td><td><span class="tag tag-hi">LOW-COST LEADER</span></td></tr>
+              <tr><td>CF</td><td style="text-align:left;color:var(--text)">CF Industries</td><td>$20B</td><td class="pos">+9.7</td><td class="pos">+3.9</td><td class="pos">+6.7</td><td><span class="tag tag-hi">HIGH FCF · NITROGEN</span></td></tr>
+              <tr><td>CTVA</td><td style="text-align:left;color:var(--text)">Corteva</td><td>$55B</td><td class="pos">+8.9</td><td class="neg">−7.2</td><td class="pos">+4.3</td><td><span class="tag tag-hi">CLEAN RESET · SEEDS</span></td></tr>
+              <tr><td>MOS</td><td style="text-align:left;color:var(--text)">Mosaic</td><td>$8B</td><td class="pos">+13.1</td><td class="pos">+7.6</td><td class="pos">+6.6</td><td><span class="tag tag-med">POTASH/PHOS · CYCLICAL</span></td></tr>
+              <tr><td>DE</td><td style="text-align:left;color:var(--text)">Deere &amp; Co</td><td>$175B</td><td class="pos">+8.1</td><td class="pos">+3.3</td><td class="pos">+22.9</td><td><span class="tag tag-hi">PICKS &amp; SHOVELS</span></td></tr>
+              <tr><td>CNH</td><td style="text-align:left;color:var(--text)">CNH Industrial</td><td>$19B</td><td class="pos">+14.3</td><td class="pos">+5.5</td><td class="pos">+16.3</td><td><span class="tag tag-med">AG/CONSTR EQUIP</span></td></tr>
+              <tr><td>TRMB</td><td style="text-align:left;color:var(--text)">Trimble</td><td>$14B</td><td class="pos">+8.9</td><td class="pos">+14.7</td><td class="pos">+7.7</td><td><span class="tag tag-med">PRECISION-AG TECH</span></td></tr>
+              <tr><td>FMC</td><td style="text-align:left;color:var(--text)">FMC Corp</td><td>$1.4B</td><td class="pos">+10.8</td><td class="neg">−0.2</td><td class="neg">−13.4</td><td><span class="tag tag-lo">CROP CHEM · TURN-CALL</span></td></tr>
+            </tbody>
+          </table>
+          <div class="callout green">
+            <strong>Best fit for your mandate:</strong> <strong>NTR</strong> and <strong>CF</strong> (low-cost, cash-generative, dividend-paying, cleanest early-rotation entries) and <strong>DE</strong> as the picks-and-shovels compounder. <strong>CTVA</strong> is a quality reset — its −7% month sets up a favorable base, with the Vylor genetics spin-off (expected Q4 2026) as an added catalyst. Treat MOS/FMC as higher-beta cyclical expressions, not core.
+          </div>
+        </div>
+      </div>
+
+      <!-- METALS -->
+      <div class="tier-card full-width">
+        <div class="tc-header">
+          <div>
+            <div class="tc-title">Metals &amp; Materials — Leadership, but Be Selective</div>
+            <div class="tc-sub">Commodities-Metals — Gold (crowded) · Copper/Diversified (extended) · Steel (breaking)</div>
+          </div>
+          <div class="tc-rating">⭐⭐</div>
+        </div>
+        <div class="tc-body">
+          <div class="stat-row">
+            <div class="stat-item"><span class="stat-label">Theme 1W</span><span class="stat-value pos">+9.9%</span></div>
+            <div class="stat-item"><span class="stat-label">Theme 1M</span><span class="stat-value pos">+27.6%</span></div>
+            <div class="stat-item"><span class="stat-label">Gold sub 1M</span><span class="stat-value pos">+41.1%</span></div>
+            <div class="stat-item"><span class="stat-label">Base metals 1W</span><span class="stat-value pos">+5.8%</span></div>
+            <div class="stat-item"><span class="stat-label">Breadth</span><span class="stat-value neu">69%</span></div>
+          </div>
+          <p><strong>The nuance that matters:</strong> the headline theme number is dominated by gold (+41% in a month — parabolic and crowded) and copper. This is <em>mature leadership</em>, not an entry point, and 69% breadth confirms the strength is narrow. Underneath, there is a real internal split: <strong>steel is breaking</strong> (NUE −10.3%, STLD −11.2%, RS −10.6%, CMC −10.8% on the week) even as diversified miners and copper extend. Don't buy "metals" as a block.</p>
+          <p><strong>Where the value angle survives:</strong> low-cost diversified producers with fortress balance sheets, and the re-accelerating battery/transition-metals sub-theme (+8.5% 1W off a flat 3-month base) — a genuine early-rotation pocket within a crowded theme.</p>
+          <table class="ticker-table">
+            <thead><tr><th>Ticker</th><th>Company</th><th>Cap</th><th>1W</th><th>1M</th><th>3M</th><th>Read</th></tr></thead>
+            <tbody>
+              <tr><td>BHP</td><td style="text-align:left;color:var(--text)">BHP Group</td><td>$247B</td><td class="pos">+9.9</td><td class="pos">+16.0</td><td class="pos">+14.8</td><td><span class="tag tag-hi">DIVERSIFIED · LOW-COST</span></td></tr>
+              <tr><td>RIO</td><td style="text-align:left;color:var(--text)">Rio Tinto</td><td>$170B</td><td class="pos">+7.8</td><td class="pos">+17.4</td><td class="neu">+2.8</td><td><span class="tag tag-hi">DIVERSIFIED · YIELD</span></td></tr>
+              <tr><td>SCCO</td><td style="text-align:left;color:var(--text)">Southern Copper</td><td>$181B</td><td class="pos">+11.6</td><td class="pos">+17.6</td><td class="pos">+19.6</td><td><span class="tag tag-med">COPPER · EXTENDED</span></td></tr>
+              <tr><td>FCX</td><td style="text-align:left;color:var(--text)">Freeport-McMoRan</td><td>$112B</td><td class="pos">+13.8</td><td class="pos">+24.3</td><td class="pos">+25.8</td><td><span class="tag tag-lo">COPPER · PARABOLIC</span></td></tr>
+              <tr><td>TECK</td><td style="text-align:left;color:var(--text)">Teck Resources</td><td>$34B</td><td class="pos">+8.3</td><td class="pos">+16.6</td><td class="pos">+12.2</td><td><span class="tag tag-med">BASE + TRANSITION</span></td></tr>
+              <tr><td>VALE</td><td style="text-align:left;color:var(--text)">Vale S.A.</td><td>$64B</td><td class="pos">+9.4</td><td class="neu">+4.6</td><td class="neg">−6.1</td><td><span class="tag tag-med">IRON ORE · VALUE</span></td></tr>
+            </tbody>
+          </table>
+          <div class="callout amber">
+            <strong>Discipline:</strong> favor BHP/RIO (diversified, low-cost, real dividends) on pullbacks over chasing FCX/SCCO after a +24% month. <strong>Avoid steel</strong> here — it is the failed sub-group. Gold miners are for momentum traders, not a value entry at +41%/month.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ============ TIER 2 ============ -->
+  <div class="section">
+    <div class="section-eyebrow">04 — Tier 2 Themes</div>
+    <div class="section-title">Emerging Opportunities &amp; Quality Pullbacks Worth Staging Into</div>
+
+    <div class="tier-grid">
+
+      <div class="tier-card">
+        <div class="tc-header">
+          <div>
+            <div class="tc-title">Defense &amp; Aerospace</div>
+            <div class="tc-sub">Buyable reset — 3M trend intact</div>
+          </div>
+          <div class="tc-rating">⭐⭐</div>
+        </div>
+        <div class="tc-body">
+          <p>A broad −5% week (only 12% green) sits on top of a +10.5% three-month gain. This is the shape of a <em>reset within an uptrend</em>, not a top: the pullback is rate/risk-off-driven and hit the whole group, but the quality primes and aerospace compounders still show positive 3-month structure. This is the classic "held-up vs buyable-on-pullback" distinction — these did <em>not</em> hold up this week, which is precisely what makes them potential buys if the weekly trend holds.</p>
+          <table class="ticker-table">
+            <thead><tr><th>Ticker</th><th>1W</th><th>1M</th><th>3M</th><th>Setup</th></tr></thead>
+            <tbody>
+              <tr><td>RTX</td><td class="neg">−5.6</td><td class="neg">−1.4</td><td class="pos">+18.6</td><td><span class="tag tag-hi">RESET</span></td></tr>
+              <tr><td>GD</td><td class="neg">−1.9</td><td class="neg">−0.8</td><td class="pos">+12.4</td><td><span class="tag tag-hi">SHALLOW · HELD</span></td></tr>
+              <tr><td>PH</td><td class="neg">−3.8</td><td class="pos">+2.7</td><td class="pos">+17.0</td><td><span class="tag tag-hi">RESET</span></td></tr>
+              <tr><td>GE</td><td class="neg">−7.5</td><td class="neg">−3.4</td><td class="pos">+13.0</td><td><span class="tag tag-med">DEEPER · WATCH</span></td></tr>
+              <tr><td>LMT</td><td class="neg">−5.0</td><td class="neg">−3.2</td><td class="pos">+6.5</td><td><span class="tag tag-med">WATCH</span></td></tr>
+            </tbody>
+          </table>
+          <p><strong>Quality picks:</strong> RTX, GD, PH — cash-generative, backlogs, durable moats. Note PLTR is theme-tagged here but is a +43%/month software momentum name — <em>not</em> a value fit; exclude it.</p>
+        </div>
+      </div>
+
+      <div class="tier-card">
+        <div class="tc-header">
+          <div>
+            <div class="tc-title">Industrials — Quality Compounders</div>
+            <div class="tc-sub">Relative strength in weakness</div>
+          </div>
+          <div class="tc-rating">⭐⭐</div>
+        </div>
+        <div class="tc-body">
+          <p>The theme split cleanly this week. The mechanical/E&amp;C data-center names <em>broke</em> (see Downgrades), but the high-ROIC compounders <em>held up</em> during the down days — a quiet relative-strength tell. No acceleration yet, so this is a watch-and-accumulate, not a chase.</p>
+          <table class="ticker-table">
+            <thead><tr><th>Ticker</th><th>1W</th><th>1M</th><th>3M</th><th>Read</th></tr></thead>
+            <tbody>
+              <tr><td>ITW</td><td class="neg">−1.2</td><td class="neu">+0.3</td><td class="pos">+13.3</td><td><span class="tag tag-hi">HELD · HIGH ROIC</span></td></tr>
+              <tr><td>GWW</td><td class="pos">+0.3</td><td class="neg">−4.2</td><td class="pos">+6.2</td><td><span class="tag tag-hi">HELD</span></td></tr>
+              <tr><td>FAST</td><td class="neu">+0.1</td><td class="pos">+9.7</td><td class="pos">+17.3</td><td><span class="tag tag-med">STRONG · EXTENDED</span></td></tr>
+              <tr><td>FERG</td><td class="neg">−3.1</td><td class="pos">+2.9</td><td class="pos">+6.3</td><td><span class="tag tag-med">MILD RESET</span></td></tr>
+              <tr><td>SHW</td><td class="neg">−0.7</td><td class="pos">+9.5</td><td class="pos">+12.4</td><td><span class="tag tag-med">HELD</span></td></tr>
+            </tbody>
+          </table>
+          <p><strong>Quality picks:</strong> ITW and GWW are the standouts on down-day resilience + durable economics; FERG offers a milder pullback entry.</p>
+        </div>
+      </div>
+
+      <div class="tier-card">
+        <div class="tc-header">
+          <div>
+            <div class="tc-title">Healthcare — Quality Sub-Segments</div>
+            <div class="tc-sub">Defensive leadership, but pick your pocket</div>
+          </div>
+          <div class="tc-rating">⭐⭐</div>
+        </div>
+        <div class="tc-body">
+          <p>Healthcare led Friday and is broad (78% green) — the right kind of defensive bid in a rising-rate tape. But the hottest sub-themes are speculative (next-gen biotech platforms +30%/month) or crowded mega-cap (metabolic/GLP-1). For a value frame, favor the <strong>durable, cash-generative pockets</strong>: research tools/instruments, medical devices, diagnostics and animal health — which are re-accelerating without being parabolic.</p>
+          <table class="ticker-table">
+            <thead><tr><th>Ticker</th><th>1W</th><th>1M</th><th>3M</th><th>Segment</th></tr></thead>
+            <tbody>
+              <tr><td>A</td><td class="pos">+3.4</td><td class="pos">+10.7</td><td class="pos">+33.7</td><td><span class="tag tag-hi">LAB TOOLS</span></td></tr>
+              <tr><td>ZTS</td><td class="pos">+5.8</td><td class="pos">+2.4</td><td class="neg">−4.4</td><td><span class="tag tag-hi">ANIMAL HEALTH · RESET</span></td></tr>
+            </tbody>
+          </table>
+          <p><strong>Avoid</strong> chasing biotech-platform spikes; they don't fit the balance-sheet/FCF filter. ZTS is the cleaner early-rotation value name here (positive week off a soft 3-month base).</p>
+        </div>
+      </div>
+
+      <div class="tier-card">
+        <div class="tc-header">
+          <div>
+            <div class="tc-title">Real Estate — Selective Early/Defensive</div>
+            <div class="tc-sub">Watch the rate headwind</div>
+          </div>
+          <div class="tc-rating">⭐⭐</div>
+        </div>
+        <div class="tc-body">
+          <p>REITs held broadly (78% green) and the theme's 1M was flat, so 1W leadership qualifies as early-rotation — but with a caveat: a 30Y near 5.3% is a direct valuation headwind for rate-sensitive REITs, so this is a <em>lower-conviction</em> early signal than agriculture. The most interesting pocket is <strong>healthcare/senior-living REITs</strong> (+2.3% 1W off a −5.2% month — a demographic-driven reset) and office (recovering, but already up on 1M).</p>
+          <p><strong>Approach:</strong> favor defensive, demographically-durable sub-sectors and demand balance-sheet quality (low leverage, staggered maturities) given the rate backdrop. Not a place to press until the long end stabilizes.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ============ COOLING / DOWNGRADES ============ -->
+  <div class="section">
+    <div class="section-eyebrow">05 — Themes Cooling / Downgrades</div>
+    <div class="section-title">What Failed, Where Momentum Narrowed, and Why</div>
+    <table class="cooling-table">
+      <thead>
+        <tr><th>Theme</th><th>1W Δ</th><th>What Happened / Why Downgraded</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="ct-theme">Semiconductors</td>
+          <td class="ct-diff">−8.2%</td>
+          <td>The week's clearest casualty and the sharpest downgrade. A complete breadth washout — <strong>0% of names green</strong> — as rising long-end yields re-priced the market's most crowded, longest-duration momentum trade. 1M and 3M are now both negative. This is a leadership break, not a dip; do not try to catch it until breadth stabilizes.</td>
+        </tr>
+        <tr>
+          <td class="ct-theme">Cybersecurity</td>
+          <td class="ct-diff">−5.8%</td>
+          <td>A sharp 1-week reversal (only 26% green) after a strong +17% three-month run. Momentum narrowed hard into the rate move. Downgraded from leadership to "prove it" — watch whether the weekly trend holds or this becomes a failed rotation.</td>
+        </tr>
+        <tr>
+          <td class="ct-theme">Software / Cloud</td>
+          <td class="ct-diff">+2.0% / +0.8%</td>
+          <td>Not a crash, but a clear <em>deceleration and narrowing</em>: Software's 1W (+2%) collapsed relative to its +25% month; Cloud's +0.8% sits under a +17.6% month. The mega-cap leaders that drove those monthly gains stalled while breadth thinned — classic late-stage crowding. Downgraded to underweight for new capital.</td>
+        </tr>
+        <tr>
+          <td class="ct-theme">Industrial Automation &amp; Robotics</td>
+          <td class="ct-diff">−3.7%</td>
+          <td>Rolling over (22% green). Factory/process automation (−9.1%) and machine-vision/sensors (−12.9%) broke, while the autonomous-robotics sub pulled back after a +17% month. The theme's 3-month gain masks a deteriorating weekly structure.</td>
+        </tr>
+        <tr>
+          <td class="ct-theme">Energy — Renewable (Grid/Solar/Wind)</td>
+          <td class="ct-diff">+0.1%</td>
+          <td>Failed at the sub-theme level: smart grid &amp; electrification −9.0%, solar −7.7%, wind −2.6%, with a negative 3-month. The higher-rate, higher-cost-of-capital backdrop is punishing capital-intensive clean-power build-outs. Only clean-materials/critical-metals held (a metals story, not a renewables one).</td>
+        </tr>
+        <tr>
+          <td class="ct-theme">Data-Center Build Contractors</td>
+          <td class="ct-diff">−11% to −14%</td>
+          <td>Within Industrials, the AI-capex proxies cracked hardest: Comfort Systems (FIX) −14.4%, EMCOR (EME) −11.3%, United Rentals (URI) −7.0%. An early warning that enthusiasm for the physical AI build-out is being questioned — worth monitoring as a second-order signal on the whole AI-infrastructure complex.</td>
+        </tr>
+        <tr>
+          <td class="ct-theme">Steel (within Metals)</td>
+          <td class="ct-diff">−10% to −11%</td>
+          <td>The failing sub-group inside an otherwise strong theme: NUE, STLD, RS, CMC all down double-digits. Separates the "real-asset bid" (gold/copper/diversified) from the cyclical laggards. Avoid.</td>
+        </tr>
+        <tr>
+          <td class="ct-theme">Space Tech</td>
+          <td class="ct-diff">−12.4%</td>
+          <td>Failed rotation, now confirmed: −30.8% over three months, 7% breadth. Speculative, pre-cash-flow, and off-mandate. Remove.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ============ PPO RESET ============ -->
+  <div class="section">
+    <div class="section-eyebrow">06 — PPO Reset Candidates</div>
+    <div class="section-title">Weekly Trend Intact + Daily Pullback + Quality</div>
+    <div class="callout amber">
+      These names fit the <em>profile</em> of "weekly trend intact + daily PPO reset + improving relative strength" based on trend structure (positive 3-month, controlled 1-week pullback, quality financials). Confirm the actual PPO reading on StockCharts before acting — the underlying data here carries 1W/1M/3M returns, not daily oscillator values.
+    </div>
+    <div class="ppo-grid">
+      <div class="ppo-card hi">
+        <div class="pc-title">▲ High Conviction — Pullback Within Uptrend</div>
+        <table class="ticker-table">
+          <thead><tr><th>Ticker</th><th>Theme</th><th>1W</th><th>3M</th></tr></thead>
+          <tbody>
+            <tr><td>RTX</td><td style="text-align:left;color:var(--text)">Aerospace/Defense</td><td class="neg">−5.6</td><td class="pos">+18.6</td></tr>
+            <tr><td>PH</td><td style="text-align:left;color:var(--text)">Industrial/Aero</td><td class="neg">−3.8</td><td class="pos">+17.0</td></tr>
+            <tr><td>GD</td><td style="text-align:left;color:var(--text)">Defense</td><td class="neg">−1.9</td><td class="pos">+12.4</td></tr>
+            <tr><td>ITW</td><td style="text-align:left;color:var(--text)">Industrials</td><td class="neg">−1.2</td><td class="pos">+13.3</td></tr>
+            <tr><td>CTVA</td><td style="text-align:left;color:var(--text)">Ag / Crop Science</td><td class="pos">+8.9</td><td class="pos">+4.3</td></tr>
+            <tr><td>DE</td><td style="text-align:left;color:var(--text)">Ag Machinery</td><td class="pos">+8.1</td><td class="pos">+22.9</td></tr>
+          </tbody>
+        </table>
+        <p style="font-size:13.5px;color:var(--muted);margin-top:12px;font-family:var(--mono)">RTX/PH/GD/ITW = defensive-quality resets. CTVA/DE = ag names turning up off a base (breakout-reset hybrids).</p>
+      </div>
+      <div class="ppo-card watch">
+        <div class="pc-title">◆ Watchlist — Needs Confirmation</div>
+        <table class="ticker-table">
+          <thead><tr><th>Ticker</th><th>Theme</th><th>1W</th><th>3M</th></tr></thead>
+          <tbody>
+            <tr><td>GE</td><td style="text-align:left;color:var(--text)">Aerospace</td><td class="neg">−7.5</td><td class="pos">+13.0</td></tr>
+            <tr><td>FERG</td><td style="text-align:left;color:var(--text)">Industrials Dist.</td><td class="neg">−3.1</td><td class="pos">+6.3</td></tr>
+            <tr><td>GWW</td><td style="text-align:left;color:var(--text)">Industrials Dist.</td><td class="pos">+0.3</td><td class="pos">+6.2</td></tr>
+            <tr><td>SHW</td><td style="text-align:left;color:var(--text)">Materials/Coatings</td><td class="neg">−0.7</td><td class="pos">+12.4</td></tr>
+            <tr><td>ZTS</td><td style="text-align:left;color:var(--text)">Animal Health</td><td class="pos">+5.8</td><td class="neg">−4.4</td></tr>
+            <tr><td>NTR</td><td style="text-align:left;color:var(--text)">Fertilizer</td><td class="pos">+8.8</td><td class="pos">+6.9</td></tr>
+          </tbody>
+        </table>
+        <p style="font-size:13.5px;color:var(--muted);margin-top:12px;font-family:var(--mono)">GE deeper pullback — wait for hold. NTR extended after the pop — buy a daily reset, not the spike. ZTS turning off a soft 3M.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ CHARTLIST ============ -->
+  <div class="section">
+    <div class="section-eyebrow">07 — StockCharts ChartList</div>
+    <div class="section-title">Comma-Delimited Import List</div>
+    <div class="chartlist-box">NTR, CF, CTVA, MOS, DE, CNH, TRMB, FMC, SMG, BHP, RIO, SCCO, FCX, TECK, VALE, RTX, GD, PH, GE, NOC, LMT, HWM, ITW, FAST, GWW, FERG, SHW, A, ZTS</div>
+    <div class="callout green">
+      <strong>Focused watchlist</strong> weighted to Tier 1 agriculture inputs and the quality defense/industrial resets. Paste directly into StockCharts.com to confirm weekly 30-week-EMA structure and daily PPO before sizing.
+    </div>
+  </div>
+
+  <!-- ============ METHODOLOGY / CHANGES ============ -->
+  <div class="section">
+    <div class="section-eyebrow">08 — Change Log vs Prior Week</div>
+    <div class="section-title">What Moved on the Scorecard</div>
+    <div class="summary-grid">
+      <div class="summary-box green">
+        <div class="sb-label">Upgrades</div>
+        <ul>
+          <li><strong>Agriculture inputs → Tier 1 (new leader).</strong> Went from laggard to the week's cleanest early-rotation signal on a real supply catalyst.</li>
+          <li><strong>Healthcare → defensive leadership.</strong> Broad participation + Friday leadership as capital sought duration-safe cash flows.</li>
+          <li><strong>Defense/Industrials → "buyable reset."</strong> Reclassified the pullback as opportunity given intact 3M trends.</li>
+        </ul>
+      </div>
+      <div class="summary-box red">
+        <div class="sb-label">Downgrades</div>
+        <ul>
+          <li><strong>Semiconductors → breakdown.</strong> From momentum leader to 0%-breadth washout on the rate move.</li>
+          <li><strong>Software/Cloud/Cyber → decelerating/narrowing.</strong> The crowded duration winners lost their weekly edge.</li>
+          <li><strong>Renewable grid/solar → failed.</strong> Cost-of-capital pressure broke the sub-themes.</li>
+          <li><strong>Gold → crowding flag.</strong> Still leadership, but +41%/month is a late-stage read, not an entry.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="report-footer">
+  METHODOLOGY — Theme and sub-theme performance is market-cap-weighted using sub-theme allocated market cap × price change (Primary 60% / Secondary 40% for multi-theme names), per the Weekly Theme Updater pipeline. Universe: 1,397 unique tickers across 34 themes / 175 sub-themes. Price changes are trailing 1W / 1M / 3M as of the 08/21/2026 close. Breadth = share of theme constituents positive over 1 week (down-day resilience proxy). Macro context (yields, gold, indices, geopolitics) sourced from market reporting for the week ending 08/21/2026. PPO/weekly-trend commentary is inferred from return structure and must be confirmed on StockCharts.com against the 30-week EMA and daily PPO before acting.<br><br>
+  NOT INVESTMENT ADVICE — This is an analytical framework output for a self-directed, long-term value investor, not a personalized recommendation. Fri 08/21/2026 was August monthly options expiration; single-session moves may reflect positioning rather than trend. Confirm all data and do your own diligence.
+</div>
+
+</body>
+</html>

@@ -1048,7 +1048,6 @@ MAR,Marriott International Inc /Md/,Real Estate & REITs,"Real Estate - Travel, L
 MARA,"Mara Holdings, Inc.",FinTech & Digital Finance,"FinTech - Crypto, Blockchain & Tokenization",Primary
 MARA,"Mara Holdings, Inc.",Crypto & Blockchain,Blockchain - Cryptocurrency Mining & Staking,Secondary
 MAS,Masco Corp,Industrials & Construction,Industrials - Building Products & HVAC,Primary
-MASI,Masimo Corp,Healthcare & Biotech,Healthcare - Medical Devices & HealthTech Hardware,Primary
 MAT,"Mattel, Inc.",Consumer Goods & Retail,Consumer - Modern Luxury & Lifestyle,Primary
 MATX,"Matson, Inc.",Transportation & Logistics,Transportation - Marine Shipping & Ports,Primary
 MBLY,Mobileye Global Inc.,Hardware,Hardware - Next-Gen & Specialty,Primary
@@ -1373,8 +1372,6 @@ PSN,Parsons Corp,Defense & Aerospace,Defense - Cyber Defense & Electronic Warfar
 PSN,Parsons Corp,Cybersecurity,"Cybersecurity - Identity, Biometrics & Access Management",Secondary
 PSNY,Polestar Automotive Holding Uk Plc,Electric Vehicles & Mobility,EVs - Manufacturers,Primary
 PSO,Pearson Plc,Education Technology,Education - Digital Curriculum,Primary
-PSTG,"Pure Storage, Inc.",Hardware,Hardware - Data Center Infrastructure & Servers,Primary
-PSTG,"Pure Storage, Inc.",Cloud Computing,Cloud - Data Centers & Infrastructure,Secondary
 PSX,Phillips 66,Energy - Traditional,Energy Base - Refining & Midstream Infrastructure,Primary
 PTC,Ptc Inc.,Industrial Automation & Robotics,"Automation - Industrial IoT, Connectivity",Primary
 PTC,Ptc Inc.,Industrial Automation & Robotics,Automation - Industrial Software & Digital Twin,Secondary
@@ -1814,7 +1811,6 @@ VLY,Valley National Bancorp,Financials - Traditional,"Fin Trad - Banks, Lending 
 VMC,Vulcan Materials Co,Industrials & Construction,Industrials - Construction Materials & Aggregates,Primary
 VMI,"Valmont Industries, Inc.",Industrials & Construction,"Industrials - Machinery, Flow Control & Components",Primary
 VMI,"Valmont Industries, Inc.",Agriculture & FoodTech,Agriculture - Precision Agriculture & Farm Automation,Secondary
-VMRK,Vivmark Residential,Real Estate & REITs,"Real Estate - Housing, Urban Living & Demographics",Primary
 VNO,Vornado Realty Trust,Real Estate & REITs,Real Estate - Office & Commercial Workspaces,Primary
 VNOM,"Viper Energy, Inc.",Energy - Traditional,Energy Base - Oil & Gas Exploration & Production,Primary
 VNT,Vontier Corp,Transportation & Logistics,Transportation - Urban Mobility & Emerging Transport Tech,Primary

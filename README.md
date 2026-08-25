@@ -65,9 +65,4 @@ The CSV has five columns:
 
 ## Notes
 
-- Ticker-level market-cap and price-change fields live in the companion Finviz
-  export, joined on `Ticker`. Newly added names need a row in that export before
-  the cap-weighted theme calculations pick them up.
-- One ticker discrepancy to watch: the Finviz export still uses `FISV` for Fiserv,
-  whose official symbol has been `FI` since 2023. Keep both files on the same
-  symbol convention when joining.
+
