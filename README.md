@@ -4,7 +4,7 @@
 structured set of themes and sub-themes, which the rotation model then weights by
 sub-theme market capitalization.
 
-## At a glance
+## At a glance -
 
 | Metric | Count |
 |---|---|
