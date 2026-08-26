@@ -1,15 +1,14 @@
 # Theme & Sub-Theme Ticker Universe
 
-`Input_Ticker_List_by_Theme.csv` — the classification map that powers the weekly
-Early Rotation theme analysis. Every ticker is assigned to one or more of a
+`Input_Ticker_List_by_Theme.csv` — Every ticker is assigned to one or more of a
 structured set of themes and sub-themes, which the rotation model then weights by
 sub-theme market capitalization.
 
-## At a glance
+## At a glance -
 
 | Metric | Count |
 |---|---|
-| Unique tickers | **1,397** |
+| Unique tickers | **1,394** |
 | Themes | **34** |
 | Sub-themes | **175** |
 | Total assignments (rows) | 1,935 |
