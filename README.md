@@ -64,5 +64,10 @@ The CSV has five columns:
 
 
 ## Notes
-
+I started with an AI scan of the FinViz Theme heatmap, but a lot of companies (e.g. Amazon) participate 
+in a lot of different markets. So then I had AI narrow it to the two largest. I actually went back and forth 
+between Claude and Grok on this to triangulate the results. Then went back and added in the S&P Large Caps and 
+Small Caps that were missing. Decided to use a 60/40 split for market cap when there was both a primary and 
+secondary sub theme. Then manually combined and sub-themes with less than 5 tickers. 
+All in all a pretty arbitrary process. May not be perfect, but it is directional.
 
