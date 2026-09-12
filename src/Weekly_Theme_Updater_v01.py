@@ -58,7 +58,7 @@ warnings.filterwarnings("ignore", category=FutureWarning)
 # Configuration
 # ──────────────────────────────────────────────────────────────────────────────
 
-DEFAULT_INPUT  = r"G:\My Drive\Projects\Python\Stocks & Options\Themes\Input_Ticker_List_by_Theme.csv"
+DEFAULT_INPUT  = r"G:\My Drive\Projects\Python\Stocks & Options\Themes\data\Input_Ticker_List_by_Theme.csv"
 DEFAULT_OUTPUT = r"G:\My Drive\Projects\Python\Stocks & Options\Themes\Tickers_Themes_SubThemes.csv"
 
 # Lookback window: must cover 3 months + a buffer for weekends / holidays
