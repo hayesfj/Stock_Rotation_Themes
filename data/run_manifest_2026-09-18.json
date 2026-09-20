@@ -1,0 +1,64 @@
+{
+  "generated_at": "2026-09-19T07:16:53",
+  "data_as_of": "2026-09-18",
+  "benchmark": "SPY",
+  "history_period": "1y",
+  "lookback_calendar_days": {
+    "1W Price Change %": 7,
+    "1M Price Change %": 31,
+    "3M Price Change %": 93
+  },
+  "weight_cap": null,
+  "start_weights": false,
+  "universe": {
+    "rows": 1963,
+    "tickers": 1419,
+    "themes": 34,
+    "sub_themes": 170,
+    "added_vs_previous": [],
+    "dropped_vs_previous": []
+  },
+  "coverage": {
+    "market_cap": 1416,
+    "return_status_counts": {
+      "ok": 1404,
+      "no_data": 12,
+      "stale_7d": 2,
+      "stale_21d": 1
+    }
+  },
+  "failures": {
+    "no_market_cap": [
+      "BLD",
+      "CSWI",
+      "JHG"
+    ],
+    "no_price_data": [
+      "AMWL",
+      "BLD",
+      "CELH",
+      "CSWI",
+      "JHG",
+      "LI",
+      "NSA",
+      "NVO",
+      "POR",
+      "RNR",
+      "RRC",
+      "WY"
+    ],
+    "stale_symbols": [
+      "ATAI",
+      "GGRP",
+      "YYGH"
+    ],
+    "partial_history": []
+  },
+  "outputs": {
+    "detail": "G:\\My Drive\\Projects\\Python\\Stocks & Options\\Themes\\data\\Tickers_Themes_SubThemes.csv",
+    "archive": "G:\\My Drive\\Projects\\Python\\Stocks & Options\\Themes\\data\\Tickers_Themes_SubThemes_2026-09-18.csv",
+    "theme_summary": "G:\\My Drive\\Projects\\Python\\Stocks & Options\\Themes\\data\\Theme_Summary_2026-09-18.csv",
+    "subtheme_summary": "G:\\My Drive\\Projects\\Python\\Stocks & Options\\Themes\\data\\SubTheme_Summary_2026-09-18.csv",
+    "ppo_candidates": "G:\\My Drive\\Projects\\Python\\Stocks & Options\\Themes\\data\\PPO_Candidates_2026-09-18.csv"
+  }
+}

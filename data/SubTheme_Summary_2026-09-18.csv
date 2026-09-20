@@ -1,0 +1,171 @@
+Theme,Sub Theme,Constituents,Theme Cap ($M),CapWtd 1W %,EqWtd 1W %,CapWtd 1M %,EqWtd 1M %,CapWtd 3M %,EqWtd 3M %,Breadth 1W %,Coverage %,Top3 Weight %,Effective N,Top Name,Distortion pp,Mega Cap Distorted,Down Day Capture,Vol Ratio 20/60,Pct Above 30W EMA,Acceleration pp,Signal,Below Min Constituents
+Cybersecurity,Cybersecurity - Application Security,8,422046.1,11.18,12.08,5.88,3.48,34.46,41.52,100.0,100.0,79.2,4.1,CRWD,-0.9,False,-1.74,1.14,100.0,9.81,EARLY ROTATION,False
+FinTech & Digital Finance,"FinTech - Crypto, Blockchain & Tokenization",6,105583.0,9.25,8.61,34.77,31.99,16.43,3.75,83.3,100.0,89.9,3.6,MSTR,0.64,False,4.77,1.2,100.0,1.16,MATURE LEADERSHIP,False
+Industrial Automation & Robotics,"Automation - Industrial IoT, Connectivity",7,284610.8,8.77,4.02,-0.31,-3.44,25.37,21.37,71.4,100.0,92.2,2.2,PANW,4.75,True,-1.49,1.05,71.4,8.84,MATURE LEADERSHIP,False
+Healthcare & Biotech,"Healthcare - Diagnostics, Biomarkers & Liquid Biopsy",16,450893.9,7.38,6.25,9.86,9.11,35.6,30.95,93.8,100.0,63.7,5.9,TMO,1.13,False,0.5,1.01,81.2,5.09,MATURE LEADERSHIP,False
+Software,"Software - Data, Analytics & DevOps",7,17406.5,7.32,5.45,8.57,7.03,36.53,43.85,71.4,100.0,81.9,4.0,DT,1.87,True,-0.14,1.09,71.4,5.33,MATURE LEADERSHIP,False
+Cybersecurity,"Cybersecurity - Endpoint, Identity & Zero Trust",5,69122.0,6.52,7.04,14.26,7.38,45.03,38.84,80.0,100.0,87.6,3.2,OKTA,-0.52,False,-0.93,1.33,80.0,3.2,MATURE LEADERSHIP,False
+Cybersecurity,Cybersecurity - Cloud Security,12,280750.8,6.2,9.89,5.52,2.07,23.28,35.93,91.7,100.0,81.9,4.0,CRWD,-3.69,True,-0.62,1.02,83.3,4.92,MATURE LEADERSHIP,False
+Healthcare & Biotech,Healthcare - Genomics & Personalized Medicine,15,260533.5,6.16,7.27,9.55,13.14,34.39,39.8,73.3,100.0,72.2,4.2,TMO,-1.11,False,1.08,0.98,73.3,3.94,MATURE LEADERSHIP,False
+Crypto & Blockchain,Blockchain - Cryptocurrency Mining & Staking,8,54580.2,5.28,6.4,17.12,22.95,-21.74,-20.41,100.0,100.0,69.9,4.9,IREN,-1.12,False,3.2,0.93,75.0,1.3,MATURE LEADERSHIP,False
+Cloud Computing,"Cloud - DevOps, Observability",6,73981.5,4.94,5.6,-1.27,7.43,13.37,35.22,83.3,100.0,89.2,2.1,DDOG,-0.66,False,0.04,0.85,100.0,5.24,EARLY ROTATION,False
+Semiconductors,Semis - Memory & Storage,5,1062203.6,4.4,3.35,5.12,-0.86,-8.63,-20.24,80.0,100.0,90.7,2.2,MU,1.05,False,0.34,0.69,80.0,3.21,EARLY ROTATION,False
+Nanotechnology,NanoTech - Research Tools & Advanced Instruments,15,254633.7,4.02,3.58,1.34,-0.21,15.03,10.51,73.3,100.0,54.2,7.5,DHR,0.44,False,1.34,0.92,73.3,3.71,EARLY ROTATION,False
+Cloud Computing,Cloud - Multi-Cloud Management,6,119738.1,3.53,4.46,6.25,4.74,28.56,10.27,83.3,100.0,90.1,3.1,NOW,-0.93,False,0.3,0.89,83.3,2.08,MATURE LEADERSHIP,False
+Healthcare & Biotech,"Healthcare - Regenerative Medicine, Psychedelics, Cannabis",13,108377.3,3.43,1.73,2.0,-3.53,21.15,30.05,50.0,92.3,87.9,2.0,GILD,1.7,True,0.66,0.98,66.7,2.96,MATURE LEADERSHIP,False
+Artificial Intelligence,"AI - Ads, Search & Recommendations",9,2659005.4,3.01,0.16,1.55,-0.17,-4.66,5.4,44.4,100.0,99.5,1.1,GOOGL,2.85,True,0.67,0.86,55.6,2.65,MIXED / CONSOLIDATING,False
+Semiconductors,"Semis - Testing, Packaging & Assembly",6,174674.2,2.97,0.91,6.24,-2.24,1.2,-13.65,66.7,100.0,89.2,2.3,ASX,2.06,True,1.09,0.73,66.7,1.52,MIXED / CONSOLIDATING,False
+Semiconductors,Semis - Emerging Technologies,21,4340350.6,2.91,-0.35,4.15,-5.67,5.88,-19.93,47.6,100.0,94.8,1.7,NVDA,3.26,True,1.64,1.02,33.3,1.94,MIXED / CONSOLIDATING,False
+Hardware,Hardware - Printing & Imaging,5,1438.4,2.86,3.4,7.49,6.22,7.77,8.08,80.0,100.0,69.4,4.6,XRX,-0.54,False,0.62,1.02,60.0,1.12,MIXED / CONSOLIDATING,False
+Nanotechnology,NanoTech - Nanomedicine & Drug Delivery,10,86199.6,2.86,3.71,40.31,22.01,59.11,33.63,80.0,100.0,77.9,4.0,REGN,-0.85,False,0.49,1.1,70.0,-6.51,MATURE LEADERSHIP,False
+Industrial Automation & Robotics,Robotics - Medical & Surgical Robotics,7,240564.1,2.7,-0.54,-5.07,-10.3,2.92,-3.39,42.9,100.0,90.9,3.5,ISRG,3.24,True,0.43,0.96,28.6,3.88,MIXED / CONSOLIDATING,False
+Artificial Intelligence,"AI - Apps, Domain-Specific AI",12,705531.1,2.63,0.17,21.58,0.17,16.33,-4.07,25.0,100.0,98.2,1.1,META,2.46,True,-2.19,1.02,33.3,-2.39,FAILED ROTATION,False
+Healthcare & Biotech,Healthcare - Age-Related & Longevity Therapeutics,5,571859.4,2.62,-0.51,-5.34,-6.03,5.33,8.34,25.0,80.0,94.3,1.8,LLY,3.13,True,0.72,0.86,75.0,3.86,FAILED ROTATION,False
+Energy - Traditional,Energy Base - Refining & Midstream Infrastructure,15,721365.6,2.6,1.0,5.9,2.89,35.53,29.56,46.7,100.0,43.3,9.9,VLO,1.6,True,-0.88,1.13,80.0,1.23,MATURE LEADERSHIP,False
+Healthcare & Biotech,Healthcare - Metabolic & Cardiometabolic,12,1220757.3,2.57,-0.86,-2.52,-5.08,9.77,3.16,45.5,91.7,78.6,3.2,LLY,3.43,True,0.94,0.96,54.5,3.16,MIXED / CONSOLIDATING,False
+Healthcare & Biotech,Healthcare - Oncology & Precision Cancer Therapeutics,12,1517827.0,2.48,1.22,1.98,0.74,14.34,10.38,66.7,100.0,64.8,5.7,ABBV,1.26,False,0.5,0.89,75.0,2.02,EARLY ROTATION,False
+Industrial Automation & Robotics,"Robotics - Autonomous Vehicles, Service & Mobility",14,348673.6,2.35,-2.83,-0.21,-7.9,10.6,-10.95,15.4,92.9,93.8,2.4,PLTR,5.18,True,1.84,0.82,30.8,2.4,FAILED ROTATION,False
+Defense & Aerospace,Defense - Space Technology & Satellite Services,6,38443.5,2.11,1.56,-15.38,-15.86,-27.1,-20.55,50.0,100.0,90.2,2.2,RKLB,0.55,False,2.16,0.77,33.3,5.69,MIXED / CONSOLIDATING,False
+Digital Entertainment & Media,Entertainment - Advertising & Social Platforms,15,1179614.9,2.02,-1.98,19.03,-0.83,13.94,3.44,33.3,100.0,92.2,1.3,META,4.0,True,-1.95,1.01,46.7,-2.41,FAILED ROTATION,False
+Defense & Aerospace,Defense - Cyber Defense & Electronic Warfare,15,692954.2,2.0,0.47,-6.33,-8.14,13.03,2.14,60.0,100.0,70.3,4.7,PLTR,1.53,True,1.34,0.9,26.7,3.47,MIXED / CONSOLIDATING,False
+Electric Vehicles & Mobility,EVs - Charging & Infrastructure,6,2628.6,2.0,2.7,8.24,17.72,4.62,0.33,50.0,100.0,93.2,2.2,VNT,-0.7,False,2.75,1.07,16.7,0.08,MIXED / CONSOLIDATING,False
+Healthcare & Biotech,Healthcare - Medical Devices & HealthTech Hardware,25,816964.6,1.58,0.14,-3.49,-7.51,12.07,4.2,56.0,100.0,62.7,4.0,JNJ,1.44,False,0.73,0.93,36.0,2.39,EARLY ROTATION,False
+Space Tech,Space - Data Analytics & Earth Observation,6,27458.2,1.52,1.31,-17.61,-19.83,-25.71,-25.52,50.0,100.0,92.2,2.3,RKLB,0.21,False,1.79,0.82,0.0,5.62,MIXED / CONSOLIDATING,False
+Semiconductors,"Semis - Logic & CPUs, GPUs, Accelerators",10,6428518.9,1.47,3.09,3.55,9.11,0.81,-9.18,80.0,100.0,84.4,3.8,TSM,-1.62,True,1.18,0.95,80.0,0.64,MIXED / CONSOLIDATING,False
+Industrial Automation & Robotics,"Automation - Additive Manufacturing, 3D Printing",5,16072.1,1.44,3.26,-6.54,2.13,-9.7,5.06,80.0,100.0,98.1,2.6,CRS,-1.82,True,2.12,0.92,60.0,2.96,MIXED / CONSOLIDATING,False
+Semiconductors,Semis - EDA Tools & Design Software,6,309410.2,1.4,-1.49,2.37,-3.76,-27.3,-23.81,33.3,100.0,86.5,2.6,ARM,2.89,True,2.87,0.82,33.3,0.85,FAILED ROTATION,False
+Healthcare & Biotech,"Healthcare - Digital Health, Telemedicine & Remote Care",12,198873.4,1.34,0.86,-4.72,-0.87,17.63,11.22,63.6,91.7,87.4,2.8,ABT,0.48,False,0.76,0.96,36.4,2.44,MATURE LEADERSHIP,False
+Energy - Renewable,Energy Clean - Fuels & Bioenergy,8,7462.6,1.29,0.15,1.92,4.45,34.75,19.81,62.5,100.0,91.6,2.6,DAR,1.14,False,-2.69,1.17,62.5,0.84,MATURE LEADERSHIP,False
+Commodities - Energy,Comm Energy - Biofuels & Renewable Fuels,7,10238.1,1.26,-0.06,2.7,6.0,37.6,22.03,57.1,100.0,93.1,2.2,DAR,1.32,False,-2.76,1.17,57.1,0.63,MATURE LEADERSHIP,False
+Hardware,"Hardware - Consumer Electronics, PCs & Peripherals",11,3504505.5,1.25,0.03,8.67,5.14,13.99,15.79,36.4,100.0,93.2,1.4,AAPL,1.22,False,-0.38,0.88,81.8,-0.77,FAILED ROTATION,False
+Hardware,Hardware - Next-Gen & Specialty,18,2371145.1,1.11,1.21,6.17,-6.08,9.53,-10.63,64.7,94.4,96.3,1.4,AAPL,-0.1,False,-0.35,0.83,35.3,-0.32,MIXED / CONSOLIDATING,False
+Big Data & Analytics,"Big Data - Analytics, AI Platforms & BI",9,357903.8,1.07,1.15,-1.48,-1.63,26.91,19.74,55.6,100.0,88.3,2.1,SAP,-0.08,False,1.53,0.94,55.6,1.41,MATURE LEADERSHIP,False
+FinTech & Digital Finance,FinTech - Exchanges & Market Infrastructure,8,271354.6,0.8,1.22,2.04,2.78,12.03,15.18,62.5,100.0,67.4,4.8,CME,-0.42,False,1.48,0.92,62.5,0.33,MIXED / CONSOLIDATING,False
+Artificial Intelligence,"AI - Compute, Edge & Acceleration",10,899149.0,0.77,-1.08,-1.47,-6.0,-12.7,-21.15,40.0,100.0,82.8,3.1,MU,1.85,True,1.74,0.68,30.0,1.11,FAILED ROTATION,False
+Transportation & Logistics,Transportation - Marine Shipping & Ports,8,31773.2,0.73,1.17,3.04,4.34,13.73,17.06,75.0,100.0,58.4,6.3,KEX,-0.44,False,0.16,1.0,87.5,0.02,MIXED / CONSOLIDATING,False
+Cloud Computing,Cloud - Hyperscalers & Platforms,11,6053899.9,0.67,2.97,0.65,2.86,13.79,29.81,72.7,100.0,91.7,3.5,MSFT,-2.3,True,1.17,0.79,90.9,0.52,MIXED / CONSOLIDATING,False
+Smart Home & IoT,"Smart Home - Connectivity, Devices & Appliances",13,135971.0,0.64,0.9,0.94,-0.92,4.17,4.68,61.5,100.0,66.5,4.7,JCI,-0.26,False,1.19,0.97,61.5,0.42,MIXED / CONSOLIDATING,False
+Energy - Renewable,Energy Clean - Wind,10,98445.7,0.57,-0.33,-5.21,-3.18,-6.76,-5.11,50.0,100.0,76.6,3.8,ENB,0.9,False,0.88,1.04,30.0,1.78,MIXED / CONSOLIDATING,False
+Real Estate & REITs,"Real Estate - E-Commerce, Warehousing & Logistics",7,96776.0,0.57,0.63,-1.46,-0.62,0.93,4.43,85.7,100.0,74.5,3.0,PLD,-0.06,False,0.67,0.84,57.1,0.91,MIXED / CONSOLIDATING,False
+Crypto & Blockchain,"Blockchain - Platforms, Tokenization & Financial Services",9,658720.5,0.56,2.81,3.53,11.97,12.11,11.92,44.4,100.0,82.6,3.5,V,-2.25,True,1.78,0.92,77.8,-0.26,MIXED / CONSOLIDATING,False
+Agriculture & FoodTech,Agriculture - Precision Agriculture & Farm Automation,12,163527.0,0.55,-1.23,15.72,7.14,16.34,9.09,25.0,100.0,86.3,2.1,DE,1.78,True,-0.83,1.23,41.7,-3.11,FAILED ROTATION,False
+Education Technology,Education - Workforce Training,6,11302.8,0.4,0.37,-4.91,-4.98,-4.13,-6.89,50.0,100.0,77.3,3.7,LAUR,0.03,False,1.12,0.89,50.0,1.54,MIXED / CONSOLIDATING,False
+E-commerce,E-commerce - Platforms,6,124408.2,0.3,-0.38,-6.77,-2.94,12.97,23.83,50.0,100.0,95.9,2.5,PDD,0.68,False,1.74,1.06,33.3,1.87,MIXED / CONSOLIDATING,False
+Healthcare & Biotech,Healthcare - Next-Gen Biotech Platforms,16,271015.1,0.25,1.87,20.13,11.35,33.36,24.84,56.2,100.0,50.5,8.2,VRTX,-1.62,True,0.91,1.06,62.5,-4.43,MATURE LEADERSHIP,False
+Consumer Goods & Retail,Consumer - Household & Personal Care,9,329559.6,0.22,-2.42,-1.06,-5.73,-0.68,7.75,33.3,100.0,84.5,2.4,PG,2.64,True,0.63,0.99,33.3,0.47,FAILED ROTATION,False
+Education Technology,Education - Digital Curriculum,10,35201.7,0.19,-0.52,-2.38,-4.4,10.89,8.11,50.0,100.0,59.2,6.4,PSO,0.71,False,0.42,1.04,70.0,0.74,MIXED / CONSOLIDATING,False
+Nanotechnology,NanoTech - Consumer & Industrial Products,7,252891.7,0.18,-1.71,-1.12,-2.89,-1.55,-7.49,57.1,100.0,85.1,2.9,PG,1.89,True,0.74,0.94,42.9,0.44,MIXED / CONSOLIDATING,False
+Defense & Aerospace,Defense - Drones & Anti-Drone Systems,9,227051.8,0.08,-0.19,-12.59,-15.46,-2.86,-12.77,66.7,100.0,80.9,3.5,RTX,0.27,False,0.88,0.91,0.0,3.01,MIXED / CONSOLIDATING,False
+Transportation & Logistics,Transportation - Air Travel & Passenger Transportation,8,116518.2,-0.0,-1.12,-7.28,-8.99,-7.76,-13.5,12.5,100.0,80.3,3.6,DAL,1.12,False,2.15,0.86,12.5,1.69,FAILED ROTATION,False
+Healthcare & Biotech,Healthcare - Healthy Aging & Nutrition,8,39666.7,0.0,-1.98,-5.03,-6.54,-3.2,-10.66,42.9,87.5,79.2,3.8,KVUE,1.98,True,1.73,1.02,0.0,1.17,MIXED / CONSOLIDATING,False
+Industrials & Construction,Industrials - Packaging & Containers,11,118108.3,-0.07,-0.58,-7.71,-7.28,2.49,0.88,27.3,100.0,53.6,7.2,SW,0.51,False,1.87,0.97,36.4,1.72,FAILED ROTATION,False
+Digital Entertainment & Media,Entertainment - Game Publishers & Developers,6,64612.3,-0.16,-1.2,-1.39,-0.34,-3.84,-5.43,50.0,100.0,91.0,3.1,NTES,1.04,False,-0.28,0.88,16.7,0.16,MIXED / CONSOLIDATING,False
+Conglomerates & Diversified Holdings,Diversified Holdings & Multi-Industry Conglomerates,6,1165022.2,-0.2,-1.94,0.89,-5.4,3.62,-0.34,16.7,100.0,97.6,1.1,BRK-B,1.74,True,-0.16,1.04,16.7,-0.41,FAILED ROTATION,False
+Telecommunications,Telecom - Satellite & Space Communication,6,54950.2,-0.2,-0.22,-1.32,-1.61,-13.85,-3.16,50.0,100.0,86.0,3.1,ECHO,0.02,False,0.71,0.63,66.7,0.11,MIXED / CONSOLIDATING,False
+Energy - Renewable,Energy Clean - Batteries & Storage,9,595653.2,-0.26,-2.68,7.64,-9.56,-8.73,-31.24,33.3,100.0,98.9,1.1,TSLA,2.42,True,1.07,1.03,11.1,-2.04,FAILED ROTATION,False
+FinTech & Digital Finance,FinTech - Trading Platforms & WealthTech,6,477028.0,-0.35,-1.67,1.06,2.46,4.1,-2.42,16.7,100.0,84.9,3.5,SCHW,1.32,False,2.31,1.0,66.7,-0.6,FAILED ROTATION,False
+Electric Vehicles & Mobility,EVs - Autonomous Driving & Fleet,7,944314.1,-0.5,-1.66,6.99,-1.0,-7.51,-11.13,14.3,100.0,99.7,1.2,TSLA,1.16,False,1.11,1.02,0.0,-2.13,FAILED ROTATION,False
+Healthcare & Biotech,Healthcare - Animal Health & Veterinary,5,49885.5,-0.57,-1.25,-5.72,-6.49,-5.82,0.27,40.0,100.0,97.4,2.6,IDXX,0.68,False,0.72,0.81,0.0,0.76,FAILED ROTATION,False
+Consumer Goods & Retail,"Consumer - Health, Food & Beverages",40,1567078.3,-0.58,0.03,-1.83,-4.0,3.22,-0.65,38.5,97.5,54.3,7.7,KO,-0.61,False,0.36,0.96,38.5,-0.15,FAILED ROTATION,False
+Financials - Traditional,Fin Trad - Insurance & Reinsurance,43,1227449.7,-0.59,-0.61,-2.16,-2.21,7.37,7.31,35.7,97.7,27.6,19.9,CB,0.02,False,0.96,0.98,64.3,-0.09,FAILED ROTATION,False
+Software,Software - Vertical SaaS Platforms,21,1923545.4,-0.63,-1.48,1.58,-6.04,24.08,21.96,33.3,100.0,87.9,1.7,MSFT,0.85,False,1.46,0.78,33.3,-1.0,FAILED ROTATION,False
+Industrial Automation & Robotics,Robotics - Sensors & Vision Systems,6,53133.7,-0.68,-0.38,0.32,-8.3,1.24,-12.15,33.3,100.0,95.8,2.2,LITE,-0.3,False,0.56,0.9,16.7,-0.75,FAILED ROTATION,False
+Industrial Automation & Robotics,Automation - Industrial Software & Digital Twin,7,104207.1,-0.7,-0.85,-9.05,-9.86,-7.43,2.71,42.9,100.0,84.3,4.1,CDNS,0.15,False,4.16,1.06,14.3,1.4,MIXED / CONSOLIDATING,False
+E-commerce,E-commerce - Grocery & Local Commerce Platforms,11,688707.9,-0.71,-1.41,-7.0,-6.49,-5.92,-4.04,45.5,100.0,87.5,1.8,WMT,0.7,False,0.39,1.0,27.3,0.92,MIXED / CONSOLIDATING,False
+Education Technology,"Education - Platforms, Infrastructure & Online Learning",5,8032.7,-0.74,6.84,0.9,-5.55,6.55,-5.64,40.0,100.0,98.3,2.7,LOPE,-7.58,True,-0.34,0.97,20.0,-0.95,FAILED ROTATION,False
+Industrials & Construction,"Industrials - Machinery, Flow Control & Components",31,355849.4,-0.74,-1.18,-7.13,-7.01,-3.52,-9.11,26.7,96.8,40.8,12.1,PH,0.44,False,2.22,0.95,16.7,0.92,FAILED ROTATION,False
+Environmental Sustainability,Environmental - Water Infrastructure & Treatment,18,106888.1,-0.78,-0.82,-4.02,-5.18,2.1,-0.73,22.2,100.0,47.1,8.6,AWK,0.04,False,1.07,0.96,38.9,0.15,FAILED ROTATION,False
+Energy - Renewable,Energy Clean - Materials & Critical Metals,8,412481.6,-0.82,-2.33,1.29,-3.96,-1.41,-13.18,25.0,100.0,79.0,4.2,BHP,1.51,True,2.42,1.01,50.0,-1.12,FAILED ROTATION,False
+Software,Software - Gaming & Platforms,7,150910.7,-0.83,-1.5,-1.09,-1.03,5.84,4.86,42.9,100.0,81.2,3.8,SONY,0.67,False,0.13,0.89,42.9,-0.58,MIXED / CONSOLIDATING,False
+Cloud Computing,Cloud - Horizontal SaaS & Cloud Applications,17,870412.4,-0.84,0.39,3.32,1.52,20.33,34.36,52.9,100.0,55.8,6.6,ORCL,-1.23,False,2.15,1.05,58.8,-1.61,MIXED / CONSOLIDATING,False
+Consumer Goods & Retail,Consumer - Apparel & E-Commerce Retail,14,155187.6,-0.9,-1.43,-9.32,-6.31,-12.97,-9.51,21.4,100.0,68.4,5.1,TJX,0.53,False,1.76,1.13,21.4,1.27,FAILED ROTATION,False
+Real Estate & REITs,Real Estate - Office & Commercial Workspaces,10,101862.3,-1.0,-1.15,-3.94,-3.48,5.97,4.54,20.0,100.0,66.1,4.7,CBRE,0.15,False,2.28,0.95,60.0,-0.08,FAILED ROTATION,False
+FinTech & Digital Finance,FinTech - InsurTech & Embedded Insurance,8,17860.4,-1.01,-2.85,-9.59,-11.53,13.26,2.9,25.0,100.0,82.4,3.9,GWRE,1.84,True,3.73,1.02,37.5,1.22,FAILED ROTATION,False
+Industrials & Construction,Industrials - Distribution & Rental Services,18,287231.7,-1.07,-1.92,-4.51,-4.52,-0.26,-3.09,16.7,100.0,53.5,8.4,GWW,0.85,False,1.41,0.85,66.7,-0.02,FAILED ROTATION,False
+Space Tech,"Space - Infrastructure, Exploration & Launch",9,26400.9,-1.09,0.19,-12.96,-10.68,-21.23,-22.61,44.4,100.0,68.3,4.9,ASTS,-1.28,False,1.99,0.69,44.4,1.92,FAILED ROTATION,False
+Big Data & Analytics,"Big Data - Data Generation, Sourcing & Providers",16,495709.6,-1.18,-0.37,-2.89,-2.41,7.99,14.24,31.2,100.0,52.2,8.0,SPGI,-0.81,False,2.01,0.88,37.5,-0.51,FAILED ROTATION,False
+Hardware,Hardware - Networking Equipment,6,332474.2,-1.21,-1.43,0.82,-1.39,5.61,1.78,33.3,100.0,91.9,2.7,CSCO,0.22,False,1.81,0.84,50.0,-1.4,FAILED ROTATION,False
+Commodities - Agriculture,Comm Agri - Softs & Plantation Crops,5,51853.5,-1.22,-1.66,-2.94,5.84,1.06,4.14,20.0,100.0,96.4,2.0,HSY,0.44,False,0.83,0.97,40.0,-0.54,FAILED ROTATION,False
+Industrial Automation & Robotics,Automation - Smart Logistics & Warehouse Automation,6,118529.2,-1.24,-0.55,-3.24,-0.7,-0.22,7.45,33.3,100.0,87.6,3.1,UPS,-0.69,False,1.74,0.89,50.0,-0.49,FAILED ROTATION,False
+E-commerce,E-commerce - Online Marketplaces & Recommerce,8,129781.3,-1.26,-2.07,2.63,-4.87,4.58,-8.93,12.5,100.0,85.4,3.0,MELI,0.81,False,0.67,1.12,37.5,-1.87,FAILED ROTATION,False
+E-commerce,"E-commerce - Omnichannel Retailers, Online & Physical Stores",34,2563514.0,-1.27,-2.25,-5.25,-6.81,0.43,0.37,26.5,100.0,65.2,4.6,AMZN,0.98,False,1.31,0.89,35.3,-0.05,FAILED ROTATION,False
+Business Services & Consulting,Consulting,11,230840.2,-1.3,-1.12,0.24,-1.05,9.25,8.33,36.4,100.0,78.7,3.5,ACN,-0.18,False,1.31,0.84,45.5,-1.36,FAILED ROTATION,False
+Healthcare & Biotech,"Healthcare - IT, Services & Data Infrastructure",28,1101347.8,-1.31,-0.67,-0.78,-0.92,6.3,15.16,39.3,100.0,48.4,7.4,UNH,-0.64,False,0.44,0.93,67.9,-1.13,FAILED ROTATION,False
+Semiconductors,Semis - Wireless & Connectivity,8,818035.0,-1.35,-1.64,-3.47,6.38,-9.36,-0.87,50.0,100.0,95.6,1.4,AVGO,0.29,False,0.92,1.09,62.5,-0.54,FAILED ROTATION,False
+Transportation & Logistics,"Transportation - Logistics, Warehousing & Supply Chain Solutions",10,135504.2,-1.37,-2.85,-2.72,-6.19,-2.81,-4.15,20.0,100.0,64.4,5.7,UPS,1.48,False,1.31,0.85,30.0,-0.74,FAILED ROTATION,False
+Hardware,Hardware - Industrial & IoT,18,458294.9,-1.37,-2.57,-2.46,-2.77,-4.87,-1.49,22.2,100.0,50.1,8.4,TXN,1.2,False,1.65,0.86,55.6,-0.8,FAILED ROTATION,False
+Industrial Automation & Robotics,Automation - Industrial Sensors & Machine Vision,9,69566.7,-1.4,-2.04,-6.87,-8.45,-4.72,-10.49,11.1,100.0,69.8,5.1,AME,0.64,False,1.76,0.88,22.2,0.2,FAILED ROTATION,False
+Commodities - Metals,Comm Metals - Rare Earth & Strategic Materials,7,9588.1,-1.42,-1.54,-14.72,-12.68,-27.92,-17.43,28.6,100.0,81.0,2.5,USAR,0.12,False,4.65,1.06,14.3,2.0,FAILED ROTATION,False
+Energy - Renewable,Energy Clean - Smart Grid & Electrification,16,439415.5,-1.44,-2.45,-6.05,-7.74,-6.86,-11.33,18.8,100.0,62.9,6.2,GEV,1.01,False,1.87,0.86,31.2,-0.03,FAILED ROTATION,False
+Semiconductors,"Semis - Analog, Mixed-Signal & Power Management",12,433363.2,-1.46,-1.72,-3.11,-5.68,-15.48,-22.18,16.7,100.0,67.2,5.0,TXN,0.26,False,2.1,0.77,41.7,-0.74,FAILED ROTATION,False
+Real Estate & REITs,"Real Estate - Housing, Urban Living & Demographics",16,227667.7,-1.47,-1.7,-6.66,-7.06,-6.24,-5.58,18.8,100.0,34.9,11.9,DHI,0.23,False,1.52,1.01,6.2,0.08,FAILED ROTATION,False
+Agriculture & FoodTech,Agriculture - Alternative Proteins,8,21041.9,-1.47,-1.58,2.08,-9.65,9.36,-7.58,25.0,100.0,98.1,1.6,ADM,0.11,False,-1.19,1.06,25.0,-1.95,FAILED ROTATION,False
+Environmental Sustainability,Environmental - Waste Management & Recycling,8,248670.3,-1.52,-0.91,-2.79,-3.08,3.23,5.1,25.0,100.0,76.5,4.4,WM,-0.61,False,0.7,1.0,50.0,-0.87,FAILED ROTATION,False
+Real Estate & REITs,Real Estate - Retail & Consumer Real Estate,21,349367.9,-1.54,-2.45,-6.59,-6.52,-4.25,-5.55,25.0,95.2,53.5,8.6,SPG,0.91,False,1.12,0.93,10.0,-0.01,FAILED ROTATION,False
+Environmental Sustainability,"Environmental - Climate, Carbon & Land Resources",9,159012.1,-1.68,-2.68,-4.75,-4.25,-6.67,-0.56,25.0,88.9,84.8,2.9,LIN,1.0,False,1.24,0.91,25.0,-0.58,FAILED ROTATION,False
+Commodities - Metals,Comm Metals - Industrial & Base Metals,13,378980.8,-1.71,-3.0,0.17,-2.28,-2.46,-5.98,23.1,100.0,57.3,7.1,BHP,1.29,False,2.06,1.0,69.2,-1.75,FAILED ROTATION,False
+Commodities - Energy,Comm Energy - Crude Oil,8,263461.1,-1.72,-2.44,2.75,0.89,23.86,18.16,12.5,100.0,59.6,6.4,COP,0.72,False,-1.0,1.15,87.5,-2.36,FAILED ROTATION,False
+Transportation & Logistics,Transportation - Infrastructure & Equipment,10,506663.6,-1.72,-1.98,-2.48,-2.89,-3.97,3.4,30.0,100.0,71.7,3.9,CAT,0.26,False,1.39,0.85,60.0,-1.14,FAILED ROTATION,False
+Nanotechnology,NanoTech - Energy & Environment,8,78834.1,-1.74,-1.34,-5.05,-5.27,-4.36,-13.46,37.5,100.0,87.3,2.6,ECL,-0.4,False,1.47,1.0,12.5,-0.57,FAILED ROTATION,False
+Commodities - Metals,Comm Metals - Gold,8,498232.9,-1.74,-1.93,6.81,6.96,13.38,12.38,0.0,100.0,60.7,6.1,NEM,0.19,False,3.67,1.16,87.5,-3.32,FAILED ROTATION,False
+Industrials & Construction,Industrials - Chemicals & Advanced Materials,14,150138.6,-1.75,-2.65,-6.04,-6.4,-1.65,-4.67,7.1,100.0,58.3,6.5,SHW,0.9,False,0.86,0.88,42.9,-0.35,FAILED ROTATION,False
+Cloud Computing,Cloud - Data Centers & Infrastructure,13,247920.4,-1.76,-0.93,-7.14,-7.22,-7.66,-6.71,30.8,100.0,48.4,8.0,DLR,-0.83,False,2.3,0.89,38.5,-0.1,FAILED ROTATION,False
+Business Services & Consulting,"Business Services - Outsourcing, Facilities & Testing",11,187628.0,-1.79,-2.51,-2.25,-2.25,14.52,10.64,18.2,100.0,73.9,4.0,CTAS,0.72,False,1.31,0.9,54.5,-1.27,FAILED ROTATION,False
+FinTech & Digital Finance,FinTech - Digital Payments & Merchant Infrastructure,20,1177704.2,-1.84,-3.67,-3.07,-6.23,8.82,10.08,10.0,100.0,78.3,4.4,V,1.83,True,1.69,0.9,50.0,-1.13,FAILED ROTATION,False
+Commodities - Metals,Comm Metals - Precious Metals,11,162708.0,-1.87,-1.21,10.05,7.36,13.71,12.28,36.4,100.0,67.4,4.4,WPM,-0.66,False,4.17,1.16,100.0,-4.21,FAILED ROTATION,False
+Energy - Traditional,Energy Base - Integrated Energy Majors,7,1184279.4,-1.88,-2.07,1.18,1.67,17.55,17.04,0.0,100.0,68.6,4.9,XOM,0.19,False,-1.36,1.08,100.0,-2.15,FAILED ROTATION,False
+Commodities - Agriculture,Comm Agri - Livestock & Animal Protein,8,54787.1,-1.88,-1.91,-8.59,-6.13,-5.86,-2.63,12.5,100.0,65.8,5.7,JBS,0.03,False,0.76,0.97,0.0,0.12,FAILED ROTATION,False
+Industrials & Construction,Industrials - Engineering & Construction,16,159499.7,-1.96,-2.37,-8.59,-9.37,-11.45,-12.99,31.2,100.0,50.1,8.9,FIX,0.41,False,1.95,0.83,37.5,0.04,FAILED ROTATION,False
+Real Estate & REITs,Real Estate - Digital Infrastructure,5,68686.0,-2.0,-2.8,-1.57,-2.69,-7.31,-10.19,20.0,100.0,85.6,3.2,AMT,0.8,False,1.19,0.84,0.0,-1.63,FAILED ROTATION,False
+Consumer Goods & Retail,Consumer - Modern Luxury & Lifestyle,18,177981.0,-2.09,-0.65,-5.28,-5.49,-0.44,-5.85,22.2,100.0,64.2,4.9,RACE,-1.44,False,1.16,0.96,27.8,-0.86,FAILED ROTATION,False
+Healthcare & Biotech,Healthcare - Senior Care & Longevity,14,238766.2,-2.11,-2.05,-5.25,-5.75,9.01,7.43,28.6,100.0,63.1,4.8,WELL,-0.06,False,0.7,0.91,42.9,-0.89,FAILED ROTATION,False
+Transportation & Logistics,Transportation - Freight Rail & Infrastructure,7,424963.0,-2.13,-1.88,-6.04,-5.18,5.0,4.42,14.3,100.0,58.5,5.8,UNP,-0.25,False,1.74,0.88,85.7,-0.73,FAILED ROTATION,False
+Hardware,Hardware - Data Center Infrastructure & Servers,21,691088.7,-2.15,-2.11,1.28,-2.22,1.57,-4.9,14.3,100.0,49.2,8.7,DELL,-0.04,False,2.25,0.96,71.4,-2.45,FAILED ROTATION,False
+Semiconductors,"Semis - Equipment, Lithography & Deposition",9,1017425.2,-2.16,-3.42,-9.93,-12.09,-18.75,-23.56,11.1,100.0,80.1,4.0,ASML,1.26,False,2.54,0.71,22.2,0.15,FAILED ROTATION,False
+Industrials & Construction,Industrials - Building Products & HVAC,28,288041.5,-2.17,-2.19,-8.58,-9.22,-8.5,-9.05,7.7,92.9,45.5,10.6,TT,0.02,False,2.04,0.91,7.7,-0.17,FAILED ROTATION,False
+Real Estate & REITs,"Real Estate - Travel, Leisure & Entertainment Properties",24,486398.3,-2.2,-2.75,-10.82,-10.04,-11.91,-10.15,12.5,100.0,45.8,10.2,MAR,0.55,False,2.06,0.92,25.0,0.32,FAILED ROTATION,False
+E-commerce,E-commerce - Retail Media & Advertising,8,152479.3,-2.31,-0.27,-8.15,-1.51,-3.2,13.19,37.5,100.0,92.6,1.6,HD,-2.04,True,1.66,0.94,62.5,-0.41,FAILED ROTATION,False
+Energy - Traditional,Energy Base - Oil & Gas Exploration & Production,19,972152.7,-2.45,-3.57,0.35,-0.24,15.83,12.89,5.6,94.7,55.7,7.1,XOM,1.12,False,-0.88,1.1,83.3,-2.53,FAILED ROTATION,False
+Energy - Renewable,Energy Clean - Hydrogen & Fuel Cells,8,316690.3,-2.46,-1.53,1.97,-4.59,-9.4,-18.77,12.5,100.0,84.9,3.5,LIN,-0.93,False,0.58,0.96,25.0,-2.92,FAILED ROTATION,False
+Defense & Aerospace,Defense - Secure Defense Supply Chains,25,547729.8,-2.47,-3.54,-14.94,-14.08,-13.09,-14.33,16.0,100.0,52.0,8.3,GE,1.07,False,2.46,1.01,12.5,1.0,FAILED ROTATION,False
+Real Estate & REITs,Real Estate - Healthcare & Senior Living,9,134749.0,-2.57,-2.87,-3.1,-4.08,8.01,2.74,11.1,100.0,72.9,3.5,WELL,0.3,False,0.66,0.92,44.4,-1.85,FAILED ROTATION,False
+Industrial Automation & Robotics,Automation - Factory & Process Automation Systems,9,160049.7,-2.61,-3.91,-7.1,-8.16,-10.4,-12.88,11.1,100.0,51.8,7.4,EMR,1.3,False,2.21,0.8,22.2,-0.96,FAILED ROTATION,False
+Energy - Traditional,Energy Base - Utilities & Conventional Power Operators,35,731460.6,-2.63,-2.11,-7.08,-6.04,-6.63,-4.77,8.8,97.1,22.2,22.4,SO,-0.52,False,1.14,1.01,5.9,-0.98,FAILED ROTATION,False
+Telecommunications,Telecom - Enterprise & Unified Communications,6,121974.2,-2.72,-0.99,-1.37,-4.83,13.04,19.86,33.3,100.0,96.7,2.1,VZ,-1.73,True,0.67,0.91,50.0,-2.4,FAILED ROTATION,False
+Transportation & Logistics,Transportation - Urban Mobility & Emerging Transport Tech,11,169891.5,-2.77,-3.01,-4.3,-8.27,-1.14,-11.01,0.0,90.9,84.8,3.0,UBER,0.24,False,1.58,0.94,20.0,-1.77,FAILED ROTATION,False
+FinTech & Digital Finance,FinTech - Digital Banking & Neobanks,9,509185.1,-2.78,-4.22,-4.02,-3.71,5.03,4.34,0.0,100.0,89.6,1.8,JPM,1.44,False,1.45,0.9,44.4,-1.85,FAILED ROTATION,False
+Environmental Sustainability,Environmental - Clean Technologies & Pollution Control,9,85069.1,-2.83,-3.42,-5.27,-3.52,-2.48,-7.78,22.2,100.0,80.9,4.0,ECL,0.59,False,1.28,0.97,22.2,-1.6,FAILED ROTATION,False
+Commodities - Energy,Comm Energy - Natural Gas & LNG,26,373779.8,-2.89,-2.93,-4.08,-4.5,5.02,1.16,16.0,96.2,32.7,13.3,LNG,0.04,False,0.59,1.04,32.0,-1.94,FAILED ROTATION,False
+Telecommunications,Telecom - Cloud & Edge Connectivity,6,312513.2,-2.91,-0.77,-0.56,-2.34,6.9,8.21,33.3,100.0,91.1,3.3,VZ,-2.14,True,0.57,0.82,83.3,-2.78,FAILED ROTATION,False
+E-commerce,E-commerce - Direct-to-Consumer,7,74075.6,-2.96,-3.39,-5.16,-5.75,-4.75,-10.73,14.3,100.0,81.2,3.5,NKE,0.43,False,2.16,1.15,14.3,-1.76,FAILED ROTATION,False
+Agriculture & FoodTech,Agriculture - Agri-Food Processing & Distribution,9,129030.5,-2.97,-1.65,-4.04,-2.84,0.9,-0.3,11.1,100.0,64.1,5.6,SYY,-1.32,False,0.46,1.03,44.4,-2.03,FAILED ROTATION,False
+Hardware,Hardware - Communications & Telecom,12,885542.9,-2.97,-3.17,-0.41,-3.59,0.3,-8.98,8.3,100.0,67.9,5.6,CSCO,0.2,False,1.56,0.85,58.3,-2.87,FAILED ROTATION,False
+Software,"Software - Collaboration, CRM & Communications",7,53827.3,-3.02,0.21,-7.13,-0.66,24.61,39.17,57.1,100.0,78.0,2.6,INTU,-3.23,True,1.86,1.04,42.9,-1.36,FAILED ROTATION,False
+Energy - Renewable,Energy Clean - Utilities & Clean Power Operators,9,276227.6,-3.05,-2.58,-6.19,-6.65,-6.14,-8.52,11.1,100.0,63.3,5.0,NEE,-0.47,False,0.91,1.01,11.1,-1.61,FAILED ROTATION,False
+Consumer Goods & Retail,Consumer - Restaurants & Dining,10,425253.5,-3.05,-5.47,-7.11,-10.45,-7.86,-14.04,0.0,100.0,76.9,3.9,MCD,2.42,True,1.47,0.92,10.0,-1.4,FAILED ROTATION,False
+Agriculture & FoodTech,Agriculture - Agricultural Inputs & Crop Science,8,72894.8,-3.27,-4.63,7.27,4.18,12.67,10.43,12.5,100.0,90.4,3.2,CTVA,1.36,False,-0.27,1.13,62.5,-4.96,FAILED ROTATION,False
+Consumer Goods & Retail,Consumer - Resale & Sharing Platforms,7,294814.3,-3.36,-6.21,-9.57,-15.8,7.59,-8.95,0.0,100.0,83.9,4.0,ABNB,2.85,True,2.76,0.99,28.6,-1.13,FAILED ROTATION,False
+Commodities - Metals,Comm Metals - Recycling & Circular Materials,5,44963.8,-3.44,-5.04,-6.18,-6.89,-6.15,-12.24,0.0,100.0,93.2,2.8,NUE,1.6,True,1.11,0.93,40.0,-2.0,FAILED ROTATION,False
+Financials - Traditional,"Fin Trad - Asset Management, Custody & Alternatives",21,925852.0,-3.45,-3.21,-6.99,-5.49,0.83,3.53,15.0,95.2,41.1,10.3,BX,-0.24,False,2.6,0.88,65.0,-1.82,FAILED ROTATION,False
+Industrials & Construction,Industrials - Construction Materials & Aggregates,8,140379.3,-3.48,-3.55,-8.29,-9.6,-18.51,-17.34,12.5,100.0,87.9,3.6,CRH,0.07,False,2.38,0.97,12.5,-1.55,FAILED ROTATION,False
+Commodities - Agriculture,"Comm Agri - Fertilizers, Crop Inputs & Seeds",6,50604.0,-3.55,-5.23,6.12,4.45,10.69,4.25,0.0,100.0,86.8,3.4,CTVA,1.68,True,-0.1,1.11,66.7,-4.97,FAILED ROTATION,False
+Defense & Aerospace,Defense - Next-Generation Aircraft & Maintenance,15,428957.4,-3.58,-4.7,-13.47,-15.17,-14.79,-14.6,6.7,100.0,75.9,3.7,GE,1.12,False,2.01,0.94,14.3,-0.45,FAILED ROTATION,False
+Energy - Renewable,Energy Clean - Solar,10,41053.1,-3.66,-3.73,-9.91,-6.15,-25.51,-30.95,10.0,100.0,82.1,4.2,FSLR,0.07,False,2.83,0.81,0.0,-1.36,FAILED ROTATION,False
+Commodities - Agriculture,"Comm Agri - Grains, Oilseeds & Softs",6,12922.9,-3.66,-0.49,1.64,1.5,2.39,9.4,50.0,100.0,87.5,2.0,BG,-3.17,True,-1.82,1.25,100.0,-4.04,FAILED ROTATION,False
+Energy - Traditional,Energy Base - Nuclear Power & Advanced Reactors,10,342908.4,-3.75,-3.65,-5.55,-7.22,-9.57,-15.64,10.0,100.0,79.2,3.7,GEV,-0.1,False,2.02,0.91,0.0,-2.46,FAILED ROTATION,False
+Commodities - Metals,Comm Metals - Battery & Energy Transition Metals,10,84499.4,-3.93,-1.97,0.79,-4.2,-7.35,-19.72,20.0,100.0,90.1,2.9,VALE,-1.96,True,2.42,1.16,10.0,-4.11,FAILED ROTATION,False
+Energy - Traditional,Energy Base - Coal & Thermal Power Generation,11,121679.6,-4.02,-7.41,-6.05,-5.53,-7.73,-8.96,0.0,100.0,73.6,5.0,DUK,3.39,True,0.9,0.94,18.2,-2.61,FAILED ROTATION,False
+Smart Home & IoT,"Smart Home - Automation, Control & Energy",12,88596.7,-4.07,-2.4,-9.25,-7.2,-11.66,-9.45,8.3,100.0,74.6,3.4,CARR,-1.67,True,2.42,0.95,16.7,-1.92,FAILED ROTATION,False
+Electric Vehicles & Mobility,EVs - Manufacturers,8,117107.2,-4.12,-2.68,-5.87,-15.62,-6.68,-19.89,28.6,87.5,79.1,3.5,F,-1.44,False,1.89,1.0,14.3,-2.75,FAILED ROTATION,False
+Financials - Traditional,"Fin Trad - Banks, Lending & Mortgage Finance",44,2204937.3,-4.19,-2.95,-5.87,-6.21,1.79,0.62,0.0,100.0,55.4,7.8,JPM,-1.24,False,1.24,0.95,50.0,-2.82,FAILED ROTATION,False
+Electric Vehicles & Mobility,EVs - Batteries & Materials,8,6246.3,-4.45,-3.3,-8.47,-5.98,-32.11,-35.69,25.0,100.0,75.0,4.8,QS,-1.15,False,3.45,0.68,0.0,-2.48,FAILED ROTATION,False
+Digital Entertainment & Media,Entertainment - Video Streaming,12,762020.5,-4.48,-3.51,-4.07,-3.24,0.59,4.36,0.0,100.0,76.2,4.2,NFLX,-0.97,False,0.93,0.89,33.3,-3.53,FAILED ROTATION,False
+Electric Vehicles & Mobility,EVs - Key Suppliers & Autonomy Tech,13,67800.2,-4.87,-4.66,-7.05,-9.27,-8.49,-15.79,0.0,100.0,56.6,7.0,MGA,-0.21,False,2.08,0.89,23.1,-3.23,FAILED ROTATION,False
+Commodities - Energy,Comm Energy - Uranium & Nuclear Fuels,9,37045.9,-4.93,-5.5,-7.93,-10.39,-15.92,-17.85,0.0,100.0,74.6,4.0,CCJ,0.57,False,3.89,1.01,0.0,-3.09,FAILED ROTATION,False
+Transportation & Logistics,"Transportation - Trucking, LTL & Ground Freight",11,143099.0,-5.46,-4.71,-12.73,-10.29,-16.5,-14.62,0.0,100.0,54.8,7.1,ODFL,-0.75,False,2.35,0.9,10.0,-2.5,FAILED ROTATION,False
+Energy - Traditional,Energy Base - Oilfield Services & Equipment,9,184716.1,-5.68,-5.99,-6.72,-6.43,-0.06,4.1,11.1,100.0,70.7,4.9,BKR,0.31,False,1.36,1.04,66.7,-4.12,FAILED ROTATION,False
+Telecommunications,Telecom - Infrastructure & Equipment,8,263668.5,-5.73,-2.87,-4.43,-6.27,-9.31,-11.04,12.5,100.0,79.0,3.3,GLW,-2.86,True,1.13,0.77,25.0,-4.7,FAILED ROTATION,False
+Cybersecurity,"Cybersecurity - Identity, Biometrics & Access Management",9,8890.7,-6.31,-2.53,-10.73,-7.97,-19.96,-26.39,22.2,100.0,89.9,2.5,YOU,-3.78,True,1.92,0.93,11.1,-3.81,FAILED ROTATION,False
+Financials - Traditional,Fin Trad - Capital Markets & Investment Banking,7,537240.7,-7.02,-6.12,-8.09,-7.52,-11.18,-10.43,0.0,100.0,92.5,2.6,GS,-0.9,False,2.63,0.96,28.6,-5.14,FAILED ROTATION,False
+Telecommunications,"Telecom - 5G, Wireless & Carriers",7,360187.0,-7.18,-5.56,-6.23,2.58,0.51,10.23,28.6,100.0,91.8,2.9,TMUS,-1.62,True,1.39,0.88,57.1,-5.73,FAILED ROTATION,False
+Digital Entertainment & Media,"Entertainment - Betting, iGaming & Wagering",14,76514.8,-7.78,-6.47,-7.32,-8.35,-13.2,-16.02,7.1,100.0,47.1,8.9,FLUT,-1.31,False,1.52,0.9,7.1,-6.08,FAILED ROTATION,False
