@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Weekly Theme Rotation — 2026-10-02</title>
+<style>
+  :root {
+    --bg:        #0C0F14;
+    --surface:   #141820;
+    --border:    #1E2530;
+    --border2:   #252E3A;
+    --text:      #D8D4CC;
+    --muted:     #FFFFFF;
+    --head:      #EAE5DA;
+    --green:     #34D399;
+    --green-dim: #1A3D2E;
+    --amber:     #FBBF24;
+    --amber-dim: #3A2F0E;
+    --red:       #F87171;
+    --red-dim:   #3B1515;
+    --blue:      #60A5FA;
+    --blue-dim:  #1A2840;
+    --accent:    #A78BFA;
+    --mono:      'Courier New', 'Consolas', monospace;
+    --sans:      system-ui, -apple-system, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 18px; line-height: 1.65; padding: 0 0 60px 0; }
+  .report-header { background: var(--surface); border-bottom: 1px solid var(--border); padding: 28px 32px 22px; display: flex; justify-content: space-between; align-items: flex-end; }
+  .report-header .brand { font-family: var(--mono); font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+  .report-header h1 { font-size: 30px; font-weight: 700; color: var(--head); letter-spacing: -.01em; }
+  .report-header .meta { text-align: right; font-family: var(--mono); font-size: 14px; color: var(--muted); line-height: 1.8; }
+  .report-header .meta .date { font-size: 17px; color: var(--head); font-weight: 600; }
+  .market-banner { background: var(--surface); border-bottom: 1px solid var(--border); padding: 22px 32px 8px; }
+  .market-banner h2 { font-size: 24px; font-weight: 700; color: var(--head); margin-bottom: 6px; }
+  .market-banner .banner-kicker { font-family: var(--mono); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+  .banner-list { list-style: none; max-width: 1600px; margin: 0 auto; padding: 8px 0 16px; }
+  .banner-list li { font-size: 17px; line-height: 1.65; padding: 8px 0; border-bottom: 1px solid var(--border); color: var(--text); }
+  .banner-list li:last-child { border-bottom: none; }
+  .banner-list .bl-name { font-family: var(--mono); font-size: 16px; letter-spacing: .08em; text-transform: uppercase; color: var(--amber); font-weight: 700; margin-right: 8px; }
+  .banner-list .bl-lvl { font-family: var(--mono); font-weight: 700; color: var(--head); }
+  .mkt-item { display: flex; flex-direction: column; gap: 2px; }
+  .mkt-label { font-family: var(--mono); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+  .mkt-val { font-family: var(--mono); font-size: 17px; font-weight: 700; color: var(--head); }
+  .mkt-chg { font-family: var(--mono); font-size: 14px; }
+  .pos { color: var(--green); }
+  .neg { color: var(--red); }
+  .neu { color: var(--amber); }
+  .report-body { max-width: 1600px; margin: 0 auto; padding: 36px 32px 0; }
+  .section { margin-top: 48px; }
+  .section-eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+  .section-title { font-size: 24px; font-weight: 700; color: var(--head); padding-bottom: 12px; border-bottom: 1px solid var(--border); margin-bottom: 20px; }
+  .summary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .summary-box { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 20px; }
+  .summary-box .sb-label { font-family: var(--mono); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 10px; }
+  .summary-box.green .sb-label { color: var(--green); }
+  .summary-box.amber .sb-label { color: var(--amber); }
+  .summary-box.red   .sb-label { color: var(--red); }
+  .summary-box.blue  .sb-label { color: var(--blue); }
+  .summary-box p { font-size: 17px; color: var(--text); line-height: 1.7; }
+  .summary-box ul { padding-left: 18px; }
+  .summary-box li { font-size: 17px; margin-bottom: 8px; }
+  .scorecard-table { width: 100%; border-collapse: collapse; font-size: 16px; }
+  .scorecard-table th { font-family: var(--mono); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); padding: 9px 14px; text-align: left; border-bottom: 1px solid var(--border); white-space: nowrap; }
+  .scorecard-table td { padding: 9px 14px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+  .badge { display: inline-block; font-family: var(--mono); font-size: 12px; padding: 3px 8px; border-radius: 3px; font-weight: 700; letter-spacing: .04em; }
+  .badge-early  { background: var(--green-dim); color: var(--green); }
+  .badge-hold   { background: var(--amber-dim); color: var(--amber); }
+  .badge-cool   { background: var(--red-dim);   color: var(--red); }
+  .badge-mature { background: var(--blue-dim);  color: var(--blue); }
+  .badge-na     { background: var(--surface);   color: var(--muted); border: 1px solid var(--border); }
+  .stars { font-size: 16px; letter-spacing: 1px; }
+  .tier-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .tier-card { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 24px; }
+  .tier-card.full-width { grid-column: 1 / -1; }
+  .tier-card .tc-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; padding-bottom: 14px; border-bottom: 1px solid var(--border); }
+  .tier-card .tc-title { font-size: 19px; font-weight: 700; color: var(--head); }
+  .tier-card .tc-sub { font-family: var(--mono); font-size: 13px; color: var(--muted); margin-top: 4px; letter-spacing: .06em; }
+  .tier-card .tc-rating { font-size: 18px; }
+  .tier-card .tc-body p { font-size: 17px; line-height: 1.7; margin-bottom: 12px; }
+  .tier-card .tc-body p:last-child { margin-bottom: 0; }
+  .stat-row { display: flex; gap: 24px; flex-wrap: wrap; margin: 14px 0; }
+  .stat-item { display: flex; flex-direction: column; gap: 2px; }
+  .stat-label { font-family: var(--mono); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+  .stat-value { font-family: var(--mono); font-size: 17px; font-weight: 700; }
+  .ticker-table { width: 100%; border-collapse: collapse; margin-top: 14px; font-size: 16px; }
+  .ticker-table th { font-family: var(--mono); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); padding: 6px 10px; text-align: right; border-bottom: 1px solid var(--border2); }
+  .ticker-table th:first-child { text-align: left; }
+  .ticker-table td { font-family: var(--mono); padding: 6px 10px; border-bottom: 1px solid var(--border2); text-align: right; }
+  .ticker-table td:first-child { text-align: left; color: var(--amber); font-weight: 700; }
+  .ticker-table tr:last-child td { border-bottom: none; }
+  .cooling-table { width: 100%; border-collapse: collapse; font-size: 16px; }
+  .cooling-table th { font-family: var(--mono); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); padding: 9px 14px; text-align: left; border-bottom: 1px solid var(--border); }
+  .cooling-table td { padding: 10px 14px; border-bottom: 1px solid var(--border); font-size: 17px; line-height: 1.65; vertical-align: top; }
+  .cooling-table .ct-theme { font-weight: 700; color: var(--head); width: 210px; }
+  .cooling-table .ct-diff { font-family: var(--mono); font-size: 15px; color: var(--red); white-space: nowrap; width: 90px; }
+  .ppo-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
+  .ppo-card { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 22px; overflow-x: auto; }
+  .ppo-card .pc-title { font-family: var(--mono); font-size: 13px; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+  .ppo-card.hi .pc-title { color: var(--green); }
+  .ppo-card.watch .pc-title { color: var(--amber); }
+  .chartlist-box { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 22px; font-family: var(--mono); font-size: 17px; line-height: 2.0; color: var(--green); word-break: break-all; white-space: pre-wrap; }
+  .callout { border-left: 3px solid; padding: 12px 16px; border-radius: 0 4px 4px 0; font-size: 17px; margin: 14px 0; line-height: 1.7; }
+  .callout.green { border-color: var(--green); background: var(--green-dim); color: #9AE6C0; }
+  .callout.amber { border-color: var(--amber); background: var(--amber-dim); color: #FDE68A; }
+  .callout.red   { border-color: var(--red);   background: var(--red-dim);   color: #FCA5A5; }
+  .report-footer { margin-top: 50px; padding: 20px 32px; background: var(--surface); border-top: 1px solid var(--border); font-family: var(--mono); font-size: 13px; color: var(--muted); line-height: 1.8; }
+  b.tk { color: var(--amber); font-weight: 700; }
+  details.failed-block { border: 1px solid var(--border); border-radius: 6px; background: var(--surface); margin-top: 18px; }
+  details.failed-block > summary { cursor: pointer; padding: 16px 18px; font-family: var(--mono); font-size: 14px; letter-spacing: .08em; text-transform: uppercase; color: var(--red); list-style: none; }
+  details.failed-block > summary::-webkit-details-marker { display: none; }
+  details.failed-block[open] > summary { border-bottom: 1px solid var(--border); }
+  .toc { display: flex; flex-wrap: wrap; gap: 10px 18px; margin: 18px 0 0; font-family: var(--mono); font-size: 13px; }
+  .toc a { color: var(--accent); text-decoration: none; }
+  @media (max-width: 760px) {
+    .report-header { padding: 18px 16px; flex-direction: column; gap: 10px; }
+    .report-header .meta { text-align: left; }
+    .report-body { padding: 20px 16px 0; }
+    .summary-grid, .tier-grid { grid-template-columns: 1fr; }
+    .tier-card.full-width { grid-column: auto; }
+    .market-banner { padding: 10px 16px; gap: 20px; }
+  }
+  .scorecard { border-top: 1px solid var(--border); }
+  .sc-legend { display: grid; grid-template-columns: minmax(0,1.15fr) minmax(0,1fr); gap: 32px; padding: 8px 14px; }
+  .sc-legend span { font-family: var(--mono); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+  .sc-row { display: grid; grid-template-columns: minmax(0,1.15fr) minmax(0,1fr); gap: 32px; padding: 18px 14px; border-bottom: 1px solid var(--border); align-items: start; }
+  .sc-row:last-child { border-bottom: none; }
+  .sc-row:hover { background: var(--surface); }
+  .sc-left { min-width: 0; }
+  .sc-name-row { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+  .sc-theme { font-size: 18px; font-weight: 600; color: var(--head); }
+  .sc-count { font-family: var(--mono); font-size: 13px; color: var(--muted); white-space: nowrap; }
+  .sc-flags { font-family: var(--mono); font-size: 12.5px; color: var(--amber); letter-spacing: .04em; margin-top: 3px; }
+  .sc-metrics { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 12px 18px; margin-top: 14px; }
+  .sc-metric { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+  .sc-m-label { font-family: var(--mono); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); white-space: nowrap; }
+  .sc-m-val { font-family: var(--mono); font-size: 16px; font-weight: 700; color: var(--head); white-space: nowrap; }
+  .sc-m-sub { font-family: var(--mono); font-size: 13px; color: var(--muted); white-space: nowrap; }
+  .sc-right { min-width: 0; display: flex; flex-direction: column; gap: 10px; }
+  .sc-head-row { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+  .sc-note { font-size: 16px; line-height: 1.7; color: var(--text); }
+  @media (max-width: 1100px) {
+    .sc-row, .sc-legend { grid-template-columns: 1fr; gap: 16px; }
+    .sc-legend span:last-child { display: none; }
+  }
+  @media (max-width: 760px) {
+    .sc-metrics { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    .sc-row { padding: 16px 0; }
+  }
+
+  .tk-row { margin-top: 10px; font-size: 16px; line-height: 1.8; }
+  .subtbl { width: 100%; border-collapse: collapse; margin-top: 14px; font-size: 15px; }
+  .subtbl th { font-family: var(--mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); padding: 6px 8px; text-align: left; border-bottom: 1px solid var(--border); }
+  .subtbl td { padding: 7px 8px; border-bottom: 1px solid var(--border2); vertical-align: top; }
+  .subtbl .st-name { color: var(--head); font-weight: 600; }
+
+  .tk-find {
+    position: sticky; top: 0; z-index: 40;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 10px 32px;
+    display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px;
+  }
+  .tk-find label {
+    font-family: var(--mono); font-size: 12px; letter-spacing: .12em;
+    text-transform: uppercase; color: var(--accent);
+  }
+  .tk-find input {
+    background: var(--bg); color: var(--head);
+    border: 1px solid var(--border2); border-radius: 4px;
+    font-family: var(--mono); font-size: 16px; font-weight: 700;
+    letter-spacing: .06em; text-transform: uppercase;
+    padding: 6px 10px; width: 140px;
+  }
+  .tk-find input:focus { outline: 1px solid var(--amber); border-color: var(--amber); }
+  .tk-find .tf-count { font-family: var(--mono); font-size: 13px; color: var(--muted); }
+  .tk-find .tf-count.has { color: var(--amber); }
+  .tk-find button {
+    font-family: var(--mono); font-size: 12px; letter-spacing: .08em;
+    text-transform: uppercase; background: var(--bg); color: var(--text);
+    border: 1px solid var(--border2); border-radius: 4px;
+    padding: 6px 10px; cursor: pointer;
+  }
+  .tk-find button:hover { border-color: var(--amber); color: var(--head); }
+  .tf-hits {
+    width: 100%; display: none;
+    list-style: none; max-height: 220px; overflow: auto;
+    border-top: 1px solid var(--border); padding-top: 8px; margin: 0;
+  }
+  .tf-hits.open { display: block; }
+  .tf-hits li { font-size: 15px; line-height: 1.5; padding: 4px 0; }
+  .tf-hits a { color: var(--accent); text-decoration: none; font-family: var(--mono); font-size: 13px; }
+  .tf-hits a:hover { color: var(--amber); }
+  .tf-hits .tf-where { color: var(--muted); margin-left: 8px; font-size: 14px; }
+  b.tk.tk-hit {
+    background: var(--amber); color: #1A1400; padding: 0 3px; border-radius: 2px;
+    box-shadow: 0 0 0 3px var(--amber-dim);
+  }
+  b.tk.tk-hit.tk-current { outline: 2px solid var(--head); }
+  @media (max-width: 760px) {
+    .tk-find { padding: 10px 16px; }
+  }
+</style>
+</head>
+<body>
+<header class="report-header">
+  <div>
+    <div class="brand">Theme Rotation · Spec v10</div>
+    <h1>Weekly Theme Rotation</h1>
+  </div>
+  <div class="meta">
+    <div class="date">2026-10-02</div>
+    <div>Benchmark SPY · weight-cap not applied</div>
+    <div>1969 rows · 1458 tickers · 34 themes · 159 sub-themes</div>
+  </div>
+</header>
+<div class="tk-find">
+  <label for="tk-q">Find ticker</label>
+  <input id="tk-q" type="text" autocomplete="off" spellcheck="false" placeholder="SYMBOL"/>
+  <span class="tf-count" id="tk-count">Type a symbol · Enter to jump</span>
+  <button type="button" id="tk-prev" hidden>Prev</button>
+  <button type="button" id="tk-next" hidden>Next</button>
+  <button type="button" id="tk-clear" hidden>Clear</button>
+  <ul id="tk-hits"></ul>
+</div>
+<section class="market-banner" id="mkt">
+  <div class="banner-kicker">Market climate</div>
+  <h2>Week ending 2026-10-02</h2>
+  <ul class="banner-list">
+    <li><span class="bl-name">S&P 500</span> <span class="bl-lvl">7,722.72 (−0.27% week)</span>. Friday +0.73% after a 29k payroll miss repaired a four-day slide. The week still closed red versus the Sep 25 close of 7,743.41.</li>
+    <li><span class="bl-name">Nasdaq Composite</span> <span class="bl-lvl">27,190.86 (+0.45% week)</span>. Only major index up on the week. Friday +1.19% led by semis and Tesla deliveries. Prior Friday 27,068.72.</li>
+    <li><span class="bl-name">Russell 2000</span> <span class="bl-lvl">2,832.90 (−0.16% week)</span>. Friday +0.94%, the largest daily gain in a month, was not enough to finish green versus 2,837.55.</li>
+    <li><span class="bl-name">Fed funds target</span> <span class="bl-lvl">3.75–4.00% (unchanged)</span>. No FOMC this week. Williams and Jefferson pushed back on urgency. October hike odds fell toward the low-20s after the payroll miss. Effective funds 3.88%.</li>
+    <li><span class="bl-name">3-month UST</span> <span class="bl-lvl">4.19%</span>. Official par yield on Oct 2. Weekly change versus Sep 25 not in the source set — n/a.</li>
+    <li><span class="bl-name">2-year UST</span> <span class="bl-lvl">4.83% (+2 bp week)</span>. Prior Friday 4.81%. Front end barely moved. The hike scare came out of the long end, not the 2-year.</li>
+    <li><span class="bl-name">10-year UST</span> <span class="bl-lvl">5.28% (+11 bp week)</span>. Prior Friday 5.17%. Touched a 24-year high intraweek and finished off the high after Friday's jobs print.</li>
+    <li><span class="bl-name">30-year UST</span> <span class="bl-lvl">5.63%</span>. Official par yield on Oct 2. Weekly change n/a in the source set. Long end remains the pressure point.</li>
+    <li><span class="bl-name">2s10s (10Y − 2Y)</span> <span class="bl-lvl">+45 bp (+9 bp week)</span>. Prior Friday +36 bp. Curve steepened. Not an inversion story.</li>
+    <li><span class="bl-name">10s30s (30Y − 10Y)</span> <span class="bl-lvl">+35 bp</span>. Oct 2 par yields. Weekly change n/a.</li>
+    <li><span class="bl-name">WTI</span> <span class="bl-lvl">88.89 (−3.8% week)</span>. Front-month futures close versus 92.41 on Sep 25. Third weekly decline. Equity crude sleeve did not follow the barrel lower.</li>
+    <li><span class="bl-name">VIX</span> <span class="bl-lvl">15.31 (+3.0% week)</span>. Friday −6.6% to 15.31 from 16.39. Prior Friday 14.87. Equity vol is calm. It does not describe the bond move.</li>
+    <li><span class="bl-name">MOVE</span> <span class="bl-lvl">n/a</span>. No confirmed Oct 2 print in the source set. Treasury vol was the live risk this week. Named here so the gap is explicit.</li>
+    <li><span class="bl-name">ICE BofA US HY OAS</span> <span class="bl-lvl">3.24% as of Oct 1 (+31 bp vs Sep 25)</span>. Sep 25 was 2.93%. Oct 2 print not released (FRED lag). Credit widened into the week even as Friday's equity tape bounced.</li>
+    <li><span class="bl-name">OPEX</span> <span class="bl-lvl">Not an expiration week</span>. Monthly equity expiration is the third Friday, Oct 16. No quarterly expiration in this window.</li>
+  </ul>
+</section>
+<div class="report-body">
+<nav class="section" style="margin-top:18px">
+  <a href="#s01">01 Summary</a> ·
+  <a href="#s02">02 Tier 1</a> ·
+  <a href="#s03">03 Tier 2</a> ·
+  <a href="#s04">04 Cooling</a> ·
+  <a href="#s05">05 Scorecard</a> ·
+  <a href="#s06">06 PPO</a> ·
+  <a href="#s07">07 Sub-themes</a> ·
+  <a href="#s08">08 ChartLists</a> ·
+  <a href="#s09">09 Change log</a>
+</nav>
+
+<section class="section" id="s01">
+  <div class="section-eyebrow">01</div>
+  <h2 class="section-title">Executive Summary</h2>
+  <p>No theme is EARLY this week. The early rotation is inside sub-themes: marine shipping, engineering and construction, refining and midstream, crude-oil equities, workforce training, smart grid, and factory automation. Parents are MIXED. Last week's only EARLY theme, Industrial Automation & Robotics, downgraded to MIXED.</p>
+  <ul>
+    <li>Scorecard: 0 EARLY, 4 MATURE, 12 MIXED, 18 FAILED. Weight-cap not applied. Manifest universe 1458 tickers.</li>
+    <li>Best early industrial pocket is Engineering & Construction (<b class="tk">FIX</b>, <b class="tk">IESC</b>) and marine ports (<b class="tk">KEX</b>, <b class="tk">GNK</b>). Smart grid is later — 1M already +7.5% — but still the preferred electrical sleeve (<b class="tk">GEV</b>, <b class="tk">PWR</b>, <b class="tk">SBGSY</b>, <b class="tk">ABBNY</b>).</li>
+    <li>Hardware equal-weight +7.58% is photonics and comms equipment, not <b class="tk">AAPL</b>. Cap-weight was −0.28%. Distortion −7.86 pp. <b class="tk">GLW</b> and <b class="tk">CSCO</b> are the confirms. Photonics is mature, not early.</li>
+    <li>Mature leadership that is still holding: Semiconductors (equipment and packaging, memory failed) and Cybersecurity (distorted by <b class="tk">CRWD</b>). Business Services is mature only on the <b class="tk">ACN</b> cap print — equal-weight 1W +0.16% and 1M −8.12%.</li>
+    <li>Failed tape is broad: financials, healthcare, defense, metals, crypto, real estate. Space Tech cap-weight +6.52% is <b class="tk">SPCX</b> (Effective N 1.1) and the equal-weight week is −3.28%. Do not read that as a space rotation.</li>
+    <li>HIGH CONVICTION is an entry queue of 42 names. WATCHLIST is omitted. Work a name only when the parent is EARLY, constructive MIXED, or hold-MATURE.</li>
+  </ul>
+</section>
+
+<section class="section" id="s02">
+  <div class="section-eyebrow">02 · Tier 1</div>
+  <h2 class="section-title">Early industrial pockets</h2>
+  <p>No parent theme cleared EARLY. Tier 1 is the four parents that own an EARLY industrial or marine sub-theme and still have constructive equal-weight breadth.</p>
+  
+<article class="tier-card" id="card-Industrials-amp;-Construction">
+  <header class="tc-header">
+    <div>
+      <div class="tc-kicker">⭐⭐⭐</div>
+      <h3 class="tc-title">Industrials &amp; Construction</h3>
+    </div>
+    <div class="tc-sub"><span class="badge badge-hold">MIXED / CONSOLIDATING</span></div>
+  </header>
+  <div class="tc-body"><p>The early pocket is Engineering & Construction, not the whole industrial complex. Equal-weight 1W is +2.33% with breadth 68.8% and 1M still only +1.49% — acceleration before the group is obvious leadership. Cap leader is FIX, and FIX is also on the high-conviction PPO list, so the cap read and the tape agree. Parent theme is MIXED because construction materials, packaging, and chemicals failed the week.</p><p>Parent is <span class="badge badge-hold">MIXED / CONSOLIDATING</span>. Equal-weight 1W -0.22% / 1M -1.24% / 3M -8.08%. Cap-weight 1W -0.17% / 1M -0.30%. Breadth 42.5% (was 66.4% on 2026-09-25). Acceleration -0.10 pp. Down-day capture 1.07. 34.5% above the 30-week EMA. Coverage 98.3%. Distortion 0.05 pp, inside the 1.5 pp band. Effective N 47.1. Read both weights.</p><p class='tk-row'>Top 5 by 1W: <b class="tk">ROG</b>, <b class="tk">PRIM</b>, <b class="tk">MSM</b>, <b class="tk">SNX</b>, <b class="tk">APG</b></p><table class='subtbl'><thead><tr><th>Sub-theme</th><th>Signal</th><th>Eq 1W</th><th>Eq 1M</th><th>Breath</th><th>Highest Market Cap</th><th>Top 3 by 1W</th></tr></thead><tbody><tr><td class='st-name'>Industrials - Engineering &amp; Construction</td><td><span class="badge badge-early">EARLY ROTATION</span></td><td class='pos'>+2.33%</td><td class='pos'>+1.49%</td><td>68.8%</td><td><b class="tk">FIX</b></td><td><b class="tk">PRIM</b>, <b class="tk">APG</b>, <b class="tk">IESC</b></td></tr><tr><td class='st-name'>Industrials - Distribution &amp; Rental Services</td><td><span class="badge badge-hold">MIXED / CONSOLIDATING</span></td><td class='pos'>+0.58%</td><td class='pos'>+2.28%</td><td>57.9%</td><td><b class="tk">ORLY</b></td><td><b class="tk">MSM</b>, <b class="tk">SNX</b>, <b class="tk">ARW</b></td></tr><tr><td class='st-name'>Industrials - Machinery, Flow Control &amp; Components</td><td><span class="badge badge-hold">MIXED / CONSOLIDATING</span></td><td class='pos'>+0.40%</td><td class='neg'>-0.07%</td><td>53.3%</td><td><b class="tk">PH</b></td><td><b class="tk">TKR</b>, <b class="tk">GRC</b>, <b class="tk">POWL</b></td></tr><tr><td class='st-name'>Industrials - Chemicals &amp; Advanced Materials</td><td><span class="badge badge-cool">FAILED ROTATION</span></td><td class='pos'>+0.35%</td><td class='neg'>-2.62%</td><td>42.9%</td><td><b class="tk">SHW</b></td><td><b class="tk">ROG</b>, <b class="tk">NEU</b>, <b class="tk">SOLS</b></td></tr><tr><td class='st-name'>Industrials - Construction Materials &amp; Aggregates</td><td><span class="badge badge-cool">FAILED ROTATION</span></td><td class='neg'>-1.90%</td><td class='neg'>-7.12%</td><td>12.5%</td><td><b class="tk">CRH</b></td><td><b class="tk">GVA</b>, <b class="tk">ACA</b>, <b class="tk">MLM</b></td></tr><tr><td class='st-name'>Industrials - Building Products &amp; HVAC</td><td><span class="badge badge-cool">FAILED ROTATION</span></td><td class='neg'>-1.44%</td><td class='neg'>-2.14%</td><td>33.3%</td><td><b class="tk">TT</b></td><td><b class="tk">APG</b>, <b class="tk">JCI</b>, <b class="tk">MLI</b></td></tr><tr><td class='st-name'>Industrials - Packaging &amp; Containers</td><td><span class="badge badge-cool">FAILED ROTATION</span></td><td class='neg'>-3.41%</td><td class='neg'>-7.10%</td><td>0.0%</td><td><b class="tk">SW</b></td><td><b class="tk">TRS</b>, <b class="tk">AVY</b>, <b class="tk">GEF</b></td></tr></tbody></table><p class='sc-note'>Work the engineering and HVAC/electrical names. Do not treat aggregates or packaging as the same rotation. IESC and FIX lead the 1W list inside the early sub-theme.</p></div>
+</article>
+<article class="tier-card" id="card-Energy---Renewable">
+  <header class="tc-header">
+    <div>
+      <div class="tc-kicker">⭐⭐⭐</div>
+      <h3 class="tc-title">Energy - Renewable</h3>
+    </div>
+    <div class="tc-sub"><span class="badge badge-hold">MIXED / CONSOLIDATING</span></div>
+  </header>
+  <div class="tc-body"><p>Smart Grid & Electrification is the clean early-to-holding sleeve: equal-weight 1W +2.54%, breadth 87.0%, 1M already +7.47% so this is later than marine or refining. Pipeline still marks the sub-theme EARLY. Parent is MIXED and slightly mega-cap distorted by TSLA. GEV, SBGSY, ABBNY, and PWR are high-conviction and sit in this sleeve.</p><p>Parent is <span class="badge badge-hold">MIXED / CONSOLIDATING</span>. Equal-weight 1W +0.04% / 1M -0.79% / 3M -12.61%. Cap-weight 1W +0.79% / 1M +2.33%. Breadth 55.6% (was 35.1% on 2026-09-25). Acceleration 0.25 pp. Down-day capture 1.66. 35.0% above the 30-week EMA. Coverage 97.6%. Distortion 0.75 pp, inside the 1.5 pp band. Effective N 14.5. Read both weights.</p><p class='tk-row'>Top 5 by 1W: <b class="tk">FCEL</b>, <b class="tk">SHLS</b>, <b class="tk">ENS</b>, <b class="tk">PRIM</b>, <b class="tk">SEI</b></p><table class='subtbl'><thead><tr><th>Sub-theme</th><th>Signal</th><th>Eq 1W</th><th>Eq 1M</th><th>Breath</th><th>Highest Market Cap</th><th>Top 3 by 1W</th></tr></thead><tbody><tr><td class='st-name'>Energy Clean - Smart Grid &amp; Electrification</td><td><span class="badge badge-early">EARLY ROTATION</span></td><td class='pos'>+2.54%</td><td class='pos'>+7.47%</td><td>87.0%</td><td><b class="tk">GEV</b></td><td><b class="tk">PRIM</b>, <b class="tk">SEI</b>, <b class="tk">MPWR</b></td></tr><tr><td class='st-name'>Energy Clean - Solar</td><td><span class="badge badge-hold">MIXED / CONSOLIDATING</span></td><td class='pos'>+0.27%</td><td class='neg'>-4.28%</td><td>45.5%</td><td><b class="tk">NXT</b></td><td><b class="tk">SHLS</b>, <b class="tk">NXT</b>, <b class="tk">CSIQ</b></td></tr><tr><td class='st-name'>Energy Clean - Utilities &amp; Clean Power Operators</td><td><span class="badge badge-hold">MIXED / CONSOLIDATING</span></td><td class='pos'>+0.37%</td><td class='neg'>-7.75%</td><td>75.0%</td><td><b class="tk">NEE</b></td><td><b class="tk">PPL</b>, <b class="tk">XEL</b>, <b class="tk">PEG</b></td></tr><tr><td class='st-name'>Energy Clean - Hydrogen &amp; Fuel Cells</td><td><span class="badge badge-hold">MIXED / CONSOLIDATING</span></td><td class='pos'>+1.45%</td><td class='pos'>+0.91%</td><td>62.5%</td><td><b class="tk">LIN</b></td><td><b class="tk">FCEL</b>, <b class="tk">HTOO</b>, <b class="tk">LIN</b></td></tr><tr><td class='st-name'>Energy Clean - Batteries &amp; Storage</td><td><span class="badge badge-hold">MIXED / CONSOLIDATING</span></td><td class='neg'>-2.83%</td><td class='neg'>-5.64%</td><td>44.4%</td><td><b class="tk">TSLA</b></td><td><b class="tk">ENS</b>, <b class="tk">GNRC</b>, <b class="tk">ENPH</b></td></tr><tr><td class='st-name'>Energy Clean - Fuels &amp; Bioenergy</td><td><span class="badge badge-cool">FAILED ROTATION</span></td><td class='neg'>-1.63%</td><td class='pos'>+3.50%</td><td>37.5%</td><td><b class="tk">DAR</b></td><td><b class="tk">CLMT</b>, <b class="tk">DAR</b>, <b class="tk">GPRE</b></td></tr><tr><td class='st-name'>Energy Clean - Materials &amp; Critical Metals</td><td><span class="badge badge-cool">FAILED ROTATION</span></td><td class='neg'>-2.24%</td><td class='neg'>-9.88%</td><td>25.0%</td><td><b class="tk">BHP</b></td><td><b class="tk">BHP</b>, <b class="tk">SCCO</b>, <b class="tk">RIO</b></td></tr><tr><td class='st-name'>Energy Clean - Wind</td><td><span class="badge badge-cool">FAILED ROTATION</span></td><td class='neg'>-1.31%</td><td class='neg'>-5.91%</td><td>22.2%</td><td><b class="tk">ENB</b></td><td><b class="tk">D</b>, <b class="tk">AES</b>, <b class="tk">BEP</b></td></tr></tbody></table><p class='sc-note'>Prefer grid equipment and electrification contractors over solar (equal-weight 1W +0.27%, 0% above the 30-week EMA) and hydrogen. SIEGY is the cap-heavy name that did not confirm the week.</p></div>
+</article>
+<article class="tier-card" id="card-Transportation-amp;-Logistics">
+  <header class="tc-header">
+    <div>
+      <div class="tc-kicker">⭐⭐⭐</div>
+      <h3 class="tc-title">Transportation &amp; Logistics</h3>
+    </div>
+    <div class="tc-sub"><span class="badge badge-hold">MIXED / CONSOLIDATING</span></div>
+  </header>
+  <div class="tc-body"><p>Marine Shipping & Ports is the cleanest early print on the tape: equal-weight 1W +4.21%, 1M +2.79%, breadth 100%, distortion inside the band, top name KEX. Parent theme is only MIXED because air travel, trucking, and urban mobility are not doing the same thing. Trucking was strong on the week but 3M is still −15%.</p><p>Parent is <span class="badge badge-hold">MIXED / CONSOLIDATING</span>. Equal-weight 1W +0.90% / 1M -2.22% / 3M -6.79%. Cap-weight 1W +0.65% / 1M -1.44%. Breadth 57.4% (was 34.4% on 2026-09-25). Acceleration 0.98 pp. Down-day capture 1.45. 36.7% above the 30-week EMA. Coverage 100.0%. Distortion -0.25 pp, inside the 1.5 pp band. Effective N 18.1. Read both weights.</p><p class='tk-row'>Top 5 by 1W: <b class="tk">FWRD</b>, <b class="tk">SAIA</b>, <b class="tk">WNC</b>, <b class="tk">WERN</b>, <b class="tk">XPO</b></p><table class='subtbl'><thead><tr><th>Sub-theme</th><th>Signal</th><th>Eq 1W</th><th>Eq 1M</th><th>Breath</th><th>Highest Market Cap</th><th>Top 3 by 1W</th></tr></thead><tbody><tr><td class='st-name'>Transportation - Marine Shipping &amp; Ports</td><td><span class="badge badge-early">EARLY ROTATION</span></td><td class='pos'>+4.21%</td><td class='pos'>+2.79%</td><td>100.0%</td><td><b class="tk">KEX</b></td><td><b class="tk">DAC</b>, <b class="tk">KEX</b>, <b class="tk">GNK</b></td></tr><tr><td class='st-name'>Transportation - Trucking, LTL &amp; Ground Freight</td><td><span class="badge badge-hold">MIXED / CONSOLIDATING</span></td><td class='pos'>+4.69%</td><td class='neg'>-3.00%</td><td>81.8%</td><td><b class="tk">ODFL</b></td><td><b class="tk">SAIA</b>, <b class="tk">WERN</b>, <b class="tk">XPO</b></td></tr><tr><td class='st-name'>Transportation - Logistics, Warehousing &amp; Supply Chain Solutions</td><td><span class="badge badge-hold">MIXED / CONSOLIDATING</span></td><td class='pos'>+1.34%</td><td class='neg'>-3.42%</td><td>54.5%</td><td><b class="tk">UPS</b></td><td><b class="tk">FWRD</b>, <b class="tk">CHRW</b>, <b class="tk">GXO</b></td></tr><tr><td class='st-name'>Transportation - Infrastructure &amp; Equipment</td><td><span class="badge badge-hold">MIXED / CONSOLIDATING</span></td><td class='pos'>+1.18%</td><td class='neg'>-1.49%</td><td>66.7%</td><td><b class="tk">CAT</b></td><td><b class="tk">WNC</b>, <b class="tk">CAT</b>, <b class="tk">UNP</b></td></tr><tr><td class='st-name'>Transportation - Freight Rail &amp; Infrastructure</td><td><span class="badge badge-hold">MIXED / CONSOLIDATING</span></td><td class='neg'>-0.67%</td><td class='neg'>-1.86%</td><td>42.9%</td><td><b class="tk">UNP</b></td><td><b class="tk">UNP</b>, <b class="tk">NSC</b>, <b class="tk">CSX</b></td></tr><tr><td class='st-name'>Transportation - Urban Mobility &amp; Emerging Transport Tech</td><td><span class="badge badge-cool">FAILED ROTATION</span></td><td class='neg'>-1.96%</td><td class='neg'>-7.57%</td><td>45.5%</td><td><b class="tk">UBER</b></td><td><b class="tk">LYFT</b>, <b class="tk">SERV</b>, <b class="tk">CAR</b></td></tr><tr><td class='st-name'>Transportation - Air Travel &amp; Passenger Transportation</td><td><span class="badge badge-cool">FAILED ROTATION</span></td><td class='neg'>-4.19%</td><td class='pos'>+1.50%</td><td>0.0%</td><td><b class="tk">DAL</b></td><td><b class="tk">LUV</b>, <b class="tk">DAL</b>, <b class="tk">UAL</b></td></tr></tbody></table><p class='sc-note'>Marine is the early rotation. Infrastructure & equipment (CAT) is a high-conviction pullback inside a MIXED sub-theme, not the early signal.</p></div>
+</article>
+<article class="tier-card" id="card-Industrial-Automation-amp;-Robotics">
+  <header class="tc-header">
+    <div>
+      <div class="tc-kicker">⭐⭐</div>
+      <h3 class="tc-title">Industrial Automation &amp; Robotics</h3>
+    </div>
+    <div class="tc-sub"><span class="badge badge-hold">MIXED / CONSOLIDATING</span></div>
+  </header>
+  <div class="tc-body"><p>Last week's only EARLY theme is now MIXED. Factory & Process Automation is still tagged EARLY (equal-weight 1W +2.14%, breadth 75%, 1M already +7.32%). Sensors & vision and industrial software are MIXED or mature, and medical/service robotics failed. The parent equal-weight week is still +2.68% with breadth 70.9% and no mega-cap distortion.</p><p>Parent is <span class="badge badge-hold">MIXED / CONSOLIDATING</span>. Equal-weight 1W +2.68% / 1M +5.53% / 3M -4.38%. Cap-weight 1W +3.01% / 1M +7.09%. Breadth 70.9% (was 66.2% on 2026-09-25). Acceleration 1.36 pp. Down-day capture -0.56. 58.2% above the 30-week EMA. Coverage 98.2%. Distortion 0.33 pp, inside the 1.5 pp band. Effective N 16.6. Read both weights.</p><p class='tk-row'>Top 5 by 1W: <b class="tk">ARAY</b>, <b class="tk">LITE</b>, <b class="tk">SNPS</b>, <b class="tk">TER</b>, <b class="tk">CGNX</b></p><table class='subtbl'><thead><tr><th>Sub-theme</th><th>Signal</th><th>Eq 1W</th><th>Eq 1M</th><th>Breath</th><th>Highest Market Cap</th><th>Top 3 by 1W</th></tr></thead><tbody><tr><td class='st-name'>Automation - Factory &amp; Process Automation Systems</td><td><span class="badge badge-early">EARLY ROTATION</span></td><td class='pos'>+2.14%</td><td class='pos'>+7.32%</td><td>75.0%</td><td><b class="tk">SIEGY</b></td><td><b class="tk">TER</b>, <b class="tk">ROK</b>, <b class="tk">NOVT</b></td></tr><tr><td class='st-name'>Robotics - Sensors &amp; Vision Systems</td><td><span class="badge badge-mature">MATURE LEADERSHIP</span></td><td class='pos'>+1.74%</td><td class='pos'>+14.73%</td><td>66.7%</td><td><b class="tk">LITE</b></td><td><b class="tk">LITE</b>, <b class="tk">LSCC</b>, <b class="tk">OUST</b></td></tr><tr><td class='st-name'>Automation - Industrial IoT, Connectivity</td><td><span class="badge badge-mature">MATURE LEADERSHIP</span></td><td class='pos'>+3.20%</td><td class='pos'>+5.29%</td><td>71.4%</td><td><b class="tk">PANW</b></td><td><b class="tk">IOT</b>, <b class="tk">PANW</b>, <b class="tk">FTNT</b></td></tr><tr><td class='st-name'>Automation - Industrial Software &amp; Digital Twin</td><td><span class="badge badge-hold">MIXED / CONSOLIDATING</span></td><td class='pos'>+5.16%</td><td class='neg'>-3.77%</td><td>100.0%</td><td><b class="tk">CDNS</b></td><td><b class="tk">SNPS</b>, <b class="tk">CDNS</b>, <b class="tk">PATH</b></td></tr><tr><td class='st-name'>Automation - Industrial Sensors &amp; Machine Vision</td><td><span class="badge badge-hold">MIXED / CONSOLIDATING</span></td><td class='pos'>+3.39%</td><td class='pos'>+10.58%</td><td>90.0%</td><td><b class="tk">AME</b></td><td><b class="tk">CGNX</b>, <b class="tk">VPG</b>, <b class="tk">IPGP</b></td></tr><tr><td class='st-name'>Automation - Additive Manufacturing, 3D Printing</td><td><span class="badge badge-hold">MIXED / CONSOLIDATING</span></td><td class='pos'>+2.53%</td><td class='pos'>+10.59%</td><td>85.7%</td><td><b class="tk">CRS</b></td><td><b class="tk">DDD</b>, <b class="tk">SSYS</b>, <b class="tk">NNDM</b></td></tr><tr><td class='st-name'>Robotics - Medical, Service &amp; Mobility</td><td><span class="badge badge-cool">FAILED ROTATION</span></td><td class='pos'>+0.17%</td><td class='neg'>-3.29%</td><td>20.0%</td><td><b class="tk">ISRG</b></td><td><b class="tk">ARAY</b>, <b class="tk">SERV</b>, <b class="tk">PRCT</b></td></tr></tbody></table><p class='sc-note'>Downgrade versus 2026-09-25 is the parent signal, not a breakdown of factory automation. ROK and CGNX are the PPO confirms inside the complex.</p></div>
+</article>
+</section>
+
+<section class="section" id="s03">
+  <div class="section-eyebrow">03 · Tier 2</div>
+  <h2 class="section-title">Energy confirms, hardware equal-weight, mature leadership</h2>
+  
+<article class="tier-card" id="card-Energy---Traditional">
+  <header class="tc-header">
+    <div>
+      <div class="tc-kicker">⭐⭐</div>
+      <h3 class="tc-title">Energy - Traditional</h3>
+    </div>
+    <div class="tc-sub"><span class="badge badge-hold">MIXED / CONSOLIDATING</span></div>
+  </header>
+  <div class="tc-body"><p>Refining & midstream is EARLY: equal-weight 1W +1.77%, 1M −1.54%, breadth 60%, top name VLO. Integrated majors are mature leadership on 3M, not on the week. Oilfield services and nuclear failed. Parent equal-weight was flat-to-down. Do not buy the whole energy book off the refining print.</p><p>Parent is <span class="badge badge-hold">MIXED / CONSOLIDATING</span>. Equal-weight 1W -0.24% / 1M -6.16% / 3M +1.31%. Cap-weight 1W +0.74% / 1M -2.51%. Breadth 58.7% (was 19.4% on 2026-09-25). Acceleration 1.32 pp. Down-day capture 0.81. 30.8% above the 30-week EMA. Coverage 100.0%. Distortion 0.98 pp, inside the 1.5 pp band. Effective N 19.7. Read both weights.</p><p class='tk-row'>Top 5 by 1W: <b class="tk">PBF</b>, <b class="tk">MPC</b>, <b class="tk">DINO</b>, <b class="tk">SEI</b>, <b class="tk">TLN</b></p><table class='subtbl'><thead><tr><th>Sub-theme</th><th>Signal</th><th>Eq 1W</th><th>Eq 1M</th><th>Breath</th><th>Highest Market Cap</th><th>Top 3 by 1W</th></tr></thead><tbody><tr><td class='st-name'>Energy Base - Refining &amp; Midstream Infrastructure</td><td><span class="badge badge-early">EARLY ROTATION</span></td><td class='pos'>+1.77%</td><td class='neg'>-1.54%</td><td>60.0%</td><td><b class="tk">VLO</b></td><td><b class="tk">PBF</b>, <b class="tk">MPC</b>, <b class="tk">DINO</b></td></tr><tr><td class='st-name'>Energy Base - Oil &amp; Gas Exploration &amp; Production</td><td><span class="badge badge-mature">MATURE LEADERSHIP</span></td><td class='pos'>+0.45%</td><td class='neg'>-5.87%</td><td>63.2%</td><td><b class="tk">XOM</b></td><td><b class="tk">MTDR</b>, <b class="tk">MUR</b>, <b class="tk">PR</b></td></tr><tr><td class='st-name'>Energy Base - Integrated Energy Majors</td><td><span class="badge badge-mature">MATURE LEADERSHIP</span></td><td class='neu'>-0.00%</td><td class='neg'>-1.19%</td><td>85.7%</td><td><b class="tk">XOM</b></td><td><b class="tk">XOM</b>, <b class="tk">BP</b>, <b class="tk">CVX</b></td></tr><tr><td class='st-name'>Energy Base - Utilities &amp; Conventional Power Operators</td><td><span class="badge badge-hold">MIXED / CONSOLIDATING</span></td><td class='pos'>+0.76%</td><td class='neg'>-4.91%</td><td>85.7%</td><td><b class="tk">SO</b></td><td><b class="tk">PNW</b>, <b class="tk">CNP</b>, <b class="tk">ETR</b></td></tr><tr><td class='st-name'>Energy Base - Coal &amp; Thermal Power Generation</td><td><span class="badge badge-cool">FAILED ROTATION</span></td><td class='neg'>-2.38%</td><td class='neg'>-14.99%</td><td>27.3%</td><td><b class="tk">DUK</b></td><td><b class="tk">DTE</b>, <b class="tk">AEP</b>, <b class="tk">DUK</b></td></tr><tr><td class='st-name'>Energy Base - Nuclear Power &amp; Advanced Reactors</td><td><span class="badge badge-cool">FAILED ROTATION</span></td><td class='neg'>-2.76%</td><td class='neg'>-8.07%</td><td>28.6%</td><td><b class="tk">GEV</b></td><td><b class="tk">TLN</b>, <b class="tk">GEV</b>, <b class="tk">VST</b></td></tr><tr><td class='st-name'>Energy Base - Oilfield Services &amp; Equipment</td><td><span class="badge badge-cool">FAILED ROTATION</span></td><td class='neg'>-2.11%</td><td class='neg'>-6.18%</td><td>27.3%</td><td><b class="tk">BKR</b></td><td><b class="tk">SEI</b>, <b class="tk">PTEN</b>, <b class="tk">LBRT</b></td></tr></tbody></table><p class='sc-note'>VLO is the cap leader of the early sleeve. The high-conviction list does not feature a refining name this week — confirm before sizing.</p></div>
+</article>
+<article class="tier-card" id="card-Commodities---Energy">
+  <header class="tc-header">
+    <div>
+      <div class="tc-kicker">⭐⭐</div>
+      <h3 class="tc-title">Commodities - Energy</h3>
+    </div>
+    <div class="tc-sub"><span class="badge badge-hold">MIXED / CONSOLIDATING</span></div>
+  </header>
+  <div class="tc-body"><p>Crude oil equities are EARLY on the equal-weight tape (1W +1.40%, 1M −3.03%, breadth 62.5%) even as WTI itself fell on the week. Biofuels failed and are distorted by DAR. Parent is MIXED and mega-cap distorted. This is a second-order equity rotation, not a call on the front-month barrel.</p><p>Parent is <span class="badge badge-hold">MIXED / CONSOLIDATING</span>. Equal-weight 1W -1.08% / 1M -7.27% / 3M -0.53%. Cap-weight 1W +0.55% / 1M -5.60%. Breadth 41.2% (was 16.0% on 2026-09-25). Acceleration 1.85 pp. Down-day capture 1.52. 25.5% above the 30-week EMA. Coverage 100.0%. Mega-cap distorted (1.63 pp, cap leader <b class="tk">COP</b>). Lead with equal-weight. Read equal-weight.</p><p class='tk-row'>Top 5 by 1W: <b class="tk">MPC</b>, <b class="tk">CLMT</b>, <b class="tk">DAR</b>, <b class="tk">CNP</b>, <b class="tk">OXY</b></p><table class='subtbl'><thead><tr><th>Sub-theme</th><th>Signal</th><th>Eq 1W</th><th>Eq 1M</th><th>Breath</th><th>Highest Market Cap</th><th>Top 3 by 1W</th></tr></thead><tbody><tr><td class='st-name'>Comm Energy - Crude Oil</td><td><span class="badge badge-early">EARLY ROTATION</span></td><td class='pos'>+1.40%</td><td class='neg'>-3.03%</td><td>62.5%</td><td><b class="tk">COP</b></td><td><b class="tk">MPC</b>, <b class="tk">OXY</b>, <b class="tk">BP</b></td></tr><tr><td class='st-name'>Comm Energy - Natural Gas &amp; LNG</td><td><span class="badge badge-hold">MIXED / CONSOLIDATING</span></td><td class='neg'>-0.24%</td><td class='neg'>-7.74%</td><td>53.8%</td><td><b class="tk">LNG</b></td><td><b class="tk">CNP</b>, <b class="tk">NJR</b>, <b class="tk">UGI</b></td></tr><tr><td class='st-name'>Comm Energy - Biofuels &amp; Renewable Fuels</td><td><span class="badge badge-cool">FAILED ROTATION</span></td><td class='neg'>-2.16%</td><td class='pos'>+3.54%</td><td>28.6%</td><td><b class="tk">DAR</b></td><td><b class="tk">CLMT</b>, <b class="tk">DAR</b>, <b class="tk">MNTK</b></td></tr><tr><td class='st-name'>Comm Energy - Uranium &amp; Nuclear Fuels</td><td><span class="badge badge-cool">FAILED ROTATION</span></td><td class='neg'>-4.47%</td><td class='neg'>-17.01%</td><td>0.0%</td><td><b class="tk">CCJ</b></td><td><b class="tk">UEC</b>, <b class="tk">NXE</b>, <b class="tk">BWXT</b></td></tr></tbody></table><p class='sc-note'>COP is both the cap leader and a watch-only PPO name. Skip the failed uranium and biofuel sleeves.</p></div>
+</article>
+<article class="tier-card" id="card-Hardware">
+  <header class="tc-header">
+    <div>
+      <div class="tc-kicker">⭐⭐</div>
+      <h3 class="tc-title">Hardware</h3>
+    </div>
+    <div class="tc-sub"><span class="badge badge-hold">MIXED / CONSOLIDATING</span></div>
+  </header>
+  <div class="tc-body"><p>Equal-weight 1W +7.58% against cap-weight −0.28%. Distortion −7.86 pp, top name AAPL, Effective N 2.8 — the cap read is Apple, the tape is photonics and communications equipment. Next Gen and Photonics is mature leadership (equal-weight 1W +37.47%, breadth 93.3%) and already extended, not early. Quantum failed.</p><p>Parent is <span class="badge badge-hold">MIXED / CONSOLIDATING</span>. Equal-weight 1W +7.58% / 1M +16.67% / 3M -0.54%. Cap-weight 1W -0.28% / 1M +6.12%. Breadth 68.6% (was 73.7% on 2026-09-25). Acceleration -1.70 pp. Down-day capture 1.42. 69.0% above the 30-week EMA. Coverage 100.0%. Mega-cap distorted (-7.86 pp, cap leader <b class="tk">AAPL</b>). Lead with equal-weight. Read equal-weight.</p><p class='tk-row'>Top 5 by 1W: <b class="tk">GGRP</b>, <b class="tk">SYNA</b>, <b class="tk">ROG</b>, <b class="tk">VIAV</b>, <b class="tk">LITE</b></p><table class='subtbl'><thead><tr><th>Sub-theme</th><th>Signal</th><th>Eq 1W</th><th>Eq 1M</th><th>Breath</th><th>Highest Market Cap</th><th>Top 3 by 1W</th></tr></thead><tbody><tr><td class='st-name'>Hardware - Next Gen and Photonics</td><td><span class="badge badge-mature">MATURE LEADERSHIP</span></td><td class='pos'>+37.47%</td><td class='pos'>+47.24%</td><td>93.3%</td><td><b class="tk">GLW</b></td><td><b class="tk">GGRP</b>, <b class="tk">ROG</b>, <b class="tk">LITE</b></td></tr><tr><td class='st-name'>Hardware - Edge Computing</td><td><span class="badge badge-mature">MATURE LEADERSHIP</span></td><td class='pos'>+2.54%</td><td class='pos'>+16.43%</td><td>60.0%</td><td><b class="tk">AKAM</b></td><td><b class="tk">SYNA</b>, <b class="tk">FSLY</b>, <b class="tk">CEVA</b></td></tr><tr><td class='st-name'>Hardware - Networking Equipment</td><td><span class="badge badge-hold">MIXED / CONSOLIDATING</span></td><td class='pos'>+5.70%</td><td class='pos'>+10.19%</td><td>100.0%</td><td><b class="tk">CSCO</b></td><td><b class="tk">UI</b>, <b class="tk">HPE</b>, <b class="tk">EXTR</b></td></tr><tr><td class='st-name'>Hardware - Communications &amp; Telecom</td><td><span class="badge badge-hold">MIXED / CONSOLIDATING</span></td><td class='pos'>+4.28%</td><td class='pos'>+8.57%</td><td>70.0%</td><td><b class="tk">CSCO</b></td><td><b class="tk">VIAV</b>, <b class="tk">HPE</b>, <b class="tk">CIEN</b></td></tr><tr><td class='st-name'>Hardware - Industrial &amp; IoT</td><td><span class="badge badge-hold">MIXED / CONSOLIDATING</span></td><td class='pos'>+3.65%</td><td class='pos'>+11.20%</td><td>94.4%</td><td><b class="tk">TXN</b></td><td><b class="tk">AEIS</b>, <b class="tk">IOT</b>, <b class="tk">PI</b></td></tr><tr><td class='st-name'>Hardware - Data Center Infrastructure &amp; Servers</td><td><span class="badge badge-hold">MIXED / CONSOLIDATING</span></td><td class='pos'>+0.54%</td><td class='pos'>+14.38%</td><td>52.2%</td><td><b class="tk">IBM</b></td><td><b class="tk">NTAP</b>, <b class="tk">FN</b>, <b class="tk">VICR</b></td></tr><tr><td class='st-name'>Hardware - Consumer Electronics, PCs &amp; Peripherals</td><td><span class="badge badge-cool">FAILED ROTATION</span></td><td class='neg'>-0.53%</td><td class='pos'>+7.68%</td><td>50.0%</td><td><b class="tk">AAPL</b></td><td><b class="tk">TBCH</b>, <b class="tk">LOGI</b>, <b class="tk">HPQ</b></td></tr><tr><td class='st-name'>Hardware - Quantum Computing</td><td><span class="badge badge-cool">FAILED ROTATION</span></td><td class='neg'>-6.05%</td><td class='pos'>+9.34%</td><td>20.0%</td><td><b class="tk">IONQ</b></td><td><b class="tk">ARQQ</b>, <b class="tk">IONQ</b>, <b class="tk">RGTI</b></td></tr></tbody></table><p class='sc-note'>GLW, CSCO, and NOK are the high-conviction confirms. Do not read AAPL's week as the hardware signal.</p></div>
+</article>
+<article class="tier-card" id="card-Cybersecurity">
+  <header class="tc-header">
+    <div>
+      <div class="tc-kicker">⭐⭐</div>
+      <h3 class="tc-title">Cybersecurity</h3>
+    </div>
+    <div class="tc-sub"><span class="badge badge-mature">MATURE LEADERSHIP</span></div>
+  </header>
+  <div class="tc-body"><p>Still mature leadership. Equal-weight 1W +3.21% and 1M +3.12%, breadth 70.8%, but mega-cap distorted (+2.24 pp) by CRWD and 3M equal-weight is only +3.3% against cap-weight +29%. Platform security is the mature sleeve. IAM is mature on cap and weak on equal-weight.</p><p>Parent is <span class="badge badge-mature">MATURE LEADERSHIP</span>. Equal-weight 1W +3.21% / 1M +3.12% / 3M +3.30%. Cap-weight 1W +5.45% / 1M +17.94%. Breadth 70.8% (was 47.8% on 2026-09-25). Acceleration 1.28 pp. Down-day capture -6.06. 58.3% above the 30-week EMA. Coverage 100.0%. Mega-cap distorted (2.24 pp, cap leader <b class="tk">CRWD</b>). Lead with equal-weight. Read equal-weight.</p><p class='tk-row'>Top 5 by 1W: <b class="tk">BKYI</b>, <b class="tk">S</b>, <b class="tk">QLYS</b>, <b class="tk">TENB</b>, <b class="tk">OKTA</b></p><table class='subtbl'><thead><tr><th>Sub-theme</th><th>Signal</th><th>Eq 1W</th><th>Eq 1M</th><th>Breath</th><th>Highest Market Cap</th><th>Top 3 by 1W</th></tr></thead><tbody><tr><td class='st-name'>Cybersecurity - IAM &amp; Zero Trust</td><td><span class="badge badge-mature">MATURE LEADERSHIP</span></td><td class='pos'>+1.33%</td><td class='neg'>-4.97%</td><td>50.0%</td><td><b class="tk">OKTA</b></td><td><b class="tk">BKYI</b>, <b class="tk">S</b>, <b class="tk">OKTA</b></td></tr><tr><td class='st-name'>Cybersecurity - Platform, Cloud &amp; Application Security</td><td><span class="badge badge-mature">MATURE LEADERSHIP</span></td><td class='pos'>+5.81%</td><td class='pos'>+13.58%</td><td>91.7%</td><td><b class="tk">CRWD</b></td><td><b class="tk">S</b>, <b class="tk">QLYS</b>, <b class="tk">TENB</b></td></tr></tbody></table><p class='sc-note'>TENB is the high-conviction name inside platform security. Parent capture is −6.06 — it did not track SPY down days. Treat as hold-mature, not a fresh early entry.</p></div>
+</article>
+<article class="tier-card" id="card-Semiconductors">
+  <header class="tc-header">
+    <div>
+      <div class="tc-kicker">⭐⭐</div>
+      <h3 class="tc-title">Semiconductors</h3>
+    </div>
+    <div class="tc-sub"><span class="badge badge-mature">MATURE LEADERSHIP</span></div>
+  </header>
+  <div class="tc-body"><p>Mature leadership, and the leadership is equipment, packaging, and analog — not memory. Equipment equal-weight 1W +9.96% with breadth 100%. Packaging +10.22%. Memory failed (equal-weight 1W −2.79%, breadth 20%). Parent is not mega-cap distorted. Effective N is only 6.4 against 72 constituents because NVDA still dominates cap.</p><p>Parent is <span class="badge badge-mature">MATURE LEADERSHIP</span>. Equal-weight 1W +4.05% / 1M +18.88% / 3M -7.47%. Cap-weight 1W +3.25% / 1M +13.63%. Breadth 78.9% (was 92.3% on 2026-09-25). Acceleration 0.08 pp. Down-day capture 0.93. 75.7% above the 30-week EMA. Coverage 98.6%. Distortion -0.80 pp, inside the 1.5 pp band. Effective N 6.4. Read both weights.</p><p class='tk-row'>Top 5 by 1W: <b class="tk">WOLF</b>, <b class="tk">ACLS</b>, <b class="tk">SNPS</b>, <b class="tk">FORM</b>, <b class="tk">TER</b></p><table class='subtbl'><thead><tr><th>Sub-theme</th><th>Signal</th><th>Eq 1W</th><th>Eq 1M</th><th>Breath</th><th>Highest Market Cap</th><th>Top 3 by 1W</th></tr></thead><tbody><tr><td class='st-name'>Semis - Equipment, Lithography &amp; Deposition</td><td><span class="badge badge-mature">MATURE LEADERSHIP</span></td><td class='pos'>+9.96%</td><td class='pos'>+19.91%</td><td>100.0%</td><td><b class="tk">ASML</b></td><td><b class="tk">ACLS</b>, <b class="tk">AMAT</b>, <b class="tk">LRCX</b></td></tr><tr><td class='st-name'>Semis - Analog, Mixed-Signal &amp; Power Management</td><td><span class="badge badge-mature">MATURE LEADERSHIP</span></td><td class='pos'>+6.37%</td><td class='pos'>+21.09%</td><td>100.0%</td><td><b class="tk">TXN</b></td><td><b class="tk">STM</b>, <b class="tk">ON</b>, <b class="tk">VICR</b></td></tr><tr><td class='st-name'>Semis - Testing, Packaging &amp; Assembly</td><td><span class="badge badge-mature">MATURE LEADERSHIP</span></td><td class='pos'>+10.22%</td><td class='pos'>+39.17%</td><td>100.0%</td><td><b class="tk">ASX</b></td><td><b class="tk">FORM</b>, <b class="tk">TER</b>, <b class="tk">CAMT</b></td></tr><tr><td class='st-name'>Semis - Logic &amp; CPUs, GPUs, Accelerators</td><td><span class="badge badge-mature">MATURE LEADERSHIP</span></td><td class='neg'>-0.67%</td><td class='pos'>+18.33%</td><td>63.6%</td><td><b class="tk">TSM</b></td><td><b class="tk">UMC</b>, <b class="tk">TSM</b>, <b class="tk">MRVL</b></td></tr><tr><td class='st-name'>Semis - Emerging Technologies</td><td><span class="badge badge-mature">MATURE LEADERSHIP</span></td><td class='pos'>+2.63%</td><td class='pos'>+16.04%</td><td>78.3%</td><td><b class="tk">NVDA</b></td><td><b class="tk">WOLF</b>, <b class="tk">STM</b>, <b class="tk">ON</b></td></tr><tr><td class='st-name'>Semis - EDA Tools &amp; Design Software</td><td><span class="badge badge-mature">MATURE LEADERSHIP</span></td><td class='pos'>+7.76%</td><td class='pos'>+24.54%</td><td>83.3%</td><td><b class="tk">ARM</b></td><td><b class="tk">SNPS</b>, <b class="tk">PDFS</b>, <b class="tk">CDNS</b></td></tr><tr><td class='st-name'>Semis - Wireless &amp; Connectivity</td><td><span class="badge badge-hold">MIXED / CONSOLIDATING</span></td><td class='neg'>-0.02%</td><td class='pos'>+12.25%</td><td>60.0%</td><td><b class="tk">AVGO</b></td><td><b class="tk">MTSI</b>, <b class="tk">CRDO</b>, <b class="tk">NXPI</b></td></tr><tr><td class='st-name'>Semis - Memory &amp; Storage</td><td><span class="badge badge-cool">FAILED ROTATION</span></td><td class='neg'>-2.79%</td><td class='pos'>+11.20%</td><td>20.0%</td><td><b class="tk">MU</b></td><td><b class="tk">RMBS</b>, <b class="tk">MU</b>, <b class="tk">SNDK</b></td></tr></tbody></table><p class='sc-note'>No equipment name cleared high-conviction except as watchlist (LRCX). SLAB is the high-conviction wireless confirm. Do not chase the already-mature equipment week without a daily PPO reset.</p></div>
+</article>
+<article class="tier-card" id="card-Education-Technology">
+  <header class="tc-header">
+    <div>
+      <div class="tc-kicker">⭐</div>
+      <h3 class="tc-title">Education Technology</h3>
+    </div>
+    <div class="tc-sub"><span class="badge badge-hold">MIXED / CONSOLIDATING</span></div>
+  </header>
+  <div class="tc-body"><p>Workforce training is a small early sleeve: equal-weight 1W +1.17%, 1M −5.12%, breadth 66.7%, top name LAUR. Digital curriculum is MIXED. Parent is MIXED, not distorted, Effective N 10.2. Outside the industrial preference, so it stays Tier 2.</p><p>Parent is <span class="badge badge-hold">MIXED / CONSOLIDATING</span>. Equal-weight 1W +0.81% / 1M -5.16% / 3M -6.63%. Cap-weight 1W +1.27% / 1M -2.79%. Breadth 61.1% (was 44.4% on 2026-09-25). Acceleration 1.92 pp. Down-day capture -0.90. 61.1% above the 30-week EMA. Coverage 100.0%. Distortion 0.46 pp, inside the 1.5 pp band. Effective N 10.2. Read both weights.</p><p class='tk-row'>Top 5 by 1W: <b class="tk">LOPE</b>, <b class="tk">PRDO</b>, <b class="tk">CVSA</b>, <b class="tk">BNED</b>, <b class="tk">LAUR</b></p><table class='subtbl'><thead><tr><th>Sub-theme</th><th>Signal</th><th>Eq 1W</th><th>Eq 1M</th><th>Breath</th><th>Highest Market Cap</th><th>Top 3 by 1W</th></tr></thead><tbody><tr><td class='st-name'>Education - Workforce Training</td><td><span class="badge badge-early">EARLY ROTATION</span></td><td class='pos'>+1.17%</td><td class='neg'>-5.12%</td><td>66.7%</td><td><b class="tk">LAUR</b></td><td><b class="tk">PRDO</b>, <b class="tk">CVSA</b>, <b class="tk">LAUR</b></td></tr><tr><td class='st-name'>Education - Digital Curriculum</td><td><span class="badge badge-hold">MIXED / CONSOLIDATING</span></td><td class='pos'>+0.89%</td><td class='neg'>-5.25%</td><td>61.5%</td><td><b class="tk">PSO</b></td><td><b class="tk">LOPE</b>, <b class="tk">CVSA</b>, <b class="tk">BNED</b></td></tr></tbody></table><p class='sc-note'>LAUR is high-conviction. Size it as a probe. The sub-theme 3M is −15.8% — structure is not established.</p></div>
+</article>
+</section>
+
+<section class="section" id="s04">
+  <div class="section-eyebrow">04</div>
+  <h2 class="section-title">Cooling / Downgrades</h2>
+  <p>Signal rank versus the 2026-09-25 scorecard. Breadth columns are this week and prior week.</p>
+  <table class="scorecard-table">
+    <thead><tr><th>Theme</th><th>Prior</th><th>Current</th><th>Eq 1W</th><th>Breath</th><th>Prior breath</th><th>Accel</th></tr></thead>
+    <tbody><tr><td>Industrial Automation &amp; Robotics</td><td><span class="badge badge-early">EARLY ROTATION</span></td><td><span class="badge badge-hold">MIXED / CONSOLIDATING</span></td><td class='pos'>+2.68%</td><td>70.9%</td><td>66.2%</td><td>1.36</td></tr><tr><td>Nanotechnology</td><td><span class="badge badge-mature">MATURE LEADERSHIP</span></td><td><span class="badge badge-cool">FAILED ROTATION</span></td><td class='neg'>-2.77%</td><td>28.6%</td><td>67.6%</td><td>-3.24</td></tr><tr><td>Space Tech</td><td><span class="badge badge-hold">MIXED / CONSOLIDATING</span></td><td><span class="badge badge-cool">FAILED ROTATION</span></td><td class='neg'>-3.28%</td><td>26.7%</td><td>84.6%</td><td>3.83</td></tr><tr><td>Cloud Computing</td><td><span class="badge badge-mature">MATURE LEADERSHIP</span></td><td><span class="badge badge-hold">MIXED / CONSOLIDATING</span></td><td class='neg'>-0.73%</td><td>58.7%</td><td>50.0%</td><td>0.12</td></tr><tr><td>Environmental Sustainability</td><td><span class="badge badge-hold">MIXED / CONSOLIDATING</span></td><td><span class="badge badge-cool">FAILED ROTATION</span></td><td class='neg'>-0.87%</td><td>38.6%</td><td>43.2%</td><td>0.58</td></tr><tr><td>Conglomerates &amp; Diversified Holdings</td><td><span class="badge badge-hold">MIXED / CONSOLIDATING</span></td><td><span class="badge badge-cool">FAILED ROTATION</span></td><td class='neg'>-0.68%</td><td>33.3%</td><td>50.0%</td><td>-0.57</td></tr><tr><td>Electric Vehicles &amp; Mobility</td><td><span class="badge badge-hold">MIXED / CONSOLIDATING</span></td><td><span class="badge badge-cool">FAILED ROTATION</span></td><td class='neu'>+0.00%</td><td>29.3%</td><td>41.5%</td><td>-1.36</td></tr><tr><td>E-commerce</td><td><span class="badge badge-hold">MIXED / CONSOLIDATING</span></td><td><span class="badge badge-cool">FAILED ROTATION</span></td><td class='pos'>+0.16%</td><td>41.5%</td><td>47.7%</td><td>-0.31</td></tr><tr><td>Defense &amp; Aerospace</td><td><span class="badge badge-hold">MIXED / CONSOLIDATING</span></td><td><span class="badge badge-cool">FAILED ROTATION</span></td><td class='neg'>-1.90%</td><td>31.5%</td><td>50.0%</td><td>-1.19</td></tr><tr><td>Healthcare &amp; Biotech</td><td><span class="badge badge-hold">MIXED / CONSOLIDATING</span></td><td><span class="badge badge-cool">FAILED ROTATION</span></td><td class='neg'>-1.16%</td><td>26.1%</td><td>50.4%</td><td>-1.96</td></tr><tr><td>Big Data &amp; Analytics</td><td><span class="badge badge-hold">MIXED / CONSOLIDATING</span></td><td><span class="badge badge-cool">FAILED ROTATION</span></td><td class='neg'>-3.44%</td><td>20.0%</td><td>50.0%</td><td>-1.18</td></tr></tbody>
+  </table>
+</section>
+
+<section class="section" id="s05">
+  <div class="section-eyebrow">05</div>
+  <h2 class="section-title">Theme Scorecard</h2>
+  <p>Themes already written in Tier 1 or Tier 2 are omitted. Remaining non-FAILED rows are open. FAILED rows are collapsed. Effective N is diversification: how many names the cap weights actually represent. Breath is 1W breadth.</p>
+  
+<div class="sc-row">
+  <div class="sc-head-row">
+    <div class="sc-theme">Business Services &amp; Consulting</div>
+    <div><span class="badge badge-mature">MATURE</span></div>
+  </div>
+  <div class="sc-metrics">
+    <div><div class="sc-m-lab">Eq 1W</div><div class="sc-m-val pos">+0.16%</div></div>
+    <div><div class="sc-m-lab">Eq 1M</div><div class="sc-m-val neg">-8.12%</div></div>
+    <div><div class="sc-m-lab">Eq 3M</div><div class="sc-m-val pos">+9.13%</div></div>
+    <div><div class="sc-m-lab">Breath</div><div class="sc-m-val">45.5%</div></div>
+    <div><div class="sc-m-lab">Accel</div><div class="sc-m-val">4.41</div></div>
+    <div><div class="sc-m-lab">Eff. N</div><div class="sc-m-val">6.8</div></div>
+    <div><div class="sc-m-lab">Down-day</div><div class="sc-m-val pos">0.59</div></div>
+    <div><div class="sc-m-lab">Highest Market Cap</div><div class="sc-m-val"><b class="tk">ACN</b></div></div>
+  </div>
+  <p class="sc-note">Signal changed from FAILED ROTATION to MATURE LEADERSHIP. Equal-weight 1W +0.16% / 1M -8.12% / 3M +9.13%. Cap-weight 1W +3.58%. Breadth 45.5%. Breadth was 18.2% on 2026-09-25. Acceleration 4.41 pp. Effective N 6.8 is how many names the cap weights actually represent. Down-day capture 0.59. Highest market cap <b class="tk">ACN</b>. Mega-cap distorted (3.42 pp) by <b class="tk">ACN</b> — read equal-weight. Highest 1W: <b class="tk">ACN</b>, <b class="tk">INFY</b>, <b class="tk">EXPO</b>, <b class="tk">WIT</b>, <b class="tk">EXLS</b>.</p>
+</div>
+<div class="sc-row">
+  <div class="sc-head-row">
+    <div class="sc-theme">Software</div>
+    <div><span class="badge badge-mature">MATURE</span></div>
+  </div>
+  <div class="sc-metrics">
+    <div><div class="sc-m-lab">Eq 1W</div><div class="sc-m-val pos">+1.30%</div></div>
+    <div><div class="sc-m-lab">Eq 1M</div><div class="sc-m-val neg">-6.02%</div></div>
+    <div><div class="sc-m-lab">Eq 3M</div><div class="sc-m-val pos">+14.09%</div></div>
+    <div><div class="sc-m-lab">Breath</div><div class="sc-m-val">64.3%</div></div>
+    <div><div class="sc-m-lab">Accel</div><div class="sc-m-val">0.32</div></div>
+    <div><div class="sc-m-lab">Eff. N</div><div class="sc-m-val">2.0</div></div>
+    <div><div class="sc-m-lab">Down-day</div><div class="sc-m-val pos">0.85</div></div>
+    <div><div class="sc-m-lab">Highest Market Cap</div><div class="sc-m-val"><b class="tk">MSFT</b></div></div>
+  </div>
+  <p class="sc-note">Signal changed from FAILED ROTATION to MATURE LEADERSHIP. Equal-weight 1W +1.30% / 1M -6.02% / 3M +14.09%. Cap-weight 1W +0.48%. Breadth 64.3%. Breadth was 35.0% on 2026-09-25. Acceleration 0.32 pp. Effective N 2.0 is how many names the cap weights actually represent. Down-day capture 0.85. Highest market cap <b class="tk">MSFT</b>. Highest 1W: <b class="tk">TENB</b>, <b class="tk">FROG</b>, <b class="tk">PD</b>, <b class="tk">GTLB</b>, <b class="tk">PATH</b>.</p>
+</div>
+<div class="sc-row">
+  <div class="sc-head-row">
+    <div class="sc-theme">Telecommunications</div>
+    <div><span class="badge badge-hold">MIXED</span></div>
+  </div>
+  <div class="sc-metrics">
+    <div><div class="sc-m-lab">Eq 1W</div><div class="sc-m-val neg">-0.35%</div></div>
+    <div><div class="sc-m-lab">Eq 1M</div><div class="sc-m-val pos">+2.64%</div></div>
+    <div><div class="sc-m-lab">Eq 3M</div><div class="sc-m-val pos">+2.74%</div></div>
+    <div><div class="sc-m-lab">Breath</div><div class="sc-m-val">40.6%</div></div>
+    <div><div class="sc-m-lab">Accel</div><div class="sc-m-val">1.95</div></div>
+    <div><div class="sc-m-lab">Eff. N</div><div class="sc-m-val">3.9</div></div>
+    <div><div class="sc-m-lab">Down-day</div><div class="sc-m-val pos">0.93</div></div>
+    <div><div class="sc-m-lab">Highest Market Cap</div><div class="sc-m-val"><b class="tk">SPCX</b></div></div>
+  </div>
+  <p class="sc-note">Equal-weight 1W -0.35% / 1M +2.64% / 3M +2.74%. Cap-weight 1W +2.52%. Breadth 40.6%. Breadth was 48.4% on 2026-09-25. Acceleration 1.95 pp. Effective N 3.9 is how many names the cap weights actually represent. Down-day capture 0.93. Highest market cap <b class="tk">SPCX</b>. Mega-cap distorted (2.87 pp) by <b class="tk">SPCX</b> — read equal-weight. Highest 1W: <b class="tk">CIEN</b>, <b class="tk">SPCX</b>, <b class="tk">TWLO</b>, <b class="tk">ECHO</b>, <b class="tk">ZM</b>.</p>
+</div>
+<div class="sc-row">
+  <div class="sc-head-row">
+    <div class="sc-theme">Cloud Computing</div>
+    <div><span class="badge badge-hold">MIXED</span></div>
+  </div>
+  <div class="sc-metrics">
+    <div><div class="sc-m-lab">Eq 1W</div><div class="sc-m-val neg">-0.73%</div></div>
+    <div><div class="sc-m-lab">Eq 1M</div><div class="sc-m-val pos">+3.04%</div></div>
+    <div><div class="sc-m-lab">Eq 3M</div><div class="sc-m-val pos">+6.58%</div></div>
+    <div><div class="sc-m-lab">Breath</div><div class="sc-m-val">58.7%</div></div>
+    <div><div class="sc-m-lab">Accel</div><div class="sc-m-val">0.12</div></div>
+    <div><div class="sc-m-lab">Eff. N</div><div class="sc-m-val">5.2</div></div>
+    <div><div class="sc-m-lab">Down-day</div><div class="sc-m-val neg">1.07</div></div>
+    <div><div class="sc-m-lab">Highest Market Cap</div><div class="sc-m-val"><b class="tk">MSFT</b></div></div>
+  </div>
+  <p class="sc-note">Signal changed from MATURE LEADERSHIP to MIXED / CONSOLIDATING. Equal-weight 1W -0.73% / 1M +3.04% / 3M +6.58%. Cap-weight 1W +0.45%. Breadth 58.7%. Breadth was 50.0% on 2026-09-25. Acceleration 0.12 pp. Effective N 5.2 is how many names the cap weights actually represent. Down-day capture 1.07. Highest market cap <b class="tk">MSFT</b>. Highest 1W: <b class="tk">FROG</b>, <b class="tk">TWLO</b>, <b class="tk">PD</b>, <b class="tk">ESTC</b>, <b class="tk">SHOP</b>.</p>
+</div>
+<div class="sc-row">
+  <div class="sc-head-row">
+    <div class="sc-theme">Smart Home &amp; IoT</div>
+    <div><span class="badge badge-hold">MIXED</span></div>
+  </div>
+  <div class="sc-metrics">
+    <div><div class="sc-m-lab">Eq 1W</div><div class="sc-m-val pos">+0.65%</div></div>
+    <div><div class="sc-m-lab">Eq 1M</div><div class="sc-m-val pos">+2.27%</div></div>
+    <div><div class="sc-m-lab">Eq 3M</div><div class="sc-m-val neg">-4.79%</div></div>
+    <div><div class="sc-m-lab">Breath</div><div class="sc-m-val">45.8%</div></div>
+    <div><div class="sc-m-lab">Accel</div><div class="sc-m-val">-0.44</div></div>
+    <div><div class="sc-m-lab">Eff. N</div><div class="sc-m-val">8.4</div></div>
+    <div><div class="sc-m-lab">Down-day</div><div class="sc-m-val neg">1.30</div></div>
+    <div><div class="sc-m-lab">Highest Market Cap</div><div class="sc-m-val"><b class="tk">CARR</b></div></div>
+  </div>
+  <p class="sc-note">Equal-weight 1W +0.65% / 1M +2.27% / 3M -4.79%. Cap-weight 1W +1.03%. Breadth 45.8%. Breadth was 52.0% on 2026-09-25. Acceleration -0.44 pp. Effective N 8.4 is how many names the cap weights actually represent. Down-day capture 1.30. Highest market cap <b class="tk">CARR</b>. Highest 1W: <b class="tk">BB</b>, <b class="tk">UI</b>, <b class="tk">SMTC</b>, <b class="tk">NTGR</b>, <b class="tk">PI</b>.</p>
+</div>
+<div class="sc-row">
+  <div class="sc-head-row">
+    <div class="sc-theme">Artificial Intelligence</div>
+    <div><span class="badge badge-hold">MIXED</span></div>
+  </div>
+  <div class="sc-metrics">
+    <div><div class="sc-m-lab">Eq 1W</div><div class="sc-m-val neg">-0.52%</div></div>
+    <div><div class="sc-m-lab">Eq 1M</div><div class="sc-m-val pos">+0.10%</div></div>
+    <div><div class="sc-m-lab">Eq 3M</div><div class="sc-m-val pos">+0.38%</div></div>
+    <div><div class="sc-m-lab">Breath</div><div class="sc-m-val">52.4%</div></div>
+    <div><div class="sc-m-lab">Accel</div><div class="sc-m-val">-2.66</div></div>
+    <div><div class="sc-m-lab">Eff. N</div><div class="sc-m-val">1.8</div></div>
+    <div><div class="sc-m-lab">Down-day</div><div class="sc-m-val pos">0.07</div></div>
+    <div><div class="sc-m-lab">Highest Market Cap</div><div class="sc-m-val"><b class="tk">GOOGL</b></div></div>
+  </div>
+  <p class="sc-note">Equal-weight 1W -0.52% / 1M +0.10% / 3M +0.38%. Cap-weight 1W -0.99%. Breadth 52.4%. Breadth was 58.6% on 2026-09-25. Acceleration -2.66 pp. Effective N 1.8 is how many names the cap weights actually represent. Down-day capture 0.07. Highest market cap <b class="tk">GOOGL</b>. Highest 1W: <b class="tk">RXRX</b>, <b class="tk">AI</b>, <b class="tk">MGNI</b>, <b class="tk">SNAP</b>, <b class="tk">EXLS</b>.</p>
+</div>
+  <details class="failed-block">
+    <summary>FAILED themes (18)</summary>
+    
+<div class="sc-row">
+  <div class="sc-head-row">
+    <div class="sc-theme">Space Tech</div>
+    <div><span class="badge badge-cool">FAILED</span></div>
+  </div>
+  <div class="sc-metrics">
+    <div><div class="sc-m-lab">Eq 1W</div><div class="sc-m-val neg">-3.28%</div></div>
+    <div><div class="sc-m-lab">Eq 1M</div><div class="sc-m-val pos">+2.72%</div></div>
+    <div><div class="sc-m-lab">Eq 3M</div><div class="sc-m-val neg">-16.01%</div></div>
+    <div><div class="sc-m-lab">Breath</div><div class="sc-m-val">26.7%</div></div>
+    <div><div class="sc-m-lab">Accel</div><div class="sc-m-val">3.83</div></div>
+    <div><div class="sc-m-lab">Eff. N</div><div class="sc-m-val">1.1</div></div>
+    <div><div class="sc-m-lab">Down-day</div><div class="sc-m-val pos">0.32</div></div>
+    <div><div class="sc-m-lab">Highest Market Cap</div><div class="sc-m-val"><b class="tk">SPCX</b></div></div>
+  </div>
+  <p class="sc-note">Signal changed from MIXED / CONSOLIDATING to FAILED ROTATION. Equal-weight 1W -3.28% / 1M +2.72% / 3M -16.01%. Cap-weight 1W +6.52%. Breadth 26.7%. Breadth was 84.6% on 2026-09-25. Acceleration 3.83 pp. Effective N 1.1 is how many names the cap weights actually represent. Down-day capture 0.32. Highest market cap <b class="tk">SPCX</b>. Mega-cap distorted (9.80 pp) by <b class="tk">SPCX</b> — read equal-weight. Highest 1W: <b class="tk">SPCX</b>, <b class="tk">MOG.A</b>, <b class="tk">GSAT</b>, <b class="tk">PL</b>, <b class="tk">RKLB</b>.</p>
+</div>
+<div class="sc-row">
+  <div class="sc-head-row">
+    <div class="sc-theme">Real Estate &amp; REITs</div>
+    <div><span class="badge badge-cool">FAILED</span></div>
+  </div>
+  <div class="sc-metrics">
+    <div><div class="sc-m-lab">Eq 1W</div><div class="sc-m-val neg">-1.61%</div></div>
+    <div><div class="sc-m-lab">Eq 1M</div><div class="sc-m-val neg">-6.32%</div></div>
+    <div><div class="sc-m-lab">Eq 3M</div><div class="sc-m-val neg">-10.09%</div></div>
+    <div><div class="sc-m-lab">Breath</div><div class="sc-m-val">24.2%</div></div>
+    <div><div class="sc-m-lab">Accel</div><div class="sc-m-val">0.73</div></div>
+    <div><div class="sc-m-lab">Eff. N</div><div class="sc-m-val">38.8</div></div>
+    <div><div class="sc-m-lab">Down-day</div><div class="sc-m-val pos">0.90</div></div>
+    <div><div class="sc-m-lab">Highest Market Cap</div><div class="sc-m-val"><b class="tk">MAR</b></div></div>
+  </div>
+  <p class="sc-note">Equal-weight 1W -1.61% / 1M -6.32% / 3M -10.09%. Cap-weight 1W -0.32%. Breadth 24.2%. Breadth was 36.3% on 2026-09-25. Acceleration 0.73 pp. Effective N 38.8 is how many names the cap weights actually represent. Down-day capture 0.90. Highest market cap <b class="tk">MAR</b>. Highest 1W: <b class="tk">CCL</b>, <b class="tk">RCL</b>, <b class="tk">MTN</b>, <b class="tk">NCLH</b>, <b class="tk">PEB</b>.</p>
+</div>
+<div class="sc-row">
+  <div class="sc-head-row">
+    <div class="sc-theme">Environmental Sustainability</div>
+    <div><span class="badge badge-cool">FAILED</span></div>
+  </div>
+  <div class="sc-metrics">
+    <div><div class="sc-m-lab">Eq 1W</div><div class="sc-m-val neg">-0.87%</div></div>
+    <div><div class="sc-m-lab">Eq 1M</div><div class="sc-m-val neg">-4.42%</div></div>
+    <div><div class="sc-m-lab">Eq 3M</div><div class="sc-m-val neg">-8.14%</div></div>
+    <div><div class="sc-m-lab">Breath</div><div class="sc-m-val">38.6%</div></div>
+    <div><div class="sc-m-lab">Accel</div><div class="sc-m-val">0.58</div></div>
+    <div><div class="sc-m-lab">Eff. N</div><div class="sc-m-val">13.7</div></div>
+    <div><div class="sc-m-lab">Down-day</div><div class="sc-m-val pos">0.74</div></div>
+    <div><div class="sc-m-lab">Highest Market Cap</div><div class="sc-m-val"><b class="tk">LIN</b></div></div>
+  </div>
+  <p class="sc-note">Signal changed from MIXED / CONSOLIDATING to FAILED ROTATION. Equal-weight 1W -0.87% / 1M -4.42% / 3M -8.14%. Cap-weight 1W -0.32%. Breadth 38.6%. Breadth was 43.2% on 2026-09-25. Acceleration 0.58 pp. Effective N 13.7 is how many names the cap weights actually represent. Down-day capture 0.74. Highest market cap <b class="tk">LIN</b>. Highest 1W: <b class="tk">CWCO</b>, <b class="tk">GRC</b>, <b class="tk">JCI</b>, <b class="tk">ZWS</b>, <b class="tk">LIN</b>.</p>
+</div>
+<div class="sc-row">
+  <div class="sc-head-row">
+    <div class="sc-theme">Consumer Goods &amp; Retail</div>
+    <div><span class="badge badge-cool">FAILED</span></div>
+  </div>
+  <div class="sc-metrics">
+    <div><div class="sc-m-lab">Eq 1W</div><div class="sc-m-val neg">-0.52%</div></div>
+    <div><div class="sc-m-lab">Eq 1M</div><div class="sc-m-val neg">-6.85%</div></div>
+    <div><div class="sc-m-lab">Eq 3M</div><div class="sc-m-val neg">-9.87%</div></div>
+    <div><div class="sc-m-lab">Breath</div><div class="sc-m-val">38.2%</div></div>
+    <div><div class="sc-m-lab">Accel</div><div class="sc-m-val">-0.09</div></div>
+    <div><div class="sc-m-lab">Eff. N</div><div class="sc-m-val">19.4</div></div>
+    <div><div class="sc-m-lab">Down-day</div><div class="sc-m-val pos">0.76</div></div>
+    <div><div class="sc-m-lab">Highest Market Cap</div><div class="sc-m-val"><b class="tk">KO</b></div></div>
+  </div>
+  <p class="sc-note">Equal-weight 1W -0.52% / 1M -6.85% / 3M -9.87%. Cap-weight 1W -1.30%. Breadth 38.2%. Breadth was 38.6% on 2026-09-25. Acceleration -0.09 pp. Effective N 19.4 is how many names the cap weights actually represent. Down-day capture 0.76. Highest market cap <b class="tk">KO</b>. Highest 1W: <b class="tk">SFIX</b>, <b class="tk">MAT</b>, <b class="tk">BURL</b>, <b class="tk">BODI</b>, <b class="tk">WING</b>.</p>
+</div>
+<div class="sc-row">
+  <div class="sc-head-row">
+    <div class="sc-theme">Commodities - Agriculture</div>
+    <div><span class="badge badge-cool">FAILED</span></div>
+  </div>
+  <div class="sc-metrics">
+    <div><div class="sc-m-lab">Eq 1W</div><div class="sc-m-val neg">-4.45%</div></div>
+    <div><div class="sc-m-lab">Eq 1M</div><div class="sc-m-val neg">-13.19%</div></div>
+    <div><div class="sc-m-lab">Eq 3M</div><div class="sc-m-val neg">-7.57%</div></div>
+    <div><div class="sc-m-lab">Breath</div><div class="sc-m-val">45.5%</div></div>
+    <div><div class="sc-m-lab">Accel</div><div class="sc-m-val">-0.15</div></div>
+    <div><div class="sc-m-lab">Eff. N</div><div class="sc-m-val">11.8</div></div>
+    <div><div class="sc-m-lab">Down-day</div><div class="sc-m-val neg">1.45</div></div>
+    <div><div class="sc-m-lab">Highest Market Cap</div><div class="sc-m-val"><b class="tk">NTR</b></div></div>
+  </div>
+  <p class="sc-note">Equal-weight 1W -4.45% / 1M -13.19% / 3M -7.57%. Cap-weight 1W -3.15%. Breadth 45.5%. Breadth was 4.5% on 2026-09-25. Acceleration -0.15 pp. Effective N 11.8 is how many names the cap weights actually represent. Down-day capture 1.45. Highest market cap <b class="tk">NTR</b>. Highest 1W: <b class="tk">PAHC</b>, <b class="tk">CSAN</b>, <b class="tk">HRL</b>, <b class="tk">GPRE</b>, <b class="tk">TSN</b>.</p>
+</div>
+<div class="sc-row">
+  <div class="sc-head-row">
+    <div class="sc-theme">Agriculture &amp; FoodTech</div>
+    <div><span class="badge badge-cool">FAILED</span></div>
+  </div>
+  <div class="sc-metrics">
+    <div><div class="sc-m-lab">Eq 1W</div><div class="sc-m-val neg">-4.93%</div></div>
+    <div><div class="sc-m-lab">Eq 1M</div><div class="sc-m-val neg">-9.27%</div></div>
+    <div><div class="sc-m-lab">Eq 3M</div><div class="sc-m-val neg">-4.24%</div></div>
+    <div><div class="sc-m-lab">Breath</div><div class="sc-m-val">41.7%</div></div>
+    <div><div class="sc-m-lab">Accel</div><div class="sc-m-val">-0.23</div></div>
+    <div><div class="sc-m-lab">Eff. N</div><div class="sc-m-val">7.2</div></div>
+    <div><div class="sc-m-lab">Down-day</div><div class="sc-m-val neg">1.19</div></div>
+    <div><div class="sc-m-lab">Highest Market Cap</div><div class="sc-m-val"><b class="tk">DE</b></div></div>
+  </div>
+  <p class="sc-note">Equal-weight 1W -4.93% / 1M -9.27% / 3M -4.24%. Cap-weight 1W -1.17%. Breadth 41.7%. Breadth was 22.2% on 2026-09-25. Acceleration -0.23 pp. Effective N 7.2 is how many names the cap weights actually represent. Down-day capture 1.19. Highest market cap <b class="tk">DE</b>. Mega-cap distorted (3.76 pp) by <b class="tk">DE</b> — read equal-weight. Highest 1W: <b class="tk">DNA</b>, <b class="tk">CBUS</b>, <b class="tk">HYFM</b>, <b class="tk">USFD</b>, <b class="tk">CNH</b>.</p>
+</div>
+<div class="sc-row">
+  <div class="sc-head-row">
+    <div class="sc-theme">E-commerce</div>
+    <div><span class="badge badge-cool">FAILED</span></div>
+  </div>
+  <div class="sc-metrics">
+    <div><div class="sc-m-lab">Eq 1W</div><div class="sc-m-val pos">+0.16%</div></div>
+    <div><div class="sc-m-lab">Eq 1M</div><div class="sc-m-val neg">-4.27%</div></div>
+    <div><div class="sc-m-lab">Eq 3M</div><div class="sc-m-val neg">-3.94%</div></div>
+    <div><div class="sc-m-lab">Breath</div><div class="sc-m-val">41.5%</div></div>
+    <div><div class="sc-m-lab">Accel</div><div class="sc-m-val">-0.31</div></div>
+    <div><div class="sc-m-lab">Eff. N</div><div class="sc-m-val">6.6</div></div>
+    <div><div class="sc-m-lab">Down-day</div><div class="sc-m-val neg">1.41</div></div>
+    <div><div class="sc-m-lab">Highest Market Cap</div><div class="sc-m-val"><b class="tk">AMZN</b></div></div>
+  </div>
+  <p class="sc-note">Signal changed from MIXED / CONSOLIDATING to FAILED ROTATION. Equal-weight 1W +0.16% / 1M -4.27% / 3M -3.94%. Cap-weight 1W -1.15%. Breadth 41.5%. Breadth was 47.7% on 2026-09-25. Acceleration -0.31 pp. Effective N 6.6 is how many names the cap weights actually represent. Down-day capture 1.41. Highest market cap <b class="tk">AMZN</b>. Highest 1W: <b class="tk">BIRD</b>, <b class="tk">BURL</b>, <b class="tk">SHOP</b>, <b class="tk">ETSY</b>, <b class="tk">VVV</b>.</p>
+</div>
+<div class="sc-row">
+  <div class="sc-head-row">
+    <div class="sc-theme">Conglomerates &amp; Diversified Holdings</div>
+    <div><span class="badge badge-cool">FAILED</span></div>
+  </div>
+  <div class="sc-metrics">
+    <div><div class="sc-m-lab">Eq 1W</div><div class="sc-m-val neg">-0.68%</div></div>
+    <div><div class="sc-m-lab">Eq 1M</div><div class="sc-m-val neg">-3.54%</div></div>
+    <div><div class="sc-m-lab">Eq 3M</div><div class="sc-m-val neg">-4.75%</div></div>
+    <div><div class="sc-m-lab">Breath</div><div class="sc-m-val">33.3%</div></div>
+    <div><div class="sc-m-lab">Accel</div><div class="sc-m-val">-0.57</div></div>
+    <div><div class="sc-m-lab">Eff. N</div><div class="sc-m-val">1.1</div></div>
+    <div><div class="sc-m-lab">Down-day</div><div class="sc-m-val pos">-0.20</div></div>
+    <div><div class="sc-m-lab">Highest Market Cap</div><div class="sc-m-val"><b class="tk">BRK-B</b></div></div>
+  </div>
+  <p class="sc-note">Signal changed from MIXED / CONSOLIDATING to FAILED ROTATION. Equal-weight 1W -0.68% / 1M -3.54% / 3M -4.75%. Cap-weight 1W -0.62%. Breadth 33.3%. Breadth was 50.0% on 2026-09-25. Acceleration -0.57 pp. Effective N 1.1 is how many names the cap weights actually represent. Down-day capture -0.20. Highest market cap <b class="tk">BRK-B</b>. Highest 1W: <b class="tk">L</b>, <b class="tk">CSL</b>, <b class="tk">BRK-B</b>, <b class="tk">ROP</b>, <b class="tk">DOV</b>.</p>
+</div>
+<div class="sc-row">
+  <div class="sc-head-row">
+    <div class="sc-theme">Financials - Traditional</div>
+    <div><span class="badge badge-cool">FAILED</span></div>
+  </div>
+  <div class="sc-metrics">
+    <div><div class="sc-m-lab">Eq 1W</div><div class="sc-m-val neg">-1.79%</div></div>
+    <div><div class="sc-m-lab">Eq 1M</div><div class="sc-m-val neg">-5.89%</div></div>
+    <div><div class="sc-m-lab">Eq 3M</div><div class="sc-m-val neg">-4.50%</div></div>
+    <div><div class="sc-m-lab">Breath</div><div class="sc-m-val">13.5%</div></div>
+    <div><div class="sc-m-lab">Accel</div><div class="sc-m-val">-0.91</div></div>
+    <div><div class="sc-m-lab">Eff. N</div><div class="sc-m-val">25.9</div></div>
+    <div><div class="sc-m-lab">Down-day</div><div class="sc-m-val neg">3.01</div></div>
+    <div><div class="sc-m-lab">Highest Market Cap</div><div class="sc-m-val"><b class="tk">JPM</b></div></div>
+  </div>
+  <p class="sc-note">Equal-weight 1W -1.79% / 1M -5.89% / 3M -4.50%. Cap-weight 1W -2.66%. Breadth 13.5%. Breadth was 16.5% on 2026-09-25. Acceleration -0.91 pp. Effective N 25.9 is how many names the cap weights actually represent. Down-day capture 3.01. Highest market cap <b class="tk">JPM</b>. Highest 1W: <b class="tk">WRB</b>, <b class="tk">PGR</b>, <b class="tk">HIG</b>, <b class="tk">PNFP</b>, <b class="tk">L</b>.</p>
+</div>
+<div class="sc-row">
+  <div class="sc-head-row">
+    <div class="sc-theme">Big Data &amp; Analytics</div>
+    <div><span class="badge badge-cool">FAILED</span></div>
+  </div>
+  <div class="sc-metrics">
+    <div><div class="sc-m-lab">Eq 1W</div><div class="sc-m-val neg">-3.44%</div></div>
+    <div><div class="sc-m-lab">Eq 1M</div><div class="sc-m-val neg">-8.72%</div></div>
+    <div><div class="sc-m-lab">Eq 3M</div><div class="sc-m-val pos">+5.44%</div></div>
+    <div><div class="sc-m-lab">Breath</div><div class="sc-m-val">20.0%</div></div>
+    <div><div class="sc-m-lab">Accel</div><div class="sc-m-val">-1.18</div></div>
+    <div><div class="sc-m-lab">Eff. N</div><div class="sc-m-val">7.6</div></div>
+    <div><div class="sc-m-lab">Down-day</div><div class="sc-m-val pos">0.53</div></div>
+    <div><div class="sc-m-lab">Highest Market Cap</div><div class="sc-m-val"><b class="tk">SAP</b></div></div>
+  </div>
+  <p class="sc-note">Signal changed from MIXED / CONSOLIDATING to FAILED ROTATION. Equal-weight 1W -3.44% / 1M -8.72% / 3M +5.44%. Cap-weight 1W -2.78%. Breadth 20.0%. Breadth was 50.0% on 2026-09-25. Acceleration -1.18 pp. Effective N 7.6 is how many names the cap weights actually represent. Down-day capture 0.53. Highest market cap <b class="tk">SAP</b>. Highest 1W: <b class="tk">TDC</b>, <b class="tk">AI</b>, <b class="tk">SNOW</b>, <b class="tk">NICE</b>, <b class="tk">NWSA</b>.</p>
+</div>
+<div class="sc-row">
+  <div class="sc-head-row">
+    <div class="sc-theme">Defense &amp; Aerospace</div>
+    <div><span class="badge badge-cool">FAILED</span></div>
+  </div>
+  <div class="sc-metrics">
+    <div><div class="sc-m-lab">Eq 1W</div><div class="sc-m-val neg">-1.90%</div></div>
+    <div><div class="sc-m-lab">Eq 1M</div><div class="sc-m-val neg">-4.27%</div></div>
+    <div><div class="sc-m-lab">Eq 3M</div><div class="sc-m-val neg">-13.36%</div></div>
+    <div><div class="sc-m-lab">Breath</div><div class="sc-m-val">31.5%</div></div>
+    <div><div class="sc-m-lab">Accel</div><div class="sc-m-val">-1.19</div></div>
+    <div><div class="sc-m-lab">Eff. N</div><div class="sc-m-val">11.6</div></div>
+    <div><div class="sc-m-lab">Down-day</div><div class="sc-m-val neg">1.19</div></div>
+    <div><div class="sc-m-lab">Highest Market Cap</div><div class="sc-m-val"><b class="tk">GE</b></div></div>
+  </div>
+  <p class="sc-note">Signal changed from MIXED / CONSOLIDATING to FAILED ROTATION. Equal-weight 1W -1.90% / 1M -4.27% / 3M -13.36%. Cap-weight 1W -2.34%. Breadth 31.5%. Breadth was 50.0% on 2026-09-25. Acceleration -1.19 pp. Effective N 11.6 is how many names the cap weights actually represent. Down-day capture 1.19. Highest market cap <b class="tk">GE</b>. Highest 1W: <b class="tk">MTSI</b>, <b class="tk">ATI</b>, <b class="tk">MRCY</b>, <b class="tk">ESE</b>, <b class="tk">TTMI</b>.</p>
+</div>
+<div class="sc-row">
+  <div class="sc-head-row">
+    <div class="sc-theme">FinTech &amp; Digital Finance</div>
+    <div><span class="badge badge-cool">FAILED</span></div>
+  </div>
+  <div class="sc-metrics">
+    <div><div class="sc-m-lab">Eq 1W</div><div class="sc-m-val neg">-1.50%</div></div>
+    <div><div class="sc-m-lab">Eq 1M</div><div class="sc-m-val neg">-6.76%</div></div>
+    <div><div class="sc-m-lab">Eq 3M</div><div class="sc-m-val neg">-1.17%</div></div>
+    <div><div class="sc-m-lab">Breath</div><div class="sc-m-val">26.9%</div></div>
+    <div><div class="sc-m-lab">Accel</div><div class="sc-m-val">-1.33</div></div>
+    <div><div class="sc-m-lab">Eff. N</div><div class="sc-m-val">9.2</div></div>
+    <div><div class="sc-m-lab">Down-day</div><div class="sc-m-val neg">2.00</div></div>
+    <div><div class="sc-m-lab">Highest Market Cap</div><div class="sc-m-val"><b class="tk">V</b></div></div>
+  </div>
+  <p class="sc-note">Equal-weight 1W -1.50% / 1M -6.76% / 3M -1.17%. Cap-weight 1W -2.31%. Breadth 26.9%. Breadth was 25.5% on 2026-09-25. Acceleration -1.33 pp. Effective N 9.2 is how many names the cap weights actually represent. Down-day capture 2.00. Highest market cap <b class="tk">V</b>. Highest 1W: <b class="tk">VIRT</b>, <b class="tk">DAVE</b>, <b class="tk">HIPO</b>, <b class="tk">CBOE</b>, <b class="tk">EVER</b>.</p>
+</div>
+<div class="sc-row">
+  <div class="sc-head-row">
+    <div class="sc-theme">Electric Vehicles &amp; Mobility</div>
+    <div><span class="badge badge-cool">FAILED</span></div>
+  </div>
+  <div class="sc-metrics">
+    <div><div class="sc-m-lab">Eq 1W</div><div class="sc-m-val neu">+0.00%</div></div>
+    <div><div class="sc-m-lab">Eq 1M</div><div class="sc-m-val neg">-1.84%</div></div>
+    <div><div class="sc-m-lab">Eq 3M</div><div class="sc-m-val neg">-17.32%</div></div>
+    <div><div class="sc-m-lab">Breath</div><div class="sc-m-val">29.3%</div></div>
+    <div><div class="sc-m-lab">Accel</div><div class="sc-m-val">-1.36</div></div>
+    <div><div class="sc-m-lab">Eff. N</div><div class="sc-m-val">1.7</div></div>
+    <div><div class="sc-m-lab">Down-day</div><div class="sc-m-val neg">2.08</div></div>
+    <div><div class="sc-m-lab">Highest Market Cap</div><div class="sc-m-val"><b class="tk">TSLA</b></div></div>
+  </div>
+  <p class="sc-note">Signal changed from MIXED / CONSOLIDATING to FAILED ROTATION. Equal-weight 1W +0.00% / 1M -1.84% / 3M -17.32%. Cap-weight 1W -1.07%. Breadth 29.3%. Breadth was 41.5% on 2026-09-25. Acceleration -1.36 pp. Effective N 1.7 is how many names the cap weights actually represent. Down-day capture 2.08. Highest market cap <b class="tk">TSLA</b>. Highest 1W: <b class="tk">SES</b>, <b class="tk">WOLF</b>, <b class="tk">ALGM</b>, <b class="tk">LFUS</b>, <b class="tk">CHPT</b>.</p>
+</div>
+<div class="sc-row">
+  <div class="sc-head-row">
+    <div class="sc-theme">Commodities - Metals</div>
+    <div><span class="badge badge-cool">FAILED</span></div>
+  </div>
+  <div class="sc-metrics">
+    <div><div class="sc-m-lab">Eq 1W</div><div class="sc-m-val neg">-4.83%</div></div>
+    <div><div class="sc-m-lab">Eq 1M</div><div class="sc-m-val neg">-10.62%</div></div>
+    <div><div class="sc-m-lab">Eq 3M</div><div class="sc-m-val pos">+0.01%</div></div>
+    <div><div class="sc-m-lab">Breath</div><div class="sc-m-val">13.7%</div></div>
+    <div><div class="sc-m-lab">Accel</div><div class="sc-m-val">-1.70</div></div>
+    <div><div class="sc-m-lab">Eff. N</div><div class="sc-m-val">18.8</div></div>
+    <div><div class="sc-m-lab">Down-day</div><div class="sc-m-val neg">2.84</div></div>
+    <div><div class="sc-m-lab">Highest Market Cap</div><div class="sc-m-val"><b class="tk">NEM</b></div></div>
+  </div>
+  <p class="sc-note">Equal-weight 1W -4.83% / 1M -10.62% / 3M +0.01%. Cap-weight 1W -3.21%. Breadth 13.7%. Breadth was 16.0% on 2026-09-25. Acceleration -1.70 pp. Effective N 18.8 is how many names the cap weights actually represent. Down-day capture 2.84. Highest market cap <b class="tk">NEM</b>. Mega-cap distorted (1.62 pp) by <b class="tk">NEM</b> — read equal-weight. Highest 1W: <b class="tk">TECK</b>, <b class="tk">RS</b>, <b class="tk">BHP</b>, <b class="tk">VALE</b>, <b class="tk">SCCO</b>.</p>
+</div>
+<div class="sc-row">
+  <div class="sc-head-row">
+    <div class="sc-theme">Healthcare &amp; Biotech</div>
+    <div><span class="badge badge-cool">FAILED</span></div>
+  </div>
+  <div class="sc-metrics">
+    <div><div class="sc-m-lab">Eq 1W</div><div class="sc-m-val neg">-1.16%</div></div>
+    <div><div class="sc-m-lab">Eq 1M</div><div class="sc-m-val neg">-2.17%</div></div>
+    <div><div class="sc-m-lab">Eq 3M</div><div class="sc-m-val pos">+5.52%</div></div>
+    <div><div class="sc-m-lab">Breath</div><div class="sc-m-val">26.1%</div></div>
+    <div><div class="sc-m-lab">Accel</div><div class="sc-m-val">-1.96</div></div>
+    <div><div class="sc-m-lab">Eff. N</div><div class="sc-m-val">20.3</div></div>
+    <div><div class="sc-m-lab">Down-day</div><div class="sc-m-val pos">-0.08</div></div>
+    <div><div class="sc-m-lab">Highest Market Cap</div><div class="sc-m-val"><b class="tk">LLY</b></div></div>
+  </div>
+  <p class="sc-note">Signal changed from MIXED / CONSOLIDATING to FAILED ROTATION. Equal-weight 1W -1.16% / 1M -2.17% / 3M +5.52%. Cap-weight 1W -2.59%. Breadth 26.1%. Breadth was 50.4% on 2026-09-25. Acceleration -1.96 pp. Effective N 20.3 is how many names the cap weights actually represent. Down-day capture -0.08. Highest market cap <b class="tk">LLY</b>. Highest 1W: <b class="tk">PACB</b>, <b class="tk">SYNA</b>, <b class="tk">SEER</b>, <b class="tk">UTHR</b>, <b class="tk">TXG</b>.</p>
+</div>
+<div class="sc-row">
+  <div class="sc-head-row">
+    <div class="sc-theme">Nanotechnology</div>
+    <div><span class="badge badge-cool">FAILED</span></div>
+  </div>
+  <div class="sc-metrics">
+    <div><div class="sc-m-lab">Eq 1W</div><div class="sc-m-val neg">-2.77%</div></div>
+    <div><div class="sc-m-lab">Eq 1M</div><div class="sc-m-val pos">+1.26%</div></div>
+    <div><div class="sc-m-lab">Eq 3M</div><div class="sc-m-val pos">+3.13%</div></div>
+    <div><div class="sc-m-lab">Breath</div><div class="sc-m-val">28.6%</div></div>
+    <div><div class="sc-m-lab">Accel</div><div class="sc-m-val">-3.24</div></div>
+    <div><div class="sc-m-lab">Eff. N</div><div class="sc-m-val">12.8</div></div>
+    <div><div class="sc-m-lab">Down-day</div><div class="sc-m-val pos">-0.59</div></div>
+    <div><div class="sc-m-lab">Highest Market Cap</div><div class="sc-m-val"><b class="tk">MMM</b></div></div>
+  </div>
+  <p class="sc-note">Signal changed from MATURE LEADERSHIP to FAILED ROTATION. Equal-weight 1W -2.77% / 1M +1.26% / 3M +3.13%. Cap-weight 1W -2.49%. Breadth 28.6%. Breadth was 67.6% on 2026-09-25. Acceleration -3.24 pp. Effective N 12.8 is how many names the cap weights actually represent. Down-day capture -0.59. Highest market cap <b class="tk">MMM</b>. Highest 1W: <b class="tk">VECO</b>, <b class="tk">ONTO</b>, <b class="tk">ASPN</b>, <b class="tk">ATOM</b>, <b class="tk">Q</b>.</p>
+</div>
+<div class="sc-row">
+  <div class="sc-head-row">
+    <div class="sc-theme">Digital Entertainment &amp; Media</div>
+    <div><span class="badge badge-cool">FAILED</span></div>
+  </div>
+  <div class="sc-metrics">
+    <div><div class="sc-m-lab">Eq 1W</div><div class="sc-m-val neg">-3.77%</div></div>
+    <div><div class="sc-m-lab">Eq 1M</div><div class="sc-m-val neg">-6.21%</div></div>
+    <div><div class="sc-m-lab">Eq 3M</div><div class="sc-m-val neg">-10.93%</div></div>
+    <div><div class="sc-m-lab">Breath</div><div class="sc-m-val">30.4%</div></div>
+    <div><div class="sc-m-lab">Accel</div><div class="sc-m-val">-5.89</div></div>
+    <div><div class="sc-m-lab">Eff. N</div><div class="sc-m-val">3.3</div></div>
+    <div><div class="sc-m-lab">Down-day</div><div class="sc-m-val pos">-0.37</div></div>
+    <div><div class="sc-m-lab">Highest Market Cap</div><div class="sc-m-val"><b class="tk">META</b></div></div>
+  </div>
+  <p class="sc-note">Equal-weight 1W -3.77% / 1M -6.21% / 3M -10.93%. Cap-weight 1W -3.70%. Breadth 30.4%. Breadth was 34.8% on 2026-09-25. Acceleration -5.89 pp. Effective N 3.3 is how many names the cap weights actually represent. Down-day capture -0.37. Highest market cap <b class="tk">META</b>. Highest 1W: <b class="tk">DDI</b>, <b class="tk">PLTK</b>, <b class="tk">HAS</b>, <b class="tk">NTES</b>, <b class="tk">NWSA</b>.</p>
+</div>
+<div class="sc-row">
+  <div class="sc-head-row">
+    <div class="sc-theme">Crypto &amp; Blockchain</div>
+    <div><span class="badge badge-cool">FAILED</span></div>
+  </div>
+  <div class="sc-metrics">
+    <div><div class="sc-m-lab">Eq 1W</div><div class="sc-m-val neg">-7.62%</div></div>
+    <div><div class="sc-m-lab">Eq 1M</div><div class="sc-m-val pos">+9.66%</div></div>
+    <div><div class="sc-m-lab">Eq 3M</div><div class="sc-m-val neg">-20.42%</div></div>
+    <div><div class="sc-m-lab">Breath</div><div class="sc-m-val">0.0%</div></div>
+    <div><div class="sc-m-lab">Accel</div><div class="sc-m-val">-9.79</div></div>
+    <div><div class="sc-m-lab">Eff. N</div><div class="sc-m-val">6.9</div></div>
+    <div><div class="sc-m-lab">Down-day</div><div class="sc-m-val neg">5.39</div></div>
+    <div><div class="sc-m-lab">Highest Market Cap</div><div class="sc-m-val"><b class="tk">IREN</b></div></div>
+  </div>
+  <p class="sc-note">Equal-weight 1W -7.62% / 1M +9.66% / 3M -20.42%. Cap-weight 1W -7.32%. Breadth 0.0%. Breadth was 37.5% on 2026-09-25. Acceleration -9.79 pp. Effective N 6.9 is how many names the cap weights actually represent. Down-day capture 5.39. Highest market cap <b class="tk">IREN</b>. Highest 1W: <b class="tk">WULF</b>, <b class="tk">BTDR</b>, <b class="tk">CORZ</b>, <b class="tk">IREN</b>, <b class="tk">HUT</b>.</p>
+</div>
+  </details>
+</section>
+
+<section class="section" id="s06">
+  <div class="section-eyebrow">06</div>
+  <h2 class="section-title">PPO Reset Candidates</h2>
+  <p>Theme first, setup second. HIGH CONVICTION is an entry queue, not a buy list. Work a name only when its parent Signal is EARLY, a constructive MIXED, or a hold-MATURE. A HIGH CONVICTION row inside FAILED is a stock trying to work in a group that is not — half-size probe or skip. Daily PPO near zero and turning up is the trigger; capture < 1.0 means it held up on SPY down days (can pay up a little); capture ≥ 1.0 is buyable only on a pullback.</p>
+  <p>WATCHLIST (199 rows) is omitted. Sorted EARLY → MATURE → MIXED → FAILED, then percent above the 30-week EMA. Parent Signal is joined from Theme_Summary. Readings as of the 2026-10-02 close.</p>
+  <table class="scorecard-table ticker-table">
+    <thead><tr>
+      <th>Ticker</th><th>Theme</th><th>Signal</th><th>1W</th><th>1M</th><th>vs 30W EMA</th>
+      <th>Daily PPO</th><th>Weekly Hist</th><th>RS 1M</th><th>Vol 20/60</th><th>Down-day capture</th>
+    </tr></thead>
+    <tbody><tr><td><b class="tk">TENB</b></td><td>Cybersecurity</td><td><span class="badge badge-mature">MATURE</span></td><td class='pos'>+10.03%</td><td class='pos'>+3.89%</td><td>19.0%</td><td>0.70</td><td>-1.02</td><td class='pos'>+2.57%</td><td>1.13</td><td>-8.53</td></tr><tr><td><b class="tk">SLAB</b></td><td>Semiconductors</td><td><span class="badge badge-mature">MATURE</span></td><td class='pos'>+0.69%</td><td class='pos'>+1.66%</td><td>6.2%</td><td>0.36</td><td>-0.94</td><td class='pos'>+0.37%</td><td>0.99</td><td>-0.03</td></tr><tr><td><b class="tk">WNC</b></td><td>Transportation &amp; Logistics</td><td><span class="badge badge-hold">MIXED</span></td><td class='pos'>+7.75%</td><td class='pos'>+9.95%</td><td>21.9%</td><td>0.38</td><td>-0.12</td><td class='pos'>+8.55%</td><td>0.79</td><td>3.58</td></tr><tr><td><b class="tk">GNK</b></td><td>Transportation &amp; Logistics</td><td><span class="badge badge-hold">MIXED</span></td><td class='pos'>+6.06%</td><td class='pos'>+6.30%</td><td>14.3%</td><td>0.54</td><td>0.04</td><td class='pos'>+4.95%</td><td>1.25</td><td>0.75</td></tr><tr><td><b class="tk">IOT</b></td><td>Hardware</td><td><span class="badge badge-hold">MIXED</span></td><td class='pos'>+8.32%</td><td class='pos'>+5.27%</td><td>12.8%</td><td>0.14</td><td>0.72</td><td class='pos'>+3.94%</td><td>1.23</td><td>-3.11</td></tr><tr><td><b class="tk">SCCO</b></td><td>Energy - Renewable</td><td><span class="badge badge-hold">MIXED</span></td><td class='pos'>+0.79%</td><td class='pos'>+1.95%</td><td>11.9%</td><td>0.75</td><td>0.41</td><td class='pos'>+0.66%</td><td>0.97</td><td>0.18</td></tr><tr><td><b class="tk">CGNX</b></td><td>Industrial Automation &amp; Robotics</td><td><span class="badge badge-hold">MIXED</span></td><td class='pos'>+10.76%</td><td class='pos'>+8.14%</td><td>8.6%</td><td>-0.15</td><td>-1.67</td><td class='pos'>+6.77%</td><td>0.80</td><td>3.05</td></tr><tr><td><b class="tk">AIT</b></td><td>Industrials &amp; Construction</td><td><span class="badge badge-hold">MIXED</span></td><td class='pos'>+3.02%</td><td class='pos'>+7.63%</td><td>7.9%</td><td>0.49</td><td>-0.96</td><td class='pos'>+6.26%</td><td>0.99</td><td>-0.18</td></tr><tr><td><b class="tk">IESC</b></td><td>Industrials &amp; Construction</td><td><span class="badge badge-hold">MIXED</span></td><td class='pos'>+4.69%</td><td class='pos'>+12.89%</td><td>7.8%</td><td>-0.27</td><td>-2.11</td><td class='pos'>+11.46%</td><td>0.76</td><td>2.14</td></tr><tr><td><b class="tk">LAUR</b></td><td>Education Technology</td><td><span class="badge badge-hold">MIXED</span></td><td class='pos'>+3.26%</td><td class='pos'>+3.65%</td><td>7.6%</td><td>0.83</td><td>-0.39</td><td class='pos'>+2.34%</td><td>1.00</td><td>-2.20</td></tr><tr><td><b class="tk">IEX</b></td><td>Industrials &amp; Construction</td><td><span class="badge badge-hold">MIXED</span></td><td class='pos'>+1.59%</td><td class='pos'>+4.88%</td><td>7.5%</td><td>0.34</td><td>-0.61</td><td class='pos'>+3.55%</td><td>0.94</td><td>-0.17</td></tr><tr><td><b class="tk">PWR</b></td><td>Energy - Renewable</td><td><span class="badge badge-hold">MIXED</span></td><td class='pos'>+4.24%</td><td class='pos'>+10.68%</td><td>7.3%</td><td>0.90</td><td>-1.19</td><td class='pos'>+9.28%</td><td>0.81</td><td>1.72</td></tr><tr><td><b class="tk">CSCO</b></td><td>Hardware</td><td><span class="badge badge-hold">MIXED</span></td><td class='pos'>+5.56%</td><td class='pos'>+2.64%</td><td>7.3%</td><td>-0.69</td><td>-2.07</td><td class='pos'>+1.34%</td><td>0.90</td><td>2.15</td></tr><tr><td><b class="tk">GSAT</b></td><td>Telecommunications</td><td><span class="badge badge-hold">MIXED</span></td><td class='pos'>+0.41%</td><td class='pos'>+2.27%</td><td>7.2%</td><td>0.30</td><td>-1.05</td><td class='pos'>+0.98%</td><td>0.73</td><td>0.42</td></tr><tr><td><b class="tk">SBGSY</b></td><td>Energy - Renewable</td><td><span class="badge badge-hold">MIXED</span></td><td class='pos'>+2.47%</td><td class='pos'>+3.03%</td><td>7.0%</td><td>-0.05</td><td>-0.15</td><td class='pos'>+1.72%</td><td>1.10</td><td>2.61</td></tr><tr><td><b class="tk">URI</b></td><td>Industrials &amp; Construction</td><td><span class="badge badge-hold">MIXED</span></td><td class='pos'>+3.25%</td><td class='pos'>+9.18%</td><td>6.9%</td><td>-0.21</td><td>-1.21</td><td class='pos'>+7.80%</td><td>1.00</td><td>1.07</td></tr><tr><td><b class="tk">FIX</b></td><td>Industrials &amp; Construction</td><td><span class="badge badge-hold">MIXED</span></td><td class='pos'>+4.17%</td><td class='pos'>+11.17%</td><td>6.7%</td><td>0.65</td><td>-1.92</td><td class='pos'>+9.76%</td><td>0.75</td><td>1.73</td></tr><tr><td><b class="tk">FLEX</b></td><td>Hardware</td><td><span class="badge badge-hold">MIXED</span></td><td class='pos'>+1.68%</td><td class='pos'>+9.12%</td><td>5.8%</td><td>-0.15</td><td>-3.50</td><td class='pos'>+7.74%</td><td>0.85</td><td>3.09</td></tr><tr><td><b class="tk">GLW</b></td><td>Hardware</td><td><span class="badge badge-hold">MIXED</span></td><td class='pos'>+4.75%</td><td class='pos'>+12.80%</td><td>5.4%</td><td>0.68</td><td>-2.16</td><td class='pos'>+11.37%</td><td>0.82</td><td>5.47</td></tr><tr><td><b class="tk">ROK</b></td><td>Industrial Automation &amp; Robotics</td><td><span class="badge badge-hold">MIXED</span></td><td class='pos'>+4.65%</td><td class='pos'>+8.82%</td><td>5.2%</td><td>0.50</td><td>-1.05</td><td class='pos'>+7.44%</td><td>0.89</td><td>0.30</td></tr><tr><td><b class="tk">GRC</b></td><td>Industrials &amp; Construction</td><td><span class="badge badge-hold">MIXED</span></td><td class='pos'>+4.11%</td><td class='pos'>+4.42%</td><td>4.8%</td><td>-0.42</td><td>-2.30</td><td class='pos'>+3.10%</td><td>1.08</td><td>0.43</td></tr><tr><td><b class="tk">GEV</b></td><td>Energy - Renewable</td><td><span class="badge badge-hold">MIXED</span></td><td class='pos'>+3.24%</td><td class='pos'>+10.04%</td><td>4.3%</td><td>0.36</td><td>-1.88</td><td class='pos'>+8.64%</td><td>0.88</td><td>0.82</td></tr><tr><td><b class="tk">LECO</b></td><td>Industrials &amp; Construction</td><td><span class="badge badge-hold">MIXED</span></td><td class='pos'>+1.28%</td><td class='pos'>+2.42%</td><td>4.1%</td><td>0.02</td><td>-0.11</td><td class='pos'>+1.12%</td><td>0.97</td><td>-0.50</td></tr><tr><td><b class="tk">CAT</b></td><td>Transportation &amp; Logistics</td><td><span class="badge badge-hold">MIXED</span></td><td class='pos'>+2.90%</td><td class='pos'>+8.50%</td><td>3.5%</td><td>0.13</td><td>-1.93</td><td class='pos'>+7.13%</td><td>0.85</td><td>2.14</td></tr><tr><td><b class="tk">LOGI</b></td><td>Hardware</td><td><span class="badge badge-hold">MIXED</span></td><td class='pos'>+3.20%</td><td class='pos'>+8.14%</td><td>3.5%</td><td>0.90</td><td>0.13</td><td class='pos'>+6.77%</td><td>0.79</td><td>2.58</td></tr><tr><td><b class="tk">CR</b></td><td>Industrials &amp; Construction</td><td><span class="badge badge-hold">MIXED</span></td><td class='pos'>+0.66%</td><td class='pos'>+4.09%</td><td>3.2%</td><td>-0.02</td><td>-0.86</td><td class='pos'>+2.78%</td><td>0.86</td><td>0.25</td></tr><tr><td><b class="tk">ABBNY</b></td><td>Energy - Renewable</td><td><span class="badge badge-hold">MIXED</span></td><td class='pos'>+2.07%</td><td class='pos'>+3.79%</td><td>3.1%</td><td>-0.27</td><td>-1.31</td><td class='pos'>+2.48%</td><td>0.73</td><td>1.94</td></tr><tr><td><b class="tk">DBRG</b></td><td>Cloud Computing</td><td><span class="badge badge-hold">MIXED</span></td><td class='pos'>+0.13%</td><td class='pos'>+0.57%</td><td>3.0%</td><td>0.13</td><td>-0.43</td><td class='pos'>+0.87%</td><td>1.36</td><td>-0.11</td></tr><tr><td><b class="tk">ST</b></td><td>Industrial Automation &amp; Robotics</td><td><span class="badge badge-hold">MIXED</span></td><td class='pos'>+3.13%</td><td class='pos'>+6.17%</td><td>2.1%</td><td>-0.57</td><td>-1.91</td><td class='pos'>+4.83%</td><td>0.88</td><td>2.20</td></tr><tr><td><b class="tk">NOK</b></td><td>Hardware</td><td><span class="badge badge-hold">MIXED</span></td><td class='pos'>+2.02%</td><td class='pos'>+6.75%</td><td>1.8%</td><td>0.22</td><td>-2.24</td><td class='pos'>+5.40%</td><td>1.06</td><td>4.66</td></tr><tr><td><b class="tk">GOOGL</b></td><td>Artificial Intelligence</td><td><span class="badge badge-hold">MIXED</span></td><td class='neg'>-0.12%</td><td class='pos'>+2.60%</td><td>0.9%</td><td>-0.15</td><td>-0.88</td><td class='pos'>+1.30%</td><td>1.00</td><td>0.65</td></tr><tr><td><b class="tk">IRDM</b></td><td>Defense &amp; Aerospace</td><td><span class="badge badge-cool">FAILED</span></td><td class='pos'>+0.43%</td><td class='pos'>+5.14%</td><td>15.2%</td><td>0.49</td><td>-2.77</td><td class='pos'>+3.80%</td><td>0.96</td><td>-0.00</td></tr><tr><td><b class="tk">PK</b></td><td>Real Estate &amp; REITs</td><td><span class="badge badge-cool">FAILED</span></td><td class='pos'>+2.29%</td><td class='pos'>+3.70%</td><td>14.7%</td><td>0.78</td><td>-0.63</td><td class='pos'>+2.39%</td><td>0.85</td><td>0.20</td></tr><tr><td><b class="tk">PEB</b></td><td>Real Estate &amp; REITs</td><td><span class="badge badge-cool">FAILED</span></td><td class='pos'>+3.58%</td><td class='pos'>+7.55%</td><td>13.8%</td><td>0.94</td><td>-1.46</td><td class='pos'>+6.19%</td><td>1.03</td><td>-1.20</td></tr><tr><td><b class="tk">TECK</b></td><td>Commodities - Metals</td><td><span class="badge badge-cool">FAILED</span></td><td class='pos'>+3.80%</td><td class='pos'>+2.79%</td><td>11.7%</td><td>0.01</td><td>-0.14</td><td class='pos'>+1.49%</td><td>1.00</td><td>1.16</td></tr><tr><td><b class="tk">DCO</b></td><td>Defense &amp; Aerospace</td><td><span class="badge badge-cool">FAILED</span></td><td class='pos'>+1.88%</td><td class='pos'>+3.93%</td><td>9.4%</td><td>-0.81</td><td>-2.30</td><td class='pos'>+2.62%</td><td>0.93</td><td>-0.91</td></tr><tr><td><b class="tk">MOG.A</b></td><td>Defense &amp; Aerospace</td><td><span class="badge badge-cool">FAILED</span></td><td class='pos'>+1.27%</td><td class='pos'>+7.59%</td><td>8.8%</td><td>0.36</td><td>-1.92</td><td class='pos'>+6.23%</td><td>0.98</td><td>0.01</td></tr><tr><td><b class="tk">RS</b></td><td>Commodities - Metals</td><td><span class="badge badge-cool">FAILED</span></td><td class='pos'>+3.36%</td><td class='pos'>+2.61%</td><td>7.0%</td><td>-0.36</td><td>-1.17</td><td class='pos'>+1.32%</td><td>0.85</td><td>0.08</td></tr><tr><td><b class="tk">HST</b></td><td>Real Estate &amp; REITs</td><td><span class="badge badge-cool">FAILED</span></td><td class='pos'>+1.53%</td><td class='pos'>+5.19%</td><td>4.5%</td><td>-0.04</td><td>-1.65</td><td class='pos'>+3.86%</td><td>0.93</td><td>0.56</td></tr><tr><td><b class="tk">BJ</b></td><td>E-commerce</td><td><span class="badge badge-cool">FAILED</span></td><td class='pos'>+1.25%</td><td class='pos'>+3.80%</td><td>2.1%</td><td>0.44</td><td>0.30</td><td class='pos'>+2.49%</td><td>1.03</td><td>0.17</td></tr><tr><td><b class="tk">MTN</b></td><td>Real Estate &amp; REITs</td><td><span class="badge badge-cool">FAILED</span></td><td class='pos'>+3.71%</td><td class='pos'>+6.62%</td><td>1.5%</td><td>-0.53</td><td>-0.57</td><td class='pos'>+5.27%</td><td>1.37</td><td>0.29</td></tr><tr><td><b class="tk">CECO</b></td><td>Environmental Sustainability</td><td><span class="badge badge-cool">FAILED</span></td><td class='pos'>+0.22%</td><td class='pos'>+4.41%</td><td>0.6%</td><td>-0.60</td><td>-1.78</td><td class='pos'>+3.09%</td><td>0.87</td><td>4.50</td></tr></tbody>
+  </table>
+</section>
+
+<section class="section" id="s07">
+  <div class="section-eyebrow">07</div>
+  <h2 class="section-title">Sub-Theme Appendix — EARLY only</h2>
+  <p>Seven sub-themes. Top 5 by 1W, not the cap-weighted leader alone. These names feed the Early Sub-Themes ChartLists.</p>
+  <ul>
+    <li><b>Transportation &amp; Logistics</b> — Transportation - Marine Shipping &amp; Ports <span class="badge badge-early">EARLY ROTATION</span>. Eq 1W +4.21%, eq 1M +2.79%, breadth 100.0%, accel 3.77 pp. Highest market cap <b class="tk">KEX</b>. Top 5 by 1W: <b class="tk">DAC</b>, <b class="tk">KEX</b>, <b class="tk">GNK</b>, <b class="tk">SBLK</b>, <b class="tk">GSL</b>.</li><li><b>Education Technology</b> — Education - Workforce Training <span class="badge badge-early">EARLY ROTATION</span>. Eq 1W +1.17%, eq 1M -5.12%, breadth 66.7%, accel 2.81 pp. Highest market cap <b class="tk">LAUR</b>. Top 5 by 1W: <b class="tk">PRDO</b>, <b class="tk">CVSA</b>, <b class="tk">LAUR</b>, <b class="tk">DCBO</b>, <b class="tk">LINC</b>.</li><li><b>Commodities - Energy</b> — Comm Energy - Crude Oil <span class="badge badge-early">EARLY ROTATION</span>. Eq 1W +1.40%, eq 1M -3.03%, breadth 62.5%, accel 2.19 pp. Highest market cap <b class="tk">COP</b>. Top 5 by 1W: <b class="tk">MPC</b>, <b class="tk">OXY</b>, <b class="tk">BP</b>, <b class="tk">DVN</b>, <b class="tk">EOG</b>.</li><li><b>Energy - Traditional</b> — Energy Base - Refining &amp; Midstream Infrastructure <span class="badge badge-early">EARLY ROTATION</span>. Eq 1W +1.77%, eq 1M -1.54%, breadth 60.0%, accel 2.15 pp. Highest market cap <b class="tk">VLO</b>. Top 5 by 1W: <b class="tk">PBF</b>, <b class="tk">MPC</b>, <b class="tk">DINO</b>, <b class="tk">VLO</b>, <b class="tk">PSX</b>.</li><li><b>Industrials &amp; Construction</b> — Industrials - Engineering &amp; Construction <span class="badge badge-early">EARLY ROTATION</span>. Eq 1W +2.33%, eq 1M +1.49%, breadth 68.8%, accel 1.74 pp. Highest market cap <b class="tk">FIX</b>. Top 5 by 1W: <b class="tk">PRIM</b>, <b class="tk">APG</b>, <b class="tk">IESC</b>, <b class="tk">GVA</b>, <b class="tk">MYRG</b>.</li><li><b>Energy - Renewable</b> — Energy Clean - Smart Grid &amp; Electrification <span class="badge badge-early">EARLY ROTATION</span>. Eq 1W +2.54%, eq 1M +7.47%, breadth 87.0%, accel 0.40 pp. Highest market cap <b class="tk">GEV</b>. Top 5 by 1W: <b class="tk">PRIM</b>, <b class="tk">SEI</b>, <b class="tk">MPWR</b>, <b class="tk">IESC</b>, <b class="tk">INIO</b>.</li><li><b>Industrial Automation &amp; Robotics</b> — Automation - Factory &amp; Process Automation Systems <span class="badge badge-early">EARLY ROTATION</span>. Eq 1W +2.14%, eq 1M +7.32%, breadth 75.0%, accel 0.28 pp. Highest market cap <b class="tk">SIEGY</b>. Top 5 by 1W: <b class="tk">TER</b>, <b class="tk">ROK</b>, <b class="tk">NOVT</b>, <b class="tk">RRX</b>, <b class="tk">SBGSY</b>.</li>
+  </ul>
+</section>
+
+<section class="section" id="s08">
+  <div class="section-eyebrow">08</div>
+  <h2 class="section-title">ChartLists</h2>
+  <p>Four paste lists. High Conviction = PPO HIGH CONVICTION names. Early Sub-Themes = unique names from the Section 07 EARLY appendix. Python blocks are the same names wrapped for a Python list.</p>
+  <div class="chartlist-box"><div class="cl-title">High Conviction</div><pre>TENB,SLAB,WNC,GNK,IOT,SCCO,CGNX,AIT,IESC,LAUR,IEX,PWR,CSCO,GSAT,SBGSY,URI,FIX,FLEX,GLW,ROK,GRC,GEV,LECO,CAT,LOGI,CR,ABBNY,DBRG,ST,NOK,GOOGL,IRDM,PK,PEB,TECK,DCO,MOG.A,RS,HST,BJ,MTN,CECO</pre></div>
+  <div class="chartlist-box"><div class="cl-title">High Conviction - Python</div><pre>'TENB', 'SLAB', 'WNC', 'GNK', 'IOT', 'SCCO', 'CGNX', 'AIT', 'IESC', 'LAUR', 'IEX', 'PWR', 'CSCO', 'GSAT', 'SBGSY', 'URI', 'FIX', 'FLEX', 'GLW', 'ROK', 'GRC', 'GEV', 'LECO', 'CAT', 'LOGI', 'CR', 'ABBNY', 'DBRG', 'ST', 'NOK', 'GOOGL', 'IRDM', 'PK', 'PEB', 'TECK', 'DCO', 'MOG.A', 'RS', 'HST', 'BJ', 'MTN', 'CECO'</pre></div>
+  <div class="chartlist-box"><div class="cl-title">Early Sub-Themes</div><pre>DAC,KEX,GNK,SBLK,GSL,PRDO,CVSA,LAUR,DCBO,LINC,MPC,OXY,BP,DVN,EOG,PBF,DINO,VLO,PSX,PRIM,APG,IESC,GVA,MYRG,SEI,MPWR,INIO,TER,ROK,NOVT,RRX,SBGSY</pre></div>
+  <div class="chartlist-box"><div class="cl-title">Early Sub-Themes - Python</div><pre>'DAC', 'KEX', 'GNK', 'SBLK', 'GSL', 'PRDO', 'CVSA', 'LAUR', 'DCBO', 'LINC', 'MPC', 'OXY', 'BP', 'DVN', 'EOG', 'PBF', 'DINO', 'VLO', 'PSX', 'PRIM', 'APG', 'IESC', 'GVA', 'MYRG', 'SEI', 'MPWR', 'INIO', 'TER', 'ROK', 'NOVT', 'RRX', 'SBGSY'</pre></div>
+</section>
+
+<section class="section" id="s09">
+  <div class="section-eyebrow">09</div>
+  <h2 class="section-title">Change Log vs Prior Week</h2>
+  <p>Prior file Theme_Summary_2026-09-25.csv. 16 themes unchanged.</p>
+  <ul>
+    <li>Upgrades: Business Services &amp; Consulting <span class="badge badge-cool">FAILED</span> → <span class="badge badge-mature">MATURE</span>; Semiconductors <span class="badge badge-hold">MIXED</span> → <span class="badge badge-mature">MATURE</span>; Energy - Renewable <span class="badge badge-cool">FAILED</span> → <span class="badge badge-hold">MIXED</span>; Energy - Traditional <span class="badge badge-cool">FAILED</span> → <span class="badge badge-hold">MIXED</span>; Transportation &amp; Logistics <span class="badge badge-cool">FAILED</span> → <span class="badge badge-hold">MIXED</span>; Commodities - Energy <span class="badge badge-cool">FAILED</span> → <span class="badge badge-hold">MIXED</span>; Software <span class="badge badge-cool">FAILED</span> → <span class="badge badge-mature">MATURE</span>.</li>
+    <li>Downgrades: Space Tech <span class="badge badge-hold">MIXED</span> → <span class="badge badge-cool">FAILED</span>; Industrial Automation &amp; Robotics <span class="badge badge-early">EARLY</span> → <span class="badge badge-hold">MIXED</span>; Cloud Computing <span class="badge badge-mature">MATURE</span> → <span class="badge badge-hold">MIXED</span>; Environmental Sustainability <span class="badge badge-hold">MIXED</span> → <span class="badge badge-cool">FAILED</span>; Conglomerates &amp; Diversified Holdings <span class="badge badge-hold">MIXED</span> → <span class="badge badge-cool">FAILED</span>; Electric Vehicles &amp; Mobility <span class="badge badge-hold">MIXED</span> → <span class="badge badge-cool">FAILED</span>; E-commerce <span class="badge badge-hold">MIXED</span> → <span class="badge badge-cool">FAILED</span>; Defense &amp; Aerospace <span class="badge badge-hold">MIXED</span> → <span class="badge badge-cool">FAILED</span>; Nanotechnology <span class="badge badge-mature">MATURE</span> → <span class="badge badge-cool">FAILED</span>; Healthcare &amp; Biotech <span class="badge badge-hold">MIXED</span> → <span class="badge badge-cool">FAILED</span>; Big Data &amp; Analytics <span class="badge badge-hold">MIXED</span> → <span class="badge badge-cool">FAILED</span>.</li>
+    <li>Industrial Automation & Robotics left EARLY. No theme replaced it. Early signal moved down to seven sub-themes.</li>
+    <li>Universe versus the prior run, from the manifest: added AAOI, ABBNY, ALAB, AOSL, APLD, AXTI, BITF, CBRS, CLFD, CRDO, CRWV, DFH, FIVN, GDS, GLXY, HIMX, INIO, IRBT, LASR, LBRT, LTBR, MIR, NBIS, NNE, OSS, POET, PPTA, RBRK, REAX, RR, SBGSY, SEI, SHLS, SIEGY, SKYT, SMNEY, SPCX, TSEM, VNET, VPG, WULF. Dropped P, YYGH.</li>
+    <li>Mapping file on this run is the 2026-10-03 rebuild (1,969 rows / 1,458 tickers). Derived CSVs match that universe. Weight-cap null.</li>
+  </ul>
+</section>
+
+<footer class="section" style="margin-top:48px;font-size:14px;color:var(--muted)">
+  <p>Methodology: aggregates taken from Theme_Summary and SubTheme_Summary. Not recomputed. Ticker-file returns are fractions and are displayed as percent only in the PPO table. Top-5 and top-3 lists are unique tickers with a valid 1W, ranked by 1W descending. Signal badges are binding. WATCHLIST omitted. Spec v10.</p>
+  <p>Manifest generated_at 2026-10-03T07:00:53. Data as of 2026-10-02. Coverage market-cap 1451. Return status {'ok': 1444, 'no_data': 10, 'partial': 3, 'stale_21d': 1}. No market cap: BITF, BLD, CSWI, IRBT, JHG, NSA, SMNEY. No price: BITF, BLD, CSWI, CWEN, IRBT, JHG, NSA, SKYT, SMNEY, WBX. Stale: ATAI. Partial: CSAN, DOMO, GGRP.</p>
+  <p>Banner sources: S&P, Nasdaq, Russell weekly changes versus the Sep 25 close (Financial Current / Reuters week scoreboard). Friday index levels from the Oct 2 close recap. Treasury par yields Oct 2 from the Treasury curve compilation (3M 4.19, 2Y 4.83, 10Y 5.28, 30Y 5.63). 2Y/10Y weekly change versus Sep 25 official par yields. WTI front-month futures Oct 2 close 88.89 versus Sep 25 92.41. VIX 15.31 versus Sep 25 14.87. HY OAS FRED BAMLH0A0HYM2 3.24 on Oct 1 versus 2.93 on Sep 25. MOVE n/a. Fed funds target 3.75–4.00, no meeting this week. Not an expiration week.</p>
+  <p>Not advice. Levels drift after the close. PPO readings are as of the as-of close.</p>
+</footer>
+</div>
+<script>
+(function () {
+  var q = document.getElementById('tk-q');
+  var countEl = document.getElementById('tk-count');
+  var hitsEl = document.getElementById('tk-hits');
+  var prevBtn = document.getElementById('tk-prev');
+  var nextBtn = document.getElementById('tk-next');
+  var clearBtn = document.getElementById('tk-clear');
+  var painted = [];
+  var targets = [];
+  var idx = -1;
+
+  function sectionLabel(el) {
+    var sec = el.closest('section');
+    if (sec) {
+      var t = sec.querySelector('.section-title');
+      var e = sec.querySelector('.section-eyebrow');
+      return ((e ? e.textContent.trim() + ' ' : '') + (t ? t.textContent.trim() : sec.id || 'Section'));
+    }
+    if (el.closest('.market-banner')) return 'Market climate';
+    if (el.closest('.report-header')) return 'Header';
+    if (el.closest('footer')) return 'Footer';
+    return 'Report';
+  }
+
+  function contextText(el) {
+    var card = el.closest('.tier-card');
+    if (card) {
+      var title = card.querySelector('.tc-title');
+      if (title) return title.textContent.trim();
+    }
+    var row = el.closest('tr');
+    if (row) {
+      var first = row.querySelector('td');
+      if (first) return first.textContent.trim().slice(0, 80);
+    }
+    var li = el.closest('li');
+    if (li) return li.textContent.replace(/\s+/g, ' ').trim().slice(0, 90);
+    var p = el.closest('p, .sc-note, .tk-row, .callout');
+    if (p) return p.textContent.replace(/\s+/g, ' ').trim().slice(0, 90);
+    return '';
+  }
+
+  function clearHits() {
+    painted.forEach(function (el) {
+      el.classList.remove('tk-hit', 'tk-current');
+    });
+    painted = [];
+    targets = [];
+    idx = -1;
+    hitsEl.classList.remove('open');
+    hitsEl.innerHTML = '';
+    prevBtn.hidden = nextBtn.hidden = clearBtn.hidden = true;
+    countEl.classList.remove('has');
+    countEl.textContent = 'Type a symbol · Enter to jump';
+  }
+
+  function go(i) {
+    if (!targets.length) return;
+    if (idx >= 0 && painted.indexOf(targets[idx]) >= 0) {
+      targets[idx].classList.remove('tk-current');
+    }
+    idx = (i + targets.length) % targets.length;
+    var el = targets[idx];
+    if (painted.indexOf(el) >= 0) el.classList.add('tk-current');
+    var det = el.closest('details');
+    if (det && !det.open) det.open = true;
+    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    countEl.textContent = (idx + 1) + ' / ' + targets.length + ' mention' + (targets.length === 1 ? '' : 's');
+    var items = hitsEl.querySelectorAll('li');
+    items.forEach(function (li, n) {
+      li.style.opacity = n === idx ? '1' : '.65';
+    });
+  }
+
+  function search() {
+    var raw = (q.value || '').trim().toUpperCase();
+    clearHits();
+    q.value = raw;
+    if (!raw) return;
+    document.querySelectorAll('b.tk').forEach(function (el) {
+      if (el.closest('#s08')) return;
+      if (el.textContent.trim().toUpperCase() === raw) {
+        el.classList.add('tk-hit');
+        painted.push(el);
+        targets.push(el);
+      }
+    });
+    if (!targets.length) {
+      countEl.textContent = raw + ' — not mentioned in this report';
+      clearBtn.hidden = false;
+      return;
+    }
+    countEl.classList.add('has');
+    countEl.textContent = targets.length + ' mention' + (targets.length === 1 ? '' : 's');
+    prevBtn.hidden = nextBtn.hidden = false;
+    clearBtn.hidden = false;
+    hitsEl.innerHTML = targets.map(function (el, i) {
+      var ctx = contextText(el);
+      return '<li><a href="#" data-i="' + i + '">' + (i + 1) + '. ' + sectionLabel(el) + '</a>' +
+        (ctx ? '<span class="tf-where">' + ctx.replace(/</g, '').slice(0, 90) + '</span>' : '') + '</li>';
+    }).join('');
+    hitsEl.classList.add('open');
+    go(0);
+  }
+
+  q.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      if (targets.length && q.value.trim()) go(idx + (e.shiftKey ? -1 : 1));
+      else search();
+    } else if (e.key === 'Escape') {
+      q.value = '';
+      clearHits();
+    }
+  });
+  q.addEventListener('change', search);
+  prevBtn.addEventListener('click', function () { go(idx - 1); });
+  nextBtn.addEventListener('click', function () { go(idx + 1); });
+  clearBtn.addEventListener('click', function () { q.value = ''; clearHits(); q.focus(); });
+  hitsEl.addEventListener('click', function (e) {
+    var a = e.target.closest('a');
+    if (!a) return;
+    e.preventDefault();
+    go(parseInt(a.getAttribute('data-i'), 10));
+  });
+})();
+</script>
+</body>
+</html>
