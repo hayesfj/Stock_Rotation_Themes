@@ -139,7 +139,10 @@
   .sc-m-sub { font-family: var(--mono); font-size: 13px; color: var(--muted); white-space: nowrap; }
   .sc-right { min-width: 0; display: flex; flex-direction: column; gap: 10px; }
   .sc-head-row { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
-  .sc-note { font-size: 16px; line-height: 1.7; color: var(--text); }
+  .sc-note { font-size: 16px; line-height: 1.55; color: var(--text); max-width: 68ch; }
+  .sc-row { grid-template-columns: minmax(200px, 240px) minmax(0, 520px); gap: 18px 28px; max-width: 860px; }
+  .sc-metrics { grid-template-columns: repeat(3, max-content); gap: 8px 22px; margin-top: 0; }
+  .sc-note { grid-column: 2; grid-row: 2; }
   @media (max-width: 1100px) {
     .sc-row, .sc-legend { grid-template-columns: 1fr; gap: 16px; }
     .sc-legend span:last-child { display: none; }
@@ -190,9 +193,11 @@
   }
   .tf-hits.open { display: block; }
   .tf-hits li { font-size: 15px; line-height: 1.5; padding: 4px 0; }
-  .tf-hits a { color: var(--accent); text-decoration: none; font-family: var(--mono); font-size: 13px; }
-  .tf-hits a:hover { color: var(--amber); }
-  .tf-hits .tf-where { color: var(--muted); margin-left: 8px; font-size: 14px; }
+  #tk-hits a, #tk-hits a:link, #tk-hits a:visited, #tk-hits a:active {
+    color: #FBBF24 !important; text-decoration: none; font-family: var(--mono); font-size: 13px;
+  }
+  #tk-hits a:hover { color: #EAE5DA !important; }
+  #tk-hits .tf-where { color: #D8D4CC !important; margin-left: 8px; font-size: 14px; }
   b.tk.tk-hit {
     background: var(--amber); color: #1A1400; padding: 0 3px; border-radius: 2px;
     box-shadow: 0 0 0 3px var(--amber-dim);
@@ -201,6 +206,12 @@
   @media (max-width: 760px) {
     .tk-find { padding: 10px 16px; }
   }
+
+  #s05 .sc-row { grid-template-columns: minmax(180px, 220px) max-content minmax(280px, 46ch) !important; max-width: 1120px; align-items: start; }
+  #s05 .sc-head-row { grid-column: 1; grid-row: 1; }
+  #s05 .sc-metrics { grid-column: 2; grid-row: 1; grid-template-columns: repeat(3, max-content) !important; }
+  #s05 .sc-note { grid-column: 3 !important; grid-row: 1 !important; max-width: 46ch; margin: 0; }
+  .tier-card .sc-note { display: block; width: 100%; max-width: none !important; grid-column: auto !important; grid-row: auto !important; margin-top: 12px; }
 </style>
 </head>
 <body>
@@ -222,7 +233,7 @@
   <button type="button" id="tk-prev" hidden>Prev</button>
   <button type="button" id="tk-next" hidden>Next</button>
   <button type="button" id="tk-clear" hidden>Clear</button>
-  <ul id="tk-hits"></ul>
+  <ul id="tk-hits" class="tf-hits"></ul>
 </div>
 <section class="market-banner" id="mkt">
   <div class="banner-kicker">Market climate</div>
@@ -246,17 +257,7 @@
   </ul>
 </section>
 <div class="report-body">
-<nav class="section" style="margin-top:18px">
-  <a href="#s01">01 Summary</a> ·
-  <a href="#s02">02 Tier 1</a> ·
-  <a href="#s03">03 Tier 2</a> ·
-  <a href="#s04">04 Cooling</a> ·
-  <a href="#s05">05 Scorecard</a> ·
-  <a href="#s06">06 PPO</a> ·
-  <a href="#s07">07 Sub-themes</a> ·
-  <a href="#s08">08 ChartLists</a> ·
-  <a href="#s09">09 Change log</a>
-</nav>
+
 
 <section class="section" id="s01">
   <div class="section-eyebrow">01</div>
