@@ -27,6 +27,8 @@ ACN,Accenture Plc,Business Services & Consulting,Consulting,Primary
 ADBE,Adobe Inc.,Cloud Computing,Cloud - Horizontal SaaS & Cloud Applications,Primary
 ADBE,Adobe Inc.,E-commerce,E-commerce - Platforms,Secondary
 ADC,Agree Realty Corp,Real Estate & REITs,Real Estate - Retail & Consumer Real Estate,Primary
+ADEA,Adeia Inc.,Semiconductors,Semis - Emerging Technologies,Primary
+ADEA,Adeia Inc.,Semiconductors,Semis - EDA Tools & Design Software,Secondary
 ADI,Analog Devices Inc,Semiconductors,"Semis - Analog, Mixed-Signal & Power Management",Primary
 ADI,Analog Devices Inc,Hardware,Hardware - Industrial & IoT,Secondary
 ADM,Archer-Daniels-Midland Co,Agriculture & FoodTech,Agriculture - Agri-Food Processing & Distribution,Primary
@@ -54,6 +56,8 @@ AFRM,"Affirm Holdings, Inc.",FinTech & Digital Finance,FinTech - Digital Payment
 AG,First Majestic Silver Corp,Commodities - Metals,Comm Metals - Precious Metals,Primary
 AGCO,Agco Corp /De,Agriculture & FoodTech,Agriculture - Precision Agriculture & Farm Automation,Primary
 AGRO,Adecoagro S.A.,Commodities - Agriculture,"Comm Agri - Grains, Oilseeds & Softs",Primary
+AGX,"Argan, Inc.",Industrials & Construction,Industrials - Engineering & Construction,Primary
+AGX,"Argan, Inc.",Energy - Renewable,Energy Clean - Smart Grid & Electrification,Secondary
 AHR,"American Healthcare REIT, Inc.",Real Estate & REITs,Real Estate - Healthcare & Senior Living,Primary
 AI,"C3.Ai, Inc.",Big Data & Analytics,"Big Data - Analytics, AI Platforms & BI",Primary
 AI,"C3.Ai, Inc.",Artificial Intelligence,"AI - Apps, Domain-Specific AI",Secondary
@@ -98,6 +102,8 @@ AMGN,Amgen Inc,Healthcare & Biotech,Healthcare - Oncology & Precision Cancer The
 AMH,American Homes 4 Rent,Real Estate & REITs,"Real Estate - Housing, Urban Living & Demographics",Primary
 AMKR,"Amkor Technology, Inc.",Semiconductors,"Semis - Testing, Packaging & Assembly",Primary
 AMP,"Ameriprise Financial, Inc.",Financials - Traditional,"Fin Trad - Asset Management, Custody & Alternatives",Primary
+AMPX,"Amprius Technologies, Inc.",Electric Vehicles & Mobility,EVs - Batteries & Materials,Primary
+AMPX,"Amprius Technologies, Inc.",Energy - Renewable,Energy Clean - Batteries & Storage,Secondary
 AMR,"Alpha Metallurgical Resources, Inc.",Energy - Traditional,Energy Base - Coal & Thermal Power Generation,Primary
 AMSC,American Superconductor Corp /De/,Energy - Renewable,Energy Clean - Wind,Primary
 AMT,American Tower Corp /Ma/,Telecommunications,Telecom - Infrastructure & Equipment,Primary
@@ -149,6 +155,8 @@ ARWR,"Arrowhead Pharmaceuticals, Inc.",Healthcare & Biotech,Healthcare - Genomic
 ASAN,"Asana, Inc.",Cloud Computing,Cloud - Horizontal SaaS & Cloud Applications,Primary
 ASB,Associated Banc-Corp,Financials - Traditional,"Fin Trad - Banks, Lending & Mortgage Finance",Primary
 ASH,Ashland Inc.,Industrials & Construction,Industrials - Chemicals & Advanced Materials,Primary
+ASIX,AdvanSix Inc.,Industrials & Construction,Industrials - Chemicals & Advanced Materials,Primary
+ASIX,AdvanSix Inc.,Agriculture & FoodTech,Agriculture - Agricultural Inputs & Crop Science,Secondary
 ASML,Asml Holding Nv,Semiconductors,"Semis - Equipment, Lithography & Deposition",Primary
 ASPN,Aspen Aerogels Inc,Nanotechnology,"NanoTech - Materials, Industrial & Environment",Primary
 ASTS,"Ast Spacemobile, Inc.",Telecommunications,Telecom - Satellite & Space Communication,Primary
@@ -217,6 +225,8 @@ BE,Bloom Energy Corp,Energy - Renewable,Energy Clean - Hydrogen & Fuel Cells,Pri
 BEAM,Beam Therapeutics Inc.,Healthcare & Biotech,Healthcare - Next-Gen Biotech Platforms,Primary
 BEEM,Beam Global,Electric Vehicles & Mobility,EVs - Charging & Infrastructure,Primary
 BEEM,Beam Global,Electric Vehicles & Mobility,EVs - Autonomous Driving & Fleet,Secondary
+BELFA,Bel Fuse Inc.,Hardware,Hardware - Industrial & IoT,Primary
+BELFA,Bel Fuse Inc.,Semiconductors,"Semis - Analog, Mixed-Signal & Power Management",Secondary
 BEN,"Franklin Resources, Inc.",Financials - Traditional,"Fin Trad - Asset Management, Custody & Alternatives",Primary
 BEP,Brookfield Renewable Partners L.P.,Energy - Renewable,Energy Clean - Solar,Primary
 BEP,Brookfield Renewable Partners L.P.,Energy - Renewable,Energy Clean - Wind,Secondary
@@ -564,6 +574,8 @@ DVN,Devon Energy Corp/De,Energy - Traditional,Energy Base - Oil & Gas Exploratio
 DVN,Devon Energy Corp/De,Commodities - Energy,Comm Energy - Crude Oil,Secondary
 DXCM,Dexcom Inc,Healthcare & Biotech,"Healthcare - Digital Health, Telemedicine & Remote Care",Primary
 DXCM,Dexcom Inc,Healthcare & Biotech,Healthcare - Medical Devices & HealthTech Hardware,Secondary
+DXPE,"DXP Enterprises, Inc.",Industrials & Construction,Industrials - Distribution & Rental Services,Primary
+DXPE,"DXP Enterprises, Inc.",Industrials & Construction,"Industrials - Machinery, Flow Control & Components",Secondary
 DY,"Dycom Industries, Inc.",Industrials & Construction,Industrials - Engineering & Construction,Primary
 DY,"Dycom Industries, Inc.",Telecommunications,Telecom - Infrastructure & Equipment,Secondary
 E,Eni Spa,Energy - Traditional,Energy Base - Integrated Energy Majors,Primary
@@ -709,6 +721,7 @@ FORM,Formfactor Inc,Semiconductors,"Semis - Testing, Packaging & Assembly",Prima
 FOUR,"Shift4 Payments, Inc.",FinTech & Digital Finance,FinTech - Digital Payments & Merchant Infrastructure,Primary
 FOXA,Fox Corp,Digital Entertainment & Media,Entertainment - Video Streaming,Primary
 FOXA,Fox Corp,Digital Entertainment & Media,Entertainment - Advertising & Social Platforms,Secondary
+FPS,"Forgent Power Solutions, Inc.",Energy - Renewable,Energy Clean - Smart Grid & Electrification,Primary
 FR,"First Industrial Realty Trust, Inc.",Real Estate & REITs,"Real Estate - E-Commerce, Warehousing & Logistics",Primary
 FROG,Jfrog Ltd,Cloud Computing,"Cloud - DevOps, Observability & Multi-Cloud",Primary
 FROG,Jfrog Ltd,Software,"Software - Data, Analytics & DevOps",Secondary
@@ -735,6 +748,8 @@ GDDY,Godaddy Inc.,E-commerce,E-commerce - Platforms,Primary
 GDRX,"Goodrx Holdings, Inc.",Healthcare & Biotech,"Healthcare - IT, Services & Data Infrastructure",Primary
 GDS,GDS Holdings Ltd,Cloud Computing,Cloud - Data Centers & Infrastructure,Primary
 GDS,GDS Holdings Ltd,Real Estate & REITs,Real Estate - Digital Infrastructure,Secondary
+GDYN,"Grid Dynamics Holdings, Inc.",Business Services & Consulting,Consulting,Primary
+GDYN,"Grid Dynamics Holdings, Inc.",Artificial Intelligence,"AI - Apps, Domain-Specific AI",Secondary
 GE,General Electric Co,Defense & Aerospace,Defense - Next-Generation Aircraft & Maintenance,Primary
 GE,General Electric Co,Defense & Aerospace,Defense - Secure Defense Supply Chains,Secondary
 GEF,"Greif, Inc.",Industrials & Construction,Industrials - Packaging & Containers,Primary
@@ -771,6 +786,8 @@ GNK,Genco Shipping & Trading Ltd,Transportation & Logistics,Transportation - Mar
 GNRC,Generac Holdings Inc.,Energy - Renewable,Energy Clean - Batteries & Storage,Primary
 GNRC,Generac Holdings Inc.,Smart Home & IoT,"Smart Home - Automation, Control & Energy",Secondary
 GNTX,Gentex Corp,Electric Vehicles & Mobility,EVs - Key Suppliers & Autonomy Tech,Primary
+GOOG,Alphabet Inc.,Artificial Intelligence,"AI - Ads, Search & Recommendations",Primary
+GOOG,Alphabet Inc.,Cloud Computing,Cloud - Hyperscalers & Platforms,Secondary
 GOOGL,Alphabet Inc.,Artificial Intelligence,"AI - Ads, Search & Recommendations",Primary
 GOOGL,Alphabet Inc.,Cloud Computing,Cloud - Hyperscalers & Platforms,Secondary
 GPC,Genuine Parts Co,Industrials & Construction,Industrials - Distribution & Rental Services,Primary
@@ -867,6 +884,7 @@ IBM,International Business Machines Corp,Hardware,Hardware - Data Center Infrast
 IBOC,International Bancshares Corp,Financials - Traditional,"Fin Trad - Banks, Lending & Mortgage Finance",Primary
 ICE,"Intercontinental Exchange, Inc.",FinTech & Digital Finance,FinTech - Exchanges & Market Infrastructure,Primary
 ICE,"Intercontinental Exchange, Inc.",Big Data & Analytics,"Big Data - Data Generation, Sourcing & Providers",Secondary
+ICHR,"Ichor Holdings, Ltd.",Semiconductors,"Semis - Equipment, Lithography & Deposition",Primary
 IDA,"Idacorp, Inc.",Energy - Traditional,Energy Base - Utilities & Conventional Power Operators,Primary
 IDCC,"Interdigital, Inc.",Semiconductors,Semis - Wireless & Connectivity,Primary
 IDCC,"Interdigital, Inc.",Telecommunications,"Telecom - 5G, Wireless & Carriers",Secondary
@@ -1229,6 +1247,8 @@ NTR,Nutrien Ltd.,Agriculture & FoodTech,Agriculture - Agricultural Inputs & Crop
 NTR,Nutrien Ltd.,Commodities - Agriculture,"Comm Agri - Fertilizers, Crop Inputs & Seeds",Secondary
 NTRA,"Natera, Inc.",Healthcare & Biotech,"Healthcare - Diagnostics, Biomarkers & Liquid Biopsy",Primary
 NTRS,Northern Trust Corp,Financials - Traditional,"Fin Trad - Asset Management, Custody & Alternatives",Primary
+NTSK,"Netskope, Inc.",Cybersecurity,"Cybersecurity - Platform, Cloud & Application Security",Primary
+NTSK,"Netskope, Inc.",Cybersecurity,Cybersecurity - IAM & Zero Trust,Secondary
 NU,Nu Holdings Ltd.,FinTech & Digital Finance,FinTech - Digital Banking & Neobanks,Primary
 NUE,Nucor Corp,Commodities - Metals,Comm Metals - Industrial & Base Metals,Primary
 NUE,Nucor Corp,Commodities - Metals,Comm Metals - Recycling & Circular Materials,Secondary
@@ -1273,6 +1293,8 @@ OLLI,"Ollie's Bargain Outlet Holdings, Inc.",E-commerce,"E-commerce - Omnichanne
 OLN,Olin Corp,Defense & Aerospace,Defense - Secure Defense Supply Chains,Primary
 OMC,Omnicom Group Inc.,Digital Entertainment & Media,Entertainment - Advertising & Social Platforms,Primary
 OMCL,"Omnicell, Inc.",Healthcare & Biotech,"Healthcare - IT, Services & Data Infrastructure",Primary
+OMDA,"Omada Health, Inc.",Healthcare & Biotech,"Healthcare - Digital Health, Telemedicine & Remote Care",Primary
+OMDA,"Omada Health, Inc.",Healthcare & Biotech,Healthcare - Metabolic & Cardiometabolic,Secondary
 ON,On Semiconductor Corp,Semiconductors,"Semis - Analog, Mixed-Signal & Power Management",Primary
 ON,On Semiconductor Corp,Semiconductors,Semis - Emerging Technologies,Secondary
 ONB,Old National Bancorp,Financials - Traditional,"Fin Trad - Banks, Lending & Mortgage Finance",Primary
@@ -1305,6 +1327,8 @@ PAA,Plains All American Pipeline Lp,Energy - Traditional,Energy Base - Refining 
 PAAS,Pan American Silver Corp,Commodities - Metals,Comm Metals - Precious Metals,Primary
 PACB,"Pacific Biosciences Of California, Inc.",Healthcare & Biotech,"Healthcare - Diagnostics, Biomarkers & Liquid Biopsy",Primary
 PACB,"Pacific Biosciences Of California, Inc.",Healthcare & Biotech,Healthcare - Genomics & Personalized Medicine,Secondary
+PACS,"PACS Group, Inc.",Healthcare & Biotech,Healthcare - Senior Care & Longevity,Primary
+PACS,"PACS Group, Inc.",Real Estate & REITs,Real Estate - Healthcare & Senior Living,Secondary
 PAG,"Penske Automotive Group, Inc.",E-commerce,"E-commerce - Omnichannel Retailers, Online & Physical Stores",Primary
 PAHC,Phibro Animal Health Corporation,Healthcare & Biotech,Healthcare - Animal Health & Veterinary,Primary
 PAHC,Phibro Animal Health Corporation,Commodities - Agriculture,Comm Agri - Livestock & Animal Protein,Secondary
@@ -1330,6 +1354,8 @@ PEG,Public Service Enterprise Group Inc,Energy - Renewable,Energy Clean - Utilit
 PEGA,Pegasystems Inc.,Software,"Software - Collaboration, CRM & Communications",Primary
 PEGA,Pegasystems Inc.,Artificial Intelligence,"AI - Apps, Domain-Specific AI",Secondary
 PEN,"Penumbra, Inc.",Healthcare & Biotech,Healthcare - Medical Devices & HealthTech Hardware,Primary
+PENG,"Penguin Solutions, Inc.",Hardware,Hardware - Data Center Infrastructure & Servers,Primary
+PENG,"Penguin Solutions, Inc.",Semiconductors,Semis - Memory & Storage,Secondary
 PENN,"Penn Entertainment, Inc.",Digital Entertainment & Media,"Entertainment - Betting, iGaming & Wagering",Primary
 PEP,Pepsico Inc,Consumer Goods & Retail,"Consumer - Health, Food & Beverages",Primary
 PFE,Pfizer Inc,Healthcare & Biotech,Healthcare - Metabolic & Cardiometabolic,Primary
@@ -1350,11 +1376,15 @@ PINS,"Pinterest, Inc.",E-commerce,E-commerce - Online Marketplaces & Recommerce,
 PINS,"Pinterest, Inc.",Artificial Intelligence,"AI - Ads, Search & Recommendations",Secondary
 PK,Park Hotels & Resorts Inc.,Real Estate & REITs,"Real Estate - Travel, Leisure & Entertainment Properties",Primary
 PKG,Packaging Corp Of America,Industrials & Construction,Industrials - Packaging & Containers,Primary
+PKOH,Park-Ohio Holdings Corp.,Industrials & Construction,Industrials - Distribution & Rental Services,Primary
+PKOH,Park-Ohio Holdings Corp.,Industrials & Construction,"Industrials - Machinery, Flow Control & Components",Secondary
 PL,Planet Labs Pbc,Defense & Aerospace,Defense - Space Technology & Satellite Services,Primary
 PL,Planet Labs Pbc,Space Tech,Space - Data Analytics & Earth Observation,Secondary
 PLD,"Prologis, Inc.",E-commerce,"E-commerce - Omnichannel Retailers, Online & Physical Stores",Primary
 PLD,"Prologis, Inc.",Real Estate & REITs,"Real Estate - E-Commerce, Warehousing & Logistics",Secondary
-PLNT,"Planet Fitness, Inc.",Real Estate & REITs,"Real Estate - Travel, Leisure & Entertainment Properties",Primary
+PLNT,"Planet Fitness, Inc.",Consumer Goods & Retail,"Consumer - Health, Food & Beverages",Primary
+PLPC,Preformed Line Products Company,Energy - Renewable,Energy Clean - Smart Grid & Electrification,Primary
+PLPC,Preformed Line Products Company,Telecommunications,Telecom - Infrastructure & Equipment,Secondary
 PLTK,Playtika Holding Corp.,Digital Entertainment & Media,Entertainment - Game Publishers & Developers,Primary
 PLTK,Playtika Holding Corp.,Software,Software - Gaming & Platforms,Secondary
 PLTR,Palantir Technologies Inc.,Defense & Aerospace,Defense - Cyber Defense & Electronic Warfare,Primary
@@ -1438,7 +1468,10 @@ REAX,Real REMAX Group Inc.,Real Estate & REITs,"Real Estate - Housing, Urban Liv
 REG,Regency Centers Corp,Real Estate & REITs,Real Estate - Retail & Consumer Real Estate,Primary
 REGN,"Regeneron Pharmaceuticals, Inc.",Healthcare & Biotech,Healthcare - Next-Gen Biotech Platforms,Primary
 REGN,"Regeneron Pharmaceuticals, Inc.",Nanotechnology,NanoTech - Nanomedicine & Drug Delivery,Secondary
+RELL,"Richardson Electronics, Ltd.",Industrials & Construction,Industrials - Distribution & Rental Services,Primary
+RELL,"Richardson Electronics, Ltd.",Energy - Renewable,Energy Clean - Smart Grid & Electrification,Secondary
 RELX,Relx Plc,Big Data & Analytics,"Big Data - Data Generation, Sourcing & Providers",Primary
+RELY,"Remitly Global, Inc.",FinTech & Digital Finance,FinTech - Digital Payments & Merchant Infrastructure,Primary
 RENT,"Rent The Runway, Inc.",Consumer Goods & Retail,Consumer - Resale & Sharing Platforms,Primary
 REX,Rex American Resources Corp,Commodities - Agriculture,"Comm Agri - Grains, Oilseeds & Softs",Primary
 REXR,"Rexford Industrial Realty, Inc.",Real Estate & REITs,"Real Estate - E-Commerce, Warehousing & Logistics",Primary
@@ -1472,6 +1505,8 @@ RNR,Renaissancere Holdings Ltd.,Financials - Traditional,Fin Trad - Insurance & 
 RNW,Renew Energy Global Plc,Environmental Sustainability,"Environmental - Climate, Carbon & Land Resources",Primary
 ROAD,"Construction Partners, Inc.",Industrials & Construction,Industrials - Engineering & Construction,Primary
 ROAD,"Construction Partners, Inc.",Industrials & Construction,Industrials - Construction Materials & Aggregates,Secondary
+ROC,Rank One Computing Corporation,Cybersecurity,Cybersecurity - IAM & Zero Trust,Primary
+ROC,Rank One Computing Corporation,Artificial Intelligence,"AI - Apps, Domain-Specific AI",Secondary
 ROG,Rogers Corporation,Industrials & Construction,Industrials - Chemicals & Advanced Materials,Primary
 ROG,Rogers Corporation,Hardware,Hardware - NextGen,Secondary
 ROIV,Roivant Sciences Ltd.,Healthcare & Biotech,Healthcare - Next-Gen Biotech Platforms,Primary
@@ -1538,6 +1573,7 @@ SEIC,SEI Investments Co,Financials - Traditional,"Fin Trad - Asset Management, C
 SERV,Serve Robotics Inc. /De/,Industrial Automation & Robotics,"Robotics - Medical, Service & Mobility",Primary
 SERV,Serve Robotics Inc. /De/,Transportation & Logistics,Transportation - Urban Mobility & Emerging Transport Tech,Secondary
 SES,Ses Ai Corp,Electric Vehicles & Mobility,EVs - Batteries & Materials,Primary
+SEZL,Sezzle Inc.,FinTech & Digital Finance,FinTech - Digital Payments & Merchant Infrastructure,Primary
 SF,Stifel Financial Corp,Financials - Traditional,Fin Trad - Capital Markets & Investment Banking,Primary
 SFIX,"Stitch Fix, Inc.",Consumer Goods & Retail,Consumer - Apparel & E-Commerce Retail,Primary
 SFM,"Sprouts Farmers Market, Inc.",Consumer Goods & Retail,"Consumer - Health, Food & Beverages",Primary
@@ -1557,6 +1593,8 @@ SIEGY,Siemens AG,Energy - Renewable,Energy Clean - Smart Grid & Electrification,
 SIEGY,Siemens AG,Industrial Automation & Robotics,Automation - Factory & Process Automation Systems,Secondary
 SIG,Signet Jewelers Ltd,Consumer Goods & Retail,Consumer - Modern Luxury & Lifestyle,Primary
 SIGI,"Selective Insurance Group, Inc.",Financials - Traditional,Fin Trad - Insurance & Reinsurance,Primary
+SILC,Silicom Ltd.,Hardware,Hardware - Networking Equipment,Primary
+SILC,Silicom Ltd.,Hardware,Hardware - Data Center Infrastructure & Servers,Secondary
 SIMO,Silicon Motion Technology Corp,Semiconductors,Semis - Emerging Technologies,Primary
 SIRI,Sirius Xm Holdings Inc.,Digital Entertainment & Media,Entertainment - Video Streaming,Primary
 SITM,Sitime Corp,Semiconductors,"Semis - Analog, Mixed-Signal & Power Management",Primary
@@ -1574,10 +1612,14 @@ SLG,Sl Green Realty Corp,Real Estate & REITs,Real Estate - Office & Commercial W
 SLGN,Silgan Holdings Inc.,Industrials & Construction,Industrials - Packaging & Containers,Primary
 SLM,SLM Corp,Financials - Traditional,"Fin Trad - Banks, Lending & Mortgage Finance",Primary
 SLQT,"Selectquote, Inc.",FinTech & Digital Finance,FinTech - InsurTech & Embedded Insurance,Primary
+SLRC,SLR Investment Corp.,Financials - Traditional,"Fin Trad - Banks, Lending & Mortgage Finance",Primary
+SLRC,SLR Investment Corp.,Financials - Traditional,"Fin Trad - Asset Management, Custody & Alternatives",Secondary
 SMCI,"Super Micro Computer, Inc.",Hardware,Hardware - Data Center Infrastructure & Servers,Primary
 SMG,Scotts Miracle-Gro Co,Commodities - Agriculture,"Comm Agri - Fertilizers, Crop Inputs & Seeds",Primary
 SMNEY,Siemens Energy AG,Energy - Renewable,Energy Clean - Smart Grid & Electrification,Primary
 SMNEY,Siemens Energy AG,Energy - Renewable,Energy Clean - Wind,Secondary
+SMP,"Standard Motor Products, Inc.",Industrials & Construction,Industrials - Distribution & Rental Services,Primary
+SMP,"Standard Motor Products, Inc.",Electric Vehicles & Mobility,EVs - Key Suppliers & Autonomy Tech,Secondary
 SMPL,Simply Good Foods Co,Consumer Goods & Retail,"Consumer - Health, Food & Beverages",Primary
 SMR,Nuscale Power Corp,Energy - Traditional,Energy Base - Nuclear Power & Advanced Reactors,Primary
 SMR,Nuscale Power Corp,Commodities - Energy,Comm Energy - Uranium & Nuclear Fuels,Secondary
@@ -1719,6 +1761,7 @@ TNL,Travel + Leisure Co.,Real Estate & REITs,"Real Estate - Travel, Leisure & En
 TOL,"Toll Brothers, Inc.",Real Estate & REITs,"Real Estate - Housing, Urban Living & Demographics",Primary
 TOST,"Toast, Inc.",FinTech & Digital Finance,FinTech - Digital Payments & Merchant Infrastructure,Primary
 TOST,"Toast, Inc.",Software,Software - Vertical SaaS Platforms,Secondary
+TPG,TPG Inc.,Financials - Traditional,"Fin Trad - Asset Management, Custody & Alternatives",Primary
 TPL,Texas Pacific Land Corp,Energy - Traditional,Energy Base - Oil & Gas Exploration & Production,Primary
 TPL,Texas Pacific Land Corp,Commodities - Energy,Comm Energy - Crude Oil,Secondary
 TPR,"Tapestry, Inc.",Consumer Goods & Retail,Consumer - Modern Luxury & Lifestyle,Primary
@@ -1795,6 +1838,7 @@ UI,Ubiquiti Inc.,Smart Home & IoT,"Smart Home - Connectivity, Devices & Applianc
 ULS,UL Solutions Inc.,Business Services & Consulting,"Business Services - Outsourcing, Facilities & Testing",Primary
 ULTA,"Ulta Beauty, Inc.",E-commerce,"E-commerce - Omnichannel Retailers, Online & Physical Stores",Primary
 ULTA,"Ulta Beauty, Inc.",Consumer Goods & Retail,Consumer - Household & Personal Care,Secondary
+UMAC,"Unusual Machines, Inc.",Defense & Aerospace,Defense - Drones & Anti-Drone Systems,Primary
 UMBF,UMB Financial Corp,Financials - Traditional,"Fin Trad - Banks, Lending & Mortgage Finance",Primary
 UMC,United Microelectronics Corp,Semiconductors,"Semis - Logic & CPUs, GPUs, Accelerators",Primary
 UMH,"Umh Properties, Inc.",Real Estate & REITs,"Real Estate - Housing, Urban Living & Demographics",Primary
@@ -1834,6 +1878,7 @@ VIAV,Viavi Solutions Inc.,Semiconductors,"Semis - Testing, Packaging & Assembly"
 VICI,Vici Properties Inc.,Real Estate & REITs,"Real Estate - Travel, Leisure & Entertainment Properties",Primary
 VICR,Vicor Corp,Semiconductors,"Semis - Analog, Mixed-Signal & Power Management",Primary
 VICR,Vicor Corp,Hardware,Hardware - Data Center Infrastructure & Servers,Secondary
+VIK,Viking Holdings Ltd,Real Estate & REITs,"Real Estate - Travel, Leisure & Entertainment Properties",Primary
 VIRT,"Virtu Financial, Inc.",FinTech & Digital Finance,FinTech - Trading Platforms & WealthTech,Primary
 VISN,"Vistance Networks, Inc.  -",Telecommunications,Telecom - Infrastructure & Equipment,Primary
 VITL,"Vital Farms, Inc.",Consumer Goods & Retail,"Consumer - Health, Food & Beverages",Primary
@@ -1901,7 +1946,10 @@ WHR,Whirlpool Corp /De/,Consumer Goods & Retail,"Consumer - Health, Food & Bever
 WING,Wingstop Inc.,Consumer Goods & Retail,Consumer - Restaurants & Dining,Primary
 WIT,Wipro Ltd,Business Services & Consulting,Consulting,Primary
 WIX,Wix.Com Ltd.,E-commerce,E-commerce - Platforms,Primary
+WLDN,"Willdan Group, Inc.",Energy - Renewable,Energy Clean - Smart Grid & Electrification,Primary
+WLDN,"Willdan Group, Inc.",Industrials & Construction,Industrials - Engineering & Construction,Secondary
 WLK,Westlake Corp,Industrials & Construction,Industrials - Chemicals & Advanced Materials,Primary
+WLKP,Westlake Chemical Partners LP,Industrials & Construction,Industrials - Chemicals & Advanced Materials,Primary
 WLY,"John Wiley & Sons, Inc.",Education Technology,Education - Digital Curriculum,Primary
 WM,Waste Management Inc,Environmental Sustainability,Environmental - Waste Management & Recycling,Primary
 WMB,"Williams Companies, Inc.",Energy - Traditional,Energy Base - Refining & Midstream Infrastructure,Primary

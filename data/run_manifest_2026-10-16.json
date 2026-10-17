@@ -1,0 +1,106 @@
+{
+  "generated_at": "2026-10-17T05:10:25",
+  "data_as_of": "2026-10-16",
+  "benchmark": "SPY",
+  "history_period": "1y",
+  "lookback_calendar_days": {
+    "1W Price Change %": 7,
+    "1M Price Change %": 31,
+    "3M Price Change %": 93
+  },
+  "weight_cap": null,
+  "start_weights": false,
+  "universe": {
+    "rows": 2016,
+    "tickers": 1493,
+    "themes": 34,
+    "sub_themes": 160,
+    "added_vs_previous": [
+      "ADEA",
+      "AGX",
+      "AMPX",
+      "ASIX",
+      "BELFA",
+      "DXPE",
+      "FPS",
+      "GDYN",
+      "GOOG",
+      "ICHR",
+      "NTSK",
+      "OMDA",
+      "PACS",
+      "PENG",
+      "PKOH",
+      "PLPC",
+      "RELL",
+      "RELY",
+      "ROC",
+      "SEZL",
+      "SILC",
+      "SLRC",
+      "SMP",
+      "TPG",
+      "UMAC",
+      "VIK",
+      "WLDN",
+      "WLKP"
+    ],
+    "dropped_vs_previous": []
+  },
+  "coverage": {
+    "market_cap": 1485,
+    "return_status_counts": {
+      "ok": 1473,
+      "no_data": 15,
+      "partial": 2,
+      "stale_14d": 1,
+      "stale_15d": 1,
+      "stale_18d": 1
+    }
+  },
+  "failures": {
+    "no_market_cap": [
+      "BITF",
+      "BLD",
+      "CSWI",
+      "IAC",
+      "IRBT",
+      "JHG",
+      "NSA",
+      "SMNEY"
+    ],
+    "no_price_data": [
+      "ACIW",
+      "ATAI",
+      "BITF",
+      "BLD",
+      "CODI",
+      "CSWI",
+      "DBRG",
+      "IAC",
+      "IRBT",
+      "JHG",
+      "NSA",
+      "QRVO",
+      "SKYT",
+      "SMNEY",
+      "WBD"
+    ],
+    "stale_symbols": [
+      "CSAN",
+      "DOMO",
+      "GGRP"
+    ],
+    "partial_history": [
+      "GWH",
+      "PSKY"
+    ]
+  },
+  "outputs": {
+    "detail": "G:\\My Drive\\Projects\\Python\\Stocks & Options\\Themes\\data\\Tickers_Themes_SubThemes.csv",
+    "archive": "G:\\My Drive\\Projects\\Python\\Stocks & Options\\Themes\\data\\Tickers_Themes_SubThemes_2026-10-16.csv",
+    "theme_summary": "G:\\My Drive\\Projects\\Python\\Stocks & Options\\Themes\\data\\Theme_Summary_2026-10-16.csv",
+    "subtheme_summary": "G:\\My Drive\\Projects\\Python\\Stocks & Options\\Themes\\data\\SubTheme_Summary_2026-10-16.csv",
+    "ppo_candidates": "G:\\My Drive\\Projects\\Python\\Stocks & Options\\Themes\\data\\PPO_Candidates_2026-10-16.csv"
+  }
+}
