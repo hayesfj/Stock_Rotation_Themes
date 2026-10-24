@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Weekly Theme Rotation — 2026-10-23</title>
+<style>
+
+  :root {
+    --bg:        #0C0F14;
+    --surface:   #141820;
+    --border:    #1E2530;
+    --border2:   #252E3A;
+    --text:      #D8D4CC;
+    --muted:     #FFFFFF;
+    --head:      #EAE5DA;
+    --green:     #34D399;
+    --green-dim: #1A3D2E;
+    --amber:     #FBBF24;
+    --amber-dim: #3A2F0E;
+    --red:       #F87171;
+    --red-dim:   #3B1515;
+    --blue:      #60A5FA;
+    --blue-dim:  #1A2840;
+    --accent:    #A78BFA;
+    --mono:      'Courier New', 'Consolas', monospace;
+    --sans:      system-ui, -apple-system, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 18px; line-height: 1.65; padding: 0 0 60px 0; }
+  .report-header { background: var(--surface); border-bottom: 1px solid var(--border); padding: 28px 32px 18px; display: flex; flex-direction: column; gap: 14px; }
+  .report-header .header-main { display: flex; justify-content: space-between; align-items: flex-end; width: 100%; }
+  .report-header .brand { font-family: var(--mono); font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+  .report-header h1 { font-size: 30px; font-weight: 700; color: var(--head); letter-spacing: -.01em; }
+  .report-header .meta { text-align: right; font-family: var(--mono); font-size: 14px; color: var(--muted); line-height: 1.8; }
+  .report-header .meta .date { font-size: 17px; color: var(--head); font-weight: 600; }
+  .report-header .header-disclaimer { font-family: var(--mono); font-size: 12px; color: var(--muted); letter-spacing: .02em; line-height: 1.5; }
+  .market-banner { background: var(--surface); border-bottom: 1px solid var(--border); max-width: 1600px; margin: 0 auto; padding: 22px 32px 8px; }
+  .market-banner h2 { font-size: 24px; font-weight: 700; color: var(--head); margin-bottom: 6px; }
+  .market-banner .banner-kicker { font-family: var(--mono); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--amber); margin-bottom: 8px; }
+  .banner-list { list-style: none; max-width: 1600px; margin: 0 auto; padding: 8px 0 16px; }
+  .banner-list li { font-size: 17px; line-height: 1.65; padding: 8px 0; border-bottom: 1px solid var(--border); color: var(--text); }
+  .banner-list li:last-child { border-bottom: none; }
+  .banner-list .bl-name { font-family: var(--mono); font-size: 16px; letter-spacing: .08em; text-transform: uppercase; color: var(--amber); font-weight: 700; margin-right: 8px; }
+  .banner-list .bl-lvl { font-family: var(--mono); font-weight: 700; color: var(--head); }
+  .mkt-item { display: flex; flex-direction: column; gap: 2px; }
+  .mkt-label { font-family: var(--mono); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+  .mkt-val { font-family: var(--mono); font-size: 17px; font-weight: 700; color: var(--head); }
+  .mkt-chg { font-family: var(--mono); font-size: 14px; }
+  .pos { color: var(--green); }
+  .neg { color: var(--red); }
+  .neu { color: var(--amber); }
+  .report-body { max-width: 1600px; margin: 0 auto; padding: 36px 32px 0; }
+  .report-body > section { margin-top: 64px; }
+  .report-body > section:first-of-type { margin-top: 8px; }
+  .section { margin-top: 64px; }
+  .section-eyebrow { font-family: var(--mono); font-size: 14px; letter-spacing: .12em; text-transform: uppercase; color: var(--amber); margin-right: 10px; font-weight: 600; }
+  .section-title { font-size: 24px; font-weight: 700; color: var(--head); padding-bottom: 12px; border-bottom: 1px solid var(--border); margin-bottom: 20px; display: flex; align-items: baseline; }
+  .summary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .summary-box { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 20px; }
+  .summary-box .sb-label { font-family: var(--mono); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 10px; }
+  .summary-box.green .sb-label { color: var(--green); }
+  .summary-box.amber .sb-label { color: var(--amber); }
+  .summary-box.red   .sb-label { color: var(--red); }
+  .summary-box.blue  .sb-label { color: var(--blue); }
+  .summary-box p { font-size: 17px; color: var(--text); line-height: 1.7; }
+  .summary-box ul { padding-left: 18px; }
+  .summary-box li { font-size: 17px; margin-bottom: 8px; }
+  .scorecard-table { width: 100%; border-collapse: collapse; font-size: 16px; }
+  .scorecard-table th { font-family: var(--mono); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); padding: 9px 14px; text-align: left; border-bottom: 1px solid var(--border); white-space: nowrap; }
+  .scorecard-table td { padding: 9px 14px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+  .badge { display: inline-block; font-family: var(--mono); font-size: 12px; padding: 3px 8px; border-radius: 3px; font-weight: 700; letter-spacing: .04em; }
+  .badge-early  { background: var(--green-dim); color: var(--green); }
+  .badge-hold   { background: var(--amber-dim); color: var(--amber); }
+  .badge-cool   { background: var(--red-dim);   color: var(--red); }
+  .badge-mature { background: var(--blue-dim);  color: var(--blue); }
+  .badge-na     { background: var(--surface);   color: var(--muted); border: 1px solid var(--border); }
+  .stars { font-size: 16px; letter-spacing: 1px; }
+  .tier-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .tier-card { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 24px; }
+  .tier-card.full-width { grid-column: 1 / -1; }
+  .tier-card .tc-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; padding-bottom: 14px; border-bottom: 1px solid var(--border); }
+  .tier-card .tc-title { font-size: 19px; font-weight: 700; color: var(--head); }
+  .tier-card .tc-sub { font-family: var(--mono); font-size: 13px; color: var(--muted); margin-top: 4px; letter-spacing: .06em; }
+  .tier-card .tc-rating { font-size: 18px; }
+  .tier-card .tc-body p { font-size: 17px; line-height: 1.7; margin-bottom: 12px; }
+  .tier-card .tc-body p:last-child { margin-bottom: 0; }
+  .stat-row { display: flex; gap: 24px; flex-wrap: wrap; margin: 14px 0; }
+  .stat-item { display: flex; flex-direction: column; gap: 2px; }
+  .stat-label { font-family: var(--mono); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+  .stat-value { font-family: var(--mono); font-size: 17px; font-weight: 700; }
+  .ticker-table { width: 100%; border-collapse: collapse; margin-top: 14px; font-size: 16px; }
+  .ticker-table th { font-family: var(--mono); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); padding: 6px 10px; text-align: right; border-bottom: 1px solid var(--border2); }
+  .ticker-table th:first-child { text-align: left; }
+  .ticker-table td { font-family: var(--mono); padding: 6px 10px; border-bottom: 1px solid var(--border2); text-align: right; }
+  .ticker-table td:first-child { text-align: left; color: var(--amber); font-weight: 700; }
+  .ticker-table tr:last-child td { border-bottom: none; }
+  .cooling-table { width: 100%; border-collapse: collapse; font-size: 16px; }
+  .cooling-table th { font-family: var(--mono); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); padding: 9px 14px; text-align: left; border-bottom: 1px solid var(--border); }
+  .cooling-table td { padding: 10px 14px; border-bottom: 1px solid var(--border); font-size: 17px; line-height: 1.65; vertical-align: top; }
+  .cooling-table .ct-theme { font-weight: 700; color: var(--head); width: 210px; }
+  .cooling-table .ct-diff { font-family: var(--mono); font-size: 15px; color: var(--red); white-space: nowrap; width: 90px; }
+  .ppo-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
+  .ppo-card { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 22px; overflow-x: auto; }
+  .ppo-card .pc-title { font-family: var(--mono); font-size: 13px; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+  .ppo-card.hi .pc-title { color: var(--green); }
+  .ppo-card.watch .pc-title { color: var(--amber); }
+  .chartlist-box { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 22px; font-family: var(--mono); font-size: 17px; line-height: 2.0; color: var(--green); word-break: break-all; white-space: pre-wrap; }
+  .callout { border-left: 3px solid; padding: 12px 16px; border-radius: 0 4px 4px 0; font-size: 17px; margin: 14px 0; line-height: 1.7; }
+  .callout.green { border-color: var(--green); background: var(--green-dim); color: #9AE6C0; }
+  .callout.amber { border-color: var(--amber); background: var(--amber-dim); color: #FDE68A; }
+  .callout.red   { border-color: var(--red);   background: var(--red-dim);   color: #FCA5A5; }
+  .report-footer { margin-top: 50px; padding: 20px 32px; background: var(--surface); border-top: 1px solid var(--border); font-family: var(--mono); font-size: 13px; color: var(--muted); line-height: 1.8; }
+  b.tk { color: var(--amber); font-weight: 700; }
+  details.failed-block { border: 1px solid var(--border); border-radius: 6px; background: var(--surface); margin-top: 18px; }
+  details.failed-block > summary { cursor: pointer; padding: 16px 18px; font-family: var(--mono); font-size: 14px; letter-spacing: .08em; text-transform: uppercase; color: var(--red); list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+  details.failed-block > summary::-webkit-details-marker { display: none; }
+  details.failed-block > summary .expand-hint { color: var(--amber); font-size: 12px; letter-spacing: .1em; }
+  details.failed-block[open] > summary .expand-hint { display: none; }
+  details.failed-block[open] > summary { border-bottom: 1px solid var(--border); }
+  .toc { display: flex; flex-wrap: wrap; gap: 10px 18px; margin: 18px 0 0; font-family: var(--mono); font-size: 13px; }
+  .toc a { color: var(--accent); text-decoration: none; }
+  @media (max-width: 760px) {
+    .report-header { padding: 18px 16px; gap: 10px; }
+    .report-header .header-main { flex-direction: column; align-items: flex-start; gap: 10px; }
+    .report-header .meta { text-align: left; }
+    .report-body { padding: 20px 16px 0; }
+    .summary-grid, .tier-grid { grid-template-columns: 1fr; }
+    .tier-card.full-width { grid-column: auto; }
+    .market-banner { padding: 10px 16px; gap: 20px; }
+  }
+  .scorecard { border-top: 1px solid var(--border); }
+  .sc-legend { display: grid; grid-template-columns: minmax(0,1.15fr) minmax(0,1fr); gap: 32px; padding: 8px 14px; }
+  .sc-legend span { font-family: var(--mono); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+  .sc-row { display: grid; grid-template-columns: minmax(0,1.15fr) minmax(0,1fr); gap: 32px; padding: 18px 14px; border-bottom: 1px solid var(--border); align-items: start; }
+  .sc-row:last-child { border-bottom: none; }
+  .sc-row:hover { background: var(--surface); }
+  .sc-left { min-width: 0; }
+  .sc-name-row { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+  .sc-theme { font-size: 18px; font-weight: 600; color: var(--head); }
+  .sc-count { font-family: var(--mono); font-size: 13px; color: var(--muted); white-space: nowrap; }
+  .sc-flags { font-family: var(--mono); font-size: 12.5px; color: var(--amber); letter-spacing: .04em; margin-top: 3px; }
+  .sc-metrics { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 12px 18px; margin-top: 14px; }
+  .sc-metric { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+  .sc-m-label { font-family: var(--mono); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); white-space: nowrap; }
+  .sc-m-val { font-family: var(--mono); font-size: 16px; font-weight: 700; color: var(--head); white-space: nowrap; }
+  .sc-m-sub { font-family: var(--mono); font-size: 13px; color: var(--muted); white-space: nowrap; }
+  .sc-right { min-width: 0; display: flex; flex-direction: column; gap: 10px; }
+  .sc-head-row { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+  .sc-note { font-size: 16px; line-height: 1.55; color: var(--text); max-width: 68ch; }
+  .sc-row { grid-template-columns: minmax(200px, 240px) minmax(0, 520px); gap: 18px 28px; max-width: 860px; }
+  .sc-metrics { grid-template-columns: repeat(3, max-content); gap: 8px 22px; margin-top: 0; }
+  .sc-note { grid-column: 2; grid-row: 2; }
+  @media (max-width: 1100px) {
+    .sc-row, .sc-legend { grid-template-columns: 1fr; gap: 16px; }
+    .sc-legend span:last-child { display: none; }
+  }
+  @media (max-width: 760px) {
+    .sc-metrics { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    .sc-row { padding: 16px 0; }
+  }
+
+  .tk-row { margin-top: 10px; font-size: 16px; line-height: 1.8; }
+  .subtbl { width: 100%; border-collapse: collapse; margin-top: 14px; font-size: 15px; }
+  .subtbl th { font-family: var(--mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); padding: 6px 8px; text-align: left; border-bottom: 1px solid var(--border); }
+  .subtbl td { padding: 7px 8px; border-bottom: 1px solid var(--border2); vertical-align: top; }
+  .subtbl .st-name { color: var(--head); font-weight: 600; }
+
+  .tk-find {
+    position: sticky; top: 0; z-index: 40;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    max-width: 1600px; margin: 0 auto;
+    padding: 10px 32px;
+    display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px;
+  }
+  .tk-find label {
+    font-family: var(--mono); font-size: 12px; letter-spacing: .12em;
+    text-transform: uppercase; color: var(--amber);
+  }
+  .tk-find input {
+    background: var(--bg); color: var(--head);
+    border: 1px solid var(--border2); border-radius: 4px;
+    font-family: var(--mono); font-size: 16px; font-weight: 700;
+    letter-spacing: .06em; text-transform: uppercase;
+    padding: 6px 10px; width: 140px;
+  }
+  .tk-find input:focus { outline: 1px solid var(--amber); border-color: var(--amber); }
+  .tk-find .tf-count { font-family: var(--mono); font-size: 13px; color: var(--muted); }
+  .tk-find .tf-count.has { color: var(--amber); }
+  .tk-find button {
+    font-family: var(--mono); font-size: 12px; letter-spacing: .08em;
+    text-transform: uppercase; background: var(--bg); color: var(--text);
+    border: 1px solid var(--border2); border-radius: 4px;
+    padding: 6px 10px; cursor: pointer;
+  }
+  .tk-find button:hover { border-color: var(--amber); color: var(--head); }
+  .tf-hits {
+    width: 100%; display: none;
+    list-style: none; max-height: 220px; overflow: auto;
+    border-top: 1px solid var(--border); padding-top: 8px; margin: 0;
+  }
+  .tf-hits.open { display: block; }
+  .tf-hits li { font-size: 15px; line-height: 1.5; padding: 4px 0; }
+  #tk-hits a, #tk-hits a:link, #tk-hits a:visited, #tk-hits a:active {
+    color: #FBBF24 !important; text-decoration: none; font-family: var(--mono); font-size: 13px;
+  }
+  #tk-hits a:hover { color: #EAE5DA !important; }
+  #tk-hits .tf-where { color: #D8D4CC !important; margin-left: 8px; font-size: 14px; }
+  b.tk.tk-hit {
+    background: var(--amber); color: #1A1400; padding: 0 3px; border-radius: 2px;
+    box-shadow: 0 0 0 3px var(--amber-dim);
+  }
+  b.tk.tk-hit.tk-current { outline: 2px solid var(--head); }
+  @media (max-width: 760px) {
+    .tk-find { padding: 10px 16px; }
+  }
+
+  #s05 .sc-row { grid-template-columns: minmax(180px, 220px) max-content minmax(280px, 46ch) !important; max-width: 1120px; align-items: start; }
+  #s05 .sc-head-row { grid-column: 1; grid-row: 1; }
+  #s05 .sc-metrics { grid-column: 2; grid-row: 1; grid-template-columns: repeat(3, max-content) !important; }
+  #s05 .sc-note { grid-column: 3 !important; grid-row: 1 !important; max-width: 46ch; margin: 0; }
+  .tier-card .sc-note { display: block; width: 100%; max-width: none !important; grid-column: auto !important; grid-row: auto !important; margin-top: 12px; }
+
+  .report-nav { max-width: 1600px; margin: 0 auto; padding: 10px 32px; background: var(--surface); border-bottom: 1px solid var(--border); }
+  .report-nav a { color: var(--amber); text-decoration: none; font-family: var(--mono); font-size: 13px; letter-spacing: .06em; margin-right: 14px; font-weight: 600; }
+  .report-nav a:hover { color: var(--head); text-decoration: underline; }
+
+  .section ul { margin: 12px 0 12px 28px; padding-left: 8px; }
+  .section ul li { margin-bottom: 6px; }
+
+
+  .bl-pct.pos, .banner-list .pos { color: var(--green); }
+  .bl-pct.neg, .banner-list .neg { color: var(--red); }
+  .tk-find { background: var(--surface); border-bottom: 1px solid var(--border); padding: 12px 32px; max-width: 1600px; margin: 0 auto; font-family: var(--mono); font-size: 14px; color: var(--amber); position: sticky; top: 0; z-index: 100; }
+  .tk-find input { background: var(--bg); border: 1px solid var(--border); color: var(--text); padding: 6px 10px; font-family: var(--mono); font-size: 14px; width: 180px; }
+  .tk-find button { background: var(--surface); border: 1px solid var(--border); color: var(--amber); padding: 6px 12px; margin-left: 6px; font-family: var(--mono); cursor: pointer; }
+  .tk-hit { background: var(--amber-dim) !important; outline: 2px solid var(--amber); }
+  .tk-current { outline: 2px solid var(--green); }
+</style>
+</head><body>
+<div class="report-header">
+  <div class="header-main">
+    <div>
+      <div class="brand">THEME ROTATION</div>
+      <h1>Weekly Theme Rotation</h1>
+    </div>
+    <div class="meta">
+      <div class="date">2026-10-23</div>
+      <div>As of Friday close</div>
+      <div>Spec v12 · Universe 1493 tickers</div>
+    </div>
+  </div>
+  <div class="header-disclaimer">Not investment advice. For information only. Data may or may not be accurate. © Frank Hayes</div>
+</div>
+
+<nav class="report-nav toc">
+  <a href="#s01">01 Summary</a>
+  <a href="#s02">02 Tier 1</a>
+  <a href="#s03">03 Tier 2</a>
+  <a href="#s04">04 Cooling</a>
+  <a href="#s05">05 Scorecard</a>
+  <a href="#s06">06 PPO</a>
+  <a href="#s07">07 Sub-themes</a>
+  <a href="#s08">08 ChartLists</a>
+  <a href="#s09">09 Change Log</a>
+</nav>
+
+<div class="tk-find" id="tk-find">
+  Find ticker: <input id="tk-q" type="text" placeholder="exact symbol" autocomplete="off"/>
+  <button id="tk-prev">Prev</button>
+  <button id="tk-next">Next</button>
+  <button id="tk-clear">Clear</button>
+  <span id="tk-count"></span>
+</div>
+
+<div class="market-banner">
+  <div class="banner-kicker">MARKET CLIMATE</div>
+  <h2>Week Ending 2026-10-23</h2>
+  <ul class="banner-list">
+<li><span class="bl-name">S&P 500</span> — 7,623.68 (<span class="bl-pct neg">-0.47%</span>).</li>
+<li><span class="bl-name">Nasdaq Composite</span> — 25,955.34 (<span class="bl-pct neg">-0.71%</span>).</li>
+<li><span class="bl-name">Russell 2000</span> — 2,775.90 (<span class="bl-pct pos">+2.00%</span>).</li>
+<li><span class="bl-name">Fed funds target</span> — 3.75–4.00%. Unchanged; next FOMC Oct 28.</li>
+<li><span class="bl-name">3-month UST</span> — 4.22%. Weekly Change: <span class="bl-pct neg">−4 bp</span>.</li>
+<li><span class="bl-name">2-year UST</span> — 4.69%. Weekly Change: <span class="bl-pct neg">−5 bp</span>.</li>
+<li><span class="bl-name">10-year UST</span> — 5.00%. Weekly Change: <span class="bl-pct neg">−9 bp</span>.</li>
+<li><span class="bl-name">30-year UST</span> — 5.33%. Weekly Change: <span class="bl-pct neg">−10 bp</span>.</li>
+<li><span class="bl-name">2s10s (10Y − 2Y)</span> — +31 bp. Weekly Change: <span class="bl-pct neg">−4 bp</span>.</li>
+<li><span class="bl-name">10s30s (30Y − 10Y)</span> — +33 bp. Weekly Change: <span class="bl-pct neg">−1 bp</span>.</li>
+<li><span class="bl-name">WTI</span> — $103.44 (<span class="bl-pct pos">+2.00%</span>).</li>
+<li><span class="bl-name">Brent</span> — $116.72 (<span class="bl-pct pos">+6.24%</span>).</li>
+<li><span class="bl-name">VIX</span> — 19.45 (<span class="bl-pct neg">-2.70%</span>).</li>
+<li><span class="bl-name">MOVE</span> — 103.31 (<span class="bl-pct neg">-3.30%</span>).</li>
+<li><span class="bl-name">ICE BofA US HY OAS</span> — 3.40%. Weekly Change: <span class="bl-pct pos">+9 bp</span>.</li>
+<li><span class="bl-name">OPEX / positioning</span> — None in window. No monthly/quarterly equity OPEX this week.</li>
+  </ul>
+</div>
+
+<div class="report-body">
+
+<section id="s01">
+  <h2 class="section-title"><span class="section-eyebrow">01</span> Executive Summary</h2>
+  <p>Early rotation is concentrated in Cybersecurity, Smart Home & IoT, Nanotechnology, and Healthcare & Biotech. Equal-weighted leadership is strongest in Cybersecurity (+11.99% 1W, breadth 92%). Mega-cap distortion is elevated in several large themes; prefer equal-weighted reads.</p>
+  <ul style="margin-left:28px">
+    <li>Cybersecurity — Accel +11.03pp, Equal Weighted 1W +11.99%, breadth 92% <span class="badge badge-early">EARLY ROTATION</span></li>
+    <li>Smart Home & IoT — Accel +2.22pp, Equal Weighted 1W +1.77%, breadth 71% <span class="badge badge-early">EARLY ROTATION</span></li>
+    <li>Nanotechnology — Accel +1.10pp, Equal Weighted 1W +2.30%, breadth 66% <span class="badge badge-early">EARLY ROTATION</span></li>
+    <li>Healthcare & Biotech — Accel +0.51pp, Equal Weighted 1W +2.65%, breadth 75% <span class="badge badge-early">EARLY ROTATION</span></li>
+  </ul>
+</section>
+
+<section id="s02">
+  <h2 class="section-title"><span class="section-eyebrow">02</span> Tier 1 — Early Rotation</h2>
+  <div class="tier-grid">
+
+    <div class="tier-card">
+      <div class="tc-header">
+        <div class="tc-title">Cybersecurity</div>
+        <div class="tc-sub"><span class="badge badge-early">EARLY ROTATION</span> · Accel +11.03pp</div>
+      </div>
+      <div class="tc-body">
+        <p>Equal-weighted 1W +11.99% vs cap-weighted +11.76%. Breadth 92%. Effective N 5.2. Top name <b class="tk">PANW</b>.</p>
+        <div class="tk-row">Top 5 by 1W: <b class="tk">BKYI</b>, <b class="tk">NTSK</b>, <b class="tk">ZS</b>, <b class="tk">TENB</b></div>
+        <table class="subtbl">
+          <thead><tr><th>Sub-theme</th><th>Signal</th><th>Eq 1W</th><th>Brd</th><th>Top 3</th></tr></thead>
+          <tbody>
+<tr><td class="st-name">Cybersecurity - Platform, Cloud & Application Security</td><td><span class="badge badge-mature">MATURE LEADERSHIP</span></td><td>+14.90%</td><td>100%</td><td><b class="tk">NTSK</b>, <b class="tk">ZS</b>, <b class="tk">TENB</b></td></tr>
+<tr><td class="st-name">Cybersecurity - IAM & Zero Trust</td><td><span class="badge badge-mature">MATURE LEADERSHIP</span></td><td>+10.70%</td><td>87%</td><td><b class="tk">BKYI</b>, <b class="tk">NTSK</b>, <b class="tk">SAIL</b></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="tier-card">
+      <div class="tc-header">
+        <div class="tc-title">Smart Home & IoT</div>
+        <div class="tc-sub"><span class="badge badge-early">EARLY ROTATION</span> · Accel +2.22pp</div>
+      </div>
+      <div class="tc-body">
+        <p>Equal-weighted 1W +1.77% vs cap-weighted +2.22%. Breadth 71%. Effective N 8.1. Top name <b class="tk">CARR</b>.</p>
+        <div class="tk-row">Top 5 by 1W: <b class="tk">ALLE</b>, <b class="tk">ALRM</b>, <b class="tk">BB</b>, <b class="tk">REZI</b>, <b class="tk">DGII</b></div>
+        <table class="subtbl">
+          <thead><tr><th>Sub-theme</th><th>Signal</th><th>Eq 1W</th><th>Brd</th><th>Top 3</th></tr></thead>
+          <tbody>
+<tr><td class="st-name">Smart Home - Automation, Control & Energy</td><td><span class="badge badge-hold">MIXED / CONSOLIDATING</span></td><td>+1.71%</td><td>67%</td><td><b class="tk">ALLE</b>, <b class="tk">ALRM</b>, <b class="tk">REZI</b></td></tr>
+<tr><td class="st-name">Smart Home - Connectivity, Devices & Appliances</td><td><span class="badge badge-hold">MIXED / CONSOLIDATING</span></td><td>+1.83%</td><td>75%</td><td><b class="tk">BB</b>, <b class="tk">DGII</b>, <b class="tk">ARLO</b></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="tier-card">
+      <div class="tc-header">
+        <div class="tc-title">Nanotechnology</div>
+        <div class="tc-sub"><span class="badge badge-early">EARLY ROTATION</span> · Accel +1.10pp</div>
+      </div>
+      <div class="tc-body">
+        <p>Equal-weighted 1W +2.30% vs cap-weighted +1.66%. Breadth 66%. Effective N 12.2. Top name <b class="tk">MMM</b>.</p>
+        <div class="tk-row">Top 5 by 1W: <b class="tk">NBTX</b>, <b class="tk">CLNN</b>, <b class="tk">LQDA</b>, <b class="tk">ASPN</b>, <b class="tk">AVTR</b></div>
+        <table class="subtbl">
+          <thead><tr><th>Sub-theme</th><th>Signal</th><th>Eq 1W</th><th>Brd</th><th>Top 3</th></tr></thead>
+          <tbody>
+<tr><td class="st-name">NanoTech - Research Tools & Advanced Instruments</td><td><span class="badge badge-mature">MATURE LEADERSHIP</span></td><td>-0.79%</td><td>67%</td><td><b class="tk">AVTR</b>, <b class="tk">MMM</b>, <b class="tk">BRKR</b></td></tr>
+<tr><td class="st-name">NanoTech - Materials, Industrial & Environment</td><td><span class="badge badge-hold">MIXED / CONSOLIDATING</span></td><td>+1.35%</td><td>54%</td><td><b class="tk">ASPN</b>, <b class="tk">MMM</b>, <b class="tk">DD</b></td></tr>
+<tr><td class="st-name">NanoTech - Nanomedicine & Drug Delivery</td><td><span class="badge badge-hold">MIXED / CONSOLIDATING</span></td><td>+8.29%</td><td>80%</td><td><b class="tk">NBTX</b>, <b class="tk">CLNN</b>, <b class="tk">LQDA</b></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="tier-card">
+      <div class="tc-header">
+        <div class="tc-title">Healthcare & Biotech</div>
+        <div class="tc-sub"><span class="badge badge-early">EARLY ROTATION</span> · Accel +0.51pp</div>
+      </div>
+      <div class="tc-body">
+        <p>Equal-weighted 1W +2.65% vs cap-weighted +1.63%. Breadth 75%. Effective N 19.8. Top name <b class="tk">LLY</b>.</p>
+        <div class="tk-row">Top 5 by 1W: <b class="tk">PACB</b>, <b class="tk">FATE</b>, <b class="tk">AMWL</b>, <b class="tk">PHR</b></div>
+        <table class="subtbl">
+          <thead><tr><th>Sub-theme</th><th>Signal</th><th>Eq 1W</th><th>Brd</th><th>Top 3</th></tr></thead>
+          <tbody>
+<tr><td class="st-name">Healthcare - Medical Devices & HealthTech Hardware</td><td><span class="badge badge-early">EARLY ROTATION</span></td><td>+3.28%</td><td>88%</td><td><b class="tk">IRTC</b>, <b class="tk">XRAY</b>, <b class="tk">TNDM</b></td></tr>
+<tr><td class="st-name">Healthcare - Oncology & Precision Cancer Therapeutics</td><td><span class="badge badge-early">EARLY ROTATION</span></td><td>+2.07%</td><td>83%</td><td><b class="tk">TNGX</b>, <b class="tk">EXEL</b>, <b class="tk">AZN</b></td></tr>
+<tr><td class="st-name">Healthcare - Genomics & Personalized Medicine</td><td><span class="badge badge-mature">MATURE LEADERSHIP</span></td><td>+3.71%</td><td>73%</td><td><b class="tk">PACB</b>, <b class="tk">CDNA</b>, <b class="tk">GH</b></td></tr>
+<tr><td class="st-name">Healthcare - Next-Gen Biotech Platforms</td><td><span class="badge badge-mature">MATURE LEADERSHIP</span></td><td>+3.32%</td><td>81%</td><td><b class="tk">CRL</b>, <b class="tk">UTHR</b>, <b class="tk">ROIV</b></td></tr>
+<tr><td class="st-name">Healthcare - Diagnostics, Biomarkers & Liquid Biopsy</td><td><span class="badge badge-mature">MATURE LEADERSHIP</span></td><td>+3.93%</td><td>88%</td><td><b class="tk">PACB</b>, <b class="tk">GH</b>, <b class="tk">QDEL</b></td></tr>
+<tr><td class="st-name">Healthcare - Regenerative Medicine, Psychedelics, Cannabis</td><td><span class="badge badge-hold">MIXED / CONSOLIDATING</span></td><td>+1.46%</td><td>50%</td><td><b class="tk">FATE</b>, <b class="tk">DFTX</b>, <b class="tk">CRON</b></td></tr>
+<tr><td class="st-name">Healthcare - Senior Care & Longevity</td><td><span class="badge badge-hold">MIXED / CONSOLIDATING</span></td><td>+1.05%</td><td>80%</td><td><b class="tk">ZBH</b>, <b class="tk">BSX</b>, <b class="tk">GEHC</b></td></tr>
+<tr><td class="st-name">Healthcare - Metabolic & Cardiometabolic</td><td><span class="badge badge-hold">MIXED / CONSOLIDATING</span></td><td>+1.46%</td><td>62%</td><td><b class="tk">UTHR</b>, <b class="tk">BIIB</b>, <b class="tk">OMDA</b></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="s03">
+  <h2 class="section-title"><span class="section-eyebrow">03</span> Tier 2 — Constructive</h2>
+  <div class="tier-grid">
+
+    <div class="tier-card">
+      <div class="tc-header">
+        <div class="tc-title">Big Data & Analytics</div>
+        <div class="tc-sub"><span class="badge badge-mature">MATURE LEADERSHIP</span> · Accel +2.97pp</div>
+      </div>
+      <div class="tc-body">
+        <p>Equal Weighted 1W +7.12%, CapWtd 1W +5.70%. Breadth 96%. Top name <b class="tk">SAP</b>.</p>
+        <div class="tk-row">Top 5 by 1W: <b class="tk">TDC</b>, <b class="tk">EFX</b>, <b class="tk">TRI</b>, <b class="tk">IT</b>, <b class="tk">AI</b></div>
+        <table class="subtbl">
+          <thead><tr><th>Sub-theme</th><th>Signal</th><th>Eq 1W</th><th>Brd</th><th>Top 3</th></tr></thead>
+          <tbody>
+<tr><td class="st-name">Big Data - Analytics, AI Platforms & BI</td><td><span class="badge badge-mature">MATURE LEADERSHIP</span></td><td>+8.70%</td><td>100%</td><td><b class="tk">TDC</b>, <b class="tk">AI</b>, <b class="tk">MDB</b></td></tr>
+<tr><td class="st-name">Big Data - Data Generation, Sourcing & Providers</td><td><span class="badge badge-mature">MATURE LEADERSHIP</span></td><td>+6.43%</td><td>94%</td><td><b class="tk">EFX</b>, <b class="tk">TRI</b>, <b class="tk">IT</b></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="tier-card">
+      <div class="tc-header">
+        <div class="tc-title">Space Tech</div>
+        <div class="tc-sub"><span class="badge badge-mature">MATURE LEADERSHIP</span> · Accel +2.23pp</div>
+      </div>
+      <div class="tc-body">
+        <p>Equal Weighted 1W -0.67%, CapWtd 1W +1.03%. Breadth 53%. Top name <b class="tk">SPCX</b>.</p>
+        <div class="tk-row">Top 5 by 1W: <b class="tk">LDOS</b>, <b class="tk">FLY</b>, <b class="tk">RKLB</b>, <b class="tk">BKSY</b>, <b class="tk">SPCE</b></div>
+        <table class="subtbl">
+          <thead><tr><th>Sub-theme</th><th>Signal</th><th>Eq 1W</th><th>Brd</th><th>Top 3</th></tr></thead>
+          <tbody>
+<tr><td class="st-name">Space - Data Analytics & Earth Observation</td><td><span class="badge badge-hold">MIXED / CONSOLIDATING</span></td><td>+2.28%</td><td>67%</td><td><b class="tk">LDOS</b>, <b class="tk">RKLB</b>, <b class="tk">BKSY</b></td></tr>
+<tr><td class="st-name">Space - Infrastructure, Exploration & Launch</td><td><span class="badge badge-cool">FAILED ROTATION</span></td><td>-2.40%</td><td>40%</td><td><b class="tk">FLY</b>, <b class="tk">SPCE</b>, <b class="tk">SPCX</b></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="tier-card">
+      <div class="tc-header">
+        <div class="tc-title">Environmental Sustainability</div>
+        <div class="tc-sub"><span class="badge badge-hold">MIXED / CONSOLIDATING</span> · Accel +1.63pp</div>
+      </div>
+      <div class="tc-body">
+        <p>Equal Weighted 1W +2.04%, CapWtd 1W +3.45%. Breadth 68%. Top name <b class="tk">WM</b>.</p>
+        <div class="tk-row">Top 5 by 1W: <b class="tk">BMI</b>, <b class="tk">WCN</b>, <b class="tk">CWST</b>, <b class="tk">TTEK</b>, <b class="tk">AWK</b></div>
+        <table class="subtbl">
+          <thead><tr><th>Sub-theme</th><th>Signal</th><th>Eq 1W</th><th>Brd</th><th>Top 3</th></tr></thead>
+          <tbody>
+<tr><td class="st-name">Environmental - Water Infrastructure & Treatment</td><td><span class="badge badge-early">EARLY ROTATION</span></td><td>+3.64%</td><td>83%</td><td><b class="tk">BMI</b>, <b class="tk">TTEK</b>, <b class="tk">AWK</b></td></tr>
+<tr><td class="st-name">Environmental - Waste Management & Recycling</td><td><span class="badge badge-mature">MATURE LEADERSHIP</span></td><td>+4.76%</td><td>88%</td><td><b class="tk">WCN</b>, <b class="tk">CWST</b>, <b class="tk">WM</b></td></tr>
+<tr><td class="st-name">Environmental - Climate, Carbon & Land Resources</td><td><span class="badge badge-hold">MIXED / CONSOLIDATING</span></td><td>-0.34%</td><td>44%</td><td><b class="tk">LNZA</b>, <b class="tk">LIN</b>, <b class="tk">OC</b></td></tr>
+<tr><td class="st-name">Environmental - Clean Technologies & Pollution Control</td><td><span class="badge badge-hold">MIXED / CONSOLIDATING</span></td><td>-1.20%</td><td>44%</td><td><b class="tk">ROL</b>, <b class="tk">VLTO</b>, <b class="tk">TNC</b></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="tier-card">
+      <div class="tc-header">
+        <div class="tc-title">Business Services & Consulting</div>
+        <div class="tc-sub"><span class="badge badge-mature">MATURE LEADERSHIP</span> · Accel +1.00pp</div>
+      </div>
+      <div class="tc-body">
+        <p>Equal Weighted 1W +6.36%, CapWtd 1W +5.75%. Breadth 96%. Top name <b class="tk">ACN</b>.</p>
+        <div class="tk-row">Top 5 by 1W: <b class="tk">CNXC</b>, <b class="tk">IT</b>, <b class="tk">KD</b>, <b class="tk">GDYN</b>, <b class="tk">G</b></div>
+        <table class="subtbl">
+          <thead><tr><th>Sub-theme</th><th>Signal</th><th>Eq 1W</th><th>Brd</th><th>Top 3</th></tr></thead>
+          <tbody>
+<tr><td class="st-name">Consulting</td><td><span class="badge badge-mature">MATURE LEADERSHIP</span></td><td>+7.33%</td><td>100%</td><td><b class="tk">IT</b>, <b class="tk">KD</b>, <b class="tk">GDYN</b></td></tr>
+<tr><td class="st-name">Business Services - Outsourcing, Facilities & Testing</td><td><span class="badge badge-hold">MIXED / CONSOLIDATING</span></td><td>+5.30%</td><td>91%</td><td><b class="tk">CNXC</b>, <b class="tk">G</b>, <b class="tk">EXLS</b></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="tier-card">
+      <div class="tc-header">
+        <div class="tc-title">Financials - Traditional</div>
+        <div class="tc-sub"><span class="badge badge-hold">MIXED / CONSOLIDATING</span> · Accel +0.93pp</div>
+      </div>
+      <div class="tc-body">
+        <p>Equal Weighted 1W +1.55%, CapWtd 1W +0.74%. Breadth 66%. Top name <b class="tk">JPM</b>.</p>
+        <div class="tk-row">Top 5 by 1W: <b class="tk">TCBI</b>, <b class="tk">VLY</b>, <b class="tk">BX</b>, <b class="tk">OZK</b>, <b class="tk">GBCI</b></div>
+        <table class="subtbl">
+          <thead><tr><th>Sub-theme</th><th>Signal</th><th>Eq 1W</th><th>Brd</th><th>Top 3</th></tr></thead>
+          <tbody>
+<tr><td class="st-name">Fin Trad - Asset Management, Custody & Alternatives</td><td><span class="badge badge-early">EARLY ROTATION</span></td><td>+1.76%</td><td>61%</td><td><b class="tk">BX</b>, <b class="tk">ARES</b>, <b class="tk">CG</b></td></tr>
+<tr><td class="st-name">Fin Trad - Banks, Lending & Mortgage Finance</td><td><span class="badge badge-hold">MIXED / CONSOLIDATING</span></td><td>+1.94%</td><td>73%</td><td><b class="tk">TCBI</b>, <b class="tk">VLY</b>, <b class="tk">OZK</b></td></tr>
+<tr><td class="st-name">Fin Trad - Insurance & Reinsurance</td><td><span class="badge badge-hold">MIXED / CONSOLIDATING</span></td><td>+1.09%</td><td>63%</td><td><b class="tk">SIGI</b>, <b class="tk">RYAN</b>, <b class="tk">RLI</b></td></tr>
+<tr><td class="st-name">Fin Trad - Capital Markets & Investment Banking</td><td><span class="badge badge-cool">FAILED ROTATION</span></td><td>-0.21%</td><td>29%</td><td><b class="tk">HLI</b>, <b class="tk">RJF</b>, <b class="tk">JEF</b></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="tier-card">
+      <div class="tc-header">
+        <div class="tc-title">Hardware</div>
+        <div class="tc-sub"><span class="badge badge-hold">MIXED / CONSOLIDATING</span> · Accel +0.91pp</div>
+      </div>
+      <div class="tc-body">
+        <p>Equal Weighted 1W -0.90%, CapWtd 1W +0.56%. Breadth 50%. Top name <b class="tk">AAPL</b>.</p>
+        <div class="tk-row">Top 5 by 1W: <b class="tk">ARQQ</b>, <b class="tk">IOT</b>, <b class="tk">HPQ</b>, <b class="tk">OLED</b>, <b class="tk">CDW</b></div>
+        <table class="subtbl">
+          <thead><tr><th>Sub-theme</th><th>Signal</th><th>Eq 1W</th><th>Brd</th><th>Top 3</th></tr></thead>
+          <tbody>
+<tr><td class="st-name">Hardware - Edge Computing</td><td><span class="badge badge-hold">MIXED / CONSOLIDATING</span></td><td>+3.72%</td><td>80%</td><td><b class="tk">FSLY</b>, <b class="tk">AKAM</b>, <b class="tk">CEVA</b></td></tr>
+<tr><td class="st-name">Hardware - NextGen</td><td><span class="badge badge-hold">MIXED / CONSOLIDATING</span></td><td>+1.18%</td><td>50%</td><td><b class="tk">OLED</b>, <b class="tk">KOPN</b>, <b class="tk">VUZI</b></td></tr>
+<tr><td class="st-name">Hardware - Consumer Electronics, PCs & Peripherals</td><td><span class="badge badge-hold">MIXED / CONSOLIDATING</span></td><td>+3.59%</td><td>83%</td><td><b class="tk">HPQ</b>, <b class="tk">TBCH</b>, <b class="tk">CRSR</b></td></tr>
+<tr><td class="st-name">Hardware - Industrial & IoT</td><td><span class="badge badge-hold">MIXED / CONSOLIDATING</span></td><td>-1.63%</td><td>42%</td><td><b class="tk">IOT</b>, <b class="tk">TRMB</b>, <b class="tk">ZBRA</b></td></tr>
+<tr><td class="st-name">Hardware - Quantum Computing</td><td><span class="badge badge-cool">FAILED ROTATION</span></td><td>+3.35%</td><td>40%</td><td><b class="tk">ARQQ</b>, <b class="tk">QUBT</b>, <b class="tk">IONQ</b></td></tr>
+<tr><td class="st-name">Hardware - Data Center Infrastructure & Servers</td><td><span class="badge badge-cool">FAILED ROTATION</span></td><td>-4.37%</td><td>32%</td><td><b class="tk">CDW</b>, <b class="tk">IBM</b>, <b class="tk">NTAP</b></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="s04">
+  <h2 class="section-title"><span class="section-eyebrow">04</span> Cooling / Downgrades</h2>
+  <p>Prior-week signals not fully available in this run; cooling rows limited to current FAILED themes with negative acceleration.</p>
+  <table class="cooling-table">
+    <thead><tr><th>Theme</th><th>Current</th><th>Accel</th><th>Notes</th></tr></thead>
+    <tbody>
+<tr><td class="ct-theme">Artificial Intelligence</td><td><span class="badge badge-cool">FAILED ROTATION</span></td><td class="ct-diff">-3.78pp</td><td>Equal Weighted 1W +1.71%, breadth 58%.</td></tr>
+<tr><td class="ct-theme">Commodities - Metals</td><td><span class="badge badge-cool">FAILED ROTATION</span></td><td class="ct-diff">-3.57pp</td><td>Equal Weighted 1W -6.95%, breadth 12%.</td></tr>
+<tr><td class="ct-theme">Digital Entertainment & Media</td><td><span class="badge badge-cool">FAILED ROTATION</span></td><td class="ct-diff">-3.33pp</td><td>Equal Weighted 1W +0.81%, breadth 54%.</td></tr>
+<tr><td class="ct-theme">Cloud Computing</td><td><span class="badge badge-cool">FAILED ROTATION</span></td><td class="ct-diff">-1.49pp</td><td>Equal Weighted 1W +1.50%, breadth 52%.</td></tr>
+<tr><td class="ct-theme">Commodities - Agriculture</td><td><span class="badge badge-cool">FAILED ROTATION</span></td><td class="ct-diff">-0.82pp</td><td>Equal Weighted 1W -1.23%, breadth 33%.</td></tr>
+<tr><td class="ct-theme">Energy - Renewable</td><td><span class="badge badge-cool">FAILED ROTATION</span></td><td class="ct-diff">-0.74pp</td><td>Equal Weighted 1W -3.63%, breadth 30%.</td></tr>
+<tr><td class="ct-theme">Defense & Aerospace</td><td><span class="badge badge-cool">FAILED ROTATION</span></td><td class="ct-diff">-0.70pp</td><td>Equal Weighted 1W -2.20%, breadth 48%.</td></tr>
+<tr><td class="ct-theme">Agriculture & FoodTech</td><td><span class="badge badge-cool">FAILED ROTATION</span></td><td class="ct-diff">+0.18pp</td><td>Equal Weighted 1W -1.63%, breadth 38%.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="s05">
+  <h2 class="section-title"><span class="section-eyebrow">05</span> Theme Scorecard</h2>
+  <p>Remaining non-FAILED themes not written up above. FAILED collapsed below.</p>
+  <div class="scorecard">
+
+    <div class="sc-row">
+      <div class="sc-left">
+        <div class="sc-name-row"><span class="sc-theme">Real Estate & REITs</span><span class="sc-count">98</span></div>
+        <div class="sc-metrics">
+          <div class="sc-metric"><span class="sc-m-label">Eq 1W</span><span class="sc-m-val">+1.35%</span></div>
+          <div class="sc-metric"><span class="sc-m-label">Accel</span><span class="sc-m-val">+0.44</span></div>
+          <div class="sc-metric"><span class="sc-m-label">Brd</span><span class="sc-m-val">77%</span></div>
+        </div>
+      </div>
+      <div class="sc-right">
+        <div class="sc-head-row"><span class="badge badge-hold">MIXED</span></div>
+        <div class="sc-note">Highest Market Cap <b class="tk">MAR</b>. Top 1W names: <b class="tk">DFH</b>, <b class="tk">LEN</b>, <b class="tk">KBH</b>, <b class="tk">KRC</b>, <b class="tk">PHM</b>. Effective N 40.0 (diversification of cap weights).</div>
+      </div>
+    </div>
+
+    <div class="sc-row">
+      <div class="sc-left">
+        <div class="sc-name-row"><span class="sc-theme">Telecommunications</span><span class="sc-count">33</span></div>
+        <div class="sc-metrics">
+          <div class="sc-metric"><span class="sc-m-label">Eq 1W</span><span class="sc-m-val">+1.50%</span></div>
+          <div class="sc-metric"><span class="sc-m-label">Accel</span><span class="sc-m-val">+0.44</span></div>
+          <div class="sc-metric"><span class="sc-m-label">Brd</span><span class="sc-m-val">62%</span></div>
+        </div>
+      </div>
+      <div class="sc-right">
+        <div class="sc-head-row"><span class="badge badge-hold">MIXED</span></div>
+        <div class="sc-note">Highest Market Cap <b class="tk">SPCX</b>. Top 1W names: <b class="tk">KVHI</b>, <b class="tk">RNG</b>, <b class="tk">EGHT</b>, <b class="tk">FSLY</b>, <b class="tk">TWLO</b>. Effective N 4.0 (diversification of cap weights).</div>
+      </div>
+    </div>
+
+    <div class="sc-row">
+      <div class="sc-left">
+        <div class="sc-name-row"><span class="sc-theme">Conglomerates & Diversified Holdings</span><span class="sc-count">5</span></div>
+        <div class="sc-metrics">
+          <div class="sc-metric"><span class="sc-m-label">Eq 1W</span><span class="sc-m-val">-1.49%</span></div>
+          <div class="sc-metric"><span class="sc-m-label">Accel</span><span class="sc-m-val">+0.09</span></div>
+          <div class="sc-metric"><span class="sc-m-label">Brd</span><span class="sc-m-val">75%</span></div>
+        </div>
+      </div>
+      <div class="sc-right">
+        <div class="sc-head-row"><span class="badge badge-hold">MIXED</span></div>
+        <div class="sc-note">Highest Market Cap <b class="tk">BRK-B</b>. Top 1W names: <b class="tk">CODI</b>, <b class="tk">BRK-B</b>, <b class="tk">L</b>, <b class="tk">IEP</b>. Effective N 1.0 (diversification of cap weights).</div>
+      </div>
+    </div>
+
+    <div class="sc-row">
+      <div class="sc-left">
+        <div class="sc-name-row"><span class="sc-theme">Transportation & Logistics</span><span class="sc-count">61</span></div>
+        <div class="sc-metrics">
+          <div class="sc-metric"><span class="sc-m-label">Eq 1W</span><span class="sc-m-val">-0.31%</span></div>
+          <div class="sc-metric"><span class="sc-m-label">Accel</span><span class="sc-m-val">-0.08</span></div>
+          <div class="sc-metric"><span class="sc-m-label">Brd</span><span class="sc-m-val">53%</span></div>
+        </div>
+      </div>
+      <div class="sc-right">
+        <div class="sc-head-row"><span class="badge badge-hold">MIXED</span></div>
+        <div class="sc-note">Highest Market Cap <b class="tk">CAT</b>. Top 1W names: <b class="tk">R</b>, <b class="tk">LCID</b>, <b class="tk">LUV</b>, <b class="tk">COLD</b>, <b class="tk">GNK</b>. Effective N 19.0 (diversification of cap weights).</div>
+      </div>
+    </div>
+
+    <div class="sc-row">
+      <div class="sc-left">
+        <div class="sc-name-row"><span class="sc-theme">Industrials & Construction</span><span class="sc-count">123</span></div>
+        <div class="sc-metrics">
+          <div class="sc-metric"><span class="sc-m-label">Eq 1W</span><span class="sc-m-val">-0.64%</span></div>
+          <div class="sc-metric"><span class="sc-m-label">Accel</span><span class="sc-m-val">-0.19</span></div>
+          <div class="sc-metric"><span class="sc-m-label">Brd</span><span class="sc-m-val">56%</span></div>
+        </div>
+      </div>
+      <div class="sc-right">
+        <div class="sc-head-row"><span class="badge badge-hold">MIXED</span></div>
+        <div class="sc-note">Highest Market Cap <b class="tk">SHW</b>. Top 1W names: <b class="tk">BMI</b>, <b class="tk">TREX</b>, <b class="tk">CDW</b>, <b class="tk">WSO</b>. Effective N 45.7 (diversification of cap weights).</div>
+      </div>
+    </div>
+
+    <div class="sc-row">
+      <div class="sc-left">
+        <div class="sc-name-row"><span class="sc-theme">E-commerce</span><span class="sc-count">65</span></div>
+        <div class="sc-metrics">
+          <div class="sc-metric"><span class="sc-m-label">Eq 1W</span><span class="sc-m-val">+1.21%</span></div>
+          <div class="sc-metric"><span class="sc-m-label">Accel</span><span class="sc-m-val">-0.37</span></div>
+          <div class="sc-metric"><span class="sc-m-label">Brd</span><span class="sc-m-val">65%</span></div>
+        </div>
+      </div>
+      <div class="sc-right">
+        <div class="sc-head-row"><span class="badge badge-hold">MIXED</span></div>
+        <div class="sc-note">Highest Market Cap <b class="tk">AMZN</b>. Top 1W names: <b class="tk">CART</b>, <b class="tk">WRBY</b>, <b class="tk">WIX</b>, <b class="tk">ACI</b>. Effective N 6.8 (diversification of cap weights).</div>
+      </div>
+    </div>
+
+    <div class="sc-row">
+      <div class="sc-left">
+        <div class="sc-name-row"><span class="sc-theme">FinTech & Digital Finance</span><span class="sc-count">54</span></div>
+        <div class="sc-metrics">
+          <div class="sc-metric"><span class="sc-m-label">Eq 1W</span><span class="sc-m-val">+1.59%</span></div>
+          <div class="sc-metric"><span class="sc-m-label">Accel</span><span class="sc-m-val">-0.42</span></div>
+          <div class="sc-metric"><span class="sc-m-label">Brd</span><span class="sc-m-val">63%</span></div>
+        </div>
+      </div>
+      <div class="sc-right">
+        <div class="sc-head-row"><span class="badge badge-hold">MIXED</span></div>
+        <div class="sc-note">Highest Market Cap <b class="tk">V</b>. Top 1W names: <b class="tk">GWRE</b>, <b class="tk">BILL</b>, <b class="tk">NDAQ</b>, <b class="tk">HIPO</b>, <b class="tk">WEX</b>. Effective N 8.6 (diversification of cap weights).</div>
+      </div>
+    </div>
+
+    <div class="sc-row">
+      <div class="sc-left">
+        <div class="sc-name-row"><span class="sc-theme">Industrial Automation & Robotics</span><span class="sc-count">54</span></div>
+        <div class="sc-metrics">
+          <div class="sc-metric"><span class="sc-m-label">Eq 1W</span><span class="sc-m-val">-1.49%</span></div>
+          <div class="sc-metric"><span class="sc-m-label">Accel</span><span class="sc-m-val">-0.46</span></div>
+          <div class="sc-metric"><span class="sc-m-label">Brd</span><span class="sc-m-val">47%</span></div>
+        </div>
+      </div>
+      <div class="sc-right">
+        <div class="sc-head-row"><span class="badge badge-hold">MIXED</span></div>
+        <div class="sc-note">Highest Market Cap <b class="tk">ISRG</b>. Top 1W names: <b class="tk">PRCT</b>, <b class="tk">IOT</b>, <b class="tk">BSY</b>, <b class="tk">DDD</b>, <b class="tk">PATH</b>. Effective N 14.3 (diversification of cap weights).</div>
+      </div>
+    </div>
+
+    <div class="sc-row">
+      <div class="sc-left">
+        <div class="sc-name-row"><span class="sc-theme">Software</span><span class="sc-count">42</span></div>
+        <div class="sc-metrics">
+          <div class="sc-metric"><span class="sc-m-label">Eq 1W</span><span class="sc-m-val">+7.38%</span></div>
+          <div class="sc-metric"><span class="sc-m-label">Accel</span><span class="sc-m-val">-0.77</span></div>
+          <div class="sc-metric"><span class="sc-m-label">Brd</span><span class="sc-m-val">72%</span></div>
+        </div>
+      </div>
+      <div class="sc-right">
+        <div class="sc-head-row"><span class="badge badge-mature">MATURE</span></div>
+        <div class="sc-note">Highest Market Cap <b class="tk">MSFT</b>. Top 1W names: <b class="tk">BRZE</b>, <b class="tk">TENB</b>, <b class="tk">FROG</b>, <b class="tk">HUBS</b>, <b class="tk">TDC</b>. Effective N 2.1 (diversification of cap weights).</div>
+      </div>
+    </div>
+
+    <div class="sc-row">
+      <div class="sc-left">
+        <div class="sc-name-row"><span class="sc-theme">Commodities - Energy</span><span class="sc-count">51</span></div>
+        <div class="sc-metrics">
+          <div class="sc-metric"><span class="sc-m-label">Eq 1W</span><span class="sc-m-val">-0.87%</span></div>
+          <div class="sc-metric"><span class="sc-m-label">Accel</span><span class="sc-m-val">-0.91</span></div>
+          <div class="sc-metric"><span class="sc-m-label">Brd</span><span class="sc-m-val">61%</span></div>
+        </div>
+      </div>
+      <div class="sc-right">
+        <div class="sc-head-row"><span class="badge badge-hold">MIXED</span></div>
+        <div class="sc-note">Highest Market Cap <b class="tk">COP</b>. Top 1W names: <b class="tk">RRC</b>, <b class="tk">SWX</b>, <b class="tk">CQP</b>, <b class="tk">AR</b>, <b class="tk">SR</b>. Effective N 20.4 (diversification of cap weights).</div>
+      </div>
+    </div>
+
+    <div class="sc-row">
+      <div class="sc-left">
+        <div class="sc-name-row"><span class="sc-theme">Consumer Goods & Retail</span><span class="sc-count">103</span></div>
+        <div class="sc-metrics">
+          <div class="sc-metric"><span class="sc-m-label">Eq 1W</span><span class="sc-m-val">+0.78%</span></div>
+          <div class="sc-metric"><span class="sc-m-label">Accel</span><span class="sc-m-val">-1.01</span></div>
+          <div class="sc-metric"><span class="sc-m-label">Brd</span><span class="sc-m-val">61%</span></div>
+        </div>
+      </div>
+      <div class="sc-right">
+        <div class="sc-head-row"><span class="badge badge-hold">MIXED</span></div>
+        <div class="sc-note">Highest Market Cap <b class="tk">KO</b>. Top 1W names: <b class="tk">RENT</b>, <b class="tk">RH</b>, <b class="tk">HAS</b>, <b class="tk">SAM</b>, <b class="tk">VITL</b>. Effective N 19.3 (diversification of cap weights).</div>
+      </div>
+    </div>
+
+    <div class="sc-row">
+      <div class="sc-left">
+        <div class="sc-name-row"><span class="sc-theme">Energy - Traditional</span><span class="sc-count">104</span></div>
+        <div class="sc-metrics">
+          <div class="sc-metric"><span class="sc-m-label">Eq 1W</span><span class="sc-m-val">+0.24%</span></div>
+          <div class="sc-metric"><span class="sc-m-label">Accel</span><span class="sc-m-val">-1.14</span></div>
+          <div class="sc-metric"><span class="sc-m-label">Brd</span><span class="sc-m-val">71%</span></div>
+        </div>
+      </div>
+      <div class="sc-right">
+        <div class="sc-head-row"><span class="badge badge-hold">MIXED</span></div>
+        <div class="sc-note">Highest Market Cap <b class="tk">XOM</b>. Top 1W names: <b class="tk">VAL</b>, <b class="tk">WFRD</b>, <b class="tk">SLB</b>, <b class="tk">MUR</b>, <b class="tk">APA</b>. Effective N 18.8 (diversification of cap weights).</div>
+      </div>
+    </div>
+
+    <div class="sc-row">
+      <div class="sc-left">
+        <div class="sc-name-row"><span class="sc-theme">Education Technology</span><span class="sc-count">18</span></div>
+        <div class="sc-metrics">
+          <div class="sc-metric"><span class="sc-m-label">Eq 1W</span><span class="sc-m-val">+0.36%</span></div>
+          <div class="sc-metric"><span class="sc-m-label">Accel</span><span class="sc-m-val">-1.73</span></div>
+          <div class="sc-metric"><span class="sc-m-label">Brd</span><span class="sc-m-val">67%</span></div>
+        </div>
+      </div>
+      <div class="sc-right">
+        <div class="sc-head-row"><span class="badge badge-hold">MIXED</span></div>
+        <div class="sc-note">Highest Market Cap <b class="tk">PSO</b>. Top 1W names: <b class="tk">DCBO</b>, <b class="tk">UTI</b>, <b class="tk">BNED</b>, <b class="tk">MH</b>, <b class="tk">CVSA</b>. Effective N 10.1 (diversification of cap weights).</div>
+      </div>
+    </div>
+  </div>
+  <details class="failed-block">
+    <summary>FAILED ROTATION themes <span class="expand-hint">Click To Expand</span></summary>
+    <div class="scorecard">
+
+    <div class="sc-row">
+      <div class="sc-left">
+        <div class="sc-name-row"><span class="sc-theme">Artificial Intelligence</span><span class="sc-count">24</span></div>
+        <div class="sc-metrics">
+          <div class="sc-metric"><span class="sc-m-label">Eq 1W</span><span class="sc-m-val">+1.71%</span></div>
+          <div class="sc-metric"><span class="sc-m-label">Accel</span><span class="sc-m-val">-3.78</span></div>
+          <div class="sc-metric"><span class="sc-m-label">Brd</span><span class="sc-m-val">58%</span></div>
+        </div>
+      </div>
+      <div class="sc-right">
+        <div class="sc-head-row"><span class="badge badge-cool">FAILED</span></div>
+        <div class="sc-note">Highest Market Cap <b class="tk">GOOGL</b>. Top 1W names: <b class="tk">INOD</b>, <b class="tk">GDYN</b>, <b class="tk">AI</b>, <b class="tk">G</b>, <b class="tk">EXLS</b>.</div>
+      </div>
+    </div>
+
+    <div class="sc-row">
+      <div class="sc-left">
+        <div class="sc-name-row"><span class="sc-theme">Commodities - Metals</span><span class="sc-count">51</span></div>
+        <div class="sc-metrics">
+          <div class="sc-metric"><span class="sc-m-label">Eq 1W</span><span class="sc-m-val">-6.95%</span></div>
+          <div class="sc-metric"><span class="sc-m-label">Accel</span><span class="sc-m-val">-3.57</span></div>
+          <div class="sc-metric"><span class="sc-m-label">Brd</span><span class="sc-m-val">12%</span></div>
+        </div>
+      </div>
+      <div class="sc-right">
+        <div class="sc-head-row"><span class="badge badge-cool">FAILED</span></div>
+        <div class="sc-note">Highest Market Cap <b class="tk">NEM</b>. Top 1W names: <b class="tk">CLF</b>, <b class="tk">WWR</b>, <b class="tk">RS</b>, <b class="tk">NUE</b>.</div>
+      </div>
+    </div>
+
+    <div class="sc-row">
+      <div class="sc-left">
+        <div class="sc-name-row"><span class="sc-theme">Digital Entertainment & Media</span><span class="sc-count">46</span></div>
+        <div class="sc-metrics">
+          <div class="sc-metric"><span class="sc-m-label">Eq 1W</span><span class="sc-m-val">+0.81%</span></div>
+          <div class="sc-metric"><span class="sc-m-label">Accel</span><span class="sc-m-val">-3.33</span></div>
+          <div class="sc-metric"><span class="sc-m-label">Brd</span><span class="sc-m-val">54%</span></div>
+        </div>
+      </div>
+      <div class="sc-right">
+        <div class="sc-head-row"><span class="badge badge-cool">FAILED</span></div>
+        <div class="sc-note">Highest Market Cap <b class="tk">META</b>. Top 1W names: <b class="tk">HAS</b>, <b class="tk">DKNG</b>, <b class="tk">SPOT</b>, <b class="tk">DSP</b>, <b class="tk">RBLX</b>.</div>
+      </div>
+    </div>
+
+    <div class="sc-row">
+      <div class="sc-left">
+        <div class="sc-name-row"><span class="sc-theme">Cloud Computing</span><span class="sc-count">63</span></div>
+        <div class="sc-metrics">
+          <div class="sc-metric"><span class="sc-m-label">Eq 1W</span><span class="sc-m-val">+1.50%</span></div>
+          <div class="sc-metric"><span class="sc-m-label">Accel</span><span class="sc-m-val">-1.49</span></div>
+          <div class="sc-metric"><span class="sc-m-label">Brd</span><span class="sc-m-val">52%</span></div>
+        </div>
+      </div>
+      <div class="sc-right">
+        <div class="sc-head-row"><span class="badge badge-cool">FAILED</span></div>
+        <div class="sc-note">Highest Market Cap <b class="tk">MSFT</b>. Top 1W names: <b class="tk">ASAN</b>, <b class="tk">FROG</b>, <b class="tk">MNDY</b>, <b class="tk">HUBS</b>, <b class="tk">FIVN</b>.</div>
+      </div>
+    </div>
+
+    <div class="sc-row">
+      <div class="sc-left">
+        <div class="sc-name-row"><span class="sc-theme">Commodities - Agriculture</span><span class="sc-count">22</span></div>
+        <div class="sc-metrics">
+          <div class="sc-metric"><span class="sc-m-label">Eq 1W</span><span class="sc-m-val">-1.23%</span></div>
+          <div class="sc-metric"><span class="sc-m-label">Accel</span><span class="sc-m-val">-0.82</span></div>
+          <div class="sc-metric"><span class="sc-m-label">Brd</span><span class="sc-m-val">33%</span></div>
+        </div>
+      </div>
+      <div class="sc-right">
+        <div class="sc-head-row"><span class="badge badge-cool">FAILED</span></div>
+        <div class="sc-note">Highest Market Cap <b class="tk">ZTS</b>. Top 1W names: <b class="tk">SMG</b>, <b class="tk">TSN</b>, <b class="tk">HRL</b>, <b class="tk">FF</b>, <b class="tk">ZTS</b>.</div>
+      </div>
+    </div>
+
+    <div class="sc-row">
+      <div class="sc-left">
+        <div class="sc-name-row"><span class="sc-theme">Energy - Renewable</span><span class="sc-count">89</span></div>
+        <div class="sc-metrics">
+          <div class="sc-metric"><span class="sc-m-label">Eq 1W</span><span class="sc-m-val">-3.63%</span></div>
+          <div class="sc-metric"><span class="sc-m-label">Accel</span><span class="sc-m-val">-0.74</span></div>
+          <div class="sc-metric"><span class="sc-m-label">Brd</span><span class="sc-m-val">30%</span></div>
+        </div>
+      </div>
+      <div class="sc-right">
+        <div class="sc-head-row"><span class="badge badge-cool">FAILED</span></div>
+        <div class="sc-note">Highest Market Cap <b class="tk">TSLA</b>. Top 1W names: <b class="tk">CDLR</b>, <b class="tk">SLB</b>, <b class="tk">SEDG</b>, <b class="tk">AMPX</b>, <b class="tk">SHLS</b>.</div>
+      </div>
+    </div>
+
+    <div class="sc-row">
+      <div class="sc-left">
+        <div class="sc-name-row"><span class="sc-theme">Defense & Aerospace</span><span class="sc-count">55</span></div>
+        <div class="sc-metrics">
+          <div class="sc-metric"><span class="sc-m-label">Eq 1W</span><span class="sc-m-val">-2.20%</span></div>
+          <div class="sc-metric"><span class="sc-m-label">Accel</span><span class="sc-m-val">-0.70</span></div>
+          <div class="sc-metric"><span class="sc-m-label">Brd</span><span class="sc-m-val">48%</span></div>
+        </div>
+      </div>
+      <div class="sc-right">
+        <div class="sc-head-row"><span class="badge badge-cool">FAILED</span></div>
+        <div class="sc-note">Highest Market Cap <b class="tk">GE</b>. Top 1W names: <b class="tk">SAIC</b>, <b class="tk">LMT</b>, <b class="tk">LDOS</b>, <b class="tk">KBR</b>.</div>
+      </div>
+    </div>
+
+    <div class="sc-row">
+      <div class="sc-left">
+        <div class="sc-name-row"><span class="sc-theme">Agriculture & FoodTech</span><span class="sc-count">37</span></div>
+        <div class="sc-metrics">
+          <div class="sc-metric"><span class="sc-m-label">Eq 1W</span><span class="sc-m-val">-1.63%</span></div>
+          <div class="sc-metric"><span class="sc-m-label">Accel</span><span class="sc-m-val">+0.18</span></div>
+          <div class="sc-metric"><span class="sc-m-label">Brd</span><span class="sc-m-val">38%</span></div>
+        </div>
+      </div>
+      <div class="sc-right">
+        <div class="sc-head-row"><span class="badge badge-cool">FAILED</span></div>
+        <div class="sc-note">Highest Market Cap <b class="tk">DE</b>. Top 1W names: <b class="tk">OTLY</b>, <b class="tk">CBUS</b>, <b class="tk">TRMB</b>, <b class="tk">LSF</b>, <b class="tk">TTC</b>.</div>
+      </div>
+    </div>
+
+    <div class="sc-row">
+      <div class="sc-left">
+        <div class="sc-name-row"><span class="sc-theme">Semiconductors</span><span class="sc-count">78</span></div>
+        <div class="sc-metrics">
+          <div class="sc-metric"><span class="sc-m-label">Eq 1W</span><span class="sc-m-val">-3.54%</span></div>
+          <div class="sc-metric"><span class="sc-m-label">Accel</span><span class="sc-m-val">+1.02</span></div>
+          <div class="sc-metric"><span class="sc-m-label">Brd</span><span class="sc-m-val">27%</span></div>
+        </div>
+      </div>
+      <div class="sc-right">
+        <div class="sc-head-row"><span class="badge badge-cool">FAILED</span></div>
+        <div class="sc-note">Highest Market Cap <b class="tk">NVDA</b>. Top 1W names: <b class="tk">ARQQ</b>, <b class="tk">OLED</b>, <b class="tk">POWI</b>, <b class="tk">SWKS</b>, <b class="tk">CRUS</b>.</div>
+      </div>
+    </div>
+
+    <div class="sc-row">
+      <div class="sc-left">
+        <div class="sc-name-row"><span class="sc-theme">Crypto & Blockchain</span><span class="sc-count">10</span></div>
+        <div class="sc-metrics">
+          <div class="sc-metric"><span class="sc-m-label">Eq 1W</span><span class="sc-m-val">-7.37%</span></div>
+          <div class="sc-metric"><span class="sc-m-label">Accel</span><span class="sc-m-val">+2.94</span></div>
+          <div class="sc-metric"><span class="sc-m-label">Brd</span><span class="sc-m-val">0%</span></div>
+        </div>
+      </div>
+      <div class="sc-right">
+        <div class="sc-head-row"><span class="badge badge-cool">FAILED</span></div>
+        <div class="sc-note">Highest Market Cap <b class="tk">HUT</b>. Top 1W names: <b class="tk">CORZ</b>, <b class="tk">WULF</b>, <b class="tk">CLSK</b>, <b class="tk">MARA</b>, <b class="tk">IREN</b>.</div>
+      </div>
+    </div>
+
+    <div class="sc-row">
+      <div class="sc-left">
+        <div class="sc-name-row"><span class="sc-theme">Electric Vehicles & Mobility</span><span class="sc-count">44</span></div>
+        <div class="sc-metrics">
+          <div class="sc-metric"><span class="sc-m-label">Eq 1W</span><span class="sc-m-val">-2.04%</span></div>
+          <div class="sc-metric"><span class="sc-m-label">Accel</span><span class="sc-m-val">+3.72</span></div>
+          <div class="sc-metric"><span class="sc-m-label">Brd</span><span class="sc-m-val">30%</span></div>
+        </div>
+      </div>
+      <div class="sc-right">
+        <div class="sc-head-row"><span class="badge badge-cool">FAILED</span></div>
+        <div class="sc-note">Highest Market Cap <b class="tk">TSLA</b>. Top 1W names: <b class="tk">CHPT</b>, <b class="tk">LCID</b>, <b class="tk">ENVX</b>, <b class="tk">AMPX</b>, <b class="tk">HSAI</b>.</div>
+      </div>
+    </div>
+    </div>
+  </details>
+</section>
+
+<section id="s06">
+  <h2 class="section-title"><span class="section-eyebrow">06</span> PPO Reset Candidates</h2>
+  <p>Theme first, setup second. HIGH CONVICTION is an entry queue, not a buy list. Work a name only when its parent Signal is EARLY, a constructive MIXED, or a hold-MATURE. A HIGH CONVICTION row inside FAILED is a stock trying to work in a group that is not — half-size probe or skip. Daily PPO near zero and turning up is the trigger; capture < 1.0 means it held up on SPY down days (can pay up a little); capture ≥ 1.0 is buyable only on a pullback. WATCHLIST omitted.</p>
+  <div class="ppo-card hi">
+    <div class="pc-title">HIGH CONVICTION ({len(hc)} names)</div>
+    <table class="ticker-table">
+      <thead><tr><th>Ticker</th><th>Theme</th><th>Signal</th><th>1W</th><th>1M</th><th>vs 30W EMA</th><th>Daily PPO</th><th>Weekly Hist</th><th>RS 1M</th><th>Vol 20/60</th><th>Down-day</th></tr></thead>
+      <tbody>
+<tr><td><b class="tk">LFST</b></td><td>Healthcare & Biotech</td><td><span class="badge badge-early">EARLY</span></td><td>+10.14%</td><td>+3.03%</td><td>+23.07%</td><td>+0.502</td><td>-1.522</td><td>+4.85</td><td>0.68</td><td>-0.01</td></tr>
+<tr><td><b class="tk">SAIL</b></td><td>Cybersecurity</td><td><span class="badge badge-early">EARLY</span></td><td>+16.21%</td><td>+1.97%</td><td>+22.08%</td><td>+0.655</td><td>+1.929</td><td>+3.76</td><td>1.12</td><td>0.23</td></tr>
+<tr><td><b class="tk">BB</b></td><td>Smart Home & IoT</td><td><span class="badge badge-early">EARLY</span></td><td>+10.67%</td><td>+3.48%</td><td>+14.44%</td><td>+0.998</td><td>-2.500</td><td>+5.31</td><td>1.23</td><td>6.49</td></tr>
+<tr><td><b class="tk">MITK</b></td><td>Cybersecurity</td><td><span class="badge badge-early">EARLY</span></td><td>+15.70%</td><td>+6.70%</td><td>+11.92%</td><td>+0.259</td><td>-1.894</td><td>+8.58</td><td>0.84</td><td>3.25</td></tr>
+<tr><td><b class="tk">LH</b></td><td>Healthcare & Biotech</td><td><span class="badge badge-early">EARLY</span></td><td>+3.46%</td><td>+5.59%</td><td>+10.33%</td><td>+0.916</td><td>-0.049</td><td>+7.45</td><td>0.92</td><td>-0.41</td></tr>
+<tr><td><b class="tk">DGX</b></td><td>Healthcare & Biotech</td><td><span class="badge badge-early">EARLY</span></td><td>+2.93%</td><td>+3.42%</td><td>+9.88%</td><td>+0.551</td><td>-0.386</td><td>+5.25</td><td>1.09</td><td>-0.36</td></tr>
+<tr><td><b class="tk">LIVN</b></td><td>Healthcare & Biotech</td><td><span class="badge badge-early">EARLY</span></td><td>+4.28%</td><td>+3.07%</td><td>+7.49%</td><td>+0.682</td><td>-1.041</td><td>+4.89</td><td>0.90</td><td>-0.63</td></tr>
+<tr><td><b class="tk">ASPN</b></td><td>Nanotechnology</td><td><span class="badge badge-early">EARLY</span></td><td>+6.36%</td><td>+0.73%</td><td>+6.57%</td><td>+0.762</td><td>-0.044</td><td>+2.51</td><td>0.75</td><td>4.05</td></tr>
+<tr><td><b class="tk">VRTX</b></td><td>Healthcare & Biotech</td><td><span class="badge badge-early">EARLY</span></td><td>+4.84%</td><td>+1.74%</td><td>+6.56%</td><td>+0.144</td><td>-0.357</td><td>+3.53</td><td>1.05</td><td>0.82</td></tr>
+<tr><td><b class="tk">PATH</b></td><td>Software</td><td><span class="badge badge-mature">MATURE</span></td><td>+9.96%</td><td>+6.64%</td><td>+6.76%</td><td>-0.351</td><td>-0.375</td><td>+8.52</td><td>0.52</td><td>1.13</td></tr>
+<tr><td><b class="tk">HPQ</b></td><td>Hardware</td><td><span class="badge badge-hold">MIXED</span></td><td>+12.10%</td><td>+4.99%</td><td>+21.43%</td><td>+0.724</td><td>-0.044</td><td>+6.85</td><td>0.83</td><td>-1.69</td></tr>
+<tr><td><b class="tk">PTEN</b></td><td>Energy - Traditional</td><td><span class="badge badge-hold">MIXED</span></td><td>+4.09%</td><td>+7.45%</td><td>+11.78%</td><td>+0.333</td><td>-0.718</td><td>+9.35</td><td>0.85</td><td>-1.51</td></tr>
+<tr><td><b class="tk">GRMN</b></td><td>Hardware</td><td><span class="badge badge-hold">MIXED</span></td><td>+3.14%</td><td>+3.19%</td><td>+10.90%</td><td>+0.897</td><td>-0.266</td><td>+5.01</td><td>0.94</td><td>-0.23</td></tr>
+<tr><td><b class="tk">DGII</b></td><td>Industrial Automation & Robotics</td><td><span class="badge badge-hold">MIXED</span></td><td>+7.22%</td><td>+0.15%</td><td>+10.78%</td><td>-0.022</td><td>-1.655</td><td>+1.91</td><td>0.97</td><td>1.58</td></tr>
+<tr><td><b class="tk">TTEK</b></td><td>Industrials & Construction</td><td><span class="badge badge-hold">MIXED</span></td><td>+6.51%</td><td>+4.29%</td><td>+10.41%</td><td>+0.948</td><td>+0.508</td><td>+6.13</td><td>0.80</td><td>-1.35</td></tr>
+<tr><td><b class="tk">ACA</b></td><td>Industrials & Construction</td><td><span class="badge badge-hold">MIXED</span></td><td>+1.42%</td><td>+1.77%</td><td>+8.89%</td><td>+0.464</td><td>-0.756</td><td>+3.31</td><td>1.03</td><td>-0.01</td></tr>
+<tr><td><b class="tk">MSI</b></td><td>Hardware</td><td><span class="badge badge-hold">MIXED</span></td><td>+4.03%</td><td>+5.50%</td><td>+8.74%</td><td>+0.833</td><td>+0.266</td><td>+7.36</td><td>0.89</td><td>-0.91</td></tr>
+<tr><td><b class="tk">CSX</b></td><td>Transportation & Logistics</td><td><span class="badge badge-hold">MIXED</span></td><td>+4.33%</td><td>+9.01%</td><td>+8.25%</td><td>+0.977</td><td>-0.996</td><td>+10.94</td><td>1.00</td><td>-1.48</td></tr>
+<tr><td><b class="tk">OKE</b></td><td>Energy - Traditional</td><td><span class="badge badge-hold">MIXED</span></td><td>+2.70%</td><td>+6.37%</td><td>+7.85%</td><td>+0.771</td><td>-0.458</td><td>+8.25</td><td>0.87</td><td>-2.05</td></tr>
+<tr><td><b class="tk">URI</b></td><td>Industrials & Construction</td><td><span class="badge badge-hold">MIXED</span></td><td>+6.72%</td><td>+5.35%</td><td>+7.84%</td><td>+0.973</td><td>-0.872</td><td>+7.21</td><td>1.21</td><td>0.79</td></tr>
+<tr><td><b class="tk">UBSI</b></td><td>Financials - Traditional</td><td><span class="badge badge-hold">MIXED</span></td><td>+4.24%</td><td>+4.60%</td><td>+7.41%</td><td>+0.581</td><td>-0.602</td><td>+6.44</td><td>1.01</td><td>-0.71</td></tr>
+<tr><td><b class="tk">PKG</b></td><td>Industrials & Construction</td><td><span class="badge badge-hold">MIXED</span></td><td>+4.78%</td><td>+3.80%</td><td>+6.91%</td><td>+0.934</td><td>-0.492</td><td>+5.63</td><td>1.09</td><td>-1.05</td></tr>
+<tr><td><b class="tk">REXR</b></td><td>Real Estate & REITs</td><td><span class="badge badge-hold">MIXED</span></td><td>+5.08%</td><td>+2.45%</td><td>+6.25%</td><td>+0.195</td><td>+0.576</td><td>+4.25</td><td>1.11</td><td>-1.81</td></tr>
+<tr><td><b class="tk">MAC</b></td><td>Real Estate & REITs</td><td><span class="badge badge-hold">MIXED</span></td><td>+4.97%</td><td>+5.70%</td><td>+6.25%</td><td>+0.676</td><td>-1.282</td><td>+7.57</td><td>0.93</td><td>0.09</td></tr>
+<tr><td><b class="tk">J</b></td><td>Industrials & Construction</td><td><span class="badge badge-hold">MIXED</span></td><td>+2.82%</td><td>+1.36%</td><td>+5.66%</td><td>+0.393</td><td>+0.253</td><td>+3.14</td><td>1.02</td><td>-0.61</td></tr>
+<tr><td><b class="tk">HIW</b></td><td>Real Estate & REITs</td><td><span class="badge badge-hold">MIXED</span></td><td>+3.99%</td><td>-0.78%</td><td>+5.57%</td><td>-0.404</td><td>-1.403</td><td>+0.97</td><td>1.02</td><td>-0.33</td></tr>
+<tr><td><b class="tk">AVNT</b></td><td>Industrials & Construction</td><td><span class="badge badge-hold">MIXED</span></td><td>+5.26%</td><td>-0.51%</td><td>+5.51%</td><td>-0.604</td><td>-1.031</td><td>+1.25</td><td>1.03</td><td>-0.52</td></tr>
+<tr><td><b class="tk">CVSA</b></td><td>Education Technology</td><td><span class="badge badge-hold">MIXED</span></td><td>+4.00%</td><td>+7.17%</td><td>+5.43%</td><td>+0.766</td><td>-0.229</td><td>+9.06</td><td>0.87</td><td>-1.26</td></tr>
+<tr><td><b class="tk">EGHT</b></td><td>Telecommunications</td><td><span class="badge badge-hold">MIXED</span></td><td>+9.79%</td><td>+7.04%</td><td>+5.37%</td><td>+0.350</td><td>+0.847</td><td>+8.92</td><td>0.91</td><td>1.96</td></tr>
+<tr><td><b class="tk">ARLP</b></td><td>Energy - Traditional</td><td><span class="badge badge-hold">MIXED</span></td><td>+1.51%</td><td>+1.08%</td><td>+5.03%</td><td>+0.454</td><td>-0.063</td><td>+2.87</td><td>0.95</td><td>-1.03</td></tr>
+<tr><td><b class="tk">EWBC</b></td><td>Financials - Traditional</td><td><span class="badge badge-hold">MIXED</span></td><td>+3.40%</td><td>+4.50%</td><td>+4.92%</td><td>+0.568</td><td>-0.805</td><td>+6.34</td><td>1.17</td><td>0.23</td></tr>
+<tr><td><b class="tk">CQP</b></td><td>Commodities - Energy</td><td><span class="badge badge-hold">MIXED</span></td><td>+4.06%</td><td>+0.12%</td><td>+4.88%</td><td>-0.214</td><td>-0.747</td><td>+1.89</td><td>0.85</td><td>-0.79</td></tr>
+<tr><td><b class="tk">CUZ</b></td><td>Real Estate & REITs</td><td><span class="badge badge-hold">MIXED</span></td><td>+4.45%</td><td>+1.05%</td><td>+4.34%</td><td>+0.041</td><td>-1.196</td><td>+2.83</td><td>0.91</td><td>-0.36</td></tr>
+<tr><td><b class="tk">HOMB</b></td><td>Financials - Traditional</td><td><span class="badge badge-hold">MIXED</span></td><td>+3.08%</td><td>+3.29%</td><td>+4.31%</td><td>+0.368</td><td>-0.531</td><td>+5.12</td><td>1.12</td><td>-0.77</td></tr>
+<tr><td><b class="tk">SSB</b></td><td>Financials - Traditional</td><td><span class="badge badge-hold">MIXED</span></td><td>+3.38%</td><td>+3.07%</td><td>+4.30%</td><td>+0.129</td><td>-0.590</td><td>+4.89</td><td>0.99</td><td>-0.43</td></tr>
+<tr><td><b class="tk">ASB</b></td><td>Financials - Traditional</td><td><span class="badge badge-hold">MIXED</span></td><td>+4.32%</td><td>+4.10%</td><td>+3.95%</td><td>-0.091</td><td>-1.042</td><td>+5.94</td><td>1.07</td><td>-0.51</td></tr>
+<tr><td><b class="tk">AWR</b></td><td>Environmental Sustainability</td><td><span class="badge badge-hold">MIXED</span></td><td>+2.38%</td><td>+1.24%</td><td>+3.87%</td><td>-0.303</td><td>-0.884</td><td>+3.03</td><td>1.01</td><td>-1.17</td></tr>
+<tr><td><b class="tk">COLD</b></td><td>Transportation & Logistics</td><td><span class="badge badge-hold">MIXED</span></td><td>+4.70%</td><td>+1.05%</td><td>+3.74%</td><td>-0.179</td><td>-1.086</td><td>+2.83</td><td>0.90</td><td>-0.15</td></tr>
+<tr><td><b class="tk">CFR</b></td><td>Financials - Traditional</td><td><span class="badge badge-hold">MIXED</span></td><td>+1.29%</td><td>+0.58%</td><td>+3.53%</td><td>-0.317</td><td>-1.191</td><td>+2.35</td><td>0.81</td><td>-0.44</td></tr>
+<tr><td><b class="tk">WRBY</b></td><td>E-commerce</td><td><span class="badge badge-hold">MIXED</span></td><td>+11.01%</td><td>+12.95%</td><td>+2.68%</td><td>+0.077</td><td>-0.807</td><td>+14.94</td><td>1.04</td><td>2.20</td></tr>
+<tr><td><b class="tk">ESS</b></td><td>Real Estate & REITs</td><td><span class="badge badge-hold">MIXED</span></td><td>+3.31%</td><td>+2.27%</td><td>+2.58%</td><td>+0.261</td><td>-0.762</td><td>+4.08</td><td>0.93</td><td>0.16</td></tr>
+<tr><td><b class="tk">HWC</b></td><td>Financials - Traditional</td><td><span class="badge badge-hold">MIXED</span></td><td>+0.66%</td><td>-0.08%</td><td>+2.46%</td><td>-0.274</td><td>-1.086</td><td>+1.68</td><td>1.08</td><td>-0.21</td></tr>
+<tr><td><b class="tk">ONB</b></td><td>Financials - Traditional</td><td><span class="badge badge-hold">MIXED</span></td><td>+1.24%</td><td>+1.16%</td><td>+1.96%</td><td>-0.267</td><td>-0.978</td><td>+2.94</td><td>1.25</td><td>-0.44</td></tr>
+<tr><td><b class="tk">WMB</b></td><td>Energy - Traditional</td><td><span class="badge badge-hold">MIXED</span></td><td>+0.59%</td><td>+1.01%</td><td>+0.93%</td><td>-0.089</td><td>-0.595</td><td>+2.80</td><td>1.04</td><td>-0.36</td></tr>
+<tr><td><b class="tk">FROG</b></td><td>Cloud Computing</td><td><span class="badge badge-cool">FAILED</span></td><td>+19.35%</td><td>+11.86%</td><td>+22.46%</td><td>+0.700</td><td>-1.260</td><td>+13.84</td><td>0.92</td><td>3.82</td></tr>
+<tr><td><b class="tk">TXN</b></td><td>Semiconductors</td><td><span class="badge badge-cool">FAILED</span></td><td>+2.97%</td><td>+4.89%</td><td>+6.99%</td><td>+0.692</td><td>-1.003</td><td>+6.74</td><td>1.05</td><td>1.08</td></tr>
+<tr><td><b class="tk">LXFR</b></td><td>Commodities - Metals</td><td><span class="badge badge-cool">FAILED</span></td><td>+0.29%</td><td>-0.06%</td><td>+5.25%</td><td>+0.061</td><td>-0.903</td><td>+1.71</td><td>1.01</td><td>-0.00</td></tr>
+<tr><td><b class="tk">SLAB</b></td><td>Semiconductors</td><td><span class="badge badge-cool">FAILED</span></td><td>+0.12%</td><td>-0.32%</td><td>+4.39%</td><td>+0.076</td><td>-0.829</td><td>+1.44</td><td>1.12</td><td>0.22</td></tr>
+<tr><td><b class="tk">CF</b></td><td>Agriculture & FoodTech</td><td><span class="badge badge-cool">FAILED</span></td><td>-0.14%</td><td>+0.07%</td><td>+3.68%</td><td>-0.837</td><td>-1.205</td><td>+1.84</td><td>0.91</td><td>-2.05</td></tr>
+<tr><td><b class="tk">AES</b></td><td>Energy - Renewable</td><td><span class="badge badge-cool">FAILED</span></td><td>+0.33%</td><td>+1.21%</td><td>+2.49%</td><td>+0.274</td><td>+0.082</td><td>+3.00</td><td>1.18</td><td>-0.04</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="s07">
+  <h2 class="section-title"><span class="section-eyebrow">07</span> Sub-Theme Appendix — EARLY only</h2>
+  <ul style="margin-left:28px">
+<li>Real Estate - Housing, Urban Living & Demographics (Real Estate & REITs) <span class="badge badge-early">EARLY ROTATION</span> — Eq 1W +4.23%, top 5: <b class="tk">DFH</b>, <b class="tk">LEN</b>, <b class="tk">KBH</b>, <b class="tk">PHM</b>, <b class="tk">DHI</b></li>
+<li>Environmental - Water Infrastructure & Treatment (Environmental Sustainability) <span class="badge badge-early">EARLY ROTATION</span> — Eq 1W +3.64%, top 5: <b class="tk">BMI</b>, <b class="tk">TTEK</b>, <b class="tk">AWK</b>, <b class="tk">WTRG</b>, <b class="tk">XYL</b></li>
+<li>Fin Trad - Asset Management, Custody & Alternatives (Financials - Traditional) <span class="badge badge-early">EARLY ROTATION</span> — Eq 1W +1.76%, top 5: <b class="tk">BX</b>, <b class="tk">ARES</b>, <b class="tk">CG</b>, <b class="tk">KKR</b>, <b class="tk">TPG</b></li>
+<li>Energy Base - Oilfield Services & Equipment (Energy - Traditional) <span class="badge badge-early">EARLY ROTATION</span> — Eq 1W +2.35%, top 5: <b class="tk">VAL</b>, <b class="tk">WFRD</b>, <b class="tk">SLB</b>, <b class="tk">NOV</b>, <b class="tk">HAL</b></li>
+<li>Defense - Cyber Defense & Electronic Warfare (Defense & Aerospace) <span class="badge badge-early">EARLY ROTATION</span> — Eq 1W +4.08%, top 5: <b class="tk">SAIC</b>, <b class="tk">LMT</b>, <b class="tk">LDOS</b>, <b class="tk">KBR</b>, <b class="tk">AXON</b></li>
+<li>E-commerce - Retail Media & Advertising (E-commerce) <span class="badge badge-early">EARLY ROTATION</span> — Eq 1W +3.98%, top 5: <b class="tk">CART</b>, <b class="tk">BBY</b>, <b class="tk">TTD</b>, <b class="tk">PUBM</b>, <b class="tk">HD</b></li>
+<li>Industrials - Packaging & Containers (Industrials & Construction) <span class="badge badge-early">EARLY ROTATION</span> — Eq 1W +2.35%, top 5: <b class="tk">AMCR</b>, <b class="tk">PKG</b>, <b class="tk">SLGN</b>, <b class="tk">AVY</b>, <b class="tk">CCK</b></li>
+<li>Transportation - Logistics, Warehousing & Supply Chain Solutions (Transportation & Logistics) <span class="badge badge-early">EARLY ROTATION</span> — Eq 1W +2.86%, top 5: <b class="tk">R</b>, <b class="tk">COLD</b>, <b class="tk">UPS</b>, <b class="tk">GXO</b>, <b class="tk">UAL</b></li>
+<li>Healthcare - Medical Devices & HealthTech Hardware (Healthcare & Biotech) <span class="badge badge-early">EARLY ROTATION</span> — Eq 1W +3.28%, top 5: <b class="tk">IRTC</b>, <b class="tk">XRAY</b>, <b class="tk">TNDM</b>, <b class="tk">GMED</b>, <b class="tk">RMD</b></li>
+<li>Defense - Drones & Anti-Drone Systems (Defense & Aerospace) <span class="badge badge-early">EARLY ROTATION</span> — Eq 1W +1.52%, top 5: <b class="tk">LMT</b>, <b class="tk">NOC</b>, <b class="tk">UMAC</b>, <b class="tk">ONDS</b>, <b class="tk">LHX</b></li>
+<li>Real Estate - Retail & Consumer Real Estate (Real Estate & REITs) <span class="badge badge-early">EARLY ROTATION</span> — Eq 1W +1.70%, top 5: <b class="tk">MAC</b>, <b class="tk">PSA</b>, <b class="tk">LAMR</b>, <b class="tk">KIM</b>, <b class="tk">SPG</b></li>
+<li>Industrials - Construction Materials & Aggregates (Industrials & Construction) <span class="badge badge-early">EARLY ROTATION</span> — Eq 1W +1.38%, top 5: <b class="tk">KNF</b>, <b class="tk">EXP</b>, <b class="tk">VMC</b>, <b class="tk">CRH</b>, <b class="tk">ACA</b></li>
+<li>Industrials - Chemicals & Advanced Materials (Industrials & Construction) <span class="badge badge-early">EARLY ROTATION</span> — Eq 1W +1.33%, top 5: <b class="tk">DOW</b>, <b class="tk">AVNT</b>, <b class="tk">IFF</b>, <b class="tk">LYB</b>, <b class="tk">ASH</b></li>
+<li>Energy Clean - Utilities & Clean Power Operators (Energy - Renewable) <span class="badge badge-early">EARLY ROTATION</span> — Eq 1W +2.00%, top 5: <b class="tk">SLB</b>, <b class="tk">CWEN</b>, <b class="tk">NEE</b>, <b class="tk">XEL</b>, <b class="tk">EXC</b></li>
+<li>Healthcare - Oncology & Precision Cancer Therapeutics (Healthcare & Biotech) <span class="badge badge-early">EARLY ROTATION</span> — Eq 1W +2.07%, top 5: <b class="tk">TNGX</b>, <b class="tk">EXEL</b>, <b class="tk">AZN</b>, <b class="tk">JNJ</b>, <b class="tk">BMY</b></li>
+  </ul>
+</section>
+
+<section id="s08">
+  <h2 class="section-title"><span class="section-eyebrow">08</span> ChartLists</h2>
+  <p>Six paste lists. High Conviction = all PPO HIGH CONVICTION names. High Conviction - Early/Mature = the subset whose parent Signal is EARLY or MATURE. Early Sub-Themes = unique names from the Section 07 EARLY appendix. Python blocks are the same names wrapped for a Python list.</p>
+<div class="chartlist-box"><strong>High Conviction</strong>
+LFST,SAIL,BB,MITK,LH,DGX,LIVN,ASPN,VRTX,PATH,HPQ,PTEN,GRMN,DGII,TTEK,ACA,MSI,CSX,OKE,URI,UBSI,PKG,REXR,MAC,J,HIW,AVNT,CVSA,EGHT,ARLP,EWBC,CQP,CUZ,HOMB,SSB,ASB,AWR,COLD,CFR,WRBY,ESS,HWC,ONB,WMB,FROG,TXN,LXFR,SLAB,CF,AES</div>
+<div class="chartlist-box"><strong>High Conviction - Python</strong>
+'LFST', 'SAIL', 'BB', 'MITK', 'LH', 'DGX', 'LIVN', 'ASPN', 'VRTX', 'PATH', 'HPQ', 'PTEN', 'GRMN', 'DGII', 'TTEK', 'ACA', 'MSI', 'CSX', 'OKE', 'URI', 'UBSI', 'PKG', 'REXR', 'MAC', 'J', 'HIW', 'AVNT', 'CVSA', 'EGHT', 'ARLP', 'EWBC', 'CQP', 'CUZ', 'HOMB', 'SSB', 'ASB', 'AWR', 'COLD', 'CFR', 'WRBY', 'ESS', 'HWC', 'ONB', 'WMB', 'FROG', 'TXN', 'LXFR', 'SLAB', 'CF', 'AES'</div>
+<div class="chartlist-box"><strong>High Conviction - Early/Mature</strong>
+LFST,SAIL,BB,MITK,LH,DGX,LIVN,ASPN,VRTX,PATH</div>
+<div class="chartlist-box"><strong>High Conviction - Early/Mature - Python</strong>
+'LFST', 'SAIL', 'BB', 'MITK', 'LH', 'DGX', 'LIVN', 'ASPN', 'VRTX', 'PATH'</div>
+<div class="chartlist-box"><strong>Early Sub-Themes</strong>
+DFH,LEN,KBH,PHM,DHI,BMI,TTEK,AWK,WTRG,XYL,BX,ARES,CG,KKR,TPG,VAL,WFRD,SLB,NOV,HAL,SAIC,LMT,LDOS,KBR,AXON,CART,BBY,TTD,PUBM,HD,AMCR,PKG,SLGN,AVY,CCK,R,COLD,UPS,GXO,UAL,IRTC,XRAY,TNDM,GMED,RMD,NOC,UMAC,ONDS,LHX,MAC,PSA,LAMR,KIM,SPG,KNF,EXP,VMC,CRH,ACA,DOW,AVNT,IFF,LYB,ASH,CWEN,NEE,XEL,EXC,TNGX,EXEL,AZN,JNJ,BMY</div>
+<div class="chartlist-box"><strong>Early Sub-Themes - Python</strong>
+'DFH', 'LEN', 'KBH', 'PHM', 'DHI', 'BMI', 'TTEK', 'AWK', 'WTRG', 'XYL', 'BX', 'ARES', 'CG', 'KKR', 'TPG', 'VAL', 'WFRD', 'SLB', 'NOV', 'HAL', 'SAIC', 'LMT', 'LDOS', 'KBR', 'AXON', 'CART', 'BBY', 'TTD', 'PUBM', 'HD', 'AMCR', 'PKG', 'SLGN', 'AVY', 'CCK', 'R', 'COLD', 'UPS', 'GXO', 'UAL', 'IRTC', 'XRAY', 'TNDM', 'GMED', 'RMD', 'NOC', 'UMAC', 'ONDS', 'LHX', 'MAC', 'PSA', 'LAMR', 'KIM', 'SPG', 'KNF', 'EXP', 'VMC', 'CRH', 'ACA', 'DOW', 'AVNT', 'IFF', 'LYB', 'ASH', 'CWEN', 'NEE', 'XEL', 'EXC', 'TNGX', 'EXEL', 'AZN', 'JNJ', 'BMY'</div>
+
+</section>
+
+<section id="s09">
+  <h2 class="section-title"><span class="section-eyebrow">09</span> Change Log vs Prior Week</h2>
+  <ul style="margin-left:28px">
+    <li>Pipeline data_as_of moved to 2026-10-23. Universe 1493 tickers / 2016 rows.</li>
+    <li>EARLY themes: Cybersecurity (strongest), Smart Home & IoT, Nanotechnology, Healthcare & Biotech.</li>
+    <li>HIGH CONVICTION count: 50.</li>
+    <li>Spec v12 applied: Market Climate % highlighting (>+1% green, <+1% red); Find Ticker bar above Market Climate with scroll-into-view.</li>
+  </ul>
+</section>
+</div>
+
+<div class="report-footer">
+  Methodology: Theme and sub-theme aggregates from pipeline CSVs (not recomputed). Name selection by 1W descending among valid returns. Signal badges per Spec v12. Weight-cap: not applied.<br/>
+  Banner sources: S&P/Nasdaq/Russell from Yahoo Finance historical closes; UST yields and spreads from FRED DGS* series; Fed funds from FRED DFF / target range; WTI/Brent from NYMEX/ICE and FRED DCOILWTICO / DCOILBRENTEU proxies; VIX from CBOE / FRED VIXCLS; MOVE from TradingView TVC:MOVE / ICE BofAML; HY OAS from FRED BAMLH0A0HYM2 (latest available Oct 22). No major OPEX in window.<br/>
+  Coverage: market_cap 1485; return_status ok 1466. Failures noted in manifest.<br/>
+  Not investment advice. Readings as of 2026-10-23 close; drift intradaily.
+</div>
+
+<script>
+(function() {
+  const q = document.getElementById('tk-q');
+  const prev = document.getElementById('tk-prev');
+  const next = document.getElementById('tk-next');
+  const clear = document.getElementById('tk-clear');
+  const count = document.getElementById('tk-count');
+  let hits = [];
+  let idx = -1;
+  function clearHighlights() {
+    document.querySelectorAll('.tk-hit, .tk-current').forEach(el => el.classList.remove('tk-hit','tk-current'));
+    hits = []; idx = -1; count.textContent = '';
+  }
+  function clearAll() {
+    clearHighlights();
+    q.value = '';
+  }
+  function search() {
+    clearHighlights();
+    const term = q.value.trim().toUpperCase();
+    if (!term) return;
+    const nodes = Array.from(document.querySelectorAll('b.tk')).filter(el => !el.closest('#s08'));
+    hits = nodes.filter(el => el.textContent.trim().toUpperCase() === term);
+    hits.forEach(el => el.classList.add('tk-hit'));
+    count.textContent = hits.length + ' hit' + (hits.length===1?'':'s');
+    if (hits.length) { idx = 0; focus(); }
+  }
+  function focus() {
+    hits.forEach(el => el.classList.remove('tk-current'));
+    if (idx >= 0 && idx < hits.length) {
+      hits[idx].classList.add('tk-current');
+      hits[idx].scrollIntoView({block:'center', behavior:'smooth'});
+    }
+  }
+  q.addEventListener('input', search);
+  q.addEventListener('keydown', e => {
+    if (e.key === 'Enter') { e.preventDefault(); if (e.shiftKey) prev.click(); else next.click(); }
+    if (e.key === 'Escape') clearAll();
+  });
+  prev.addEventListener('click', () => { if (hits.length) { idx = (idx - 1 + hits.length) % hits.length; focus(); } });
+  next.addEventListener('click', () => { if (hits.length) { idx = (idx + 1) % hits.length; focus(); } });
+  clear.addEventListener('click', clearAll);
+})();
+</script>
+</body></html>
