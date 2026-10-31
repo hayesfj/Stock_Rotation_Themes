@@ -1,7 +1,7 @@
 Ticker,Company Name,Theme,Sub Theme,Assignment
 A,"Agilent Technologies, Inc.",Nanotechnology,NanoTech - Research Tools & Advanced Instruments,Primary
 AA,Alcoa Corp,Commodities - Metals,Comm Metals - Industrial & Base Metals,Primary
-AAL,American Airlines Group Inc.,Transportation & Logistics,Transportation - Air Travel & Passenger Transportation,Primary
+AAL,American Airlines Group Inc.,Airlines,Airlines - Passenger Carriers,Primary
 AAOI,"Applied Optoelectronics, Inc.",Hardware,Hardware - Photonics,Primary
 AAON,"AAON, Inc.",Industrials & Construction,Industrials - Building Products & HVAC,Primary
 AAON,"AAON, Inc.",Cloud Computing,Cloud - Data Centers & Infrastructure,Secondary
@@ -77,8 +77,8 @@ ALB,Albemarle Corp,Commodities - Metals,Comm Metals - Battery & Energy Transitio
 ALGM,"Allegro Microsystems, Inc.",Semiconductors,"Semis - Analog, Mixed-Signal & Power Management",Primary
 ALGM,"Allegro Microsystems, Inc.",Electric Vehicles & Mobility,EVs - Key Suppliers & Autonomy Tech,Secondary
 ALGN,"Align Technology, Inc.",Healthcare & Biotech,Healthcare - Medical Devices & HealthTech Hardware,Primary
-ALGT,Allegiant Travel Co,Transportation & Logistics,Transportation - Air Travel & Passenger Transportation,Primary
-ALK,"Alaska Air Group, Inc.",Transportation & Logistics,Transportation - Air Travel & Passenger Transportation,Primary
+ALGT,Allegiant Travel Co,Airlines,Airlines - Passenger Carriers,Primary
+ALK,"Alaska Air Group, Inc.",Airlines,Airlines - Passenger Carriers,Primary
 ALL,Allstate Corp,Financials - Traditional,Fin Trad - Insurance & Reinsurance,Primary
 ALLE,Allegion Plc,Smart Home & IoT,"Smart Home - Automation, Control & Energy",Primary
 ALLY,Ally Financial Inc.,FinTech & Digital Finance,FinTech - Digital Banking & Neobanks,Primary
@@ -501,7 +501,7 @@ CZR,"Caesars Entertainment, Inc.",Digital Entertainment & Media,"Entertainment -
 D,"Dominion Energy, Inc",Energy - Traditional,Energy Base - Utilities & Conventional Power Operators,Primary
 D,"Dominion Energy, Inc",Energy - Renewable,Energy Clean - Wind,Secondary
 DAC,Danaos Corp,Transportation & Logistics,Transportation - Marine Shipping & Ports,Primary
-DAL,"Delta Air Lines, Inc.",Transportation & Logistics,Transportation - Air Travel & Passenger Transportation,Primary
+DAL,"Delta Air Lines, Inc.",Airlines,Airlines - Passenger Carriers,Primary
 DAN,Dana Inc,Electric Vehicles & Mobility,EVs - Key Suppliers & Autonomy Tech,Primary
 DAR,Darling Ingredients Inc.,Commodities - Energy,Comm Energy - Biofuels & Renewable Fuels,Primary
 DAR,Darling Ingredients Inc.,Energy - Renewable,Energy Clean - Fuels & Bioenergy,Secondary
@@ -931,8 +931,8 @@ IRDM,Iridium Communications Inc.,Defense & Aerospace,Defense - Space Technology 
 IRDM,Iridium Communications Inc.,Telecommunications,Telecom - Satellite & Space Communication,Secondary
 IREN,Iren Ltd,Cloud Computing,Cloud - Data Centers & Infrastructure,Primary
 IREN,Iren Ltd,Crypto & Blockchain,Blockchain - Cryptocurrency Mining & Staking,Secondary
-IRM,Iron Mountain Inc,Cloud Computing,Cloud - Data Centers & Infrastructure,Primary
-IRM,Iron Mountain Inc,Real Estate & REITs,Real Estate - Digital Infrastructure,Secondary
+IRM,Iron Mountain Inc,Business Services & Consulting,"Business Services - Outsourcing, Facilities & Testing",Primary
+IRM,Iron Mountain Inc,Cloud Computing,Cloud - Data Centers & Infrastructure,Secondary
 IRT,"Independence Realty Trust, Inc.",Real Estate & REITs,"Real Estate - Housing, Urban Living & Demographics",Primary
 IRTC,"Irhythm Technologies, Inc.",Healthcare & Biotech,"Healthcare - Digital Health, Telemedicine & Remote Care",Primary
 IRTC,"Irhythm Technologies, Inc.",Healthcare & Biotech,Healthcare - Medical Devices & HealthTech Hardware,Secondary
@@ -1068,7 +1068,7 @@ LTBR,Lightbridge Corporation,Energy - Traditional,Energy Base - Nuclear Power & 
 LULU,Lululemon Athletica Inc.,E-commerce,E-commerce - Direct-to-Consumer,Primary
 LULU,Lululemon Athletica Inc.,E-commerce,"E-commerce - Omnichannel Retailers, Online & Physical Stores",Secondary
 LUNR,"Intuitive Machines, Inc.",Space Tech,"Space - Infrastructure, Exploration & Launch",Primary
-LUV,Southwest Airlines Co,Transportation & Logistics,Transportation - Air Travel & Passenger Transportation,Primary
+LUV,Southwest Airlines Co,Airlines,Airlines - Passenger Carriers,Primary
 LUXE,"LuxExperience B.V. American Depositary Shares, each representing one Ordinary Share",Consumer Goods & Retail,Consumer - Modern Luxury & Lifestyle,Primary
 LVS,Las Vegas Sands Corp,Real Estate & REITs,"Real Estate - Travel, Leisure & Entertainment Properties",Primary
 LWLG,"Lightwave Logic, Inc.",Hardware,Hardware - Photonics,Primary
@@ -1818,7 +1818,7 @@ TYL,Tyler Technologies Inc,Software,Software - Vertical SaaS Platforms,Primary
 U,Unity Software Inc.,Software,Software - Vertical SaaS Platforms,Primary
 U,Unity Software Inc.,Software,Software - Gaming & Platforms,Secondary
 UAA,"Under Armour, Inc.",Consumer Goods & Retail,Consumer - Apparel & E-Commerce Retail,Primary
-UAL,"United Airlines Holdings, Inc.",Transportation & Logistics,Transportation - Air Travel & Passenger Transportation,Primary
+UAL,"United Airlines Holdings, Inc.",Airlines,Airlines - Passenger Carriers,Primary
 UAL,"United Airlines Holdings, Inc.",Transportation & Logistics,"Transportation - Logistics, Warehousing & Supply Chain Solutions",Secondary
 UAN,"Cvr Partners, Lp",Agriculture & FoodTech,Agriculture - Agricultural Inputs & Crop Science,Primary
 UAVS,Ageagle Aerial Systems Inc.,Agriculture & FoodTech,Agriculture - Precision Agriculture & Farm Automation,Primary
