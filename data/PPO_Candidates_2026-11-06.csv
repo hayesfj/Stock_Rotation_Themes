@@ -1,0 +1,169 @@
+Ticker,Company Name,Theme,Sub Theme,Setup,Market Cap,1W Price Change %,1M Price Change %,3M Price Change %,Pct vs 30W EMA,Weekly PPO Hist,Weekly Hist Improving,Daily PPO,Daily PPO Hist,Daily PPO Turning Up,RS 1M Change %,Vol Ratio 20/60,Down Day Capture
+NEM,Newmont Corp /De/,Commodities - Metals,Comm Metals - Gold,HIGH CONVICTION,125648.855,0.1341,0.0388,0.1618,7.81,-0.607,True,-0.429,0.939,True,10.07,0.92,1.15
+GRMN,Garmin Ltd,Hardware,"Hardware - Consumer Electronics, PCs & Peripherals",HIGH CONVICTION,55027.9987,0.0473,0.0228,-0.0525,7.63,-0.785,True,0.003,0.023,True,8.37,1.1,-0.08
+FNV,Franco Nevada Corp,Commodities - Metals,Comm Metals - Gold,HIGH CONVICTION,49173.1763,0.1334,0.045,0.1272,7.21,-0.51,True,-0.379,1.053,True,10.72,0.73,0.75
+VTR,"Ventas, Inc.",Healthcare & Biotech,Healthcare - Senior Care & Longevity,HIGH CONVICTION,46932.7749,0.0466,0.0842,-0.0351,2.48,-0.786,True,0.726,0.724,True,14.88,1.03,-0.95
+ESS,"Essex Property Trust, Inc.",Real Estate & REITs,"Real Estate - Housing, Urban Living & Demographics",HIGH CONVICTION,18780.9526,0.0303,-0.0011,-0.046,0.48,-0.764,True,-0.274,0.069,True,5.84,1.08,-0.36
+BEN,"Franklin Resources, Inc.",Financials - Traditional,"Fin Trad - Asset Management, Custody & Alternatives",HIGH CONVICTION,17286.6253,0.0661,0.0398,-0.0242,8.27,-1.401,True,0.567,0.887,True,10.17,1.01,0.69
+SOLV,Solventum Corp,Healthcare & Biotech,Healthcare - Medical Devices & HealthTech Hardware,HIGH CONVICTION,15360.7035,0.1113,0.0384,0.0333,9.03,-0.64,True,-0.041,0.738,True,10.02,1.2,0.03
+GSAT,"Globalstar, Inc.",Telecommunications,Telecom - Satellite & Space Communication,HIGH CONVICTION,10929.5043,0.0245,0.0083,0.0104,6.21,-0.783,True,0.359,0.105,True,6.83,1.3,0.42
+BIO,"Bio-Rad Laboratories, Inc.",Healthcare & Biotech,"Healthcare - Diagnostics, Biomarkers & Liquid Biopsy",HIGH CONVICTION,10261.5409,0.0252,0.0345,0.0969,11.93,-0.253,True,0.596,0.287,True,9.62,0.93,0.6
+HSIC,"Henry Schein, Inc.",Healthcare & Biotech,"Healthcare - IT, Services & Data Infrastructure",HIGH CONVICTION,9511.8418,0.0138,0.0143,-0.0395,2.91,-0.757,True,0.014,0.213,True,7.47,1.2,0.16
+BRKR,Bruker Corp,Nanotechnology,NanoTech - Research Tools & Advanced Instruments,HIGH CONVICTION,9363.4099,0.0743,0.0134,0.1694,11.19,-1.288,True,0.38,0.523,True,7.38,1.1,2.5
+CZR,"Caesars Entertainment, Inc.",Digital Entertainment & Media,"Entertainment - Betting, iGaming & Wagering",HIGH CONVICTION,5957.2818,0.0048,-0.0142,-0.0289,2.34,-1.083,True,-0.272,0.182,True,4.46,1.34,-0.06
+MGNI,"Magnite, Inc.",E-commerce,E-commerce - Retail Media & Advertising,HIGH CONVICTION,3932.094,0.2745,0.1027,0.3251,30.8,-1.143,True,0.739,2.116,True,16.83,1.05,-1.96
+LXFR,Luxfer Holdings Plc,Commodities - Metals,Comm Metals - Rare Earth & Strategic Materials,HIGH CONVICTION,463.4782,0.0052,0.0046,0.0129,5.02,-0.92,True,0.072,0.029,True,6.45,1.26,0.02
+AAPL,Apple Inc.,Hardware,"Hardware - Consumer Electronics, PCs & Peripherals",WATCHLIST,4975383.0195,-0.0066,0.0262,0.1018,8.17,0.053,False,0.607,-0.229,False,8.73,1.17,0.23
+MSFT,Microsoft Corporation,Cloud Computing,Cloud - Hyperscalers & Platforms,WATCHLIST,3940412.8174,0.0167,0.0025,0.0906,11.58,0.776,False,0.833,-0.118,False,6.22,1.16,1.11
+JPM,JPMorgan Chase & Co.,Financials - Traditional,"Fin Trad - Banks, Lending & Mortgage Finance",WATCHLIST,888274.8129,-0.0076,0.0097,-0.0643,0.72,-0.958,True,0.105,0.181,False,6.98,1.02,0.56
+XOM,Exxon Mobil Corp,Energy - Traditional,Energy Base - Integrated Energy Majors,WATCHLIST,676620.5993,-0.1142,0.0085,0.101,4.81,0.662,False,0.509,-1.351,False,6.85,1.07,0.08
+JNJ,Johnson & Johnson,Healthcare & Biotech,Healthcare - Medical Devices & HealthTech Hardware,WATCHLIST,664947.2614,0.0111,0.0842,0.0776,8.98,-0.314,True,1.222,0.497,True,14.87,1.14,-0.09
+CVX,Chevron Corp,Energy - Traditional,Energy Base - Integrated Energy Majors,WATCHLIST,414856.02,-0.0973,0.0242,0.1505,6.46,0.673,False,0.784,-1.141,False,8.52,1.02,-0.05
+MRK,"Merck & Co., Inc.",Healthcare & Biotech,Healthcare - Metabolic & Cardiometabolic,WATCHLIST,361725.4932,-0.0187,0.0337,0.1501,9.6,-0.528,False,0.42,0.169,False,9.53,1.0,0.02
+UNH,Unitedhealth Group Inc,Healthcare & Biotech,"Healthcare - IT, Services & Data Infrastructure",WATCHLIST,353167.3108,-0.0315,0.0474,-0.0392,3.26,-0.561,False,0.867,-0.578,False,10.98,1.19,0.53
+SHEL,Shell Plc,Energy - Traditional,Energy Base - Integrated Energy Majors,WATCHLIST,280589.3693,-0.0883,0.0151,0.139,7.46,0.889,False,0.871,-1.125,False,7.55,0.97,-0.09
+TMO,Thermo Fisher Scientific Inc.,Healthcare & Biotech,"Healthcare - Diagnostics, Biomarkers & Liquid Biopsy",WATCHLIST,257419.6081,-0.0032,0.0581,0.2033,15.59,1.093,False,1.409,-0.267,True,12.12,1.16,1.16
+TTE,Totalenergies Se,Energy - Traditional,Energy Base - Integrated Energy Majors,WATCHLIST,192811.5323,-0.0788,0.0457,0.0486,2.62,-0.01,False,0.632,-0.567,False,10.8,1.07,-0.08
+SHOP,Shopify Inc.,Cloud Computing,Cloud - Horizontal SaaS & Cloud Applications,WATCHLIST,191575.9985,-0.0545,-0.0944,0.0324,5.62,1.273,False,-1.268,-2.25,True,-4.05,1.16,1.89
+DE,Deere & Co,Agriculture & FoodTech,Agriculture - Precision Agriculture & Farm Automation,WATCHLIST,181093.9085,-0.0057,-0.0163,0.1001,7.94,-0.33,True,0.449,0.555,False,4.23,0.85,-0.43
+COP,Conocophillips,Energy - Traditional,Energy Base - Oil & Gas Exploration & Production,WATCHLIST,161116.8154,-0.1153,0.0535,0.1924,7.81,0.817,False,0.996,-1.396,False,11.63,1.09,-0.12
+SONY,Sony Group Corp,Hardware,"Hardware - Consumer Electronics, PCs & Peripherals",WATCHLIST,157362.8477,0.0672,0.1321,0.2032,13.91,1.559,True,2.557,0.493,True,19.95,1.2,-1.28
+BMY,Bristol Myers Squibb Co,Healthcare & Biotech,Healthcare - Oncology & Precision Cancer Therapeutics,WATCHLIST,127019.4995,-0.0054,0.0428,-0.0133,3.54,-0.767,True,0.701,0.456,False,10.49,1.07,-0.34
+MCK,Mckesson Corp,Healthcare & Biotech,"Healthcare - IT, Services & Data Infrastructure",WATCHLIST,122481.0414,0.0666,0.151,0.2106,18.8,2.114,True,3.233,0.435,True,21.96,1.0,-0.31
+BP,Bp Plc,Energy - Traditional,Energy Base - Integrated Energy Majors,WATCHLIST,114693.7836,-0.1163,-0.0107,0.0938,1.59,0.618,False,-0.057,-1.662,False,4.83,1.04,0.32
+BNY,BNY Mellon Corp,Financials - Traditional,"Fin Trad - Asset Management, Custody & Alternatives",WATCHLIST,99400.5647,0.0041,0.0322,-0.0654,2.3,-1.74,True,0.285,0.495,False,9.37,1.05,0.5
+EQNR,Equinor Asa,Energy - Traditional,Energy Base - Integrated Energy Majors,WATCHLIST,99385.6307,-0.1387,-0.0237,0.1119,5.13,-0.163,False,-0.01,-1.558,False,3.44,1.27,-0.07
+USB,U.S. Bancorp,Financials - Traditional,"Fin Trad - Banks, Lending & Mortgage Finance",WATCHLIST,92635.5128,0.0,0.0377,-0.0655,1.77,-1.021,True,0.587,0.209,False,9.95,1.03,-0.04
+ELV,"Elevance Health, Inc.",Healthcare & Biotech,"Healthcare - IT, Services & Data Infrastructure",WATCHLIST,91957.7068,0.0132,0.0638,0.0926,8.42,0.089,False,0.937,-0.224,False,12.72,1.26,-0.08
+SNPS,Synopsys Inc,Semiconductors,Semis - EDA Tools & Design Software,WATCHLIST,86324.6418,-0.0367,-0.1083,0.1238,2.56,1.132,False,0.437,-0.762,False,-5.52,1.05,1.45
+MSI,"Motorola Solutions, Inc.",Hardware,Hardware - Communications & Telecom,WATCHLIST,85065.9656,0.0468,0.1276,0.1773,14.52,0.863,True,2.696,0.796,True,19.48,1.18,-0.9
+EPD,Enterprise Products Partners L.P.,Energy - Traditional,Energy Base - Refining & Midstream Infrastructure,WATCHLIST,79859.0812,-0.0294,0.0083,-0.004,1.63,-0.508,True,0.449,0.156,False,6.83,1.27,-0.09
+E,Eni Spa,Energy - Traditional,Energy Base - Integrated Energy Majors,WATCHLIST,78956.5194,-0.088,0.0165,0.0619,4.44,0.258,False,0.448,-1.106,False,7.7,1.19,-0.22
+EOG,Eog Resources Inc,Energy - Traditional,Energy Base - Oil & Gas Exploration & Production,WATCHLIST,76284.5839,-0.1112,0.0266,0.1035,4.23,0.338,False,0.534,-1.386,False,8.78,1.05,-0.0
+ROST,"Ross Stores, Inc.",E-commerce,"E-commerce - Omnichannel Retailers, Online & Physical Stores",WATCHLIST,74129.3015,0.0123,0.0307,-0.0856,2.38,-0.903,True,0.35,0.13,False,9.21,0.94,0.59
+TGT,Target Corp,E-commerce,E-commerce - Grocery & Local Commerce Platforms,WATCHLIST,71965.1471,0.0261,0.0264,0.0807,10.69,-1.189,True,0.469,0.594,False,8.76,0.93,-0.39
+CAH,"Cardinal Health, Inc.",Healthcare & Biotech,"Healthcare - IT, Services & Data Infrastructure",WATCHLIST,62804.4513,0.0848,0.164,0.1385,17.5,1.12,True,2.817,0.554,True,23.33,1.14,-0.35
+MET,"Metlife, Inc.",Financials - Traditional,Fin Trad - Insurance & Reinsurance,WATCHLIST,61757.0058,-0.0117,0.0174,0.0269,7.7,-0.492,False,0.75,-0.208,False,7.8,1.06,0.57
+EW,Edwards Lifesciences Corp,Healthcare & Biotech,Healthcare - Medical Devices & HealthTech Hardware,WATCHLIST,58730.5001,0.1101,0.1811,0.148,16.29,0.971,True,3.468,1.398,True,25.14,1.29,-0.45
+BDX,Becton Dickinson & Co,Healthcare & Biotech,Healthcare - Medical Devices & HealthTech Hardware,WATCHLIST,57713.3199,0.0707,0.1752,0.2489,21.23,1.302,True,3.175,0.709,True,24.52,1.11,-0.71
+NUE,Nucor Corp,Commodities - Metals,Comm Metals - Industrial & Base Metals,WATCHLIST,55577.7352,-0.1055,-0.0243,-0.1062,2.98,-1.164,False,0.739,-0.84,False,3.38,1.12,0.98
+HUM,Humana Inc.,Healthcare & Biotech,"Healthcare - IT, Services & Data Infrastructure",WATCHLIST,52093.5834,0.0464,0.0752,0.1947,19.06,-1.007,True,1.17,-0.089,True,13.92,1.14,0.26
+XYZ,"Block, Inc.",FinTech & Digital Finance,"FinTech - Crypto, Blockchain & Tokenization",WATCHLIST,51674.5421,0.1215,0.1168,0.0152,12.82,-0.503,True,1.886,1.374,True,18.33,1.28,0.44
+WAB,Westinghouse Air Brake Technologies Corp,Transportation & Logistics,Transportation - Freight Rail & Infrastructure,WATCHLIST,47587.0781,0.0143,-0.026,-0.0419,3.53,-0.961,True,-0.047,0.143,False,3.2,1.18,1.11
+WDAY,"Workday, Inc.",Cloud Computing,Cloud - Horizontal SaaS & Cloud Applications,WATCHLIST,46488.8996,-0.0249,0.034,0.1305,9.37,0.865,False,0.917,-0.532,False,9.56,0.83,0.04
+IQV,Iqvia Holdings Inc.,Healthcare & Biotech,"Healthcare - IT, Services & Data Infrastructure",WATCHLIST,44797.5834,0.0168,0.0456,0.1516,15.05,0.127,False,0.267,-0.331,True,10.79,1.0,0.7
+EL,Estee Lauder Companies Inc,E-commerce,E-commerce - Direct-to-Consumer,WATCHLIST,39878.0908,0.0076,0.1789,0.2699,15.91,2.003,False,2.735,-0.104,True,24.91,1.14,0.37
+HIG,"Hartford Insurance Group, Inc.",Financials - Traditional,Fin Trad - Insurance & Reinsurance,WATCHLIST,35830.7226,0.0106,0.0568,-0.0628,0.09,-0.156,True,0.776,0.108,False,11.97,1.12,-0.48
+MTD,Mettler-Toledo International Inc.,Nanotechnology,NanoTech - Research Tools & Advanced Instruments,WATCHLIST,34254.2602,0.0283,0.1233,0.2115,20.42,2.43,True,3.099,-0.301,True,19.02,1.14,0.48
+NTR,Nutrien Ltd.,Agriculture & FoodTech,Agriculture - Agricultural Inputs & Crop Science,WATCHLIST,33890.8631,0.0297,0.0039,0.0764,2.78,-0.468,True,-0.093,0.685,False,6.37,0.92,-0.48
+RMD,Resmed Inc,Healthcare & Biotech,Healthcare - Medical Devices & HealthTech Hardware,WATCHLIST,33096.6098,0.0233,0.0662,0.0533,4.64,1.262,False,0.731,-0.787,False,12.97,1.16,0.51
+SN,"Sharkninja, Inc.",Consumer Goods & Retail,"Consumer - Health, Food & Beverages",WATCHLIST,31416.2196,0.0719,0.207,0.2243,35.72,0.972,True,4.744,0.834,True,27.89,1.02,-0.68
+DXCM,Dexcom Inc,Healthcare & Biotech,"Healthcare - Digital Health, Telemedicine & Remote Care",WATCHLIST,29616.0338,-0.035,-0.0477,-0.0393,0.88,-1.757,False,-0.767,0.396,False,0.9,1.13,-0.02
+CPAY,"Corpay, Inc.",FinTech & Digital Finance,FinTech - Digital Payments & Merchant Infrastructure,WATCHLIST,29117.4175,0.1352,0.1189,0.1537,19.8,0.082,True,2.024,1.269,True,18.56,1.13,-1.19
+STE,Steris Plc,Healthcare & Biotech,Healthcare - Medical Devices & HealthTech Hardware,WATCHLIST,24500.1032,0.1109,0.2092,0.0875,12.15,1.518,True,3.395,1.122,True,28.12,1.22,-1.07
+INCY,Incyte Corp,Healthcare & Biotech,Healthcare - Oncology & Precision Cancer Therapeutics,WATCHLIST,24388.5588,-0.0061,0.0614,-0.0013,4.78,-0.913,True,0.397,0.687,False,12.46,1.13,-0.09
+IOT,Samsara Inc.,Hardware,Hardware - Industrial & IoT,WATCHLIST,23998.0995,-0.0259,-0.0182,0.0581,7.91,0.316,False,0.655,-0.731,False,4.03,0.71,0.31
+EXPD,Expeditors International Of Washington Inc,Transportation & Logistics,"Transportation - Logistics, Warehousing & Supply Chain Solutions",WATCHLIST,23835.1217,-0.0716,-0.0375,0.0176,3.73,-0.504,False,0.208,-0.742,False,1.98,1.27,0.36
+PFG,"Principal Financial Group, Inc.",Financials - Traditional,"Fin Trad - Asset Management, Custody & Alternatives",WATCHLIST,23554.6747,-0.0064,0.011,-0.027,3.59,-1.168,True,0.477,0.386,False,7.13,1.0,0.32
+U,Unity Software Inc.,Software,Software - Vertical SaaS Platforms,WATCHLIST,22852.7411,0.3658,0.1455,0.4516,35.78,0.438,True,1.764,2.554,True,21.37,1.15,-1.43
+VTRS,Viatris Inc.,Healthcare & Biotech,Healthcare - Metabolic & Cardiometabolic,WATCHLIST,22825.9144,0.0457,0.1351,0.1365,19.79,0.7,True,2.572,0.348,True,20.27,1.11,0.48
+L,Loews Corp,Conglomerates & Diversified Holdings,Diversified Holdings & Multi-Industry Conglomerates,WATCHLIST,22186.1294,-0.0145,0.0305,-0.0516,0.17,-0.131,True,0.595,-0.138,False,9.19,0.82,-0.1
+RBRK,"Rubrik, Inc.",Cybersecurity,"Cybersecurity - Platform, Cloud & Application Security",WATCHLIST,21766.3693,-0.1482,-0.1594,0.2469,13.5,0.444,False,-0.02,-2.527,False,-10.93,1.07,2.36
+PTC,Ptc Inc.,Industrial Automation & Robotics,"Automation - Industrial IoT, Connectivity",WATCHLIST,21190.8895,-0.0024,0.0107,0.3991,24.49,4.593,False,3.925,-1.124,True,7.09,1.02,0.11
+IFF,International Flavors & Fragrances Inc.,Industrials & Construction,Industrials - Chemicals & Advanced Materials,WATCHLIST,20687.3293,-0.1118,-0.0155,-0.0574,1.37,-0.041,False,0.391,-1.261,False,4.32,1.37,-0.71
+EVRG,"Evergy, Inc.",Energy - Traditional,Energy Base - Utilities & Conventional Power Operators,WATCHLIST,20527.8372,0.0187,0.0895,0.0627,6.86,0.465,True,1.88,0.304,True,15.44,1.13,-0.65
+GH,"Guardant Health, Inc.",Healthcare & Biotech,"Healthcare - Diagnostics, Biomarkers & Liquid Biopsy",WATCHLIST,20410.5933,-0.1562,-0.1161,-0.0754,1.12,-2.215,False,-0.97,-1.196,False,-6.35,1.02,1.6
+SWKS,"Skyworks Solutions, Inc.",Semiconductors,Semis - Wireless & Connectivity,WATCHLIST,19328.258,-0.0615,-0.0072,0.2269,10.89,0.703,False,0.854,-0.382,False,5.19,0.73,0.33
+PR,Permian Resources Corp,Energy - Traditional,Energy Base - Oil & Gas Exploration & Production,WATCHLIST,18242.2876,-0.1641,-0.0268,0.1063,1.89,-0.145,False,-0.34,-2.043,False,3.11,1.06,0.67
+EWBC,"East West Bancorp, Inc.",Financials - Traditional,"Fin Trad - Banks, Lending & Mortgage Finance",WATCHLIST,17655.8879,-0.009,0.0198,-0.0271,3.1,-0.562,True,0.935,-0.017,False,8.05,1.11,0.21
+CF,"Cf Industries Holdings, Inc.",Agriculture & FoodTech,Agriculture - Agricultural Inputs & Crop Science,WATCHLIST,17464.9549,-0.0317,0.029,0.0282,2.14,-0.985,False,-0.475,0.049,True,9.03,0.86,-1.19
+PFGC,Performance Food Group Co,Agriculture & FoodTech,Agriculture - Agri-Food Processing & Distribution,WATCHLIST,16961.8371,0.0853,0.1463,-0.0402,8.05,-0.175,True,2.794,1.404,True,21.46,1.23,-0.29
+PAA,Plains All American Pipeline Lp,Energy - Traditional,Energy Base - Refining & Midstream Infrastructure,WATCHLIST,16877.1502,-0.0977,0.0099,0.0487,3.19,-0.516,False,0.565,-0.823,False,7.0,1.08,0.2
+GFL,Gfl Environmental Inc.,Environmental Sustainability,Environmental - Waste Management & Recycling,WATCHLIST,16716.4406,0.0246,0.0898,0.125,10.35,1.266,True,2.026,0.213,True,15.47,1.47,-1.37
+IEX,IDEX Corp,Industrials & Construction,"Industrials - Machinery, Flow Control & Components",WATCHLIST,16673.0516,-0.0293,-0.0393,-0.0391,2.66,-0.648,False,-0.091,-0.481,False,1.79,1.27,0.94
+OVV,Ovintiv Inc.,Energy - Traditional,Energy Base - Oil & Gas Exploration & Production,WATCHLIST,16262.2126,-0.1666,-0.0156,0.049,0.34,-0.239,False,-0.212,-2.083,False,4.3,1.11,0.49
+CRL,"Charles River Laboratories International, Inc.",Healthcare & Biotech,"Healthcare - IT, Services & Data Infrastructure",WATCHLIST,16173.1031,-0.0609,0.1068,0.2946,28.86,1.188,False,3.212,-1.19,True,17.27,1.31,1.55
+APA,Apa Corp,Energy - Traditional,Energy Base - Oil & Gas Exploration & Production,WATCHLIST,14984.791,-0.1551,0.0171,0.2942,9.65,0.755,False,0.48,-2.059,False,7.77,1.12,0.16
+CRBG,"Corebridge Financial, Inc.",Financials - Traditional,Fin Trad - Insurance & Reinsurance,WATCHLIST,14947.6434,-0.0207,-0.0307,0.0222,7.21,-0.256,False,0.568,-0.281,False,2.7,1.21,1.1
+EQH,"Equitable Holdings, Inc.",Financials - Traditional,Fin Trad - Insurance & Reinsurance,WATCHLIST,14043.2271,-0.0221,-0.0338,0.0265,7.17,-0.254,False,0.544,-0.286,False,2.38,1.02,1.06
+PAG,"Penske Automotive Group, Inc.",E-commerce,"E-commerce - Omnichannel Retailers, Online & Physical Stores",WATCHLIST,13943.9247,0.0011,0.0671,-0.0092,7.94,-1.052,True,0.728,0.137,False,13.06,1.39,-0.08
+CACI,Caci International Inc /De/,Defense & Aerospace,Defense - Cyber Defense & Electronic Warfare,WATCHLIST,13506.389,-0.0954,0.0192,0.1798,3.67,0.617,False,0.899,-0.667,False,7.99,0.99,0.06
+AHR,"American Healthcare REIT, Inc.",Real Estate & REITs,Real Estate - Healthcare & Senior Living,WATCHLIST,13404.9628,0.082,0.147,0.0485,10.47,0.09,True,1.836,1.011,True,21.53,1.05,-0.47
+BAX,Baxter International Inc,Healthcare & Biotech,Healthcare - Senior Care & Longevity,WATCHLIST,13342.4108,0.1213,0.0587,-0.056,12.24,-0.902,True,1.104,0.447,True,12.18,1.17,0.6
+GWRE,"Guidewire Software, Inc.",FinTech & Digital Finance,FinTech - InsurTech & Embedded Insurance,WATCHLIST,13337.5007,-0.0073,-0.0189,0.0067,1.32,0.873,False,0.071,-0.999,False,3.95,0.86,0.07
+ELAN,Elanco Animal Health Inc,Healthcare & Biotech,Healthcare - Animal Health & Veterinary,WATCHLIST,12865.5483,0.1162,0.145,-0.0183,9.37,0.28,True,2.05,1.169,True,21.32,1.03,0.03
+GME,Gamestop Corp,E-commerce,"E-commerce - Omnichannel Retailers, Online & Physical Stores",WATCHLIST,12673.065,0.0367,0.0145,0.3214,10.33,2.354,False,0.328,-0.685,True,7.5,1.07,0.67
+SEIC,SEI Investments Co,Financials - Traditional,"Fin Trad - Asset Management, Custody & Alternatives",WATCHLIST,12487.3021,0.0182,0.0237,0.0052,6.57,-0.985,True,0.206,0.204,False,8.47,1.02,0.72
+FROG,Jfrog Ltd,Cloud Computing,"Cloud - DevOps, Observability & Multi-Cloud",WATCHLIST,12450.9665,0.0698,0.0251,0.1947,19.62,-0.932,True,-1.403,-0.935,True,8.61,1.2,2.84
+WTS,Watts Water Technologies Inc,Environmental Sustainability,Environmental - Water Infrastructure & Treatment,WATCHLIST,11552.5448,-0.0042,-0.045,-0.047,0.98,-1.235,False,-0.489,-0.246,False,1.19,1.32,-0.08
+UHS,"Universal Health Services, Inc.",Healthcare & Biotech,"Healthcare - IT, Services & Data Infrastructure",WATCHLIST,11522.089,0.1105,0.104,0.1402,10.17,2.03,True,1.863,0.801,True,16.98,1.12,-0.93
+TECH,Bio-Techne Corp,Nanotechnology,NanoTech - Research Tools & Advanced Instruments,WATCHLIST,11430.5044,0.0017,0.0048,0.012,7.41,-0.7,False,0.117,-0.003,True,6.47,1.0,0.03
+PCOR,"Procore Technologies, Inc.",Software,Software - Vertical SaaS Platforms,WATCHLIST,11269.2756,0.2273,0.385,0.3527,32.53,3.914,True,7.06,2.257,True,46.75,1.3,-0.49
+RGEN,Repligen Corp,Healthcare & Biotech,Healthcare - Next-Gen Biotech Platforms,WATCHLIST,11090.1289,-0.0195,-0.0078,0.094,9.02,-0.163,False,-0.414,-0.524,False,5.13,1.1,1.54
+SAIL,"Sailpoint, Inc.",Cybersecurity,Cybersecurity - IAM & Zero Trust,WATCHLIST,10967.212,-0.0878,-0.0352,0.0768,6.38,0.624,False,-0.592,-1.292,True,2.23,0.91,1.21
+AES,Aes Corp,Energy - Renewable,Energy Clean - Wind,WATCHLIST,10610.7064,0.0027,0.0078,0.0235,2.5,0.06,False,0.312,0.001,False,6.78,1.17,-0.09
+AVTR,"Avantor, Inc.",Nanotechnology,NanoTech - Research Tools & Advanced Instruments,WATCHLIST,10482.7156,-0.0361,0.0026,0.1579,16.32,0.059,False,0.1,-1.426,True,6.23,1.28,1.1
+PSO,Pearson Plc,Education Technology,Education - Digital Curriculum,WATCHLIST,10380.8317,-0.0058,0.0582,0.0424,8.07,0.141,False,0.983,-0.677,False,12.12,1.21,0.1
+UMBF,UMB Financial Corp,Financials - Traditional,"Fin Trad - Banks, Lending & Mortgage Finance",WATCHLIST,10160.1864,-0.0052,0.0284,-0.0856,0.03,-1.298,True,0.369,0.262,False,8.96,1.01,-0.35
+SSB,Southstate Corp,Financials - Traditional,"Fin Trad - Banks, Lending & Mortgage Finance",WATCHLIST,10065.4326,-0.0038,0.0378,-0.0346,3.14,-0.428,True,0.835,0.133,False,9.97,1.15,-0.32
+CFR,"Cullen/Frost Bankers, Inc.",Financials - Traditional,"Fin Trad - Banks, Lending & Mortgage Finance",WATCHLIST,9652.2824,-0.015,0.0148,-0.0596,1.92,-1.07,False,0.295,0.089,False,7.53,0.95,-0.13
+OSCR,"Oscar Health, Inc.",Healthcare & Biotech,"Healthcare - Digital Health, Telemedicine & Remote Care",WATCHLIST,9522.5262,0.0092,-0.0523,0.0179,10.08,-2.675,False,0.147,-0.036,False,0.42,1.08,1.3
+ONB,Old National Bancorp,Financials - Traditional,"Fin Trad - Banks, Lending & Mortgage Finance",WATCHLIST,9429.972,-0.0064,0.0012,-0.0715,0.3,-0.907,True,0.21,0.133,False,6.08,1.11,-0.44
+ZION,"Zions Bancorporation, N.A.",Financials - Traditional,"Fin Trad - Banks, Lending & Mortgage Finance",WATCHLIST,9386.7008,-0.0093,0.0304,-0.0907,0.25,-1.157,True,0.461,0.092,False,9.18,1.1,0.03
+AMG,"Affiliated Managers Group, Inc.",Financials - Traditional,"Fin Trad - Asset Management, Custody & Alternatives",WATCHLIST,9386.1202,-0.0488,-0.0441,-0.0337,3.36,-0.708,False,-0.694,-1.178,True,1.28,1.04,1.4
+PCTY,Paylocity Holding Corp,Cloud Computing,Cloud - Horizontal SaaS & Cloud Applications,WATCHLIST,8997.4467,0.0131,0.1847,0.1714,21.43,1.893,False,3.036,-0.451,True,25.52,1.16,-0.82
+VOYA,"Voya Financial, Inc.",Financials - Traditional,"Fin Trad - Asset Management, Custody & Alternatives",WATCHLIST,8843.562,0.0098,0.0122,-0.0063,7.01,-1.394,True,0.869,0.524,False,7.25,0.88,0.4
+REXR,"Rexford Industrial Realty, Inc.",Real Estate & REITs,"Real Estate - E-Commerce, Warehousing & Logistics",WATCHLIST,8231.3733,-0.011,0.0272,0.0325,3.22,0.481,False,0.928,0.134,False,8.84,1.03,-0.73
+UGI,UGI Corp,Energy - Traditional,Energy Base - Utilities & Conventional Power Operators,WATCHLIST,7944.8934,-0.0422,-0.003,0.0527,1.49,0.268,False,0.296,-0.527,False,5.64,0.72,0.2
+S,"Sentinelone, Inc.",Cybersecurity,"Cybersecurity - Platform, Cloud & Application Security",WATCHLIST,7577.0296,-0.1344,-0.1562,0.0367,7.92,-0.285,False,-0.703,-1.447,False,-10.59,1.28,1.48
+DUOL,"Duolingo, Inc.",Education Technology,Education - Digital Curriculum,WATCHLIST,7568.3364,0.2191,0.083,0.1855,16.25,0.897,True,1.151,1.728,True,14.75,1.23,-0.19
+DBX,"Dropbox, Inc.",Cloud Computing,Cloud - Horizontal SaaS & Cloud Applications,WATCHLIST,7536.5612,-0.0439,0.0276,-0.0097,7.6,-0.165,False,0.425,-0.677,False,8.88,0.86,-0.0
+SLAB,Silicon Laboratories Inc.,Semiconductors,Semis - Wireless & Connectivity,WATCHLIST,7390.7374,-0.0043,-0.005,0.015,4.0,-0.78,True,0.093,-0.026,False,5.42,1.13,0.04
+TRNO,Terreno Realty Corp,Real Estate & REITs,"Real Estate - E-Commerce, Warehousing & Logistics",WATCHLIST,7288.2975,0.013,0.0339,-0.0355,1.62,-0.487,True,0.663,0.391,False,9.55,1.02,-0.32
+CHRD,Chord Energy Corp,Energy - Traditional,Energy Base - Oil & Gas Exploration & Production,WATCHLIST,7258.9742,-0.1306,-0.0076,0.0596,0.48,-0.425,False,-0.979,-1.732,False,5.16,1.13,-0.08
+G,Genpact Limited,Business Services & Consulting,"Business Services - Outsourcing, Facilities & Testing",WATCHLIST,7068.6848,0.0669,0.2637,0.205,17.3,3.028,True,4.036,0.36,True,33.9,1.01,-1.03
+ELF,"E.L.F. Beauty, Inc.",Consumer Goods & Retail,Consumer - Household & Personal Care,WATCHLIST,6869.4062,0.0398,0.1299,0.3447,25.67,1.279,False,1.934,-0.452,True,19.72,1.06,0.81
+XMTR,"Xometry, Inc.",Industrial Automation & Robotics,"Automation - Additive Manufacturing, 3D Printing",WATCHLIST,6625.4776,0.2274,0.0388,0.2449,30.27,-0.529,True,2.958,2.154,True,10.06,1.17,0.93
+LNTH,"Lantheus Holdings, Inc.",Healthcare & Biotech,"Healthcare - Diagnostics, Biomarkers & Liquid Biopsy",WATCHLIST,6580.0361,0.0015,0.0066,-0.0088,4.83,-1.494,True,0.139,0.093,False,6.66,1.03,0.08
+TXNM,"TXNM Energy, Inc.",Energy - Traditional,Energy Base - Utilities & Conventional Power Operators,WATCHLIST,6411.522,-0.0027,0.0016,0.0224,1.12,0.182,False,0.23,-0.052,False,6.12,0.81,-0.04
+FNB,F.N.B. Corp,Financials - Traditional,"Fin Trad - Banks, Lending & Mortgage Finance",WATCHLIST,6280.0548,-0.0089,0.0359,-0.0615,0.25,-0.637,True,0.795,0.1,False,9.76,1.24,-0.08
+RNG,"Ringcentral, Inc.",Telecommunications,Telecom - Enterprise & Unified Communications,WATCHLIST,6018.2892,-0.1133,-0.0656,0.1766,19.37,-0.997,False,0.022,-1.804,False,-0.99,1.21,1.54
+WEX,WEX Inc.,FinTech & Digital Finance,FinTech - Digital Payments & Merchant Infrastructure,WATCHLIST,5988.4867,-0.0129,0.0626,-0.0328,5.07,-0.577,False,0.075,-0.367,True,12.59,1.12,-0.32
+HOMB,"Home Bancshares, Inc.",Financials - Traditional,"Fin Trad - Banks, Lending & Mortgage Finance",WATCHLIST,5935.1808,0.003,0.0459,-0.0361,3.03,-0.348,True,0.932,0.153,False,10.82,1.15,-0.41
+MKTX,Marketaxess Holdings Inc,FinTech & Digital Finance,FinTech - Exchanges & Market Infrastructure,WATCHLIST,5829.5424,0.0018,0.0095,0.0245,6.17,1.188,False,0.385,-0.033,False,6.96,0.94,-0.07
+MTG,MGIC Investment Corp,Financials - Traditional,Fin Trad - Insurance & Reinsurance,WATCHLIST,5689.9497,0.0067,0.0453,-0.0651,0.77,-0.828,True,0.565,0.512,False,10.76,1.03,-0.98
+VNT,Vontier Corp,Transportation & Logistics,Transportation - Urban Mobility & Emerging Transport Tech,WATCHLIST,5608.1439,0.1856,0.2859,0.2571,25.66,3.062,True,5.203,1.843,True,36.25,1.18,-1.38
+SBRA,"Sabra Health Care Reit, Inc.",Healthcare & Biotech,Healthcare - Senior Care & Longevity,WATCHLIST,5506.43,0.0648,0.0994,0.0122,6.37,-0.157,True,1.489,1.113,True,16.49,1.1,-0.68
+PI,Impinj Inc,Hardware,Hardware - Industrial & IoT,WATCHLIST,5277.9141,-0.048,-0.0713,0.0468,6.14,-0.404,False,-0.763,-0.573,False,-1.6,1.18,1.32
+BB,Blackberry Ltd,Smart Home & IoT,"Smart Home - Connectivity, Devices & Appliances",WATCHLIST,5130.6619,0.038,-0.0877,0.0011,10.82,-2.204,True,-0.115,-0.641,True,-3.33,0.96,2.82
+NWE,"Northwestern Energy Group, Inc.",Energy - Traditional,Energy Base - Utilities & Conventional Power Operators,WATCHLIST,5089.8422,0.0366,0.2004,0.2078,15.45,1.538,True,3.463,0.367,True,27.19,1.25,-0.46
+GHC,Graham Holdings Co,Education Technology,Education - Digital Curriculum,WATCHLIST,5052.652,0.0372,0.0486,0.001,5.06,0.172,True,0.972,0.06,False,11.11,0.83,-0.01
+SEZL,Sezzle Inc.,FinTech & Digital Finance,FinTech - Digital Payments & Merchant Infrastructure,WATCHLIST,5048.2534,0.1081,0.3243,-0.1432,23.27,-0.818,True,4.249,1.272,True,40.31,1.25,-1.07
+LIVN,Livanova Plc,Healthcare & Biotech,Healthcare - Medical Devices & HealthTech Hardware,WATCHLIST,4957.2618,0.1395,0.201,0.1516,17.93,-0.015,True,3.405,1.574,True,27.25,1.21,0.07
+RELY,"Remitly Global, Inc.",FinTech & Digital Finance,FinTech - Digital Payments & Merchant Infrastructure,WATCHLIST,4776.7608,-0.0758,-0.0379,-0.0727,0.91,-1.856,False,0.508,-1.029,False,1.94,0.92,2.1
+COLD,Americold Realty Trust,Transportation & Logistics,"Transportation - Logistics, Warehousing & Supply Chain Solutions",WATCHLIST,4593.0281,0.1141,0.1551,0.1595,13.91,-0.171,True,2.358,1.337,True,22.39,1.1,-1.23
+SLG,Sl Green Realty Corp,Real Estate & REITs,Real Estate - Office & Commercial Workspaces,WATCHLIST,3900.8402,0.0083,0.0492,-0.062,3.0,-1.394,True,0.934,0.892,False,11.17,1.14,-0.71
+COTY,Coty Inc.,Consumer Goods & Retail,Consumer - Household & Personal Care,WATCHLIST,3569.4397,0.1912,0.4516,0.4311,43.44,4.666,True,7.327,1.705,True,53.81,1.13,-2.53
+AWR,American States Water Co,Environmental Sustainability,Environmental - Water Infrastructure & Treatment,WATCHLIST,3566.8198,0.0424,0.1032,0.0659,8.45,-0.307,True,1.517,0.783,True,16.9,1.03,-0.91
+ASH,Ashland Inc.,Industrials & Construction,Industrials - Chemicals & Advanced Materials,WATCHLIST,3508.6879,0.026,0.0796,0.0748,13.45,-0.179,True,1.836,0.513,True,14.39,1.01,-0.35
+WIX,Wix.Com Ltd.,E-commerce,E-commerce - Platforms,WATCHLIST,3184.3292,-0.0127,0.0295,0.1784,3.24,2.462,False,0.292,-0.379,False,9.08,0.66,0.61
+PRVA,"Privia Health Group, Inc.",Healthcare & Biotech,"Healthcare - Digital Health, Telemedicine & Remote Care",WATCHLIST,3120.1016,0.1369,0.2041,0.0192,8.76,0.943,True,2.482,0.725,True,27.59,1.18,-0.47
+WLY,"John Wiley & Sons, Inc.",Education Technology,Education - Digital Curriculum,WATCHLIST,2545.8537,-0.0184,0.0367,-0.0708,7.04,-0.894,False,0.48,-0.619,False,9.85,0.79,-0.14
+RNW,Renew Energy Global Plc,Environmental Sustainability,"Environmental - Climate, Carbon & Land Resources",WATCHLIST,2526.4087,0.0117,0.0087,0.1342,6.56,0.034,False,0.282,0.041,True,6.88,0.89,0.02
+DV,"Doubleverify Holdings, Inc.",Artificial Intelligence,"AI - Ads, Search & Recommendations",WATCHLIST,2118.2231,0.0,0.0059,0.1309,10.3,-0.27,False,0.279,-0.08,True,6.59,0.74,-0.01
+MQ,"Marqeta, Inc.",FinTech & Digital Finance,FinTech - Digital Banking & Neobanks,WATCHLIST,1929.8436,0.0271,0.1233,0.1158,8.44,1.59,False,1.596,-0.426,True,19.02,1.06,-0.24
+AI,"C3.Ai, Inc.",Big Data & Analytics,"Big Data - Analytics, AI Platforms & BI",WATCHLIST,1879.5164,-0.0135,0.04,0.1796,8.84,2.494,False,1.284,-0.933,True,10.2,1.11,0.65
+HLF,Herbalife Ltd.,Consumer Goods & Retail,"Consumer - Health, Food & Beverages",WATCHLIST,1602.8076,0.1709,0.2146,0.2127,16.24,2.276,True,3.503,0.999,True,28.7,1.19,0.65
+TRUP,"Trupanion, Inc.",FinTech & Digital Finance,FinTech - InsurTech & Embedded Insurance,WATCHLIST,1589.9692,0.2197,0.4891,0.5068,31.87,3.791,True,7.161,2.157,True,57.78,1.07,-1.17
+CRON,Cronos Group Inc.,Healthcare & Biotech,"Healthcare - Regenerative Medicine, Psychedelics, Cannabis",WATCHLIST,1322.9613,0.0939,0.0989,0.3272,17.96,0.43,True,2.226,1.004,True,16.44,1.05,-0.49
+MSEX,Middlesex Water Co,Environmental Sustainability,Environmental - Water Infrastructure & Treatment,WATCHLIST,1145.294,0.0542,0.1318,0.0504,8.54,0.089,True,2.145,0.997,True,19.92,1.09,-1.17
+GNK,Genco Shipping & Trading Ltd,Transportation & Logistics,Transportation - Marine Shipping & Ports,WATCHLIST,1133.2517,-0.0073,-0.0469,0.0487,5.49,-1.174,False,-0.978,0.148,True,0.99,0.93,-0.03
+DSP,Viant Technology Inc.,Digital Entertainment & Media,Entertainment - Advertising & Social Platforms,WATCHLIST,854.4984,0.0012,0.0767,0.0435,5.16,-0.209,False,0.375,-0.864,False,14.08,0.88,1.5
+MITK,Mitek Systems Inc,Cybersecurity,Cybersecurity - IAM & Zero Trust,WATCHLIST,777.9098,-0.0459,-0.0132,0.0064,2.85,-1.755,False,0.578,-0.351,False,4.56,0.92,1.37
+DNA,"Ginkgo Bioworks Holdings, Inc.",Agriculture & FoodTech,Agriculture - Alternative Proteins,WATCHLIST,760.2717,0.0071,-0.0902,0.2049,22.62,3.517,False,1.609,-0.994,True,-3.61,1.07,4.93
+DDI,"Doubledown Interactive Co., Ltd.",Digital Entertainment & Media,Entertainment - Game Publishers & Developers,WATCHLIST,672.9357,0.0074,0.0134,0.1383,12.27,-0.316,False,0.631,-0.223,True,7.38,0.92,0.68
+PKOH,Park-Ohio Holdings Corp.,Industrials & Construction,Industrials - Distribution & Rental Services,WATCHLIST,627.8328,0.0058,-0.1087,0.0428,8.44,-3.038,False,-2.43,-0.644,True,-5.56,1.0,2.3
+TVA,Texas Ventures Acquisition III Corp.,Financials - Traditional,Fin Trad - Capital Markets & Investment Banking,WATCHLIST,320.85,0.0013,0.0109,0.0166,1.11,0.183,True,0.276,0.028,False,7.11,0.63,-0.06
+RELL,"Richardson Electronics, Ltd.",Industrials & Construction,Industrials - Distribution & Rental Services,WATCHLIST,261.2356,-0.1072,-0.0749,-0.1575,3.52,-1.346,False,-0.034,-1.492,False,-1.98,1.27,3.81
+FF,Futurefuel Corp.,Commodities - Agriculture,"Comm Agri - Grains, Oilseeds & Softs",WATCHLIST,233.3529,-0.0617,0.031,0.0768,7.48,-0.569,False,0.982,-0.736,False,9.24,1.3,0.17
+AMWL,American Well Corp,Healthcare & Biotech,"Healthcare - Digital Health, Telemedicine & Remote Care",WATCHLIST,205.0935,-0.0644,-0.0293,-0.0853,10.72,-3.269,False,-0.89,-1.412,False,2.85,1.22,1.75

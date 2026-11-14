@@ -1,0 +1,91 @@
+{
+  "generated_at": "2026-11-14T07:46:33",
+  "data_as_of": "2026-11-13",
+  "benchmark": "SPY",
+  "history_period": "1y",
+  "lookback_calendar_days": {
+    "1W Price Change %": 7,
+    "1M Price Change %": 31,
+    "3M Price Change %": 93
+  },
+  "weight_cap": null,
+  "start_weights": false,
+  "universe": {
+    "rows": 2023,
+    "tickers": 1500,
+    "themes": 35,
+    "sub_themes": 161,
+    "added_vs_previous": [],
+    "dropped_vs_previous": []
+  },
+  "coverage": {
+    "market_cap": 1490,
+    "return_status_counts": {
+      "ok": 1467,
+      "no_data": 28,
+      "stale_28d": 2,
+      "partial": 2,
+      "stale_22d": 1
+    }
+  },
+  "failures": {
+    "no_market_cap": [
+      "BITF",
+      "BLD",
+      "CSWI",
+      "HOH",
+      "IAC",
+      "IRBT",
+      "JHG",
+      "MSOS",
+      "NSA",
+      "SMNEY"
+    ],
+    "no_price_data": [
+      "AMKR",
+      "ATAI",
+      "BITF",
+      "BLD",
+      "BROS",
+      "CQP",
+      "CSAN",
+      "CSWI",
+      "DBRG",
+      "DHR",
+      "DOMO",
+      "GGRP",
+      "HOH",
+      "IAC",
+      "IRBT",
+      "JHG",
+      "KVUE",
+      "LAR",
+      "LFST",
+      "NSA",
+      "PG",
+      "QRVO",
+      "SAM",
+      "SKYT",
+      "SMNEY",
+      "TNGX",
+      "VTEX",
+      "WBD"
+    ],
+    "stale_symbols": [
+      "ACA",
+      "ATKR",
+      "PSKY"
+    ],
+    "partial_history": [
+      "ROKU",
+      "TCBI"
+    ]
+  },
+  "outputs": {
+    "detail": "G:\\My Drive\\Projects\\Python\\Stocks & Options\\Themes\\data\\Tickers_Themes_SubThemes.csv",
+    "archive": "G:\\My Drive\\Projects\\Python\\Stocks & Options\\Themes\\data\\Tickers_Themes_SubThemes_2026-11-13.csv",
+    "theme_summary": "G:\\My Drive\\Projects\\Python\\Stocks & Options\\Themes\\data\\Theme_Summary_2026-11-13.csv",
+    "subtheme_summary": "G:\\My Drive\\Projects\\Python\\Stocks & Options\\Themes\\data\\SubTheme_Summary_2026-11-13.csv",
+    "ppo_candidates": "G:\\My Drive\\Projects\\Python\\Stocks & Options\\Themes\\data\\PPO_Candidates_2026-11-13.csv"
+  }
+}
