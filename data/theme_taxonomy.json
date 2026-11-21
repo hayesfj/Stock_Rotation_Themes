@@ -1,0 +1,861 @@
+{
+ "generated": "2026-11-15",
+ "source": "Input_Ticker_List_by_Theme.csv",
+ "slug_rule": "lowercase; & -> \" and \"; runs of non-alphanumerics -> \"-\"; trim \"-\"",
+ "themes": [
+  {
+   "theme": "Nanotechnology",
+   "slug": "th-nanotechnology",
+   "sub_themes": [
+    {
+     "name": "NanoTech - Research Tools & Advanced Instruments",
+     "slug": "sb-nanotechnology--nanotech-research-tools-and-advanced-instruments"
+    },
+    {
+     "name": "NanoTech - Nanomedicine & Drug Delivery",
+     "slug": "sb-nanotechnology--nanotech-nanomedicine-and-drug-delivery"
+    },
+    {
+     "name": "NanoTech - Materials, Industrial & Environment",
+     "slug": "sb-nanotechnology--nanotech-materials-industrial-and-environment"
+    }
+   ]
+  },
+  {
+   "theme": "Commodities - Metals",
+   "slug": "th-commodities-metals",
+   "sub_themes": [
+    {
+     "name": "Comm Metals - Industrial & Base Metals",
+     "slug": "sb-commodities-metals--comm-metals-industrial-and-base-metals"
+    },
+    {
+     "name": "Comm Metals - Recycling & Circular Materials",
+     "slug": "sb-commodities-metals--comm-metals-recycling-and-circular-materials"
+    },
+    {
+     "name": "Comm Metals - Gold",
+     "slug": "sb-commodities-metals--comm-metals-gold"
+    },
+    {
+     "name": "Comm Metals - Precious Metals",
+     "slug": "sb-commodities-metals--comm-metals-precious-metals"
+    },
+    {
+     "name": "Comm Metals - Battery & Energy Transition Metals",
+     "slug": "sb-commodities-metals--comm-metals-battery-and-energy-transition-metals"
+    },
+    {
+     "name": "Comm Metals - Rare Earth & Strategic Materials",
+     "slug": "sb-commodities-metals--comm-metals-rare-earth-and-strategic-materials"
+    }
+   ]
+  },
+  {
+   "theme": "Airlines",
+   "slug": "th-airlines",
+   "sub_themes": [
+    {
+     "name": "Airlines - Passenger Carriers",
+     "slug": "sb-airlines--airlines-passenger-carriers"
+    }
+   ]
+  },
+  {
+   "theme": "Hardware",
+   "slug": "th-hardware",
+   "sub_themes": [
+    {
+     "name": "Hardware - Photonics",
+     "slug": "sb-hardware--hardware-photonics"
+    },
+    {
+     "name": "Hardware - Consumer Electronics, PCs & Peripherals",
+     "slug": "sb-hardware--hardware-consumer-electronics-pcs-and-peripherals"
+    },
+    {
+     "name": "Hardware - Industrial & IoT",
+     "slug": "sb-hardware--hardware-industrial-and-iot"
+    },
+    {
+     "name": "Hardware - Communications & Telecom",
+     "slug": "sb-hardware--hardware-communications-and-telecom"
+    },
+    {
+     "name": "Hardware - Edge Computing",
+     "slug": "sb-hardware--hardware-edge-computing"
+    },
+    {
+     "name": "Hardware - Data Center Infrastructure & Servers",
+     "slug": "sb-hardware--hardware-data-center-infrastructure-and-servers"
+    },
+    {
+     "name": "Hardware - Networking Equipment",
+     "slug": "sb-hardware--hardware-networking-equipment"
+    },
+    {
+     "name": "Hardware - Quantum Computing",
+     "slug": "sb-hardware--hardware-quantum-computing"
+    },
+    {
+     "name": "Hardware - NextGen",
+     "slug": "sb-hardware--hardware-nextgen"
+    }
+   ]
+  },
+  {
+   "theme": "Industrials & Construction",
+   "slug": "th-industrials-and-construction",
+   "sub_themes": [
+    {
+     "name": "Industrials - Building Products & HVAC",
+     "slug": "sb-industrials-and-construction--industrials-building-products-and-hvac"
+    },
+    {
+     "name": "Industrials - Construction Materials & Aggregates",
+     "slug": "sb-industrials-and-construction--industrials-construction-materials-and-aggregates"
+    },
+    {
+     "name": "Industrials - Engineering & Construction",
+     "slug": "sb-industrials-and-construction--industrials-engineering-and-construction"
+    },
+    {
+     "name": "Industrials - Distribution & Rental Services",
+     "slug": "sb-industrials-and-construction--industrials-distribution-and-rental-services"
+    },
+    {
+     "name": "Industrials - Packaging & Containers",
+     "slug": "sb-industrials-and-construction--industrials-packaging-and-containers"
+    },
+    {
+     "name": "Industrials - Chemicals & Advanced Materials",
+     "slug": "sb-industrials-and-construction--industrials-chemicals-and-advanced-materials"
+    },
+    {
+     "name": "Industrials - Machinery, Flow Control & Components",
+     "slug": "sb-industrials-and-construction--industrials-machinery-flow-control-and-components"
+    }
+   ]
+  },
+  {
+   "theme": "Cloud Computing",
+   "slug": "th-cloud-computing",
+   "sub_themes": [
+    {
+     "name": "Cloud - Data Centers & Infrastructure",
+     "slug": "sb-cloud-computing--cloud-data-centers-and-infrastructure"
+    },
+    {
+     "name": "Cloud - Horizontal SaaS & Cloud Applications",
+     "slug": "sb-cloud-computing--cloud-horizontal-saas-and-cloud-applications"
+    },
+    {
+     "name": "Cloud - Hyperscalers & Platforms",
+     "slug": "sb-cloud-computing--cloud-hyperscalers-and-platforms"
+    },
+    {
+     "name": "Cloud - DevOps, Observability & Multi-Cloud",
+     "slug": "sb-cloud-computing--cloud-devops-observability-and-multi-cloud"
+    }
+   ]
+  },
+  {
+   "theme": "Electric Vehicles & Mobility",
+   "slug": "th-electric-vehicles-and-mobility",
+   "sub_themes": [
+    {
+     "name": "EVs - Batteries & Materials",
+     "slug": "sb-electric-vehicles-and-mobility--evs-batteries-and-materials"
+    },
+    {
+     "name": "EVs - Autonomous Driving & Fleet",
+     "slug": "sb-electric-vehicles-and-mobility--evs-autonomous-driving-and-fleet"
+    },
+    {
+     "name": "EVs - Key Suppliers & Autonomy Tech",
+     "slug": "sb-electric-vehicles-and-mobility--evs-key-suppliers-and-autonomy-tech"
+    },
+    {
+     "name": "EVs - Charging & Infrastructure",
+     "slug": "sb-electric-vehicles-and-mobility--evs-charging-and-infrastructure"
+    },
+    {
+     "name": "EVs - Manufacturers",
+     "slug": "sb-electric-vehicles-and-mobility--evs-manufacturers"
+    }
+   ]
+  },
+  {
+   "theme": "Energy - Renewable",
+   "slug": "th-energy-renewable",
+   "sub_themes": [
+    {
+     "name": "Energy Clean - Smart Grid & Electrification",
+     "slug": "sb-energy-renewable--energy-clean-smart-grid-and-electrification"
+    },
+    {
+     "name": "Energy Clean - Wind",
+     "slug": "sb-energy-renewable--energy-clean-wind"
+    },
+    {
+     "name": "Energy Clean - Materials & Critical Metals",
+     "slug": "sb-energy-renewable--energy-clean-materials-and-critical-metals"
+    },
+    {
+     "name": "Energy Clean - Batteries & Storage",
+     "slug": "sb-energy-renewable--energy-clean-batteries-and-storage"
+    },
+    {
+     "name": "Energy Clean - Fuels & Bioenergy",
+     "slug": "sb-energy-renewable--energy-clean-fuels-and-bioenergy"
+    },
+    {
+     "name": "Energy Clean - Hydrogen & Fuel Cells",
+     "slug": "sb-energy-renewable--energy-clean-hydrogen-and-fuel-cells"
+    },
+    {
+     "name": "Energy Clean - Solar",
+     "slug": "sb-energy-renewable--energy-clean-solar"
+    },
+    {
+     "name": "Energy Clean - Utilities & Clean Power Operators",
+     "slug": "sb-energy-renewable--energy-clean-utilities-and-clean-power-operators"
+    }
+   ]
+  },
+  {
+   "theme": "Industrial Automation & Robotics",
+   "slug": "th-industrial-automation-and-robotics",
+   "sub_themes": [
+    {
+     "name": "Automation - Factory & Process Automation Systems",
+     "slug": "sb-industrial-automation-and-robotics--automation-factory-and-process-automation-systems"
+    },
+    {
+     "name": "Automation - Industrial Software & Digital Twin",
+     "slug": "sb-industrial-automation-and-robotics--automation-industrial-software-and-digital-twin"
+    },
+    {
+     "name": "Robotics - Medical, Service & Mobility",
+     "slug": "sb-industrial-automation-and-robotics--robotics-medical-service-and-mobility"
+    },
+    {
+     "name": "Automation - Industrial Sensors & Machine Vision",
+     "slug": "sb-industrial-automation-and-robotics--automation-industrial-sensors-and-machine-vision"
+    },
+    {
+     "name": "Robotics - Sensors & Vision Systems",
+     "slug": "sb-industrial-automation-and-robotics--robotics-sensors-and-vision-systems"
+    },
+    {
+     "name": "Automation - Industrial IoT, Connectivity",
+     "slug": "sb-industrial-automation-and-robotics--automation-industrial-iot-connectivity"
+    },
+    {
+     "name": "Automation - Additive Manufacturing, 3D Printing",
+     "slug": "sb-industrial-automation-and-robotics--automation-additive-manufacturing-3d-printing"
+    }
+   ]
+  },
+  {
+   "theme": "Healthcare & Biotech",
+   "slug": "th-healthcare-and-biotech",
+   "sub_themes": [
+    {
+     "name": "Healthcare - Oncology & Precision Cancer Therapeutics",
+     "slug": "sb-healthcare-and-biotech--healthcare-oncology-and-precision-cancer-therapeutics"
+    },
+    {
+     "name": "Healthcare - Digital Health, Telemedicine & Remote Care",
+     "slug": "sb-healthcare-and-biotech--healthcare-digital-health-telemedicine-and-remote-care"
+    },
+    {
+     "name": "Healthcare - Medical Devices & HealthTech Hardware",
+     "slug": "sb-healthcare-and-biotech--healthcare-medical-devices-and-healthtech-hardware"
+    },
+    {
+     "name": "Healthcare - Next-Gen Biotech Platforms",
+     "slug": "sb-healthcare-and-biotech--healthcare-next-gen-biotech-platforms"
+    },
+    {
+     "name": "Healthcare - Metabolic & Cardiometabolic",
+     "slug": "sb-healthcare-and-biotech--healthcare-metabolic-and-cardiometabolic"
+    },
+    {
+     "name": "Healthcare - Genomics & Personalized Medicine",
+     "slug": "sb-healthcare-and-biotech--healthcare-genomics-and-personalized-medicine"
+    },
+    {
+     "name": "Healthcare - Regenerative Medicine, Psychedelics, Cannabis",
+     "slug": "sb-healthcare-and-biotech--healthcare-regenerative-medicine-psychedelics-cannabis"
+    },
+    {
+     "name": "Healthcare - Senior Care & Longevity",
+     "slug": "sb-healthcare-and-biotech--healthcare-senior-care-and-longevity"
+    },
+    {
+     "name": "Healthcare - Diagnostics, Biomarkers & Liquid Biopsy",
+     "slug": "sb-healthcare-and-biotech--healthcare-diagnostics-biomarkers-and-liquid-biopsy"
+    },
+    {
+     "name": "Healthcare - IT, Services & Data Infrastructure",
+     "slug": "sb-healthcare-and-biotech--healthcare-it-services-and-data-infrastructure"
+    },
+    {
+     "name": "Healthcare - Animal Health & Veterinary",
+     "slug": "sb-healthcare-and-biotech--healthcare-animal-health-and-veterinary"
+    }
+   ]
+  },
+  {
+   "theme": "Consumer Goods & Retail",
+   "slug": "th-consumer-goods-and-retail",
+   "sub_themes": [
+    {
+     "name": "Consumer - Resale & Sharing Platforms",
+     "slug": "sb-consumer-goods-and-retail--consumer-resale-and-sharing-platforms"
+    },
+    {
+     "name": "Consumer - Health, Food & Beverages",
+     "slug": "sb-consumer-goods-and-retail--consumer-health-food-and-beverages"
+    },
+    {
+     "name": "Consumer - Apparel & E-Commerce Retail",
+     "slug": "sb-consumer-goods-and-retail--consumer-apparel-and-e-commerce-retail"
+    },
+    {
+     "name": "Consumer - Household & Personal Care",
+     "slug": "sb-consumer-goods-and-retail--consumer-household-and-personal-care"
+    },
+    {
+     "name": "Consumer - Modern Luxury & Lifestyle",
+     "slug": "sb-consumer-goods-and-retail--consumer-modern-luxury-and-lifestyle"
+    },
+    {
+     "name": "Consumer - Restaurants & Dining",
+     "slug": "sb-consumer-goods-and-retail--consumer-restaurants-and-dining"
+    }
+   ]
+  },
+  {
+   "theme": "Financials - Traditional",
+   "slug": "th-financials-traditional",
+   "sub_themes": [
+    {
+     "name": "Fin Trad - Insurance & Reinsurance",
+     "slug": "sb-financials-traditional--fin-trad-insurance-and-reinsurance"
+    },
+    {
+     "name": "Fin Trad - Asset Management, Custody & Alternatives",
+     "slug": "sb-financials-traditional--fin-trad-asset-management-custody-and-alternatives"
+    },
+    {
+     "name": "Fin Trad - Banks, Lending & Mortgage Finance",
+     "slug": "sb-financials-traditional--fin-trad-banks-lending-and-mortgage-finance"
+    },
+    {
+     "name": "Fin Trad - Capital Markets & Investment Banking",
+     "slug": "sb-financials-traditional--fin-trad-capital-markets-and-investment-banking"
+    }
+   ]
+  },
+  {
+   "theme": "Transportation & Logistics",
+   "slug": "th-transportation-and-logistics",
+   "sub_themes": [
+    {
+     "name": "Transportation - Air Travel & Passenger Transportation",
+     "slug": "sb-transportation-and-logistics--transportation-air-travel-and-passenger-transportation"
+    },
+    {
+     "name": "Transportation - Infrastructure & Equipment",
+     "slug": "sb-transportation-and-logistics--transportation-infrastructure-and-equipment"
+    },
+    {
+     "name": "Transportation - Trucking, LTL & Ground Freight",
+     "slug": "sb-transportation-and-logistics--transportation-trucking-ltl-and-ground-freight"
+    },
+    {
+     "name": "Transportation - Urban Mobility & Emerging Transport Tech",
+     "slug": "sb-transportation-and-logistics--transportation-urban-mobility-and-emerging-transport-tech"
+    },
+    {
+     "name": "Transportation - Logistics, Warehousing & Supply Chain Solutions",
+     "slug": "sb-transportation-and-logistics--transportation-logistics-warehousing-and-supply-chain-solutions"
+    },
+    {
+     "name": "Transportation - Freight Rail & Infrastructure",
+     "slug": "sb-transportation-and-logistics--transportation-freight-rail-and-infrastructure"
+    },
+    {
+     "name": "Transportation - Marine Shipping & Ports",
+     "slug": "sb-transportation-and-logistics--transportation-marine-shipping-and-ports"
+    }
+   ]
+  },
+  {
+   "theme": "E-commerce",
+   "slug": "th-e-commerce",
+   "sub_themes": [
+    {
+     "name": "E-commerce - Grocery & Local Commerce Platforms",
+     "slug": "sb-e-commerce--e-commerce-grocery-and-local-commerce-platforms"
+    },
+    {
+     "name": "E-commerce - Platforms",
+     "slug": "sb-e-commerce--e-commerce-platforms"
+    },
+    {
+     "name": "E-commerce - Omnichannel Retailers, Online & Physical Stores",
+     "slug": "sb-e-commerce--e-commerce-omnichannel-retailers-online-and-physical-stores"
+    },
+    {
+     "name": "E-commerce - Retail Media & Advertising",
+     "slug": "sb-e-commerce--e-commerce-retail-media-and-advertising"
+    },
+    {
+     "name": "E-commerce - Direct-to-Consumer",
+     "slug": "sb-e-commerce--e-commerce-direct-to-consumer"
+    },
+    {
+     "name": "E-commerce - Online Marketplaces & Recommerce",
+     "slug": "sb-e-commerce--e-commerce-online-marketplaces-and-recommerce"
+    }
+   ]
+  },
+  {
+   "theme": "FinTech & Digital Finance",
+   "slug": "th-fintech-and-digital-finance",
+   "sub_themes": [
+    {
+     "name": "FinTech - Digital Payments & Merchant Infrastructure",
+     "slug": "sb-fintech-and-digital-finance--fintech-digital-payments-and-merchant-infrastructure"
+    },
+    {
+     "name": "FinTech - Digital Banking & Neobanks",
+     "slug": "sb-fintech-and-digital-finance--fintech-digital-banking-and-neobanks"
+    },
+    {
+     "name": "FinTech - Crypto, Blockchain & Tokenization",
+     "slug": "sb-fintech-and-digital-finance--fintech-crypto-blockchain-and-tokenization"
+    },
+    {
+     "name": "FinTech - Exchanges & Market Infrastructure",
+     "slug": "sb-fintech-and-digital-finance--fintech-exchanges-and-market-infrastructure"
+    },
+    {
+     "name": "FinTech - Trading Platforms & WealthTech",
+     "slug": "sb-fintech-and-digital-finance--fintech-trading-platforms-and-wealthtech"
+    },
+    {
+     "name": "FinTech - InsurTech & Embedded Insurance",
+     "slug": "sb-fintech-and-digital-finance--fintech-insurtech-and-embedded-insurance"
+    }
+   ]
+  },
+  {
+   "theme": "Semiconductors",
+   "slug": "th-semiconductors",
+   "sub_themes": [
+    {
+     "name": "Semis - Equipment, Lithography & Deposition",
+     "slug": "sb-semiconductors--semis-equipment-lithography-and-deposition"
+    },
+    {
+     "name": "Semis - Emerging Technologies",
+     "slug": "sb-semiconductors--semis-emerging-technologies"
+    },
+    {
+     "name": "Semis - EDA Tools & Design Software",
+     "slug": "sb-semiconductors--semis-eda-tools-and-design-software"
+    },
+    {
+     "name": "Semis - Analog, Mixed-Signal & Power Management",
+     "slug": "sb-semiconductors--semis-analog-mixed-signal-and-power-management"
+    },
+    {
+     "name": "Semis - Testing, Packaging & Assembly",
+     "slug": "sb-semiconductors--semis-testing-packaging-and-assembly"
+    },
+    {
+     "name": "Semis - Wireless & Connectivity",
+     "slug": "sb-semiconductors--semis-wireless-and-connectivity"
+    },
+    {
+     "name": "Semis - Logic & CPUs, GPUs, Accelerators",
+     "slug": "sb-semiconductors--semis-logic-and-cpus-gpus-accelerators"
+    },
+    {
+     "name": "Semis - Memory & Storage",
+     "slug": "sb-semiconductors--semis-memory-and-storage"
+    }
+   ]
+  },
+  {
+   "theme": "Business Services & Consulting",
+   "slug": "th-business-services-and-consulting",
+   "sub_themes": [
+    {
+     "name": "Consulting",
+     "slug": "sb-business-services-and-consulting--consulting"
+    },
+    {
+     "name": "Business Services - Outsourcing, Facilities & Testing",
+     "slug": "sb-business-services-and-consulting--business-services-outsourcing-facilities-and-testing"
+    }
+   ]
+  },
+  {
+   "theme": "Real Estate & REITs",
+   "slug": "th-real-estate-and-reits",
+   "sub_themes": [
+    {
+     "name": "Real Estate - Retail & Consumer Real Estate",
+     "slug": "sb-real-estate-and-reits--real-estate-retail-and-consumer-real-estate"
+    },
+    {
+     "name": "Real Estate - Healthcare & Senior Living",
+     "slug": "sb-real-estate-and-reits--real-estate-healthcare-and-senior-living"
+    },
+    {
+     "name": "Real Estate - Housing, Urban Living & Demographics",
+     "slug": "sb-real-estate-and-reits--real-estate-housing-urban-living-and-demographics"
+    },
+    {
+     "name": "Real Estate - Digital Infrastructure",
+     "slug": "sb-real-estate-and-reits--real-estate-digital-infrastructure"
+    },
+    {
+     "name": "Real Estate - Office & Commercial Workspaces",
+     "slug": "sb-real-estate-and-reits--real-estate-office-and-commercial-workspaces"
+    },
+    {
+     "name": "Real Estate - Travel, Leisure & Entertainment Properties",
+     "slug": "sb-real-estate-and-reits--real-estate-travel-leisure-and-entertainment-properties"
+    },
+    {
+     "name": "Real Estate - E-Commerce, Warehousing & Logistics",
+     "slug": "sb-real-estate-and-reits--real-estate-e-commerce-warehousing-and-logistics"
+    }
+   ]
+  },
+  {
+   "theme": "Agriculture & FoodTech",
+   "slug": "th-agriculture-and-foodtech",
+   "sub_themes": [
+    {
+     "name": "Agriculture - Agri-Food Processing & Distribution",
+     "slug": "sb-agriculture-and-foodtech--agriculture-agri-food-processing-and-distribution"
+    },
+    {
+     "name": "Agriculture - Alternative Proteins",
+     "slug": "sb-agriculture-and-foodtech--agriculture-alternative-proteins"
+    },
+    {
+     "name": "Agriculture - Precision Agriculture & Farm Automation",
+     "slug": "sb-agriculture-and-foodtech--agriculture-precision-agriculture-and-farm-automation"
+    },
+    {
+     "name": "Agriculture - Agricultural Inputs & Crop Science",
+     "slug": "sb-agriculture-and-foodtech--agriculture-agricultural-inputs-and-crop-science"
+    }
+   ]
+  },
+  {
+   "theme": "Software",
+   "slug": "th-software",
+   "sub_themes": [
+    {
+     "name": "Software - Vertical SaaS Platforms",
+     "slug": "sb-software--software-vertical-saas-platforms"
+    },
+    {
+     "name": "Software - Collaboration, CRM & Communications",
+     "slug": "sb-software--software-collaboration-crm-and-communications"
+    },
+    {
+     "name": "Software - Gaming & Platforms",
+     "slug": "sb-software--software-gaming-and-platforms"
+    },
+    {
+     "name": "Software - Data, Analytics & DevOps",
+     "slug": "sb-software--software-data-analytics-and-devops"
+    }
+   ]
+  },
+  {
+   "theme": "Smart Home & IoT",
+   "slug": "th-smart-home-and-iot",
+   "sub_themes": [
+    {
+     "name": "Smart Home - Automation, Control & Energy",
+     "slug": "sb-smart-home-and-iot--smart-home-automation-control-and-energy"
+    },
+    {
+     "name": "Smart Home - Connectivity, Devices & Appliances",
+     "slug": "sb-smart-home-and-iot--smart-home-connectivity-devices-and-appliances"
+    }
+   ]
+  },
+  {
+   "theme": "Energy - Traditional",
+   "slug": "th-energy-traditional",
+   "sub_themes": [
+    {
+     "name": "Energy Base - Utilities & Conventional Power Operators",
+     "slug": "sb-energy-traditional--energy-base-utilities-and-conventional-power-operators"
+    },
+    {
+     "name": "Energy Base - Coal & Thermal Power Generation",
+     "slug": "sb-energy-traditional--energy-base-coal-and-thermal-power-generation"
+    },
+    {
+     "name": "Energy Base - Refining & Midstream Infrastructure",
+     "slug": "sb-energy-traditional--energy-base-refining-and-midstream-infrastructure"
+    },
+    {
+     "name": "Energy Base - Oil & Gas Exploration & Production",
+     "slug": "sb-energy-traditional--energy-base-oil-and-gas-exploration-and-production"
+    },
+    {
+     "name": "Energy Base - Oilfield Services & Equipment",
+     "slug": "sb-energy-traditional--energy-base-oilfield-services-and-equipment"
+    },
+    {
+     "name": "Energy Base - Integrated Energy Majors",
+     "slug": "sb-energy-traditional--energy-base-integrated-energy-majors"
+    },
+    {
+     "name": "Energy Base - Nuclear Power & Advanced Reactors",
+     "slug": "sb-energy-traditional--energy-base-nuclear-power-and-advanced-reactors"
+    }
+   ]
+  },
+  {
+   "theme": "Commodities - Agriculture",
+   "slug": "th-commodities-agriculture",
+   "sub_themes": [
+    {
+     "name": "Comm Agri - Grains, Oilseeds & Softs",
+     "slug": "sb-commodities-agriculture--comm-agri-grains-oilseeds-and-softs"
+    },
+    {
+     "name": "Comm Agri - Livestock & Animal Protein",
+     "slug": "sb-commodities-agriculture--comm-agri-livestock-and-animal-protein"
+    },
+    {
+     "name": "Comm Agri - Fertilizers, Crop Inputs & Seeds",
+     "slug": "sb-commodities-agriculture--comm-agri-fertilizers-crop-inputs-and-seeds"
+    }
+   ]
+  },
+  {
+   "theme": "Big Data & Analytics",
+   "slug": "th-big-data-and-analytics",
+   "sub_themes": [
+    {
+     "name": "Big Data - Analytics, AI Platforms & BI",
+     "slug": "sb-big-data-and-analytics--big-data-analytics-ai-platforms-and-bi"
+    },
+    {
+     "name": "Big Data - Data Generation, Sourcing & Providers",
+     "slug": "sb-big-data-and-analytics--big-data-data-generation-sourcing-and-providers"
+    }
+   ]
+  },
+  {
+   "theme": "Artificial Intelligence",
+   "slug": "th-artificial-intelligence",
+   "sub_themes": [
+    {
+     "name": "AI - Apps, Domain-Specific AI",
+     "slug": "sb-artificial-intelligence--ai-apps-domain-specific-ai"
+    },
+    {
+     "name": "AI - Ads, Search & Recommendations",
+     "slug": "sb-artificial-intelligence--ai-ads-search-and-recommendations"
+    }
+   ]
+  },
+  {
+   "theme": "Defense & Aerospace",
+   "slug": "th-defense-and-aerospace",
+   "sub_themes": [
+    {
+     "name": "Defense - Next-Generation Aircraft & Maintenance",
+     "slug": "sb-defense-and-aerospace--defense-next-generation-aircraft-and-maintenance"
+    },
+    {
+     "name": "Defense - Secure Defense Supply Chains",
+     "slug": "sb-defense-and-aerospace--defense-secure-defense-supply-chains"
+    },
+    {
+     "name": "Defense - Drones & Anti-Drone Systems",
+     "slug": "sb-defense-and-aerospace--defense-drones-and-anti-drone-systems"
+    },
+    {
+     "name": "Defense - Cyber Defense & Electronic Warfare",
+     "slug": "sb-defense-and-aerospace--defense-cyber-defense-and-electronic-warfare"
+    },
+    {
+     "name": "Defense - Space Technology & Satellite Services",
+     "slug": "sb-defense-and-aerospace--defense-space-technology-and-satellite-services"
+    }
+   ]
+  },
+  {
+   "theme": "Telecommunications",
+   "slug": "th-telecommunications",
+   "sub_themes": [
+    {
+     "name": "Telecom - Cloud & Edge Connectivity",
+     "slug": "sb-telecommunications--telecom-cloud-and-edge-connectivity"
+    },
+    {
+     "name": "Telecom - Infrastructure & Equipment",
+     "slug": "sb-telecommunications--telecom-infrastructure-and-equipment"
+    },
+    {
+     "name": "Telecom - Satellite & Space Communication",
+     "slug": "sb-telecommunications--telecom-satellite-and-space-communication"
+    },
+    {
+     "name": "Telecom - 5G, Wireless & Carriers",
+     "slug": "sb-telecommunications--telecom-5g-wireless-and-carriers"
+    },
+    {
+     "name": "Telecom - Enterprise & Unified Communications",
+     "slug": "sb-telecommunications--telecom-enterprise-and-unified-communications"
+    }
+   ]
+  },
+  {
+   "theme": "Commodities - Energy",
+   "slug": "th-commodities-energy",
+   "sub_themes": [
+    {
+     "name": "Comm Energy - Natural Gas & LNG",
+     "slug": "sb-commodities-energy--comm-energy-natural-gas-and-lng"
+    },
+    {
+     "name": "Comm Energy - Biofuels & Renewable Fuels",
+     "slug": "sb-commodities-energy--comm-energy-biofuels-and-renewable-fuels"
+    },
+    {
+     "name": "Comm Energy - Crude Oil",
+     "slug": "sb-commodities-energy--comm-energy-crude-oil"
+    },
+    {
+     "name": "Comm Energy - Uranium & Nuclear Fuels",
+     "slug": "sb-commodities-energy--comm-energy-uranium-and-nuclear-fuels"
+    }
+   ]
+  },
+  {
+   "theme": "Environmental Sustainability",
+   "slug": "th-environmental-sustainability",
+   "sub_themes": [
+    {
+     "name": "Environmental - Water Infrastructure & Treatment",
+     "slug": "sb-environmental-sustainability--environmental-water-infrastructure-and-treatment"
+    },
+    {
+     "name": "Environmental - Waste Management & Recycling",
+     "slug": "sb-environmental-sustainability--environmental-waste-management-and-recycling"
+    },
+    {
+     "name": "Environmental - Climate, Carbon & Land Resources",
+     "slug": "sb-environmental-sustainability--environmental-climate-carbon-and-land-resources"
+    },
+    {
+     "name": "Environmental - Clean Technologies & Pollution Control",
+     "slug": "sb-environmental-sustainability--environmental-clean-technologies-and-pollution-control"
+    }
+   ]
+  },
+  {
+   "theme": "Digital Entertainment & Media",
+   "slug": "th-digital-entertainment-and-media",
+   "sub_themes": [
+    {
+     "name": "Entertainment - Advertising & Social Platforms",
+     "slug": "sb-digital-entertainment-and-media--entertainment-advertising-and-social-platforms"
+    },
+    {
+     "name": "Entertainment - Betting, iGaming & Wagering",
+     "slug": "sb-digital-entertainment-and-media--entertainment-betting-igaming-and-wagering"
+    },
+    {
+     "name": "Entertainment - Game Publishers & Developers",
+     "slug": "sb-digital-entertainment-and-media--entertainment-game-publishers-and-developers"
+    },
+    {
+     "name": "Entertainment - Video Streaming",
+     "slug": "sb-digital-entertainment-and-media--entertainment-video-streaming"
+    }
+   ]
+  },
+  {
+   "theme": "Space Tech",
+   "slug": "th-space-tech",
+   "sub_themes": [
+    {
+     "name": "Space - Infrastructure, Exploration & Launch",
+     "slug": "sb-space-tech--space-infrastructure-exploration-and-launch"
+    },
+    {
+     "name": "Space - Data Analytics & Earth Observation",
+     "slug": "sb-space-tech--space-data-analytics-and-earth-observation"
+    }
+   ]
+  },
+  {
+   "theme": "Cybersecurity",
+   "slug": "th-cybersecurity",
+   "sub_themes": [
+    {
+     "name": "Cybersecurity - IAM & Zero Trust",
+     "slug": "sb-cybersecurity--cybersecurity-iam-and-zero-trust"
+    },
+    {
+     "name": "Cybersecurity - Platform, Cloud & Application Security",
+     "slug": "sb-cybersecurity--cybersecurity-platform-cloud-and-application-security"
+    }
+   ]
+  },
+  {
+   "theme": "Crypto & Blockchain",
+   "slug": "th-crypto-and-blockchain",
+   "sub_themes": [
+    {
+     "name": "Blockchain - Cryptocurrency Mining & Staking",
+     "slug": "sb-crypto-and-blockchain--blockchain-cryptocurrency-mining-and-staking"
+    }
+   ]
+  },
+  {
+   "theme": "Education Technology",
+   "slug": "th-education-technology",
+   "sub_themes": [
+    {
+     "name": "Education - Digital Curriculum",
+     "slug": "sb-education-technology--education-digital-curriculum"
+    },
+    {
+     "name": "Education - Workforce Training",
+     "slug": "sb-education-technology--education-workforce-training"
+    }
+   ]
+  },
+  {
+   "theme": "Conglomerates & Diversified Holdings",
+   "slug": "th-conglomerates-and-diversified-holdings",
+   "sub_themes": [
+    {
+     "name": "Diversified Holdings & Multi-Industry Conglomerates",
+     "slug": "sb-conglomerates-and-diversified-holdings--diversified-holdings-and-multi-industry-conglomerates"
+    }
+   ]
+  }
+ ]
+}
